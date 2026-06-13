@@ -1,0 +1,258 @@
+﻿\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+\usepackage{enumitem}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+Since $Z_1$ and $Z_2$ are independent,
+
+\[
+\mathrm{Cov}(Z_1,Z_2)=E(Z_1Z_2)-E(Z_1)E(Z_2)=0-0=0
+\]
+
+\[
+\implies \boxed{\mathrm{Corr}(Z_1,Z_2)=0}
+\]
+
+\bigskip
+
+\[
+Y_1=Z_1,\qquad Y_2=\rho_{12}Z_1+\sqrt{1-\rho_{12}^2}\,Z_2
+\]
+
+\[
+\begin{aligned}
+E(Y_2)
+&=\rho_{12}E(Z_1)+\sqrt{1-\rho_{12}^2}\,E(Z_2)\\
+&=0
+\end{aligned}
+\]
+
+\[
+\implies \boxed{E(Y_2)=0}
+\]
+
+\[
+\begin{aligned}
+\mathrm{Var}(Y_2)
+&=\mathrm{Var}\left(\rho_{12}Z_1+\sqrt{1-\rho_{12}^2}\,Z_2\right)\\
+&=\rho_{12}^2\mathrm{Var}(Z_1)+(1-\rho_{12}^2)\mathrm{Var}(Z_2)
+\end{aligned}
+\]
+
+\[
+\because \ Z_1,Z_2 \text{ are independent},\qquad \mathrm{Cov}(Z_1,Z_2)=0
+\]
+
+\[
+\mathrm{Var}(Y_2)=\rho_{12}^2+(1-\rho_{12}^2)=1
+\]
+
+\[
+\implies \boxed{\mathrm{Var}(Y_2)=1}
+\]
+
+\[
+\begin{aligned}
+\mathrm{Cov}(Y_1,Y_2)
+&=\mathrm{Cov}\left(Z_1,\rho_{12}Z_1+\sqrt{1-\rho_{12}^2}\,Z_2\right)\\
+&=\rho_{12}\mathrm{Cov}(Z_1,Z_1)+\sqrt{1-\rho_{12}^2}\,\mathrm{Cov}(Z_1,Z_2)\\
+&=\rho_{12}
+\end{aligned}
+\]
+
+\[
+\therefore \ \mathrm{Corr}(Y_1,Y_2)=\frac{\mathrm{Cov}(Y_1,Y_2)}{\sqrt{\mathrm{Var}(Y_1)\mathrm{Var}(Y_2)}}=\frac{\rho_{12}}{\sqrt{1\cdot 1}}=\rho_{12}
+\]
+
+\[
+\implies \boxed{\mathrm{Corr}(Y_1,Y_2)=\rho_{12}}
+\]
+
+\bigskip
+
+Now let
+\[
+Y_3=aZ_1+bZ_2+cZ_3,\qquad c\geq 0
+\]
+
+Since $E(Z_1)=E(Z_2)=E(Z_3)=0$,
+
+\[
+E(Y_3)=aE(Z_1)+bE(Z_2)+cE(Z_3)=0
+\]
+
+which is already satisfied.
+
+\[
+\begin{aligned}
+\mathrm{Var}(Y_3)
+&=\mathrm{Var}(aZ_1+bZ_2+cZ_3)\\
+&=a^2+b^2+c^2
+\end{aligned}
+\]
+
+\[
+\because \ Z_1,Z_2,Z_3 \text{ are independent}
+\]
+
+Given $\mathrm{Var}(Y_3)=1$,
+
+\[
+a^2+b^2+c^2=1
+\]
+
+Also,
+\[
+\begin{aligned}
+\mathrm{Corr}(Y_1,Y_3)
+&=\frac{\mathrm{Cov}(Y_1,Y_3)}{\sqrt{\mathrm{Var}(Y_1)\mathrm{Var}(Y_3)}}\\
+&=\mathrm{Cov}(Y_1,Y_3)
+\end{aligned}
+\]
+
+since $\mathrm{Var}(Y_1)=\mathrm{Var}(Y_3)=1$.
+
+\[
+\begin{aligned}
+\rho_{13}
+&=\mathrm{Cov}(Z_1,aZ_1+bZ_2+cZ_3)\\
+&=a
+\end{aligned}
+\]
+
+\[
+\implies \boxed{a=\rho_{13}}
+\]
+
+Next,
+\[
+\begin{aligned}
+\rho_{23}
+&=\mathrm{Corr}(Y_2,Y_3)\\
+&=\mathrm{Cov}(Y_2,Y_3)
+\end{aligned}
+\]
+
+since $\mathrm{Var}(Y_2)=\mathrm{Var}(Y_3)=1$.
+
+\[
+\begin{aligned}
+\rho_{23}
+&=\mathrm{Cov}\left(\rho_{12}Z_1+\sqrt{1-\rho_{12}^2}\,Z_2,\ aZ_1+bZ_2+cZ_3\right)\\
+&=\rho_{12}a+\sqrt{1-\rho_{12}^2}\,b
+\end{aligned}
+\]
+
+Substituting $a=\rho_{13}$,
+
+\[
+\rho_{23}=\rho_{12}\rho_{13}+\sqrt{1-\rho_{12}^2}\,b
+\]
+
+\[
+\sqrt{1-\rho_{12}^2}\,b=\rho_{23}-\rho_{12}\rho_{13}
+\]
+
+\[
+\implies \boxed{b=\frac{\rho_{23}-\rho_{12}\rho_{13}}{\sqrt{1-\rho_{12}^2}}}
+\]
+
+Now
+\[
+a^2+b^2+c^2=1
+\]
+
+so
+
+\[
+c^2=1-a^2-b^2
+\]
+
+\[
+c^2=1-\rho_{13}^2-\frac{(\rho_{23}-\rho_{12}\rho_{13})^2}{1-\rho_{12}^2}
+\]
+
+Since $c\geq 0$,
+
+\[
+\implies \boxed{
+c=\sqrt{1-\rho_{13}^2-\frac{(\rho_{23}-\rho_{12}\rho_{13})^2}{1-\rho_{12}^2}}
+}
+\]
+
+\bigskip
+
+Given constants $\mu_i$ and $\sigma_i$, define
+
+\[
+X_1=\mu_1+\sigma_1Y_1,\qquad X_2=\mu_2+\sigma_2Y_2,\qquad X_3=\mu_3+\sigma_3Y_3
+\]
+
+Then
+
+\[
+\begin{aligned}
+E(X_i)
+&=E(\mu_i+\sigma_iY_i)\\
+&=\mu_i+\sigma_iE(Y_i)\\
+&=\mu_i
+\end{aligned}
+\]
+
+\[
+\implies \boxed{E(X_i)=\mu_i}
+\]
+
+Also,
+
+\[
+\begin{aligned}
+\mathrm{Var}(X_i)
+&=\mathrm{Var}(\mu_i+\sigma_iY_i)\\
+&=\sigma_i^2\mathrm{Var}(Y_i)\\
+&=\sigma_i^2
+\end{aligned}
+\]
+
+\[
+\implies \boxed{\mathrm{Var}(X_i)=\sigma_i^2}
+\]
+
+Finally,
+
+\[
+\begin{aligned}
+\mathrm{Corr}(X_i,X_j)
+&=\frac{\mathrm{Cov}(X_i,X_j)}{\sqrt{\mathrm{Var}(X_i)\mathrm{Var}(X_j)}}\\
+&=\frac{\sigma_i\sigma_j\mathrm{Cov}(Y_i,Y_j)}{\sigma_i\sigma_j}\\
+&=\mathrm{Corr}(Y_i,Y_j)\\
+&=\rho_{ij}
+\end{aligned}
+\]
+
+\[
+\implies \boxed{X_i=\mu_i+\sigma_iY_i\qquad (i=1,2,3)}
+\]
+
+\bigskip
+\hrule
+
+\begin{center}
+    This solution was submitted by \textbf{Jon}.\\[4pt]
+    Published and refined by \textbf{Jon}.\\[8pt]
+	\textit{Last updated: April 15, 2026}
+\end{center}
+
+\end{document}

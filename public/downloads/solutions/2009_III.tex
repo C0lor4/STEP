@@ -1,0 +1,60 @@
+﻿\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+\usepackage{enumitem}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\renewcommand{\qed}{\hfill$\blacksquare$}
+\let\newproof\proof
+\renewenvironment{proof}{\begin{addmargin}[1em]{0em}\begin{newproof}}{\end{newproof}\end{addmargin}\qed}
+% \newcommand{\expl}[1]{\text{\hfill[#1]}$}
+
+\setlength{\parindent}{0pt}
+
+\begin{document}
+	% for only the first page and for all the pages for pdf version
+	\lhead{2026}
+	\chead{STEP III}
+	\rhead{Solution}
+	
+	% \maketitle
+	
+	\section*{Problem 4.}
+	\textbf{i)}
+	$$
+	\begin{aligned}
+	\text{LHS}&=\int_{0}^{\infty}e^{-st}\;e^{-bt}f(t)\;dt=\int_{0}^{\infty}e^{-(s+b)t}f(t)\;dt\\
+	\text{RHS}&=F(s+b)=\int_{0}^{\infty}e^{-(s+b)t}f(t)\;dt\\
+	\therefore\text{LHS}&=\text{RHS}
+	\end{aligned}
+	$$
+
+	\textbf{ii)}
+	$$
+	\begin{aligned}
+		\text{LHS}&=\int_{0}^{\infty}e^{-st}f(at)\;dt\\
+		\text{Assume } u=at\text{, }\frac{du}{dt}=a\\
+		\text{LHS}&=\int_{0}^{\infty}e^{-(s/a)\;u}f(u)\times a^{-1}\;du\\
+		\text{RHS}&=a^{-1}F(\frac{s}{a})=a^{-1}\;\int_{0}^{\infty}e^{-(s/a)\;t}f(t)\;dt\\
+		\therefore \text{LHS}&=\text{RHS}
+	\end{aligned}
+	$$
+
+	\thispagestyle{empty}
+	
+	\begin{center}
+		This solution was submitted by \textbf{Jon}.\\[4pt]
+		Published and refined by \textbf{Jon}.\\[8pt]
+		\textit{Last updated: \today}
+	\end{center}
+	
+\end{document}

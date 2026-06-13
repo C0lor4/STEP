@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2017 III Q13 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      V(x)&=E\big((X-x)^2\big)\\
+      &=E\big(((X-\mu)+(\mu-x))^2\big)\\
+      &=E\big((X-\mu)^2\big)+2(\mu-x)E(X-\mu)+(\mu-x)^2\\
+      &=\sigma^2+0+(\mu-x)^2\\
+      &=\sigma^2+(x-\mu)^2
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      E(Y)=E\big(\sigma^2+(X-\mu)^2\big)=\sigma^2+E\big((X-\mu)^2\big)=\sigma^2+\sigma^2
+      \]
+    </div>
+    <div class="math-block">
+      \[
+      \implies \boxed{E(Y)=2\sigma^2}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \because \text{X is uniformly distributed on the interval } 0\leq X\leq 1
+      \]
+    </div>
+    <div class="math-block">
+      \[
+      \therefore \mu_X=\frac12,\qquad \sigma_X^2=\frac1{12}
+      \]
+    </div>
+    <div class="math-block">
+      \[
+      V(x)=\sigma^2+(x-\mu)^2=\frac1{12}+\left(x-\frac12\right)^2=\boxed{x^2-x+\frac13}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      F_Y(y)&=P(Y\le y)\\
+      &=P\left(\left(X-\frac12\right)^2+\frac1{12}\le y\right)\\
+      &=P\left(\frac12-\sqrt{y-\frac1{12}}\le X\le \frac12+\sqrt{y-\frac1{12}}\right)
+      \end{aligned}
+      \]
+    </div>
+
+    <p>Since \(0\le X\le 1\),</p>
+    <div class="math-block">
+      \[
+      0\le \left(X-\frac12\right)^2\le \frac14
+      \qquad\implies\qquad
+      \frac1{12}\le Y\le \frac13
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      F_X(x)=
+      \begin{cases}
+      0 & x\le 0\\
+      x & 0&lt;x&lt;1\\
+      1 & x\ge 1
+      \end{cases}
+      \qquad\implies\qquad
+      F_Y(y)=
+      \begin{cases}
+      0 & y\le \frac1{12}\\
+      \sqrt{4y-\frac13} & \frac1{12}&lt;y&lt;\frac13\\
+      1 & y\ge \frac13
+      \end{cases}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      F_Y(y)
+      &=F_X\left(\frac12+\sqrt{y-\frac1{12}}\right)-F_X\left(\frac12-\sqrt{y-\frac1{12}}\right)\\
+      &=\left(\frac12+\sqrt{y-\frac1{12}}\right)-\left(\frac12-\sqrt{y-\frac1{12}}\right)\\
+      &=2\sqrt{y-\frac1{12}}\\
+      &=\sqrt{4y-\frac13}
+      \end{aligned}
+      \qquad \left(\frac1{12}\le y\le \frac13\right)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      f_Y(y)=\frac{d}{dy}F_Y(y)=\frac{2}{\sqrt{4y-\frac13}}
+      \qquad \left(\frac1{12}&lt;y&lt;\frac13\right)
+      \]
+    </div>
+    <div class="math-block">
+      \[
+      \implies
+      \boxed{
+      f_Y(y)=
+      \begin{cases}
+      0 & \text{otherwise}\\
+      \dfrac{2}{\sqrt{4y-\frac13}} & \frac1{12}&lt;y&lt;\frac13
+      \end{cases}}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}[t]
+      E(Y)&=\int_{-\infty}^{\infty} y\,f_Y(y)\,\mathrm{d}y\\
+      &=\int_{1/12}^{1/3} 2y\left(4y-\frac13\right)^{-1/2}\,\mathrm{d}y\\
+      &=\left[y\left(4y-\frac13\right)^{1/2}-\frac16\left(4y-\frac13\right)^{3/2}\right]_{1/12}^{1/3}\\
+      &=\frac16
+      \end{aligned}
+      \]
+    </div>
+
+    <p>From \((*)\), \(\displaystyle E(Y)=2\sigma^2=2\cdot \frac1{12}=\frac16\).</p>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong>.</p>
+      <p>Published and refined by <strong>Jon</strong>.</p>
+      <p><em>Last updated: April 11, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>
+

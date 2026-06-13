@@ -1,0 +1,98 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage{xcolor}
+
+\begin{document}
+
+\subsection*{(i) Simultaneous Firing}
+Consider the entire system (truck, guns, and $n$ projectiles). Since there are no external horizontal forces, the total momentum $\vec{P}$ is conserved.
+Initially, the system is at rest, so $\vec{P}_{\text{initial}} = 0$.
+
+After all $n$ guns are fired simultaneously, let the speed of the truck be $u$. The speed of each projectile relative to the ground is $v$ in the opposite direction (given the muzzle speed is $v-V$ and $V=0$ initially). Thus:
+\begin{align*}
+    0 &= Mu - nmv \\
+    \implies u &= \frac{nmv}{M}
+\end{align*}
+
+The total kinetic energy $K$ gained by the system is the sum of the kinetic energy of the $n$ projectiles and the truck:
+\begin{align*}
+    K &= \sum KE_{\text{projectiles}} + KE_{\text{truck}} \\
+    &= n\left( \frac{1}{2}mv^2 \right) + \frac{1}{2}Mu^2 \\
+    &= \frac{1}{2}nmv^2 + \frac{1}{2}M\left( \frac{nmv}{M} \right)^2 \\
+    &= \frac{1}{2}nmv^2 + \frac{1}{2}\frac{n^2m^2v^2}{M} \\
+    &= \frac{1}{2}nmv^2 \left( 1 + \frac{nm}{M} \right) \quad \blacksquare
+\end{align*}
+
+\subsection*{(ii) Firing One at a Time}
+Let $u_r$ be the speed of the truck after $r$ guns have been fired.
+Consider the $r$-th firing. Immediately before this shot, the truck (with $n-r+1$ projectiles) has speed $u_{r-1}$. The speed of the $r$-th projectile relative to the ground is $-(v - u_{r-1})$ (moving backwards).
+Immediately after, the truck (with $n-r$ projectiles) has speed $u_r$.
+
+By conservation of momentum for this single event:
+\begin{equation*}
+    [M + (n-r+1)m]u_{r-1} = -m(v - u_{r-1}) + [M + (n-r)m]u_r
+\end{equation*}
+Expanding and rearranging terms:
+\begin{align*}
+    (M + (n-r)m)u_{r-1} + mu_{r-1} &= -mv + mu_{r-1} + (M + (n-r)m)u_r \\
+    (M + (n-r)m)u_r - (M + (n-r)m)u_{r-1} &= mv \\
+    u_r - u_{r-1} &= \frac{mv}{M + (n-r)m} \quad (*)
+\end{align*}
+
+To show $u_n < u$:
+Note that $u_n = \sum_{r=1}^{n} (u_r - u_{r-1})$. From $(*)$, for $1 \le r < n$, we have:
+\begin{equation*}
+    M + (n-r)m > M \implies \frac{mv}{M + (n-r)m} < \frac{mv}{M}
+\end{equation*}
+Summing from $r=1$ to $n$:
+\begin{equation*}
+    u_n = \sum_{r=1}^{n} \frac{mv}{M + (n-r)m} < \sum_{r=1}^{n} \frac{mv}{M} = \frac{nmv}{M} = u
+\end{equation*}
+Thus, $u_n < u$. $\blacksquare$
+
+\subsection*{(iii) Kinetic Energy Analysis}
+Let $K_r$ be the total kinetic energy after $r$ shots. The gain in energy during the $r$-th shot is:
+\begin{align*}
+    K_r - K_{r-1} &= KE_{\text{projectile}} + \Delta KE_{\text{truck}} \\
+    &= \frac{1}{2}m(v - u_{r-1})^2 + \frac{1}{2}[M + (n-r)m]u_r^2 - \frac{1}{2}[M + (n-r+1)m]u_{r-1}^2
+\end{align*}
+Substituting $u_r = u_{r-1} + \frac{mv}{M_r}$ (where $M_r = M + (n-r)m$):
+\begin{align*}
+    K_r - K_{r-1} &= \frac{1}{2}m(v^2 - 2vu_{r-1} + u_{r-1}^2) + \frac{1}{2}M_r \left( u_{r-1} + \frac{mv}{M_r} \right)^2 - \frac{1}{2}(M_r + m)u_{r-1}^2 \\
+    &= \frac{1}{2}mv^2 - mvu_{r-1} + \frac{1}{2}mu_{r-1}^2 + \frac{1}{2}M_r \left( u_{r-1}^2 + \frac{2mu_{r-1}v}{M_r} + \frac{m^2v^2}{M_r^2} \right) - \frac{1}{2}M_r u_{r-1}^2 - \frac{1}{2}mu_{r-1}^2 \\
+    &= \frac{1}{2}mv^2 - mvu_{r-1} + mvu_{r-1} + \frac{1}{2}\frac{m^2v^2}{M_r} \\
+    &= \frac{1}{2}mv^2 + \frac{1}{2}mv \left( \frac{mv}{M_r} \right)
+\end{align*}
+Since $u_r - u_{r-1} = \frac{mv}{M_r}$, we obtain:
+\begin{equation*}
+    K_r - K_{r-1} = \frac{1}{2}mv^2 + \frac{1}{2}mv(u_r - u_{r-1})
+\end{equation*}
+
+Summing this expression from $r=1$ to $n$:
+\begin{align*}
+    \sum_{r=1}^{n} (K_r - K_{r-1}) &= \sum_{r=1}^{n} \frac{1}{2}mv^2 + \sum_{r=1}^{n} \frac{1}{2}mv(u_r - u_{r-1}) \\
+    K_n - K_0 &= \frac{1}{2}nmv^2 + \frac{1}{2}mv(u_n - u_0)
+\end{align*}
+Given $K_0 = 0$ and $u_0 = 0$:
+\begin{equation*}
+    K_n = \frac{1}{2}nmv^2 + \frac{1}{2}mvu_n \quad \blacksquare
+\end{equation*}
+
+\textbf{Deduction of $K_n < K$:} \\
+From part (i), $K = \frac{1}{2}nmv^2 + \frac{1}{2}mv \left( \frac{nmv}{M} \right) = \frac{1}{2}nmv^2 + \frac{1}{2}mvu$. \\
+Since we proved in part (ii) that $u_n < u$, it directly follows that:
+\begin{equation*}
+    \frac{1}{2}nmv^2 + \frac{1}{2}mvu_n < \frac{1}{2}nmv^2 + \frac{1}{2}mvu \implies K_n < K \quad \blacksquare
+\end{equation*}
+
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Roy}.\\[4pt]
+    Published and refined by \textbf{Roy}.\\[8pt]
+	\textit{Last updated: April 11, 2026}
+\end{center}
+
+\end{document}

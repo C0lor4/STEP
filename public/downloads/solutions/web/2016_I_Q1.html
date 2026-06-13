@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2016 I Q1 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span></p>
+
+    <p>When \(n=1\):</p>
+    <div class="math-block">
+      \[
+      p_1(x)=(x+1)^2-3x=x^2-x+1
+      \]
+    </div>
+    <div class="math-block">
+      \[
+      \implies (x+1)p_1(x)=(x+1)(x^2-x+1)=x^3+1=(x+1)q_1(x)
+      \]
+    </div>
+    <div class="math-block">
+      \[
+      \implies p_1(x)=q_1(x)
+      \]
+    </div>
+
+    <p>When \(n=2\):</p>
+    <div class="math-block">
+      \[
+      p_2(x)=(x+1)^4-5x(x^2+x+1)
+      \]
+    </div>
+    <div class="math-block">
+      \[
+      \implies p_2(x)=(x^4+4x^3+6x^2+4x+1)-(5x^3+5x^2+5x)=x^4-x^3+x^2-x+1
+      \]
+    </div>
+    <div class="math-block">
+      \[
+      \implies (x+1)p_2(x)=(x+1)(x^4-x^3+x^2-x+1)=x^5+1=(x+1)q_2(x)
+      \]
+    </div>
+    <div class="math-block">
+      \[
+      \implies p_2(x)=q_2(x)
+      \]
+    </div>
+
+    <p>When \(n=3\):</p>
+    <div class="math-block">
+      \[
+      p_3(x)=(x+1)^6-7x(x^2+x+1)^2
+      \]
+    </div>
+    <div class="math-block">
+      \[
+      \implies p_3(x)=(x^6+6x^5+15x^4+20x^3+15x^2+6x+1)-(7x^5+14x^4+21x^3+14x^2+7x)
+      \]
+    </div>
+    <div class="math-block">
+      \[
+      \implies p_3(x)=x^6-x^5+x^4-x^3+x^2-x+1
+      \]
+    </div>
+    <div class="math-block">
+      \[
+      \implies (x+1)p_3(x)=(x+1)(x^6-x^5+x^4-x^3+x^2-x+1)=x^7+1=(x+1)q_3(x)
+      \]
+    </div>
+    <div class="math-block">
+      \[
+      \implies p_3(x)=q_3(x)
+      \]
+    </div>
+
+    <p>When \(n=4\):</p>
+    <div class="math-block">
+      \[
+      p_4(x)=(x+1)^8-9x(x^2+x+1)^3
+      \]
+    </div>
+
+    <p>Let \(x=1\):</p>
+    <div class="math-block">
+      \[
+      p_4(1)=2^8-9\cdot1\cdot3^3=256-243=13
+      \]
+    </div>
+    <div class="math-block">
+      \[
+      q_4(1)=1^8-1^7+1^6-1^5+1^4-1^3+1^2-1+1=1
+      \]
+    </div>
+    <div class="math-block">
+      \[
+      \implies p_4(1)\ne q_4(1)
+      \]
+    </div>
+    <div class="math-block">
+      \[
+      \implies p_4(x)\ne q_4(x)
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)(a)</span></p>
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      q_1(300)=\frac{300^3+1}{301}&=(301)^2-3(300)\\
+      &=301^2-30^2\\
+      &=(301-30)(301+30)\\
+      &=331\times 271
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)(b)</span></p>
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \dfrac{7^{49}+1}{7^7+1}=\dfrac{(7^7)^7+1}{7^7+1}&=q_3(7^7)=p_3(7^7)\\
+      &=(7^7+1)^6-7\cdot7^7(7^{14}+7^7+1)^2\\
+      &=\Bigl((7^7+1)^3\Bigr)^2-\Bigl(7^4(7^{14}+7^7+1)\Bigr)^2\\
+      &=\Bigl((7^7+7^0)^3+7^4(7^{14}+7^7+7^0)\Bigr)\Bigl((7^7+1)^3-7^4(7^{14}+7^7+7^0)\Bigr)
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong>.</p>
+      <p>Published and refined by <strong>Jon</strong>.</p>
+      <p><em>Last updated: April 23, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>
+

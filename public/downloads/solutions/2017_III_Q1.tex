@@ -1,0 +1,143 @@
+﻿\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{xcolor}
+\usepackage{enumitem}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\renewcommand{\qed}{\hfill$\blacksquare$}
+\let\newproof\proof
+\renewenvironment{proof}{\begin{addmargin}[1em]{0em}\begin{newproof}}{\end{newproof}\end{addmargin}\qed}
+
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\textbf{(i)}
+
+
+\[
+\begin{aligned}[t]
+RHS &= \dfrac{r+1}{r}\left(\dfrac{1}{\binom{n+r-1}{r}}-\dfrac{1}{\binom{n+r}{r}}\right)\\
+&= \frac{r+1}{r}\left(\frac{r!\,(n-1)!}{(n+r-1)!} - \frac{r!\,n!}{(n+r)!}\right)\\
+&= \frac{(r+1)!\,(n-1)!}{r}\cdot\frac{n+r - n}{(n+r)!}\\
+&= \frac{(r+1)!\,(n-1)!}{(n+r)!}\\
+&= \frac{1}{\binom{n+r}{r+1}} = \text{LHS}
+\end{aligned}
+\]
+
+\bigskip
+
+
+\[
+\sum_{n=1}^{\infty} \frac{1}{\binom{n+r}{r+1}}
+= \frac{r+1}{r}\sum_{n=1}^{\infty}\left(\frac{1}{\binom{n+r-1}{r}}-\frac{1}{\binom{n+r}{r}}\right)
+\lim_{N\rightarrow\infty}= \frac{r+1}{r}\left(1 - \frac{1}{\binom{N+r}{r}}\right)=\frac{r+1}{r}
+\]
+
+
+\bigskip
+
+When $r=2$:
+\[
+\sum_{n=1}^{\infty}\frac{1}{\binom{n+2}{3}} = \frac{3}{2}
+\]
+
+\[
+\implies\sum_{n=2}^{\infty}\frac{1}{\binom{n+2}{3}} = \frac{3}{2}-\frac{1}{\binom{3}{3}} = \frac{3}{2}-1=\frac{1}{2}
+\]
+
+\bigskip\hrule\bigskip
+\textbf{(ii)}
+
+$$\dfrac{1}{{}^{n+1}C_3} = \dfrac{(n-2)!\,3!}{(n+1)!} = \dfrac{3!}{(n+1)n(n-1)}$$
+
+\[
+(n+1)n(n-1)=n^3-n<n^3
+\]
+
+True for $n > 1$. Since $n \geq 3$:
+$$\dfrac{1}{{}^{n+1}C_3}>\dfrac{3!}{n^3}$$
+
+\bigskip
+
+\[
+\frac{20}{{}^{n+1}C_3} - \frac{1}{{}^{n+2}C_5} - \frac{5!}{n^3}
+= \frac{120}{n(n^2-1)} - \frac{120}{n(n^2-1)(n^2-4)} - \frac{120}{n^3}
+\]
+
+\[
+= \frac{120}{n^3(n^2-1)(n^2-4)}\Big(n^2(n^2-4) - n^2 - (n^2-1)(n^2-4)\Big)
+\]
+
+\[
+(\,\cdots)=n^4 - 4n^2 - n^2 - (n^4 - 5n^2 + 4) = -480 \cdot \frac{1}{480}\cdot(-480) = -480
+\]
+
+Since $n \geq 3$, $n^3(n^2-1)(n^2-4)>0$:
+\[
+\therefore \frac{20}{{}^{n+1}C_3} - \frac{1}{{}^{n+2}C_5} - \frac{5!}{n^3} = \frac{-480}{n^3(n^2-1)(n^2-4)} < 0
+\]
+
+
+\bigskip
+
+\[
+6\sum_{n=3}^{\infty}\frac{1}{n^3} < \sum_{n=3}^{\infty}\frac{1}{{}^{n+1}C_3} = \sum_{n=2}^{\infty}\frac{1}{{}^{n+2}C_3} = \frac{1}{2}
+\]
+\[
+\implies \sum_{n=3}^{\infty}\frac{1}{n^3} < \frac{1}{12}
+\]
+
+\bigskip
+
+Left inequality:
+\[
+6\sum_{n=3}^{\infty}\frac{1}{n^3} < \sum_{n=3}^{\infty}\frac{1}{{}^{n+1}C_3} = \sum_{n=2}^{\infty}\frac{1}{{}^{n+2}C_3} = \frac{1}{2}
+\]
+
+\[
+\therefore \sum_{n=1}^{\infty}\frac{3!}{n^3} < \frac{3!}{1} + \frac{3!}{8} + \frac{1}{2} = 6 + \frac{3}{4} + \frac{1}{2} = \frac{29}{4}
+\]
+
+\[
+\implies \sum_{n=1}^{\infty}\frac{1}{n^3} < \frac{29}{24} = \frac{116}{96}
+\]
+
+Right inequality:
+\[
+\sum_{n=3}^{\infty}\left(\frac{20}{{}^{n+1}C_3} - \frac{1}{{}^{n+2}C_5}\right) < \sum_{n=3}^{\infty}\frac{5!}{n^3}
+\]
+
+From Part (i), when $r=4$: $\displaystyle\sum_{n=1}^{\infty}\frac{1}{{}^{n+4}C_5} = \frac{5}{4}$
+
+\[
+\therefore \sum_{n=3}^{\infty}\left(\frac{20}{{}^{n+1}C_3}-\frac{1}{{}^{n+2}C_5}\right) = 20\times\frac{1}{2} - \sum_{n=1}^{\infty}\frac{1}{{}^{n+4}C_5} = 10 - \frac{5}{4} = \frac{35}{4}
+\]
+
+
+$$
+\implies \sum_{n=3}^{\infty}\frac{5!}{n^3} > \frac{35}{4}$$
+
+\[
+\implies \sum_{n=1}^{\infty}\frac{1}{n^3} > \frac{35}{4\times 5!} + \frac{1}{1} + \frac{1}{8} = \frac{7}{96} + \frac{96}{96} + \frac{12}{96} = \frac{115}{96}
+\]
+
+\[
+\therefore\mathbf{ \frac{115}{96} < \sum_{n=1}^{\infty}\frac{1}{n^3} < \frac{116}{96}}
+\]
+
+
+\bigskip
+\hrule
+
+\begin{center}
+    This solution was submitted by \textbf{Jon}.\\[4pt]
+    Published and refined by \textbf{Jon}.\\[8pt]
+    \textit{Last updated: April 24, 2026}
+\end{center}
+
+\end{document}

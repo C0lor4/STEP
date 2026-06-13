@@ -1,0 +1,119 @@
+﻿\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+\usepackage{enumitem}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\renewcommand{\qed}{\hfill$\blacksquare$}
+\let\newproof\proof
+\renewenvironment{proof}{\begin{addmargin}[1em]{0em}\begin{newproof}}{\end{newproof}\end{addmargin}\qed}
+
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\textbf{(i)}
+$$\because \text{Sum of all probability is }1$$,
+$$\therefore \sum_{x=1}^n \sum_{y=1}^n P(X=x,Y=y)=1$$
+$$\implies \sum_{x=1}^n \sum_{y=1}^n k(x+y)=1$$
+
+$$\implies k\left(\sum_{x=1}^n \sum_{y=1}^n x+\sum_{x=1}^n \sum_{y=1}^n y\right)=1$$
+$$\implies k\left(n\sum_{x=1}^n x+n\sum_{y=1}^n y\right)=1$$
+$$\implies k\left(n\cdot \frac{n(n+1)}{2}+n\cdot \frac{n(n+1)}{2}\right)=1$$
+$$\implies \boxed{k=\frac{1}{n^2(n+1)}}$$
+
+
+
+$$P(X=x)=\sum_{y=1}^n P(X=x,Y=y)=\sum_{y=1}^n k(x+y)$$
+$$=k\left(\sum_{y=1}^n x+\sum_{y=1}^n y\right)$$
+$$=k\left(nx+\frac{n(n+1)}{2}\right)$$
+$$=\frac{1}{n^2(n+1)}\left(nx+\frac{n(n+1)}{2}\right)$$
+$$=\frac{2x+n+1}{2n(n+1)}$$
+
+$$\implies \boxed{P(X=x)=\frac{n+1+2x}{2n(n+1)}}$$
+
+By symmetry, $P(Y=y)=\dfrac{n+1+2y}{2n(n+1)}$\\
+
+
+If $P(X=x,Y=y)=P(X=x)\times P(Y=y)$, then $X$ and $Y$ are independent.
+
+When $x=1, y=1$:
+$$P(X=1)\times P(Y=1)=\left( \frac{3+n}{2n(n+1)}\right)^2\qquad P(X=x,Y=y)=\frac{x+y}{n^2(n+1)}=\frac{2}{n^2(n+1)}$$
+
+$$P(X=1)\times P(Y=1)-P(X=1,Y=1)
+=\left( \frac{n+3}{2n(n+1)}\right)^2-\frac{2}{n^2(n+1)}$$
+
+$$=\frac{(n+3)^2-8(n+1)}{4n^2(n+1)^2}$$
+
+$$=\frac{n^2-2n+1}{4n^2(n+1)^2}$$
+
+$$=\frac{(n-1)^2}{4n^2(n+1)^2}>0\qquad (n\geq2)$$
+
+$$\therefore P(X=1)\times P(Y=1)\ne P(X=1,Y=1)$$\\\\
+
+
+
+
+\bigskip\hrule\bigskip
+\textbf{(ii)} $$\mathrm{Cov}(X,Y)=E(XY)-E(X)E(Y)$$
+
+$$E(X)=E(Y)=\sum_{x=1}^n xP(X=x)$$
+$$=\sum_{x=1}^n x\cdot \frac{n+1+2x}{2n(n+1)}$$
+$$=\frac{1}{2n(n+1)}\left((n+1)\sum_{x=1}^n x+2\sum_{x=1}^n x^2\right)$$
+
+
+$$\because \displaystyle\sum_{x=1}^n x=\frac{1}{2}n(n+1) \quad \text{and} \quad
+\sum_{x=1}^n x^2=\frac{1}{6}n(n+1)(2n+1)$$
+
+
+\[
+\begin{aligned}[t]
+\therefore E(X)&=\frac{1}{2n(n+1)}\left((n+1)\cdot \frac{n(n+1)}{2}+2\cdot \frac{n(n+1)(2n+1)}{6}\right)\\
+&=\frac{1}{2n(n+1)}\left(\frac{n(n+1)^2}{2}+\frac{n(n+1)(2n+1)}{3}\right)\\
+&=\frac{1}{2}\left(\frac{n+1}{2}+\frac{2n+1}{3}\right)\\
+&=\frac{7n+5}{12}
+\end{aligned}
+\]
+
+\[
+\begin{aligned}[t]
+E(XY)&=\sum_{x=1}^n \sum_{y=1}^n xy\,P(X=x,Y=y)\\
+&=\sum_{x=1}^n \sum_{y=1}^n xy\cdot k(x+y)\\
+&=k\sum_{x=1}^n \sum_{y=1}^n (x^2y+xy^2)\\
+&=k\left(\sum_{x=1}^n \sum_{y=1}^n x^2y+\sum_{x=1}^n \sum_{y=1}^n xy^2\right)\\
+&=k\left(2\cdot \sum_{x=1}^n \sum_{y=1}^n x^2y\right)\\
+&=k\left(2\cdot \left(\sum_{x=1}^n x^2\right)\left(\sum_{y=1}^n y\right)\right)\\
+&=k\left(2\cdot \frac{n(n+1)(2n+1)}{6}\cdot \frac{n(n+1)}{2}\right)\\
+&=\frac{1}{6}(n+1)(2n+1)
+\end{aligned}
+\]
+
+
+
+$$\implies\mathrm{Cov}(X,Y)=\frac{1}{6}(n+1)(2n+1)-\left(\frac{7n+5}{12}\right)^2$$
+$$=\frac{24(n+1)(2n+1)-(7n+5)^2}{144}$$
+$$=\frac{48n^2+72n+24-49n^2-70n-25}{144}$$
+$$=\frac{-n^2+2n-1}{144}$$
+$$=-\frac{(n-1)^2}{144}$$
+
+$$\because (n-1)^2>0$$
+$$\therefore \boxed{\mathrm{Cov}(X,Y)=-\frac{(n-1)^2}{144}<0}$$
+
+\bigskip
+\hrule
+
+\begin{center}
+    This solution was submitted by \textbf{Jon}.\\[4pt]
+    Published and refined by \textbf{Jon}.\\[8pt]
+	\textit{Last updated: April 10, 2026}
+\end{center}
+
+\end{document}
+

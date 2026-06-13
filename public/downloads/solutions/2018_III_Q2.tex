@@ -1,0 +1,98 @@
+﻿\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+\usepackage{enumitem}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\renewcommand{\qed}{\hfill$\blacksquare$}
+\let\newproof\proof
+\renewenvironment{proof}{\begin{addmargin}[1em]{0em}\begin{newproof}}{\end{newproof}\end{addmargin}\qed}
+
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+
+\textbf{(i)}
+$$y_n=(-1)^n \frac{1}{z}\frac{d^n z}{dx^n}, \qquad y_{n+1}=-(-1)^n\frac{1}{z}\frac{d^{n+1}z}{dx^{n+1}}$$
+
+
+\[
+\begin{aligned}[t]
+\frac{dy_n}{dx}&=(-1)^n\left(\frac{1}{z}\frac{d^{n+1} z}{dx^{n+1}}+\frac{d^n z}{dx^n}\cdot\frac{d}{dx}\left(\frac{1}{z}\right)\right)\\
+\frac{dy_n}{dx}&=(-1)^n\left(\frac{1}{z}\frac{d^{n+1}z}{dx^{n+1}}+\frac{2x}{z}\frac{d^n z}{dx^n}\right)\\
+&=2x\cdot(-1)^n\frac{1}{z}\frac{d^n z}{dx^n}+(-1)^n\frac{1}{z}\frac{d^{n+1}z}{dx^{n+1}}\\
+&=2x\,y_n-y_{n+1}
+\end{aligned}
+\]
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii) Base case} ($n=1$),\qquad$y_0=1,\quad y_1=2x,\quad y_2=4x^2-2$
+$$\text{LHS}=y_2=4x^2-2$$
+$$\text{RHS}=2x\,y_1-2y_0=4x^2-2$$
+$$\text{LHS}=\text{RHS}$$
+
+Assume $y_{n+1}=2xy_n-2ny_{n-1}$ is true for $n=k$.
+
+Differentiate both sides:
+$$\frac{dy_{k+1}}{dx}=2y_k+2x\frac{dy_k}{dx}-2k\frac{dy_{k-1}}{dx}$$
+
+Using part (i)
+\[
+\begin{aligned}[t]
+2xy_{k+1}-y_{k+2}&=2y_k+2x(2xy_k-y_{k+1})-2k(2xy_{k-1}-y_k)\\
+y_{k+2}&=4xy_{k+1}-2y_k-4x^2y_k+4kxy_{k-1}-2ky_k
+\end{aligned}
+\]
+
+$\because y_{k+1}=2xy_k-2ky_{k-1} \quad \implies 2xy_{k+1}=4x^2y_k-4kxy_{k-1}$
+\[
+\begin{aligned}[t]
+\therefore y_{k+2}&=2xy_{k+1}+4x^2y_k-4kxy_{k-1}-2y_k-4x^2y_k+4kxy_{k-1}-2ky_k\\
+&=2xy_{k+1}-2(k+1)y_k
+\end{aligned}
+\]
+
+From mathematical induction, the equation holds true for all $k\geq 1$
+
+\bigskip
+Using: $y_{n+1}=2xy_n-2ny_{n-1}$ and $y_{n+2}=2xy_{n+1}-2(n+1)y_n$.
+
+$$(y_{n+1})^2=2xy_n\cdot y_{n+1}-2ny_{n-1}y_{n+1}$$
+$$y_n y_{n+2}=2xy_{n+1}\cdot y_n-2(n+1)y_n^2$$
+
+$$\implies y_{n+1}^2-y_ny_{n+2}=2(n+1)y_n^2-2ny_{n-1}y_{n+1}=2n(y_n^2-y_{n-1}y_{n+1})+2y_n^2$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(iii)} Let $A_n=y_n^2-y_{n-1}y_{n+1}$
+
+\textbf{Base case}: $A_1=y_1^2-y_0 y_2=(2x)^2-(4x^2-2)=2>0$
+
+Assume $A_k>0$ for some $k\geq 1$
+
+Using (ii)
+$$A_{k+1}=2kA_k+2y_k^2$$
+
+Since $A_k>0$ and $k\geq 1$, $2kA_k>0$ and $ 2y_k^2\geq 0$. Hence $A_{k+1}>0$.
+
+From mathematical induction, $A_n>0$ for $n\geq 1$
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}.\\[4pt]
+    Published and refined by \textbf{Jon}.\\[8pt]
+	\textit{Last updated: April 14, 2026}
+\end{center}
+
+\end{document}
+

@@ -1,0 +1,72 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+\usepackage{enumitem}
+\pgfplotsset{compat=1.18}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\renewcommand{\qed}{\hfill$\blacksquare$}
+\let\newproof\proof
+\renewenvironment{proof}{\begin{addmargin}[1em]{0em}\begin{newproof}}{\end{newproof}\end{addmargin}\qed}
+% \newcommand{\expl}[1]{\text{\hfill[#1]}$}
+
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{reflection}[2][Reflection]{\begin{trivlist}
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\setlength{\parindent}{0pt}
+
+\begin{document}
+	\fancyhf{}
+	\lhead{Tips \& Tricks}
+	
+	\subsection*{Converting Product to Summation }
+	$$
+	S_n=\prod_{k=1}^{n} a_k \quad (a_k>0)
+	$$
+	
+	$$
+	\ln(S_n)=\sum_{k=1}^{n}\ln(a_k)
+	$$
+	
+	Since \(\ln x\) is continuous on \((0,\infty)\),
+	
+	$$
+	\ln\left(\prod_{k=1}^{\infty} a_k\right)
+	=
+	\ln\left(\lim_{n\to\infty}P_n\right)
+	=
+	\lim_{n\to\infty}\ln(P_n)
+	$$
+	
+	According to logarithm rule:
+	$$\ln(a_0\times a_1\times a_2\times \cdots\times a_n)=\ln(a_0)+\ln(a_1)+\ln(a_2)+\cdots+\ln(a_n)$$
+	
+	Thus, 
+	$$
+	\ln(S_n)=\ln\left(\prod_{k=1}^{n} a_k\right)=\sum_{k=1}^{n}\ln(a_k)
+	$$
+	
+	
+
+\end{document}

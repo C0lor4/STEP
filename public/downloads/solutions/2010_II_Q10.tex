@@ -1,0 +1,119 @@
+﻿\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\geometry{a4paper, margin=1.2in}
+\usepackage{xcolor}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+
+\begin{document}
+\subsection*{(i)}
+\textbf{Let $v_A$ be the final speed of particle $A$, and $v_B$ be the final speed of particle $B$.}
+
+Assume the particles are colliding elastically. By conservation of momentum and kinetic energy, we have:
+\begin{equation}
+    bmu = mv_A - bmv_B \label{eq:mom}
+\end{equation}
+\begin{equation}
+    \frac{1}{2}bmu^2 = \frac{1}{2}bmv_B^2 + \frac{1}{2}mv_A^2 \label{eq:ke}
+\end{equation}
+\textit{Note: The equation (\ref{eq:mom}) implicitly defines $v_B$ as the speed in the opposite direction of the initial velocity $u$.\\}
+
+From equations (\ref{eq:mom}) and (\ref{eq:ke}), we can simplify:
+\begin{equation}
+    bu = v_A - bv_B \implies b(u + v_B) = v_A \label{eq:1}
+\end{equation}
+\begin{equation}
+    bu^2 = bv_B^2 + v_A^2 \implies b(u^2 - v_B^2) = v_A^2 \label{eq:2}
+\end{equation}
+
+From equation (\ref{eq:2}), we factorize to get $b(u+v_B)(u-v_B) = v_A^2$.
+Substitute equation (\ref{eq:1}) into this:
+\begin{equation*}
+    v_A(u-v_B) = v_A^2 \implies u-v_B = v_A
+\end{equation*}
+
+Substitute $v_A = u - v_B$ back into the simplified momentum equation $bu = v_A - bv_B$:
+\begin{align*}
+    bu &= (u - v_B) - b v_B \\
+    bu &= u - (1+b)v_B \\
+    (1+b)v_B &= u - bu \\
+    v_B &= \left(\frac{1-b}{1+b}\right)u
+\end{align*}
+\textit{Note: Since $b > 1$, $v_B < 0$. This implies that particle $B$ actually continues to move in the same forward direction after the collision.}
+
+Now, substitute $v_B$ to find $v_A$:
+\begin{align*}
+    v_A &= u - v_B \\
+    &= u - \left(\frac{1-b}{1+b}\right)u \\
+    &= \left( \frac{1+b - (1-b)}{1+b} \right)u \\
+    &= \left(\frac{2b}{1+b}\right)u
+\end{align*}
+
+\textbf{Proof that $v_A < 2u$:} \\
+Since $b > 1$, it follows that:
+\begin{align*}
+    \frac{b}{1+b} &< 1 \\
+    \implies 2\left(\frac{b}{1+b}\right) &< 2 \\
+    \implies \left(\frac{2b}{1+b}\right)u &< 2u \quad \blacksquare
+\end{align*}
+
+\bigskip\hrule\bigskip
+\subsection*{(ii)}
+From part (i), we know that if a moving particle has a mass $b$ times that of the particle it collides with (which is at rest), the velocity of the resting object becomes $\left(\frac{2b}{1+b}\right)u$.
+
+Consider the first collision between $B_1$ and $B_2$. The masses are:
+\begin{align*}
+    m_{B_1} &= \lambda^{n+1-1}m = \lambda^n m \\
+    m_{B_2} &= \lambda^{n+1-2}m = \lambda^{n-1} m
+\end{align*}
+Therefore, $m_{B_1} = \lambda m_{B_2}$.
+Applying the result from part (i) with $b = \lambda$, the velocity of $B_2$ is:
+\begin{equation*}
+    v_{B_2} = \left(\frac{2\lambda}{1+\lambda}\right)u
+\end{equation*}
+
+This relationship applies to all subsequent collisions. For $B_n$, the velocity is:
+\begin{equation*}
+    v_{B_n} = \left(\frac{2\lambda}{1+\lambda}\right)^{n-1}u
+\end{equation*}
+Finally, $B_n$ collides with particle $A$ (mass $m$). Since $m_{B_n} = \lambda^{n+1-n}m = \lambda m$, we apply the formula one last time:
+\begin{equation*}
+    v_A = \left(\frac{2\lambda}{1+\lambda}\right)v_{B_n} = \left(\frac{2\lambda}{1+\lambda}\right)^n u
+\end{equation*}
+
+Since $\lambda > 1$, we have $\frac{2\lambda}{1+\lambda} > 1$.
+As $n \to \infty$, the term $\left(\frac{2\lambda}{1+\lambda}\right)^n \to \infty$, hence $v_A \to \infty$. This proves there is no upper limit on the speed of $A$.
+
+\vspace{0.5cm}
+\textbf{Case $\lambda = 4$:} \\
+We require $v_A > 20u$:
+\begin{align*}
+    \left(\frac{2 \cdot 4}{1+4}\right)^n u &> 20u \\
+    \left(\frac{8}{5}\right)^n &> 20
+\end{align*}
+Taking $\log_{10}$ on both sides:
+\begin{align*}
+    n \log_{10}\left(\frac{8}{5}\right) &> \log_{10} 20 \\
+    n &> \frac{\log_{10} 2 + 1}{3\log_{10} 2 - (1 - \log_{10} 2)} \\
+    n &> \frac{\log_{10} 2 + 1}{4\log_{10} 2 - 1}
+\end{align*}
+Using $\log_{10} 2 \approx 0.30103$:
+\begin{equation*}
+    n > \frac{1.30103}{1.20412 - 1} \approx 6.37
+\end{equation*}
+Thus, the least integer value is $\min(n) = 7$.
+
+
+\bigskip
+\hrule
+
+\begin{center}
+    This solution was submitted by \textbf{Roy}.\\[4pt]
+    Published and refined by \textbf{Roy}.\\[8pt]
+	\textit{Last updated: April 23, 2026}
+\end{center}
+
+\end{document}
+

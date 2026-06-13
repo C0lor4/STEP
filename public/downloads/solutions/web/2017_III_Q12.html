@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2017 III Q12 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span></p>
+
+    <div class="math-block">\[\because \text{Sum of all probability is }1\]</div>
+    <div class="math-block">\[\therefore \sum_{x=1}^n \sum_{y=1}^n P(X=x,Y=y)=1\]</div>
+    <div class="math-block">\[\implies \sum_{x=1}^n \sum_{y=1}^n k(x+y)=1\]</div>
+    <div class="math-block">\[\implies k\left(\sum_{x=1}^n \sum_{y=1}^n x+\sum_{x=1}^n \sum_{y=1}^n y\right)=1\]</div>
+    <div class="math-block">\[\implies k\left(n\sum_{x=1}^n x+n\sum_{y=1}^n y\right)=1\]</div>
+    <div class="math-block">\[\implies k\left(n\cdot \frac{n(n+1)}{2}+n\cdot \frac{n(n+1)}{2}\right)=1\]</div>
+    <div class="math-block">\[\implies \boxed{k=\frac{1}{n^2(n+1)}}\]</div>
+
+    <div class="math-block">\[P(X=x)=\sum_{y=1}^n P(X=x,Y=y)=\sum_{y=1}^n k(x+y)\]</div>
+    <div class="math-block">\[=k\left(\sum_{y=1}^n x+\sum_{y=1}^n y\right)\]</div>
+    <div class="math-block">\[=k\left(nx+\frac{n(n+1)}{2}\right)\]</div>
+    <div class="math-block">\[=\frac{1}{n^2(n+1)}\left(nx+\frac{n(n+1)}{2}\right)\]</div>
+    <div class="math-block">\[=\frac{2x+n+1}{2n(n+1)}\]</div>
+    <div class="math-block">\[\implies \boxed{P(X=x)=\frac{n+1+2x}{2n(n+1)}}\]</div>
+
+    <p>By symmetry, \(P(Y=y)=\dfrac{n+1+2y}{2n(n+1)}\).</p>
+    <p>If \(P(X=x,Y=y)=P(X=x)\times P(Y=y)\), then \(X\) and \(Y\) are independent.</p>
+    <p>When \(x=1, y=1\):</p>
+
+    <div class="math-block">\[
+      P(X=1)\times P(Y=1)=\left( \frac{3+n}{2n(n+1)}\right)^2\qquad
+      P(X=1,Y=1)=\frac{2}{n^2(n+1)}
+    \]</div>
+    <div class="math-block">\[
+      P(X=1)\times P(Y=1)-P(X=1,Y=1)
+      =\left( \frac{n+3}{2n(n+1)}\right)^2-\frac{2}{n^2(n+1)}
+    \]</div>
+    <div class="math-block">\[=\frac{(n+3)^2-8(n+1)}{4n^2(n+1)^2}\]</div>
+    <div class="math-block">\[=\frac{n^2-2n+1}{4n^2(n+1)^2}\]</div>
+    <div class="math-block">\[=\frac{(n-1)^2}{4n^2(n+1)^2}>0\qquad (n\geq2)\]</div>
+    <div class="math-block">\[\therefore P(X=1)\times P(Y=1)\ne P(X=1,Y=1)\]</div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span> \(\mathrm{Cov}(X,Y)=E(XY)-E(X)E(Y)\)</p>
+
+    <div class="math-block">\[E(X)=E(Y)=\sum_{x=1}^n xP(X=x)\]</div>
+    <div class="math-block">\[=\sum_{x=1}^n x\cdot \frac{n+1+2x}{2n(n+1)}\]</div>
+    <div class="math-block">\[=\frac{1}{2n(n+1)}\left((n+1)\sum_{x=1}^n x+2\sum_{x=1}^n x^2\right)\]</div>
+    <div class="math-block">\[
+      \because \sum_{x=1}^n x=\frac{1}{2}n(n+1)
+      \quad \text{and} \quad
+      \sum_{x=1}^n x^2=\frac{1}{6}n(n+1)(2n+1)
+    \]</div>
+
+    <div class="math-block">\[
+      \begin{aligned}[t]
+      \therefore E(X)&=\frac{1}{2n(n+1)}\left((n+1)\cdot \frac{n(n+1)}{2}+2\cdot \frac{n(n+1)(2n+1)}{6}\right)\\
+      &=\frac{1}{2n(n+1)}\left(\frac{n(n+1)^2}{2}+\frac{n(n+1)(2n+1)}{3}\right)\\
+      &=\frac{1}{2}\left(\frac{n+1}{2}+\frac{2n+1}{3}\right)\\
+      &=\frac{7n+5}{12}
+      \end{aligned}
+    \]</div>
+
+    <div class="math-block">\[
+      \begin{aligned}[t]
+      E(XY)&=\sum_{x=1}^n \sum_{y=1}^n xy\,P(X=x,Y=y)\\
+      &=\sum_{x=1}^n \sum_{y=1}^n xy\cdot k(x+y)\\
+      &=k\sum_{x=1}^n \sum_{y=1}^n (x^2y+xy^2)\\
+      &=k\left(\sum_{x=1}^n \sum_{y=1}^n x^2y+\sum_{x=1}^n \sum_{y=1}^n xy^2\right)\\
+      &=k\left(2\cdot \sum_{x=1}^n \sum_{y=1}^n x^2y\right)\\
+      &=k\left(2\cdot \left(\sum_{x=1}^n x^2\right)\left(\sum_{y=1}^n y\right)\right)\\
+      &=k\left(2\cdot \frac{n(n+1)(2n+1)}{6}\cdot \frac{n(n+1)}{2}\right)\\
+      &=\frac{1}{6}(n+1)(2n+1)
+      \end{aligned}
+    \]</div>
+
+    <div class="math-block">\[\implies\mathrm{Cov}(X,Y)=\frac{1}{6}(n+1)(2n+1)-\left(\frac{7n+5}{12}\right)^2\]</div>
+    <div class="math-block">\[=\frac{24(n+1)(2n+1)-(7n+5)^2}{144}\]</div>
+    <div class="math-block">\[=\frac{48n^2+72n+24-49n^2-70n-25}{144}\]</div>
+    <div class="math-block">\[=\frac{-n^2+2n-1}{144}\]</div>
+    <div class="math-block">\[=-\frac{(n-1)^2}{144}\]</div>
+    <div class="math-block">\[\because (n-1)^2>0\]</div>
+    <div class="math-block">\[\therefore \boxed{\mathrm{Cov}(X,Y)=-\frac{(n-1)^2}{144}&lt;0}\]</div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong>.</p>
+      <p>Published and refined by <strong>Jon</strong>.</p>
+      <p><em>Last updated: April 10, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>
+

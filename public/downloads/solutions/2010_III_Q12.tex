@@ -1,0 +1,135 @@
+﻿\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+\usepackage{enumitem}
+
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\[
+S=1+(1+d)r+(1+2d)r^2+\cdots +(1+nd)r^n+\cdots
+\]
+
+\[
+\begin{aligned}
+S
+&=(1+r+r^2+\cdots)+d(r+2r^2+3r^3+\cdots)
+\end{aligned}
+\]
+
+\[
+rS=(r+r^2+r^3+\cdots)+d(r^2+2r^3+3r^4+\cdots)
+\]
+
+\[
+\begin{aligned}
+\because |r|<1,\qquad \therefore 1+r+r^2+\cdots=\frac{1}{1-r}
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+S-rS
+&=1+d(r+r^2+r^3+\cdots)\\
+&=1+d\cdot \frac{r}{1-r}
+\end{aligned}
+\]
+
+\[S(1-r)=1+\cdot \frac{rd}{1-r}
+\]
+
+\[
+\implies \boxed{S=\frac{1}{1-r}+\frac{rd}{(1-r)^2}}
+\]
+
+
+
+
+\bigskip
+
+$\E(x)$ is the expected number of shots Arthur takes to hit the target.
+
+\[
+\E(x)=a\cdot 1+(1-a)(1+\E(x))=\frac{1}{a}
+\]
+
+Arthur wins either immediately, with probability $a$, or after both players miss once, with probability $a'b'\alpha$.
+\[
+\alpha=a+a'b'\alpha\qquad \implies \boxed{\alpha=\frac{a}{1-a'b'}}
+\]
+
+\[
+\beta=1-\alpha=\frac{a'b}{1-a'b'}
+\]
+
+\bigskip
+
+
+
+\[
+\text{If Arthur wins on his }n\text{th shot, then total shots }=n+(n-1)=2n-1
+\]
+\[
+\text{If Boadicea wins on her }n\text{th shot, then total shots }=n+n=2n
+\]
+
+\[
+\begin{aligned}
+\E(x)&=\sum_{n=1}^{\infty}(2n-1)(a'b')^{n-1}a+\sum_{n=1}^{\infty}2n(a'b')^{n-1}a'b
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+\E(x)&=a\sum_{n=1}^{\infty}(2n-1)(a'b')^{n-1}+a'b\sum_{n=1}^{\infty}2n(a'b')^{n-1}\\
+&=a\left(2\sum_{n=1}^{\infty}n(a'b')^{n-1}-\sum_{n=1}^{\infty}(a'b')^{n-1}\right)
++2a'b\sum_{n=1}^{\infty}n(a'b')^{n-1}
+\end{aligned}
+\]
+
+\[
+\sum_{n=1}^{\infty}(a'b')^{n-1}=\frac{1}{1-a'b'},\qquad
+\sum_{n=1}^{\infty}n(a'b')^{n-1}=\frac{1}{(1-a'b')^2}
+\]
+
+\[
+\E(x)=a\left(\frac{2}{(1-a'b')^2}-\frac{1}{1-a'b'}\right)
++2a'b\cdot \frac{1}{(1-a'b')^2}=\frac{a+a'b}{(1-a'b')^2}\\
+\]
+
+\[
+\because a+a'b=a(1+b')=a(2-b)\qquad \therefore \E(x)=\frac{a(2-b)}{(1-a'b')^2}
+\]
+
+\[
+\alpha=\frac{a}{1-a'b'},\qquad \beta=\frac{a'b}{1-a'b'}
+\]
+
+\[
+\frac{\alpha}{a}+\frac{\beta}{b}=\frac{1}{1-a'b'}+\frac{a'}{1-a'b'}=\frac{2-a}{1-a'b'}
+\]
+
+\[
+\implies \boxed{E=\frac{\alpha}{a}+\frac{\beta}{b}}
+\]
+
+
+
+\bigskip
+\hrule
+
+\begin{center}
+    This solution was submitted by \textbf{Jon}.\\[4pt]
+    Published and refined by \textbf{Jon}.\\[8pt]
+	\textit{Last updated: April 15, 2026}
+\end{center}
+
+\end{document}

@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2010 III Q12 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <div class="math-block">
+      \[
+      S=1+(1+d)r+(1+2d)r^2+\cdots +(1+nd)r^n+\cdots
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      S=(1+r+r^2+\cdots)+d(r+2r^2+3r^3+\cdots)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      rS=(r+r^2+r^3+\cdots)+d(r^2+2r^3+3r^4+\cdots)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \because |r|&lt;1,\qquad \therefore 1+r+r^2+\cdots=\frac{1}{1-r}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      S-rS
+      &=1+d(r+r^2+r^3+\cdots)\\
+      &=1+d\cdot \frac{r}{1-r}
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      S(1-r)=1+d\cdot \frac{r}{1-r}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \implies \boxed{S=\frac{1}{1-r}+\frac{rd}{(1-r)^2}}
+      \]
+    </div>
+
+    <p>\(\mathbb{E}(x)\) is the expected number of shots Arthur takes to hit the target.</p>
+
+    <div class="math-block">
+      \[
+      \mathbb{E}(x)=a\cdot 1+(1-a)(1+\mathbb{E}(x))=\frac{1}{a}
+      \]
+    </div>
+
+    <p>Arthur wins either immediately, with probability \(a\), or after both players miss once, with probability \(a'b'\alpha\).</p>
+
+    <div class="math-block">
+      \[
+      \alpha=a+a'b'\alpha\qquad \implies \boxed{\alpha=\frac{a}{1-a'b'}}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \beta=1-\alpha=\frac{a'b}{1-a'b'}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \text{If Arthur wins on his }n\text{th shot, then total shots }=n+(n-1)=2n-1
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \text{If Boadicea wins on her }n\text{th shot, then total shots }=n+n=2n
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \mathbb{E}(x)=\sum_{n=1}^{\infty}(2n-1)(a'b')^{n-1}a+\sum_{n=1}^{\infty}2n(a'b')^{n-1}a'b
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \mathbb{E}(x)
+      &=a\sum_{n=1}^{\infty}(2n-1)(a'b')^{n-1}+a'b\sum_{n=1}^{\infty}2n(a'b')^{n-1}\\
+      &=a\left(2\sum_{n=1}^{\infty}n(a'b')^{n-1}-\sum_{n=1}^{\infty}(a'b')^{n-1}\right)
+      +2a'b\sum_{n=1}^{\infty}n(a'b')^{n-1}
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \sum_{n=1}^{\infty}(a'b')^{n-1}=\frac{1}{1-a'b'},\qquad
+      \sum_{n=1}^{\infty}n(a'b')^{n-1}=\frac{1}{(1-a'b')^2}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \mathbb{E}(x)=a\left(\frac{2}{(1-a'b')^2}-\frac{1}{1-a'b'}\right)
+      +2a'b\cdot \frac{1}{(1-a'b')^2}
+      =\frac{a+a'b}{(1-a'b')^2}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \because a+a'b=a(1+b')=a(2-b)\qquad \therefore \mathbb{E}(x)=\frac{a(2-b)}{(1-a'b')^2}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \alpha=\frac{a}{1-a'b'},\qquad \beta=\frac{a'b}{1-a'b'}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \frac{\alpha}{a}+\frac{\beta}{b}=\frac{1}{1-a'b'}+\frac{a'}{1-a'b'}=\frac{2-a}{1-a'b'}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \implies \boxed{E=\frac{\alpha}{a}+\frac{\beta}{b}}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong>.</p>
+      <p>Published and refined by <strong>Jon</strong>.</p>
+      <p><em>Last updated: April 15, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>
+

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2017 III Q11 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i) Simultaneous Firing</span></p>
+    <p>Consider the entire system (truck, guns, and \(n\) projectiles). Since there are no external horizontal forces, the total momentum \(\vec{P}\) is conserved. Initially, the system is at rest, so \(\vec{P}_{\text{initial}} = 0\).</p>
+    <p>After all \(n\) guns are fired simultaneously, let the speed of the truck be \(u\). The speed of each projectile relative to the ground is \(v\) in the opposite direction (given the muzzle speed is \(v-V\) and \(V=0\) initially). Thus:</p>
+    <div class="math-block">
+      \[
+      \begin{aligned}
+          0 &= Mu - nmv \\
+          \implies u &= \frac{nmv}{M}
+      \end{aligned}
+      \]
+    </div>
+
+    <p>The total kinetic energy \(K\) gained by the system is the sum of the kinetic energy of the \(n\) projectiles and the truck:</p>
+    <div class="math-block">
+      \[
+      \begin{aligned}
+          K &= \sum KE_{\text{projectiles}} + KE_{\text{truck}} \\
+          &= n\left( \frac{1}{2}mv^2 \right) + \frac{1}{2}Mu^2 \\
+          &= \frac{1}{2}nmv^2 + \frac{1}{2}M\left( \frac{nmv}{M} \right)^2 \\
+          &= \frac{1}{2}nmv^2 + \frac{1}{2}\frac{n^2m^2v^2}{M} \\
+          &= \frac{1}{2}nmv^2 \left( 1 + \frac{nm}{M} \right) \quad \blacksquare
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii) Firing One at a Time</span></p>
+    <p>Let \(u_r\) be the speed of the truck after \(r\) guns have been fired. Consider the \(r\)-th firing. Immediately before this shot, the truck (with \(n-r+1\) projectiles) has speed \(u_{r-1}\). The speed of the \(r\)-th projectile relative to the ground is \(-(v - u_{r-1})\) (moving backwards). Immediately after, the truck (with \(n-r\) projectiles) has speed \(u_r\).</p>
+    <p>By conservation of momentum for this single event:</p>
+    <div class="math-block">
+      \[
+      [M + (n-r+1)m]u_{r-1} = -m(v - u_{r-1}) + [M + (n-r)m]u_r
+      \]
+    </div>
+    <p>Expanding and rearranging terms:</p>
+    <div class="math-block">
+      \[
+      \begin{aligned}
+          (M + (n-r)m)u_{r-1} + mu_{r-1} &= -mv + mu_{r-1} + (M + (n-r)m)u_r \\
+          (M + (n-r)m)u_r - (M + (n-r)m)u_{r-1} &= mv \\
+          u_r - u_{r-1} &= \frac{mv}{M + (n-r)m} \quad (*)
+      \end{aligned}
+      \]
+    </div>
+
+    <p>To show \(u_n &lt; u\): Note that \(u_n = \sum_{r=1}^{n} (u_r - u_{r-1})\). From \((*)\), for \(1 \le r &lt; n\), we have:</p>
+    <div class="math-block">
+      \[
+      M + (n-r)m &gt; M \implies \frac{mv}{M + (n-r)m} &lt; \frac{mv}{M}
+      \]
+    </div>
+    <p>Summing from \(r=1\) to \(n\):</p>
+    <div class="math-block">
+      \[
+      u_n = \sum_{r=1}^{n} \frac{mv}{M + (n-r)m} &lt; \sum_{r=1}^{n} \frac{mv}{M} = \frac{nmv}{M} = u
+      \]
+    </div>
+    <p>Thus, \(u_n &lt; u\). \(\blacksquare\)</p>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iii) Kinetic Energy Analysis</span></p>
+    <p>Let \(K_r\) be the total kinetic energy after \(r\) shots. The gain in energy during the \(r\)-th shot is:</p>
+    <div class="math-block">
+      \[
+      \begin{aligned}
+          K_r - K_{r-1} &= KE_{\text{projectile}} + \Delta KE_{\text{truck}} \\
+          &= \frac{1}{2}m(v - u_{r-1})^2 + \frac{1}{2}[M + (n-r)m]u_r^2 - \frac{1}{2}[M + (n-r+1)m]u_{r-1}^2
+      \end{aligned}
+      \]
+    </div>
+    <p>Substituting \(u_r = u_{r-1} + \frac{mv}{M_r}\) (where \(M_r = M + (n-r)m\)):</p>
+    <div class="math-block">
+      \[
+      \begin{aligned}
+          K_r - K_{r-1} &= \frac{1}{2}m(v^2 - 2vu_{r-1} + u_{r-1}^2) + \frac{1}{2}M_r \left( u_{r-1} + \frac{mv}{M_r} \right)^2 - \frac{1}{2}(M_r + m)u_{r-1}^2 \\
+          &= \frac{1}{2}mv^2 - mvu_{r-1} + \frac{1}{2}mu_{r-1}^2 + \frac{1}{2}M_r \left( u_{r-1}^2 + \frac{2mu_{r-1}v}{M_r} + \frac{m^2v^2}{M_r^2} \right) - \frac{1}{2}M_r u_{r-1}^2 - \frac{1}{2}mu_{r-1}^2 \\
+          &= \frac{1}{2}mv^2 - mvu_{r-1} + mvu_{r-1} + \frac{1}{2}\frac{m^2v^2}{M_r} \\
+          &= \frac{1}{2}mv^2 + \frac{1}{2}mv \left( \frac{mv}{M_r} \right)
+      \end{aligned}
+      \]
+    </div>
+    <p>Since \(u_r - u_{r-1} = \frac{mv}{M_r}\), we obtain:</p>
+    <div class="math-block">
+      \[
+      K_r - K_{r-1} = \frac{1}{2}mv^2 + \frac{1}{2}mv(u_r - u_{r-1})
+      \]
+    </div>
+
+    <p>Summing this expression from \(r=1\) to \(n\):</p>
+    <div class="math-block">
+      \[
+      \begin{aligned}
+          \sum_{r=1}^{n} (K_r - K_{r-1}) &= \sum_{r=1}^{n} \frac{1}{2}mv^2 + \sum_{r=1}^{n} \frac{1}{2}mv(u_r - u_{r-1}) \\
+          K_n - K_0 &= \frac{1}{2}nmv^2 + \frac{1}{2}mv(u_n - u_0)
+      \end{aligned}
+      \]
+    </div>
+    <p>Given \(K_0 = 0\) and \(u_0 = 0\):</p>
+    <div class="math-block">
+      \[
+      K_n = \frac{1}{2}nmv^2 + \frac{1}{2}mvu_n \quad \blacksquare
+      \]
+    </div>
+
+    <p><strong>Deduction of \(K_n &lt; K\):</strong></p>
+    <p>From part (i), \(K = \frac{1}{2}nmv^2 + \frac{1}{2}mv \left( \frac{nmv}{M} \right) = \frac{1}{2}nmv^2 + \frac{1}{2}mvu\). Since we proved in part (ii) that \(u_n &lt; u\), it directly follows that:</p>
+    <div class="math-block">
+      \[
+      \frac{1}{2}nmv^2 + \frac{1}{2}mvu_n &lt; \frac{1}{2}nmv^2 + \frac{1}{2}mvu \implies K_n &lt; K \quad \blacksquare
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Roy</strong>.</p>
+      <p>Published and refined by <strong>Roy</strong>.</p>
+      <p><em>Last updated: April 11, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,237 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2010 II Q10 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span> <strong>Let \(v_A\) be the final speed of particle \(A\), and \(v_B\) be the final speed of particle \(B\).</strong></p>
+
+    <p>Assume the particles are colliding elastically. By conservation of momentum and kinetic energy, we have:</p>
+
+    <div class="math-block">
+      \[
+      bmu = mv_A - bmv_B
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \frac{1}{2}bmu^2 = \frac{1}{2}bmv_B^2 + \frac{1}{2}mv_A^2
+      \]
+    </div>
+
+    <p><em>Note: The equation \(bmu = mv_A - bmv_B\) implicitly defines \(v_B\) as the speed in the opposite direction of the initial velocity \(u\).</em></p>
+
+    <p>From equations above, we can simplify:</p>
+
+    <div class="math-block">
+      \[
+      bu = v_A - bv_B \implies b(u + v_B) = v_A
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      bu^2 = bv_B^2 + v_A^2 \implies b(u^2 - v_B^2) = v_A^2
+      \]
+    </div>
+
+    <p>From the second equation, we factorize to get \(b(u+v_B)(u-v_B)=v_A^2\). Substitute \(b(u+v_B)=v_A\) into this:</p>
+
+    <div class="math-block">
+      \[
+      v_A(u-v_B)=v_A^2 \implies u-v_B=v_A
+      \]
+    </div>
+
+    <p>Substitute \(v_A=u-v_B\) back into the momentum equation:</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      bu &= (u-v_B)-bv_B\\
+      bu &= u-(1+b)v_B\\
+      (1+b)v_B &= u-bu\\
+      v_B &= \left(\frac{1-b}{1+b}\right)u
+      \end{aligned}
+      \]
+    </div>
+
+    <p><em>Note: Since \(b&gt;1\), \(v_B&lt;0\). This implies that particle \(B\) actually continues to move in the same forward direction after the collision.</em></p>
+
+    <p>Now substitute \(v_B\) to find \(v_A\):</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      v_A &= u-v_B\\
+      &= u-\left(\frac{1-b}{1+b}\right)u\\
+      &= \left(\frac{1+b-(1-b)}{1+b}\right)u\\
+      &= \left(\frac{2b}{1+b}\right)u
+      \end{aligned}
+      \]
+    </div>
+
+    <p><strong>Proof that \(v_A&lt;2u\):</strong></p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \frac{b}{1+b} &< 1\\
+      \implies 2\left(\frac{b}{1+b}\right) &< 2\\
+      \implies \left(\frac{2b}{1+b}\right)u &< 2u \quad \blacksquare
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span> From part (i), if a moving particle has mass \(b\) times that of a particle at rest, then the velocity of the resting object becomes \(\left(\frac{2b}{1+b}\right)u\).</p>
+
+    <p>Consider the first collision between \(B_1\) and \(B_2\). The masses are:</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      m_{B_1} &= \lambda^{n+1-1}m = \lambda^n m\\
+      m_{B_2} &= \lambda^{n+1-2}m = \lambda^{n-1}m
+      \end{aligned}
+      \]
+    </div>
+
+    <p>Therefore, \(m_{B_1}=\lambda m_{B_2}\). Applying the result from part (i) with \(b=\lambda\), the velocity of \(B_2\) is:</p>
+
+    <div class="math-block">
+      \[
+      v_{B_2}=\left(\frac{2\lambda}{1+\lambda}\right)u
+      \]
+    </div>
+
+    <p>This relationship applies to all subsequent collisions. For \(B_n\), the velocity is:</p>
+
+    <div class="math-block">
+      \[
+      v_{B_n}=\left(\frac{2\lambda}{1+\lambda}\right)^{n-1}u
+      \]
+    </div>
+
+    <p>Finally, \(B_n\) collides with particle \(A\) (mass \(m\)). Since \(m_{B_n}=\lambda^{n+1-n}m=\lambda m\), we apply the formula one last time:</p>
+
+    <div class="math-block">
+      \[
+      v_A=\left(\frac{2\lambda}{1+\lambda}\right)v_{B_n}=\left(\frac{2\lambda}{1+\lambda}\right)^n u
+      \]
+    </div>
+
+    <p>Since \(\lambda&gt;1\), we have \(\frac{2\lambda}{1+\lambda}&gt;1\). As \(n\to\infty\), \(\left(\frac{2\lambda}{1+\lambda}\right)^n\to\infty\), hence \(v_A\to\infty\). This proves there is no upper limit on the speed of \(A\).</p>
+
+    <p><strong>Case \(\lambda=4\):</strong> We require \(v_A&gt;20u\):</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \left(\frac{2\cdot4}{1+4}\right)^n u &> 20u\\
+      \left(\frac{8}{5}\right)^n &> 20
+      \end{aligned}
+      \]
+    </div>
+
+    <p>Taking \(\log_{10}\) on both sides:</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      n\log_{10}\left(\frac{8}{5}\right) &> \log_{10}20\\
+      n &> \frac{\log_{10}2+1}{3\log_{10}2-(1-\log_{10}2)}\\
+      n &> \frac{\log_{10}2+1}{4\log_{10}2-1}
+      \end{aligned}
+      \]
+    </div>
+
+    <p>Using \(\log_{10}2\approx0.30103\):</p>
+
+    <div class="math-block">
+      \[
+      n>\frac{1.30103}{1.20412-1}\approx6.37
+      \]
+    </div>
+
+    <p>Thus, the least integer value is \(\min(n)=7\).</p>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Roy</strong>.</p>
+      <p>Published and refined by <strong>Roy</strong>.</p>
+      <p><em>Last updated: April 23, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>
+

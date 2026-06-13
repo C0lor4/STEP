@@ -1,0 +1,131 @@
+﻿\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+\usepackage{enumitem}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\renewcommand{\qed}{\hfill$\blacksquare$}
+\let\newproof\proof
+\renewenvironment{proof}{\begin{addmargin}[1em]{0em}\begin{newproof}}{\end{newproof}\end{addmargin}\qed}
+
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\[
+\begin{aligned}
+V(x)&=E\big((X-x)^2\big)\\
+&=E\big(((X-\mu)+(\mu-x))^2\big)\\
+&=E\big((X-\mu)^2\big)+2(\mu-x)E(X-\mu)+(\mu-x)^2\\
+&=\sigma^2+0+(\mu-x)^2\\
+&=\sigma^2+(x-\mu)^2
+\end{aligned}
+\]
+\bigskip
+
+\[
+E(Y)=E\big(\sigma^2+(X-\mu)^2\big)=\sigma^2+E\big((X-\mu)^2\big)=\sigma^2+\sigma^2
+\]
+\[
+\implies \boxed{E(Y)=2\sigma^2}
+\]
+
+\bigskip
+\[
+\because \text{X is uniformly distributed on the interval } 0\leq X\leq 1
+\]
+\[
+\therefore \mu_X=\frac12,\qquad \sigma_X^2=\frac1{12}
+\]
+
+\[V(x)=\sigma^2+(x-\mu)^2=\frac1{12}+\left(x-\frac12\right)^2=\boxed{x^2-x+\frac13}\]
+
+
+\[
+\begin{aligned}
+F_Y(y)&=P(Y\leq y)\\
+&=P\left(\left(X-\frac{1}{2}\right)^2+\frac{1}{12}\leq y\right)\\
+&=P\left(\frac{1}{2}-\sqrt{y-\frac{1}{12}}\leq X\leq \frac{1}{2}+\sqrt{y-\frac{1}{12}}\right).
+\end{aligned}
+\]
+
+
+
+
+
+Since $0\leq X\leq 1$,
+
+\[
+0\leq \left(X-\frac12\right)^2\leq \frac14\qquad\implies\qquad \frac1{12}\leq Y\leq \frac13
+\]
+
+\[
+F_X(x)=
+\begin{cases}
+	0 & x\leq 0\\
+	x & 0<x<1\\
+	1 & x\geq 1
+\end{cases}
+\quad
+\implies
+F_Y(y)=
+\begin{cases}
+	0 & y\leq \frac{1}{12}\\
+	\sqrt{4y-\frac{1}{3}} & \frac{1}{12}<y<\frac{1}{3}\\
+	1 & y\geq \frac{1}{3}
+\end{cases}
+\]
+
+\[
+\begin{aligned}
+F_Y(y)
+&=F_X\left(\frac{1}{2}+\sqrt{y-\frac{1}{12}}\right)-F_X\left(\frac{1}{2}-\sqrt{y-\frac{1}{12}}\right)\\
+&=\left(\frac{1}{2}+\sqrt{y-\frac{1}{12}}\right)-\left(\frac{1}{2}-\sqrt{y-\frac{1}{12}}\right)\\
+&=2\sqrt{y-\frac{1}{12}}\\
+&=\sqrt{4y-\frac{1}{3}}
+\end{aligned}
+\qquad \left(\frac{1}{12}\leq y\leq \frac{1}{3}\right)
+\]
+
+\[
+f_Y(y)=\frac{d}{dy}F_Y(y)=\frac{2}{\sqrt{4y-\frac{1}{3}}}\qquad \left(\frac1{12}<y<\frac13\right)
+\]
+\[
+\implies\boxed{
+f_Y(y)=
+\begin{cases}
+0 & otherwise\\
+\frac{2}{\sqrt{4y-\frac{1}{3}}}\quad& \frac1{12}<y<\frac13\\
+\end{cases}
+}
+\]
+
+
+
+\[
+\begin{aligned}[t]
+E(Y)&=\int_{-\infty}^{\infty} y\,f_Y(y)\,\mathrm{d}y\\
+&=\int_{1/12}^{1/3} 2y(4y-\frac{1}{3})^{-\frac1{2}}\,\mathrm{d}y\\
+&=\left[y\left(4y-\frac1{3}\right)^\frac1{2}-\frac{1}{6}\left(4y-\frac{1}{3}\right)^\frac{3}{2}\right]^{1/3}_{1/12}\\
+&=\frac{1}{6}
+\end{aligned}
+\]
+From $(*)$, $\displaystyle E(Y)=2\sigma^2=2\cdot \frac1{12}=\frac16$.
+\bigskip
+\hrule
+
+\begin{center}
+    This solution was submitted by \textbf{Jon}.\\[4pt]
+    Published and refined by \textbf{Jon}.\\[8pt]
+	\textit{Last updated: April 11, 2026}
+\end{center}
+
+\end{document}
+

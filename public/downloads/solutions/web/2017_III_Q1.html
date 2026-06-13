@@ -1,0 +1,287 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2017 III Q1 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span></p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}[t]
+      \text{RHS}
+      &= \frac{r+1}{r}\left(\frac{1}{\binom{n+r-1}{r}}-\frac{1}{\binom{n+r}{r}}\right)\\
+      &= \frac{r+1}{r}\left(\frac{r!(n-1)!}{(n+r-1)!}-\frac{r!n!}{(n+r)!}\right)\\
+      &= \frac{(r+1)!(n-1)!}{r}\cdot\frac{n+r - n}{(n+r)!}\\
+      &= \frac{(r+1)!(n-1)!}{(n+r)!}\\
+      &= \frac{1}{\binom{n+r}{r+1}}
+      = \text{LHS.}
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \sum_{n=1}^{\infty} \frac{1}{\binom{n+r}{r+1}}
+      = \frac{r+1}{r}\sum_{n=1}^{\infty}\left(\frac{1}{\binom{n+r-1}{r}}-\frac{1}{\binom{n+r}{r}}\right)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}[t]
+      &= \frac{r+1}{r}\lim_{N\to\infty}\sum_{n=1}^{N}\left(\frac{1}{\binom{n+r-1}{r}}-\frac{1}{\binom{n+r}{r}}\right)\\
+      &= \frac{r+1}{r}\lim_{N\to\infty}\left(1-\frac{1}{\binom{N+r}{r}}\right)\\
+      &= \frac{r+1}{r}.
+      \end{aligned}
+      \]
+    </div>
+
+    <p>When \(r=2\),</p>
+
+    <div class="math-block">
+      \[
+      \sum_{n=1}^{\infty}\frac{1}{\binom{n+2}{3}} = \frac{3}{2}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \implies
+      \sum_{n=2}^{\infty}\frac{1}{\binom{n+2}{3}}
+      = \frac{3}{2}-\frac{1}{\binom{3}{3}}
+      = \frac{3}{2}-1
+      = \frac{1}{2}.
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span></p>
+
+    <div class="math-block">
+      \[
+      \frac{1}{\,^{n+1}C_3}
+      = \frac{(n-2)! \, 3!}{(n+1)!}
+      = \frac{3!}{(n+1)n(n-1)}.
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      (n+1)n(n-1)=n^3-n &lt; n^3
+      \]
+    </div>
+
+    <p>This is true for \(n&gt;1\). Since \(n\ge 3\),</p>
+
+    <div class="math-block">
+      \[
+      \frac{1}{\,^{n+1}C_3}>\frac{3!}{n^3}.
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \frac{20}{\,^{n+1}C_3} - \frac{1}{\,^{n+2}C_5} - \frac{5!}{n^3}
+      = \frac{120}{n(n^2-1)} - \frac{120}{n(n^2-1)(n^2-4)} - \frac{120}{n^3}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      = \frac{120}{n^3(n^2-1)(n^2-4)}
+      \Big(n^2(n^2-4)-n^2-(n^2-1)(n^2-4)\Big)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      (\,\cdots)=n^4 - 4n^2 - n^2 - (n^4 - 5n^2 + 4) = -480 \cdot \frac{1}{480}\cdot(-480) = -480
+      \]
+    </div>
+
+    <p>Since \(n\ge 3\), \(n^3(n^2-1)(n^2-4)&gt;0\):</p>
+
+    <div class="math-block">
+      \[
+      \therefore
+      \frac{20}{\,^{n+1}C_3} - \frac{1}{\,^{n+2}C_5} - \frac{5!}{n^3}
+      = \frac{-480}{n^3(n^2-1)(n^2-4)} &lt; 0.
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      6\sum_{n=3}^{\infty}\frac{1}{n^3}
+      &lt;
+      \sum_{n=3}^{\infty}\frac{1}{\,^{n+1}C_3}
+      =
+      \sum_{n=2}^{\infty}\frac{1}{\,^{n+2}C_3}
+      =
+      \frac{1}{2}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \implies
+      \sum_{n=3}^{\infty}\frac{1}{n^3} &lt; \frac{1}{12}.
+      \]
+    </div>
+
+    <p>Left inequality:</p>
+
+    <div class="math-block">
+      \[
+      \therefore
+      \sum_{n=1}^{\infty}\frac{3!}{n^3}
+      &lt;
+      \frac{3!}{1}+\frac{3!}{8}+\frac{1}{2}
+      =
+      6+\frac{3}{4}+\frac{1}{2}
+      =
+      \frac{29}{4}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \implies
+      \sum_{n=1}^{\infty}\frac{1}{n^3}
+      &lt;
+      \frac{29}{24}
+      =
+      \frac{116}{96}.
+      \]
+    </div>
+
+    <p>Right inequality:</p>
+
+    <div class="math-block">
+      \[
+      \sum_{n=3}^{\infty}\left(\frac{20}{\,^{n+1}C_3} - \frac{1}{\,^{n+2}C_5}\right)
+      &lt;
+      \sum_{n=3}^{\infty}\frac{5!}{n^3}.
+      \]
+    </div>
+
+    <p>From part (i), when \(r=4\), \(\displaystyle\sum_{n=1}^{\infty}\frac{1}{\,^{n+4}C_5}=\frac{5}{4}\).</p>
+
+    <div class="math-block">
+      \[
+      \therefore
+      \sum_{n=3}^{\infty}\left(\frac{20}{\,^{n+1}C_3}-\frac{1}{\,^{n+2}C_5}\right)
+      =
+      20\times \frac{1}{2} - \sum_{n=1}^{\infty}\frac{1}{\,^{n+4}C_5}
+      =
+      10-\frac{5}{4}
+      =
+      \frac{35}{4}.
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \implies
+      \sum_{n=3}^{\infty}\frac{5!}{n^3} &gt; \frac{35}{4}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \implies
+      \sum_{n=1}^{\infty}\frac{1}{n^3}
+      &gt;
+      \frac{35}{4\times 5!}+\frac{1}{1}+\frac{1}{8}
+      =
+      \frac{7}{96}+\frac{96}{96}+\frac{12}{96}
+      =
+      \frac{115}{96}.
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore
+      \boxed{\frac{115}{96} &lt; \sum_{n=1}^{\infty}\frac{1}{n^3} &lt; \frac{116}{96}}.
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong>.</p>
+      <p>Published and refined by <strong>Jon</strong>.</p>
+      <p><em>Last updated: April 24, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>
+
