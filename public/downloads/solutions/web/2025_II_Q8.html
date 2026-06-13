@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2025 II Q8 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span> Total sum \(=36\), Total sum of squares \(=204\).<br />Each subset's sum\(=18\), sum of squares \(=102\).</p>
+
+    <div class="math-block">\[\boxed{A=\{1,4,6,7\},\qquad B=\{2,3,5,8\}.}\]</div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span></p>
+
+    <div class="math-block">\[
+      \text{LHS} = \sum a_k^3 + \sum\left(c^3+3c^2b_k+3cb_k^2+b_k^3\right)
+      = \sum a_k^3+\sum b_k^3 + mc^3 + 3c^2\sum b_k + 3c\sum b_k^2
+    \]</div>
+
+    <div class="math-block">\[\because \displaystyle\sum a_k=\sum b_k \text{ and } \displaystyle\sum a_k^2=\sum b_k^2\]</div>
+
+    <div class="math-block">\[
+      \begin{aligned}
+      \therefore \text{LHS}&=\displaystyle\sum a_k^3+\sum b_k^3 + mc^3 + 3c^2\sum a_k + 3c\sum a_k^2\\
+      &= \sum_{k=1}^{m} b_k^3 + \sum_{k=1}^{m} (c+a_k)^3
+      \end{aligned}
+    \]</div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iii)</span> From part (i), let</p>
+
+    <div class="math-block">\[A'=\{1,4,6,7\},\qquad B'=\{2,3,5,8\}\]</div>
+
+    <p>Then \(\displaystyle\sum a'_k=\sum b'_k\) and \(\displaystyle\sum {a'_k}^2=\sum {b'_k}^2\).</p>
+
+    <p>Choosing \(c=8\)</p>
+
+    <div class="math-block">\[\boxed{A=\{1,4,6,7,10,11,13,16\},\qquad B=\{2,3,5,8,9,12,14,15\}.}\]</div>
+
+    <p>Now</p>
+
+    <div class="math-block">\[\sum_{x\in A}x=\sum a_k+\sum(8+b_k),\qquad \sum_{x\in B}x=\sum b_k+\sum(8+a_k),\]</div>
+
+    <p>Since \(\displaystyle\sum a'_k=\sum b'_k\), \(\quad \displaystyle\sum a_k=\sum b_k\)</p>
+
+    <div class="math-block">\[\sum a_k^2+\sum(c+b_k)^2=\sum a_k^2+\sum(c^2+2cb_k+b_k^2)\]</div>
+    <div class="math-block">\[=\sum a_k^2+mc^2+2c\sum b_k+\sum b_k^2\]</div>
+    <div class="math-block">\[=\sum b_k^2+mc^2+2c\sum a_k+\sum a_k^2\]</div>
+    <div class="math-block">\[=\sum b_k^2+\sum(c+a_k)^2\]</div>
+
+    <p>So, the sum of squares of A and B are equal.</p>
+
+    <p>By part (ii),</p>
+
+    <div class="math-block">\[\sum a_k^3+\sum(8+b_k)^3=\sum b_k^3+\sum(8+a_k)^3,\]</div>
+
+    <p>Thus, the sum of cubes of A and B are equal.</p>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iv)</span> Since \(A=\{1,3,4,5,9,11\}\) and \(B=\{2,6,7,8,10\}\) form a balanced partition of \(\{1,2,\dots,11\}\), it follows that</p>
+
+    <div class="math-block">\[\{1,3,4,5,9,11\}\quad\text{and}\quad \{0,2,6,7,8,10\}\]</div>
+
+    <p>form a balanced partition of \(\{0,1,2,\dots,11\}\), and each subset contains \(6\) elements.</p>
+
+    <p>Hence</p>
+
+    <div class="math-block">\[\{n+1,n+3,n+4,n+5,n+9,n+11\}\]</div>
+
+    <p>and</p>
+
+    <div class="math-block">\[\{n,n+2,n+6,n+7,n+8,n+10\}\]</div>
+
+    <p>form a balanced partition of</p>
+
+    <div class="math-block">\[\{n,n+1,n+2,\dots,n+11\}\]</div>
+
+    <p>Hence</p>
+
+    <div class="math-block">\[\boxed{C=\{(n+1)^2,(n+3)^2,(n+4)^2,(n+5)^2,(n+9)^2,(n+11)^2\}}\]</div>
+
+    <p>and</p>
+
+    <div class="math-block">\[\boxed{D=\{n^2,(n+2)^2,(n+6)^2,(n+7)^2,(n+8)^2,(n+10)^2\}}\]</div>
+
+    <p>is a pair of sets with the required property.</p>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong>.</p>
+      <p>Published and refined by <strong>Jon</strong>.</p>
+      <p><em>Last updated: June 13, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>
