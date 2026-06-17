@@ -1,0 +1,109 @@
+
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\textbf{(i)}
+
+$$G_{R_1}(x)=\frac16(x^0+x+x^2+x^3+x^4+x^5)$$
+\begin{align*}
+G_{R_2}(x)
+&=\frac1{36}(x^0+x+x^2+x^3+x^4+x^5)^2\\
+&=\frac6{36}(x^0+x+x^2+x^3+x^4+x^5)\\
+&=G(x)
+\end{align*}
+
+The coefficient of $x^0$ is $\frac{1}{6}$, which is the probability that $S_n$ is divisible by $6$.
+\bigskip\hrule\bigskip
+
+\textbf{(ii)}
+
+$$G_1(x)=\frac16(1+2x+x^2+x^3+x^4)$$
+$$G_1(x)=\frac16(x+y)$$
+
+Modulo $x^5=1$, we have
+$$xy=x(1+x+x^2+x^3+x^4)=x+x^2+x^3+x^4+x^5=y,\qquad y^2=5y$$
+More generally, $x^my=y$ for all integers $m\ge1$.
+\begin{align*}
+G_2(x)
+&=\frac1{36}(x+y)^2\\
+&=\frac1{36}(x^2+2xy+y^2)\\
+&=\boxed{\frac1{36}(x^2+7y)}
+\end{align*}
+
+\begin{align*}
+G_3(x)
+&=\frac1{6^3}(x+y)(x^2+7y)\\
+&=\frac1{6^3}(x^3+x^2y+7xy+7y^2)\\
+&=\frac1{6^3}(x^3+y+7y+35y)\\
+&=\frac1{6^3}(x^3+43y)
+\end{align*}
+
+\begin{align*}
+G_4(x)
+&=\frac1{6^4}(x+y)(x^3+43y)\\
+&=\frac1{6^4}(x^4+x^3y+43xy+43y^2)\\
+&=\frac1{6^4}(x^4+y+43y+215y)\\
+&=\frac1{6^4}(x^4+259y)
+\end{align*}
+
+From $G_1(x),G_2(x),G_3(x),G_4(x)$, assume
+$$
+G_k(x)=\frac1{6^k}
+\left(x^k+\frac{6^k-1}{5}y\right)
+$$
+
+
+Base case $\displaystyle n=1$: $\displaystyle \quad
+G_1(x)=\frac16(x+y)
+$\\
+
+\begin{align*}
+G_{k+1}(x)
+&=\frac1{6^{k+1}}
+\left(x^k+\frac{6^k-1}{5}y\right)(x+y)\\
+&=\frac1{6^{k+1}}
+\left(
+x^{k+1}
++x^ky
++\frac{6^k-1}{5}xy
++\frac{6^k-1}{5}y^2
+\right)\\
+&=\frac1{6^{k+1}}
+\left(
+x^{k+1}
++\left[
+1+6\left(\frac{6^k-1}{5}\right)
+\right]y
+\right)\\
+&=\frac1{6^{k+1}}
+\left(
+x^{k+1}+\frac{6^{k+1}-1}{5}y
+\right)
+\end{align*}
+
+Due to mathematical induction, the statement is true for all $n\geq1$.
+
+If $5\nmid n$, then $x^n$ contributes no $x^0$ term modulo $x^5=1$,
+$$\mathrm{P}(5\mid S_n)=\frac1{6^n}\cdot\frac{6^n-1}{5}=\boxed{\frac15\left(1-\frac1{6^n}\right)}$$
+
+If $5\mid n$, then $x^n=x^0$ modulo $x^5=1$,
+$$\mathrm{P}(5\mid S_n)=\frac1{6^n}
+\left(1+\frac{6^n-1}{5}\right)=\boxed{\frac15\left(1+\frac4{6^n}\right)}$$
+
+
+
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: June 13, 2026}
+\end{center}
+
+
+\end{document}

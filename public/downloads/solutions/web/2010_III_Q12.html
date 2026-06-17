@@ -73,7 +73,10 @@
 
     <div class="math-block">
       \[
-      S=(1+r+r^2+\cdots)+d(r+2r^2+3r^3+\cdots)
+      \begin{aligned}
+      S
+      &=(1+r+r^2+\cdots)+d(r+2r^2+3r^3+\cdots)
+      \end{aligned}
       \]
     </div>
 
@@ -85,7 +88,9 @@
 
     <div class="math-block">
       \[
+      \begin{aligned}
       \because |r|&lt;1,\qquad \therefore 1+r+r^2+\cdots=\frac{1}{1-r}
+      \end{aligned}
       \]
     </div>
 
@@ -101,7 +106,7 @@
 
     <div class="math-block">
       \[
-      S(1-r)=1+d\cdot \frac{r}{1-r}
+      S(1-r)=1+\cdot \frac{rd}{1-r}
       \]
     </div>
 
@@ -111,15 +116,15 @@
       \]
     </div>
 
-    <p>\(\mathbb{E}(x)\) is the expected number of shots Arthur takes to hit the target.</p>
+    <p>\(E(x)\) is the expected number of shots Arthur takes to hit the target</p>
 
     <div class="math-block">
       \[
-      \mathbb{E}(x)=a\cdot 1+(1-a)(1+\mathbb{E}(x))=\frac{1}{a}
+      E(x)=a\cdot 1+(1-a)(1+E(x))=\frac{1}{a}
       \]
     </div>
 
-    <p>Arthur wins either immediately, with probability \(a\), or after both players miss once, with probability \(a'b'\alpha\).</p>
+    <p>Arthur wins either immediately, with probability \(a\), or after both players miss once, with probability \(a'b'\alpha\)</p>
 
     <div class="math-block">
       \[
@@ -147,14 +152,16 @@
 
     <div class="math-block">
       \[
-      \mathbb{E}(x)=\sum_{n=1}^{\infty}(2n-1)(a'b')^{n-1}a+\sum_{n=1}^{\infty}2n(a'b')^{n-1}a'b
+      \begin{aligned}
+      E(x)&=\sum_{n=1}^{\infty}(2n-1)(a'b')^{n-1}a+\sum_{n=1}^{\infty}2n(a'b')^{n-1}a'b
+      \end{aligned}
       \]
     </div>
 
     <div class="math-block">
       \[
       \begin{aligned}
-      \mathbb{E}(x)
+      E(x)
       &=a\sum_{n=1}^{\infty}(2n-1)(a'b')^{n-1}+a'b\sum_{n=1}^{\infty}2n(a'b')^{n-1}\\
       &=a\left(2\sum_{n=1}^{\infty}n(a'b')^{n-1}-\sum_{n=1}^{\infty}(a'b')^{n-1}\right)
       +2a'b\sum_{n=1}^{\infty}n(a'b')^{n-1}
@@ -171,15 +178,14 @@
 
     <div class="math-block">
       \[
-      \mathbb{E}(x)=a\left(\frac{2}{(1-a'b')^2}-\frac{1}{1-a'b'}\right)
-      +2a'b\cdot \frac{1}{(1-a'b')^2}
-      =\frac{a+a'b}{(1-a'b')^2}
+      E(x)=a\left(\frac{2}{(1-a'b')^2}-\frac{1}{1-a'b'}\right)
+      +2a'b\cdot \frac{1}{(1-a'b')^2}=\frac{a+a'b}{(1-a'b')^2}\\
       \]
     </div>
 
     <div class="math-block">
       \[
-      \because a+a'b=a(1+b')=a(2-b)\qquad \therefore \mathbb{E}(x)=\frac{a(2-b)}{(1-a'b')^2}
+      \because a+a'b=a(1+b')=a(2-b)\qquad \therefore E(x)=\frac{a(2-b)}{(1-a'b')^2}
       \]
     </div>
 

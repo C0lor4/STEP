@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2010 III Q13 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <div class="math-block">\[
+      \begin{aligned}
+      \mathrm{Corr}(Z_1,Z_2)
+      &=\frac{\mathrm{Cov}(Z_1,Z_2)}{\sqrt{\mathrm{Var}(Z_1)\mathrm{Var}(Z_2)}}\\
+      &=\mathrm{Cov}(Z_1,Z_2)\\
+      &=\mathrm{E}\big((Z_1-\mu_{Z_1})(Z_2-\mu_{Z_2})\big)\\
+      &=E(Z_1Z_2)\\
+      &=0
+      \end{aligned}
+    \]</div>
+
+    <div class="math-block">\[\mathrm{E}(Y_2)=\rho_{12}\mathrm{E}(Z_1)+\sqrt{1-\rho_{12}^2}\,\mathrm{E}(Z_2)=0\]</div>
+
+    <div class="math-block">\[\mathrm{Var}(Y_2)=\rho_{12}^2\mathrm{Var}(Z_1)+(1-\rho_{12}^2)\mathrm{Var}(Z_2)=\rho_{12}^2+1-\rho_{12}^2=1\]</div>
+
+    <div class="math-block">\[
+      \begin{aligned}
+      \mathrm{Corr}(Y_1,Y_2)
+      &=\frac{\mathrm{Cov}(Y_1,Y_2)}{\sqrt{\mathrm{Var}(Y_1)\mathrm{Var}(Y_2)}}\\
+      &=\mathrm{Cov}(Y_1,Y_2)\\
+      &=\mathrm{Cov}\left(
+      Z_1,\rho_{12}Z_1+\sqrt{1-\rho_{12}^2}\,Z_2
+      \right)\\
+      &=\rho_{12}\mathrm{Var}(Z_1)
+      +\sqrt{1-\rho_{12}^2}\,\mathrm{Cov}(Z_1,Z_2)\\
+      &=\rho_{12}
+      \end{aligned}
+    \]</div>
+
+    <div class="math-block">\[
+      \begin{aligned}
+      \rho_{13}
+      &=\mathrm{Corr}(Y_1,Y_3)\\
+      &=\frac{\mathrm{Cov}(Y_1,Y_3)}{\sqrt{\mathrm{Var}(Y_1)\mathrm{Var}(Y_3)}}\\
+      &=\mathrm{Cov}(Y_1,Y_3)\\
+      &=E(Y_1Y_3)\\
+      &=E\big(Z_1(aZ_1+bZ_2+cZ_3)\big)\\
+      &=aE(Z_1^2)+bE(Z_1Z_2)+cE(Z_1Z_3)\\
+      &=a
+      \end{aligned}
+    \]</div>
+
+    <div class="math-block">\[
+      \begin{aligned}
+      \rho_{23}
+      &=\mathrm{Corr}(Y_2,Y_3)\\
+      &=\mathrm{Cov}\left(
+      \rho_{12}Z_1+\sqrt{1-\rho_{12}^2}\,Z_2,
+      aZ_1+bZ_2+cZ_3
+      \right)\\
+      &=\rho_{12}a+\sqrt{1-\rho_{12}^2}\,b
+      \end{aligned}
+    \]</div>
+
+    <div class="math-block">\[b=\frac{\rho_{23}-\rho_{12}a}
+      {\sqrt{1-\rho_{12}^2}}\]</div>
+
+    <div class="math-block">\[
+      \begin{aligned}
+      \mathrm{Var}(Y_3)
+      &=\mathrm{Var}(aZ_1+bZ_2+cZ_3)\\
+      &=a^2\mathrm{Var}(Z_1)+b^2\mathrm{Var}(Z_2)+c^2\mathrm{Var}(Z_3)\\
+      &=a^2+b^2+c^2=1
+      \end{aligned}
+    \]</div>
+
+    <div class="math-block">\[
+      c=\sqrt{1-a^2-b^2}=\sqrt{
+      1-\rho_{13}^2
+      -\frac{(\rho_{23}-\rho_{12}\rho_{13})^2}
+      {1-\rho_{12}^2}
+      }\]</div>
+
+    <p>For \(i=1,2,3\)</p>
+
+    <div class="math-block">\[
+      \boxed{X_i=\mu_i+\sigma_iY_i}
+    \]</div>
+
+    <div class="math-block">\[\mathrm{E}(X_i)=\mu_i+\sigma_i\mathrm{E}(Y_i)=\mu_i\]</div>
+
+    <div class="math-block">\[\mathrm{Var}(X_i)=\sigma_i^2\mathrm{Var}(Y_i)=\sigma_i^2\]</div>
+
+    <p>For \(i\neq j\)</p>
+
+    <div class="math-block">\[
+      \begin{aligned}
+      \mathrm{Corr}(X_i,X_j)
+      &=\mathrm{Corr}(\mu_i+\sigma_iY_i,\mu_j+\sigma_jY_j)\\
+      &=\mathrm{Corr}(Y_i,Y_j)\\
+      &=\rho_{ij}
+      \end{aligned}
+    \]</div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong>.</p>
+      <p>Published and refined by <strong>Jon</strong>.</p>
+      <p><em>Last updated: June 13, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>
