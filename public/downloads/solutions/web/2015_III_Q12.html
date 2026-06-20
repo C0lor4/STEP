@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2015 III Q12 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span></p>
+
+    <div class="math-block">
+      \[
+      G_{R_1}(x)=\frac16(x^0+x+x^2+x^3+x^4+x^5)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      G_{R_2}(x)
+      &=\frac1{36}(x^0+x+x^2+x^3+x^4+x^5)^2\\
+      &=\frac6{36}(x^0+x+x^2+x^3+x^4+x^5)\\
+      &=G(x)
+      \end{aligned}
+      \]
+    </div>
+
+    <p>The coefficient of \(x^0\) is \(\frac{1}{6}\), which is the probability that \(S_n\) is divisible by \(6\).</p>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span></p>
+
+    <div class="math-block">
+      \[
+      G_1(x)=\frac16(1+2x+x^2+x^3+x^4)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      G_1(x)=\frac16(x+y)
+      \]
+    </div>
+
+    <p>Modulo \(x^5=1\), we have</p>
+
+    <div class="math-block">
+      \[
+      xy=x(1+x+x^2+x^3+x^4)=x+x^2+x^3+x^4+x^5=y,\qquad y^2=5y
+      \]
+    </div>
+
+    <p>More generally, \(x^my=y\) for all integers \(m\ge1\).</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      G_2(x)
+      &=\frac1{36}(x+y)^2\\
+      &=\frac1{36}(x^2+2xy+y^2)\\
+      &=\boxed{\frac1{36}(x^2+7y)}
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      G_3(x)
+      &=\frac1{6^3}(x+y)(x^2+7y)\\
+      &=\frac1{6^3}(x^3+x^2y+7xy+7y^2)\\
+      &=\frac1{6^3}(x^3+y+7y+35y)\\
+      &=\frac1{6^3}(x^3+43y)
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      G_4(x)
+      &=\frac1{6^4}(x+y)(x^3+43y)\\
+      &=\frac1{6^4}(x^4+x^3y+43xy+43y^2)\\
+      &=\frac1{6^4}(x^4+y+43y+215y)\\
+      &=\frac1{6^4}(x^4+259y)
+      \end{aligned}
+      \]
+    </div>
+
+    <p>From \(G_1(x),G_2(x),G_3(x),G_4(x)\), assume</p>
+
+    <div class="math-block">
+      \[
+      G_k(x)=\frac1{6^k}
+      \left(x^k+\frac{6^k-1}{5}y\right)
+      \]
+    </div>
+
+    <p>Base case \(\displaystyle n=1\): \(\displaystyle \quad G_1(x)=\frac16(x+y)\)</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      G_{k+1}(x)
+      &=\frac1{6^{k+1}}
+      \left(x^k+\frac{6^k-1}{5}y\right)(x+y)\\
+      &=\frac1{6^{k+1}}
+      \left(
+      x^{k+1}
+      +x^ky
+      +\frac{6^k-1}{5}xy
+      +\frac{6^k-1}{5}y^2
+      \right)\\
+      &=\frac1{6^{k+1}}
+      \left(
+      x^{k+1}
+      +\left[
+      1+6\left(\frac{6^k-1}{5}\right)
+      \right]y
+      \right)\\
+      &=\frac1{6^{k+1}}
+      \left(
+      x^{k+1}+\frac{6^{k+1}-1}{5}y
+      \right)
+      \end{aligned}
+      \]
+    </div>
+
+    <p>Due to mathematical induction, the statement is true for all \(n\geq1\).</p>
+
+    <p>If \(5\nmid n\), then \(x^n\) contributes no \(x^0\) term,</p>
+
+    <div class="math-block">
+      \[
+      \mathrm{P}(5\mid S_n)=\frac1{6^n}\cdot\frac{6^n-1}{5}=\boxed{\frac15\left(1-\frac1{6^n}\right)}
+      \]
+    </div>
+
+    <p>If \(5\mid n\), then \(x^n=x^0\),</p>
+
+    <div class="math-block">
+      \[
+      \mathrm{P}(5\mid S_n)=\frac1{6^n}
+      \left(1+\frac{6^n-1}{5}\right)=\boxed{\frac15\left(1+\frac4{6^n}\right)}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong>.</p>
+      <p>Published and refined by <strong>Jon</strong>.</p>
+      <p><em>Last updated: June 13, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>

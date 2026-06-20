@@ -1,10 +1,12 @@
 import { createQuestionSource, type QuestionSource } from './answers/types';
 
 const questionSourceIds = [
+  '2010_II_Q2',
   '2010_II_Q10',
   '2010_III_Q12',
   '2010_III_Q13',
   '2014_II_Q12',
+  '2015_III_Q12',
   '2016_I_Q1',
   '2017_II_Q1',
   '2017_II_Q4',
