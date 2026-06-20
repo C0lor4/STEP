@@ -1,0 +1,74 @@
+
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\textbf{(a)(i)}
+$$f(12)=12\left(1-\frac12\right)\left(1-\frac13\right)\\=\boxed{4}$$
+
+$$f(180)=180\left(1-\frac12\right)\left(1-\frac13\right)\left(1-\frac15\right)=\boxed{48}$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(a)(ii)}
+
+Let $\quad\displaystyle  N=p_1^{\alpha_1}p_2^{\alpha_2}\cdots p_k^{\alpha_k}$, where $p_1,\ldots,p_k$ are distinct primes and $\alpha_1,\ldots,\alpha_k$ are positive integers.
+\begin{align*}
+f(N)
+&=p_1^{\alpha_1}\cdots p_k^{\alpha_k}
+\left(1-\frac1{p_1}\right)\cdots
+\left(1-\frac1{p_k}\right)\\
+&=p_1^{\alpha_1-1}(p_1-1)\cdots
+p_k^{\alpha_k-1}(p_k-1)
+\end{align*}
+
+Thus $\displaystyle f(N)\in\mathbb Z$
+
+\bigskip\hrule\bigskip
+
+\textbf{(b)(i)} $\quad \boxed{\text{False}}$
+$$f(3)=2,\quad f(9)=6, \quad f(27)=18$$
+$$f(3)f(9)=12\neq18=f(27)$$
+
+
+\bigskip\hrule\bigskip
+
+\textbf{(b)(ii)} $\quad \boxed{\text{True}}$
+\begin{align*}
+f(p)f(q)
+&=p\left(1-\frac1p\right)
+q\left(1-\frac1q\right)\\
+&=pq\left(1-\frac1p\right)\left(1-\frac1q\right)\\
+&=f(pq)
+\end{align*}
+
+\bigskip\hrule\bigskip
+
+\textbf{(b)(iii)} $\quad \boxed{\text{False}}$
+$$f(1)=1,\qquad f(3)=2$$
+$$f(1)f(3)=2=f(3)=f(1\cdot3)$$
+But $1$ is not prime
+
+\bigskip\hrule\bigskip
+
+\textbf{(c)} For prime $p$
+\begin{align*}
+f(p^m)
+&=p^m\left(1-\frac1p\right)\\
+&=p^{m-1}(p-1)
+\end{align*}
+
+$$\because 146410=10\cdot11^4$$
+$$\therefore p-1=10,\qquad p^{m-1}=11^4$$
+$$\boxed{p=11,\qquad m=5}$$
+
+\begin{center}
+	This solution was submitted by \textbf{Jon}.\\[4pt]
+	Published and refined by \textbf{Jon}.\\[8pt]
+	\textit{Last updated: \today}
+\end{center}
+
+\end{document}

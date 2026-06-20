@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2005 II Q2 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(a)(i)</span></p>
+
+    <div class="math-block">
+      \[
+      f(12)=12\left(1-\frac12\right)\left(1-\frac13\right)=\boxed{4}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      f(180)=180\left(1-\frac12\right)\left(1-\frac13\right)\left(1-\frac15\right)=\boxed{48}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(a)(ii)</span></p>
+
+    <p>Let \(\quad\displaystyle N=p_1^{\alpha_1}p_2^{\alpha_2}\cdots p_k^{\alpha_k}\), where \(p_1,\ldots,p_k\) are distinct primes and \(\alpha_1,\ldots,\alpha_k\) are positive integers.</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      f(N)
+      &=p_1^{\alpha_1}\cdots p_k^{\alpha_k}
+      \left(1-\frac1{p_1}\right)\cdots
+      \left(1-\frac1{p_k}\right)\\
+      &=p_1^{\alpha_1-1}(p_1-1)\cdots
+      p_k^{\alpha_k-1}(p_k-1)
+      \end{aligned}
+      \]
+    </div>
+
+    <p>Thus \(\displaystyle f(N)\in\mathbb Z\)</p>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(b)(i)</span> \(\quad \boxed{\text{False}}\)</p>
+
+    <div class="math-block">
+      \[
+      f(3)=2,\quad f(9)=6, \quad f(27)=18
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      f(3)f(9)=12\neq18=f(27)
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(b)(ii)</span> \(\quad \boxed{\text{True}}\)</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      f(p)f(q)
+      &=p\left(1-\frac1p\right)
+      q\left(1-\frac1q\right)\\
+      &=pq\left(1-\frac1p\right)\left(1-\frac1q\right)\\
+      &=f(pq)
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(b)(iii)</span> \(\quad \boxed{\text{False}}\)</p>
+
+    <div class="math-block">
+      \[
+      f(1)=1,\qquad f(3)=2
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      f(1)f(3)=2=f(3)=f(1\cdot3)
+      \]
+    </div>
+
+    <p>But \(1\) is not prime</p>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(c)</span> For prime \(p\)</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      f(p^m)
+      &=p^m\left(1-\frac1p\right)\\
+      &=p^{m-1}(p-1)
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \because 146410=10\cdot11^4
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore p-1=10,\qquad p^{m-1}=11^4
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \boxed{p=11,\qquad m=5}
+      \]
+    </div>
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong>.</p>
+      <p>Published and refined by <strong>Jon</strong>.</p>
+      <p><em>Last updated: \(\today\)</em></p>
+    </div>
+  </main>
+</body>
+</html>
