@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2015 II Q13 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span></p>
+
+    <div class="math-block">
+      \[
+      C=
+      \begin{cases}
+      ky, & X\leq y\\
+      ky+a(X-y), & X>y
+      \end{cases}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \mathrm{E}(C)
+      &=\int_0^y ky\lambda e^{-\lambda x}\,dx
+      +\int_y^\infty\left[ky+a(x-y)\right]\lambda e^{-\lambda x}\,dx\\
+      &=ky\int_0^\infty\lambda e^{-\lambda x}\,dx
+      +a\int_y^\infty(x-y)\lambda e^{-\lambda x}\,dx\\
+      &=ky+a\left[-(x-y)e^{-\lambda x}-\frac1\lambda e^{-\lambda x}\right]_y^\infty\\
+      &=ky+\frac{a}{\lambda}e^{-\lambda y}
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \frac{d}{dy}\mathrm{E}(C)=k-ae^{-\lambda y} \quad \frac{d^2}{dy^2}\mathrm{E}(C)=a\lambda e^{-\lambda y}>0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      k-ae^{-\lambda y}=0
+      \quad\Longrightarrow\quad
+      y=\frac{1}{\lambda}\ln\left(\frac{a}{k}\right)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \boxed{
+      \therefore y=
+      \begin{cases}
+      0, & \quad\dfrac{a}{k}\leq1\\[6pt]
+      \dfrac{1}{\lambda}\ln\left(\dfrac{a}{k}\right),
+      & \quad \dfrac{a}{k}>1
+      \end{cases}
+      }
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span> Let \(u=x-y\)</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \mathrm{E}(C^2)
+      &=k^2y^2+
+      \int_y^\infty
+      \left[2aky(x-y)+a^2(x-y)^2\right]
+      \lambda e^{-\lambda x}\,dx\\
+      &=k^2y^2+e^{-\lambda y}
+      \int_0^\infty
+      \left(2akyu+a^2u^2\right)
+      \lambda e^{-\lambda u}\,du\\
+      &=k^2y^2+e^{-\lambda y}
+      \left(
+      2aky\int_0^\infty u\lambda e^{-\lambda u}\,du
+      +a^2\int_0^\infty u^2\lambda e^{-\lambda u}\,du
+      \right)\\
+      &=k^2y^2+e^{-\lambda y}
+      \left(
+      \frac{2aky}{\lambda}
+      +a^2\left[-u^2e^{-\lambda u}\right]_0^\infty
+      +2a^2\int_0^\infty ue^{-\lambda u}\,du
+      \right)\\
+      &=k^2y^2+\left(\frac{2aky}{\lambda}+\frac{2a^2}{\lambda^2}\right)e^{-\lambda y}
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \mathrm{Var}(C)
+      &=\mathrm{E}(C^2)-\left(\mathrm{E}(C)\right)^2\\
+      &=k^2y^2+\left(\frac{2aky}{\lambda}+\frac{2a^2}{\lambda^2}\right)e^{-\lambda y}
+      -\left(ky+\frac{a}{\lambda}e^{-\lambda y}\right)^2\\
+      &=\boxed{\frac{a^2}{\lambda^2}
+      \left(2e^{-\lambda y}-e^{-2\lambda y}\right)}
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \frac{d}{dy}\mathrm{Var}(C)
+      &=\frac{2a^2}{\lambda}
+      e^{-\lambda y}\left(e^{-\lambda y}-1\right)
+      \end{aligned}
+      \]
+    </div>
+
+    <p>For \(y>0, \qquad e^{-\lambda y}<1
+      \quad\Longrightarrow\quad
+      \frac{d}{dy}\mathrm{Var}(C)<0\)</p>
+
+    <div class="math-block">
+      \[
+      \boxed{\text{As y increase, Var(y) decreases}}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong>.</p>
+      <p>Published and refined by <strong>Jon</strong>.</p>
+      <p><em>Last updated: June 20, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>

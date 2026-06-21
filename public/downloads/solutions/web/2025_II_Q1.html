@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2025 II Q1 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span></p>
+
+    <div class="math-block">
+      \[
+      \mathrm{Min}(x^2,2x)=
+      \begin{cases}
+      x^2, & \quad x^2\leq2x\\
+      2x, & \quad  x^2>2x
+      \end{cases}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      &x^2\leq2x\implies x(x-2)\leq0\implies0\leq x\leq2\\
+      &x^2>2x \;\implies\; x>2 \text{ or } x<0
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \mathrm{Min}(x^2,2x)=
+      \begin{cases}
+      x^2, &\quad  0\leq x\leq2\\
+      2x, & \quad x<0\text{ or }x>2
+      \end{cases}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{tikzpicture}
+      \begin{axis}[
+          axis lines=middle,
+          xmin=-2.8, xmax=5.2,
+          ymin=-5.5, ymax=7,
+          width=11cm,
+          height=8cm,
+          axis line style={->, thick},
+          xlabel={$x$},
+          ylabel={$y$},
+          ylabel style={at={(axis cs:0.12,4.7)}, anchor=south west},
+          xlabel style={at={(axis description cs:0.98,0.40)}, anchor=west},
+          ylabel style={at={(axis cs:-0.28,6.7)}, anchor=south},
+          xtick={2},
+          ytick={4},
+          xticklabels={$2$},
+          yticklabels={$4$},
+          tick style={draw=none},
+          enlargelimits=false,
+          clip=false,
+          samples=100
+      ]
+      \addplot[domain=-2.5:0, thick] {2*x};
+      \addplot[domain=0:2, thick] {x^2};
+      \addplot[domain=2:4.1, thick] {2*x};
+      \addplot[dashed] coordinates {(2,0) (2,4)};
+      \addplot[dashed] coordinates {(0,4) (2,4)};
+      \node at (axis cs:0,0) [below left] {$0$};
+      \node at (axis cs:0.85,2.45) {$y=x^2$};
+      \node at (axis cs:-1.95,-2.65) {$y=2x$};
+      \node at (axis cs:3.85,6.45) {$y=2x$};
+      \end{axis}
+      \end{tikzpicture}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span></p>
+
+    <div class="math-block">
+      \[
+      2\mathrm{Min}(x^2,2x)=5x-3
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \text{If} \ \displaystyle 0\leq x\leq2 \implies 2x^2=5x-3
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      (2x-3)(x-1)=0 \implies x=\frac32,\; 1
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \text{If}\ x<0 \ \text{or}\ x>2 \implies 4x=5x-3 \implies x=3
+      \]
+    </div>
+
+    <p>Hence,&emsp;&emsp;&emsp; \(\boxed{x=1,\; \frac32,\; 3}\)</p>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iii)</span></p>
+
+    <div class="math-block">
+      \[
+      \mathrm{Min}(x^3,4x)=
+      \begin{cases}
+      x^3, & \quad x^3\leq4x\\
+      4x, &\quad x^3>4x
+      \end{cases}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      x^3\leq4x\implies x(x-2)(x+2)\leq0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      x\leq-2\quad\text{or}\quad0\leq x\leq2
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \mathrm{Min}(x^3,4x)
+      &=
+      \begin{cases}
+      x^3, & x\leq-2\text{ or }0\leq x\leq2\\
+      4x, & -2<x<0\text{ or }x>2
+      \end{cases}
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \mathrm{Min}(x^2,2x)
+      &=
+      \begin{cases}
+      x^2, & 0\leq x\leq2\\
+      2x, & x<0\text{ or }x>2
+      \end{cases}
+      \end{aligned}
+      \]
+    </div>
+
+    <p>When \(m=2\)</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \text{1. }&x\leq-2:\quad x^3+2x=2x \text{ (rejected)}\\
+      \text{2. }&-2<x<0:\quad 4x+2x=2x \text{ (rejected)}\\
+      \text{3. }&0\leq x\leq2:\quad x^3+x^2=2x\implies x(x+2)(x-1)=0\\
+      \text{4. }&x>2:\quad 4x+2x=2x\text{ (rejected)}
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \text{So for }m=2:\ \boxed{x=0,\; 1}
+      \]
+    </div>
+
+    <p>When \(m=6\)</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \text{1. }&x\leq-2:\quad x^3+2x=6x \implies x(x-2)(x+2)=0\implies x=-2\\
+      \text{2. }&-2<x<0:\quad 4x+2x=6x \implies x\in\mathbb{R} \ (-2<x<0)\\
+      \text{3. }&0\leq x\leq2:\quad x^3+x^2=6x \implies x(x+3)(x-2)=0\implies x=0, 2\\
+      \text{4. }&x>2:\quad 4x+2x=6x \implies x\in \mathbb{R}
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \text{So for }m=6:\ \boxed{-2\leq x\leq0\ \text{or}\  x\geq2}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iv)</span></p>
+
+    <div class="math-block">
+      \[
+      y=2\mathrm{Min}(x^2,x^3)-5x
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      y=
+      \begin{cases}
+      2x^2-5x, & \text{when }x\geq1\\
+      2x^3-5x, & \text{when }x<1
+      \end{cases}
+      \]
+    </div>
+
+    <p>For \(x\geq1\)</p>
+
+    <div class="math-block">
+      \[
+      \frac{dy}{dx}=4x-5=0\implies x=\frac54
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      y=2x^2-5x=2\cdot\frac{25}{16}-5\cdot\frac54=-\frac{25}{8}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \frac{d^2y}{dx^2}=4>0\implies \left(\frac54,-\frac{25}{8}\right)\text{ is minimum point}
+      \]
+    </div>
+
+    <p>For \(x<1\)</p>
+
+    <div class="math-block">
+      \[
+      \frac{dy}{dx}=6x^2-5=0\implies x=\pm\sqrt{\frac56}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      y=\frac{2}{3}\left(\pm\sqrt{\frac56}\right)^3-5\left(\pm\sqrt{\frac56}\right)=\mp\frac{10}{3}\sqrt{\frac56}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \frac{d^2y}{dx^2}=12x \implies \left(\sqrt{\frac56},-\frac{10}{3}\sqrt{\frac56}\right)\text{ is minimum point}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \implies \left(-\sqrt{\frac56},\frac{10}{3}\sqrt{\frac56}\right)\text{ is maximum point}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      x=1\text{ is the turning point of }\mathrm{Min}(x^2,x^3)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \text{Then }x=1\text{ is also the turning point of }y
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \text{When }x=1,\quad y=-3\implies (1,-3)\text{ is also a turning point}
+      \]
+    </div>
+
+    <p>Hence the other three turning points are:</p>
+
+    <div class="math-block">
+      \[
+      \boxed{
+      \left(\frac54,-\frac{25}{8}\right),\quad
+      \left(\sqrt{\frac56},-\frac{10}{3}\sqrt{\frac56}\right),\quad
+      \left(-\sqrt{\frac56},\frac{10}{3}\sqrt{\frac56}\right)
+      }
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{tikzpicture}
+      \begin{axis}[
+          axis lines=middle,
+          xmin=-1.9, xmax=3,
+          ymin=-5, ymax=5,
+          xlabel={$x$},
+          ylabel={$y$},
+          width=9.2cm,
+          height=8cm,
+          axis line style={->, thick},
+          tick style={draw=none},
+          xtick=\empty,
+          ytick=\empty,
+          clip=false,
+          samples=150
+      ]
+      \addplot[domain=-1.9:1, thick] {2*x^3-5*x};
+      \addplot[domain=1:3, thick] {2*x^2-5*x};
+      \addplot[dashed] coordinates {(1,0) (1,-3)};
+      \addplot[thick] coordinates {(1,-0.15) (1,0.15)};
+      \node at (axis cs:1.06,0.55) {$1$};
+      \end{axis}
+      \end{tikzpicture}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Camile</strong>.</p>
+      <p>Published and refined by <strong>Jon</strong>.</p>
+      <p><em>Last updated: June 21, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>
