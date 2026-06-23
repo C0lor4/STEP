@@ -5,12 +5,9 @@
 \begin{document}
 
 
-\textbf{(i)} Let $u' = x^n \;\mathrm{d}x$, $v = \arctan x$
-
-$\implies u=\dfrac{1}{n+1}\;x^{n+1}$, $v = \dfrac{1}{1+x^2}\,\mathrm{d}x$
+\textbf{(i)} Let $u' = x^n \;\mathrm{d}x$, $v = \arctan x \implies u=\dfrac{1}{n+1}\;x^{n+1}$, $v = \dfrac{1}{1+x^2}\,\mathrm{d}x$
 
 $$\displaystyle\int uv'\mathrm{d}x=uv-\displaystyle\int u'v\mathrm{d}x$$
-
 \begin{align*}
 I_n &= \left[\frac{x^{n+1}}{n+1}\arctan x\right]_0^1 - \int_0^1 \frac{x^{n+1}}{n+1}\cdot\frac{1}{1+x^2}\,\mathrm{d}x\\
 &= \frac{1}{n+1}\;\frac{\pi}{4} - \frac{1}{n+1}\int_0^1 \frac{x^{n+1}}{1+x^2}\,\mathrm{d}x\\
@@ -60,8 +57,6 @@ $\therefore \text{In order to make LHS=RHS, } A=\dfrac{\pi}{4} - \dfrac{\ln 2}{2
 
 Assume the equation is true for $n=k$:
 $$(4k+1)\;I_{4k}=A-\frac{1}{2}\displaystyle\sum_{r=1}^{2k}\left(-1\right)^{r+1}\frac{1}{2r-1}$$
-
-
 When $n=k+1$:
 
 Apply (ii) with $n=4k$: \quad $(4k+3)\;I_{4k+2}+(4k+1)\;I_{4k}=\dfrac{\pi}{2}-\dfrac{1}{4k+2}$

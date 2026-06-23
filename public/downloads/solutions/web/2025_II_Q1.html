@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -44,14 +44,40 @@
       justify-content: center;
     }
 
-    .graph-block svg {
-      max-width: 100%;
+    .graph-block svg,
+    .graph-block img {
       height: auto;
+      display: block;
+    }
+
+    .graph-large svg,
+    .graph-large img {
+      width: min(416px, 100%);
+    }
+
+    .graph-small svg,
+    .graph-small img {
+      width: min(348px, 100%);
     }
 
     .footer-note {
       margin-top: 28px;
       text-align: center;
+    }
+
+    .result-line {
+      margin: 0 0 14px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+    }
+
+    .result-line .result-label {
+      justify-self: start;
+    }
+
+    .result-line .result-box {
+      justify-self: center;
     }
 
     .divider {
@@ -97,7 +123,7 @@
       \[
       \begin{aligned}
       &x^2\leq2x\implies x(x-2)\leq0\implies0\leq x\leq2\\
-      &x^2>2x \;\implies\; x>2 \text{ or } x<0
+      &x^2>2x \;\implies\; x>2 \text{ or } x&lt;0
       \end{aligned}
       \]
     </div>
@@ -107,35 +133,13 @@
       \mathrm{Min}(x^2,2x)=
       \begin{cases}
       x^2, &\quad  0\leq x\leq2\\
-      2x, & \quad x<0\text{ or }x>2
+      2x, & \quad x&lt;0\text{ or }x>2
       \end{cases}
       \]
     </div>
 
-    <div class="graph-block">
-      <svg viewBox="0 0 620 430" aria-label="Graph for part i">
-        <defs>
-          <marker id="arrow1" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-            <path d="M0,0 L8,4 L0,8 Z" fill="#1f2937"></path>
-          </marker>
-        </defs>
-        <line x1="40" y1="260" x2="590" y2="260" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arrow1)"></line>
-        <line x1="260" y1="395" x2="260" y2="25" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arrow1)"></line>
-        <path d="M75 390 L260 260" fill="none" stroke="#1f2937" stroke-width="2.5"></path>
-        <path d="M260 260 C285 258 330 235 360 180 C382 138 402 98 420 70" fill="none" stroke="#1f2937" stroke-width="2.5"></path>
-        <path d="M420 70 L500 10" fill="none" stroke="#1f2937" stroke-width="2.5"></path>
-        <line x1="420" y1="260" x2="420" y2="70" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="6 5"></line>
-        <line x1="260" y1="70" x2="420" y2="70" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="6 5"></line>
-        <line x1="420" y1="252" x2="420" y2="268" stroke="#1f2937" stroke-width="2"></line>
-        <text x="251" y="279" font-size="20" font-family="Times New Roman">0</text>
-        <text x="414" y="248" font-size="20" font-family="Times New Roman">2</text>
-        <text x="245" y="78" font-size="20" font-family="Times New Roman">4</text>
-        <text x="595" y="270" font-size="20" font-family="Times New Roman">x</text>
-        <text x="268" y="24" font-size="20" font-family="Times New Roman">y</text>
-        <text x="282" y="170" font-size="20" font-family="Times New Roman">y=x²</text>
-        <text x="145" y="345" font-size="20" font-family="Times New Roman">y=2x</text>
-        <text x="505" y="20" font-size="20" font-family="Times New Roman">y=2x</text>
-      </svg>
+    <div class="graph-block graph-large">
+      <img src="./2025_II_Q1_graph1.png" alt="Graph for part i" />
     </div>
 
     <hr class="divider" />
@@ -162,11 +166,15 @@
 
     <div class="math-block">
       \[
-      \text{If}\ x<0 \ \text{or}\ x>2 \implies 4x=5x-3 \implies x=3
+      \text{If}\ x&lt;0 \ \text{or}\ x>2 \implies 4x=5x-3 \implies x=3
       \]
     </div>
 
-    <p>Hence,&emsp;&emsp;&emsp; \(\boxed{x=1,\; \frac32,\; 3}\)</p>
+    <div class="result-line">
+      <span class="result-label">Hence,</span>
+      <span class="result-box">\(\boxed{x=1,\; \frac32,\; 3}\)</span>
+      <span></span>
+    </div>
 
     <hr class="divider" />
 
@@ -201,7 +209,7 @@
       &=
       \begin{cases}
       x^3, & x\leq-2\text{ or }0\leq x\leq2\\
-      4x, & -2<x<0\text{ or }x>2
+      4x, & -2&lt;x&lt;0\text{ or }x>2
       \end{cases}
       \end{aligned}
       \]
@@ -214,7 +222,7 @@
       &=
       \begin{cases}
       x^2, & 0\leq x\leq2\\
-      2x, & x<0\text{ or }x>2
+      2x, & x&lt;0\text{ or }x>2
       \end{cases}
       \end{aligned}
       \]
@@ -226,7 +234,7 @@
       \[
       \begin{aligned}
       \text{1. }&x\leq-2:\quad x^3+2x=2x \text{ (rejected)}\\
-      \text{2. }&-2<x<0:\quad 4x+2x=2x \text{ (rejected)}\\
+      \text{2. }&-2&lt;x&lt;0:\quad 4x+2x=2x \text{ (rejected)}\\
       \text{3. }&0\leq x\leq2:\quad x^3+x^2=2x\implies x(x+2)(x-1)=0\\
       \text{4. }&x>2:\quad 4x+2x=2x\text{ (rejected)}
       \end{aligned}
@@ -245,7 +253,7 @@
       \[
       \begin{aligned}
       \text{1. }&x\leq-2:\quad x^3+2x=6x \implies x(x-2)(x+2)=0\implies x=-2\\
-      \text{2. }&-2<x<0:\quad 4x+2x=6x \implies x\in\mathbb{R} \ (-2<x<0)\\
+      \text{2. }&-2&lt;x&lt;0:\quad 4x+2x=6x \implies x\in\mathbb{R} \ (-2&lt;x&lt;0)\\
       \text{3. }&0\leq x\leq2:\quad x^3+x^2=6x \implies x(x+3)(x-2)=0\implies x=0, 2\\
       \text{4. }&x>2:\quad 4x+2x=6x \implies x\in \mathbb{R}
       \end{aligned}
@@ -273,7 +281,7 @@
       y=
       \begin{cases}
       2x^2-5x, & \text{when }x\geq1\\
-      2x^3-5x, & \text{when }x<1
+      2x^3-5x, & \text{when }x&lt;1
       \end{cases}
       \]
     </div>
@@ -298,7 +306,7 @@
       \]
     </div>
 
-    <p>For \(x<1\)</p>
+    <p>For \(x&lt;1\)</p>
 
     <div class="math-block">
       \[
@@ -354,23 +362,8 @@
       \]
     </div>
 
-    <div class="graph-block">
-      <svg viewBox="0 0 560 430" aria-label="Graph for part iv">
-        <defs>
-          <marker id="arrow2" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-            <path d="M0,0 L8,4 L0,8 Z" fill="#1f2937"></path>
-          </marker>
-        </defs>
-        <line x1="45" y1="215" x2="530" y2="215" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arrow2)"></line>
-        <line x1="250" y1="395" x2="250" y2="25" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arrow2)"></line>
-        <path d="M90 135 C130 40 205 205 250 335 C270 390 290 350 302 280" fill="none" stroke="#1f2937" stroke-width="2.5"></path>
-        <path d="M302 280 C325 242 365 225 510 350" fill="none" stroke="#1f2937" stroke-width="2.5"></path>
-        <line x1="302" y1="215" x2="302" y2="280" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="6 5"></line>
-        <line x1="302" y1="207" x2="302" y2="223" stroke="#1f2937" stroke-width="2"></line>
-        <text x="307" y="202" font-size="20" font-family="Times New Roman">1</text>
-        <text x="535" y="225" font-size="20" font-family="Times New Roman">x</text>
-        <text x="258" y="24" font-size="20" font-family="Times New Roman">y</text>
-      </svg>
+    <div class="graph-block graph-small">
+      <img src="./2025_II_Q1_graph2.png" alt="Graph for part iv" />
     </div>
 
     <hr class="divider" />
@@ -383,3 +376,5 @@
   </main>
 </body>
 </html>
+
+
