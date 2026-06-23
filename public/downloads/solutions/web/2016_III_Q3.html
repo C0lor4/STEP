@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2016 III Q3 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span></p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \frac{d}{dx}\left(\frac{P(x)}{Q(x)}e^x\right)
+      &=\left(\frac{P(x)}{Q(x)}\right)'e^x+\frac{P(x)}{Q(x)}e^x\\
+      &=\frac{P'(x)Q(x)-P(x)Q'(x)}{Q(x)^2}e^x+\frac{P(x)Q(x)}{Q(x)^2}e^x\\
+      &=\frac{e^x\left(Q(x)(P(x)+P'(x))-P(x)Q'(x)\right)}{Q(x)^2}\\
+      &=\frac{x^3-2}{(x+1)^2}e^x
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">\[\therefore \bigl[Q(x)(P(x)+P'(x))-P(x)Q'(x)\bigr](x+1)^2=(x^3-2)Q(x)^2\]</div>
+
+    <p>When \(\displaystyle x=-1\implies0=-3Q(-1)^2\implies Q(-1)=0\)</p>
+
+    <div class="math-block">\[\therefore \boxed{x+1\text{ is a factor of }Q(x)}\]</div>
+
+    <p>Let \(\displaystyle\deg(P(x))=p,\ \deg(Q(x))=q \implies \deg(P(x)+P'(x))=p,\  \deg\bigl(Q(x)(P(x)+P'(x))\bigr)=p+q, \  \deg\bigl(P(x)Q'(x)\bigr)=p+q-1\)</p>
+
+    <div class="math-block">\[\deg\left(Q(x)(P(x)+P'(x))-P(x)Q'(x)\right)=p+q\]</div>
+
+    <div class="math-block">\[\therefore \deg\left(\bigl[Q(x)(P(x)+P'(x))-P(x)Q'(x)\bigr](x+1)^2\right)=p+q+2\]</div>
+
+    <div class="math-block">\[\deg\left((x^3-2)Q(x)^2\right)=2q+3\]</div>
+
+    <div class="math-block">\[p+q+2=2q+3\implies p=q+1\]</div>
+
+    <div class="math-block">\[\therefore \boxed{\deg(P(x))=\deg(Q(x))+1}\]</div>
+
+    <p>When \(Q(x)=x+1\), \(Q'(x)=1\)</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \bigl[Q(x)(P(x)+P'(x))-P(x)Q'(x)\bigr](x+1)^2&=(x^3-2)Q(x)^2\\
+      \bigl[(x+1)(P(x)+P'(x))-P(x)\bigr](x+1)^2&=(x^3-2)(x+1)^2\\
+      (x+1)(P(x)+P'(x))-P(x)&=x^3-2\\
+      xP(x)+(x+1)P'(x)&=x^3-2
+      \end{aligned}
+      \]
+    </div>
+
+    <p>Let \(P(x)=ax^2+bx+c\)</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      xP(x)+(x+1)P'(x)
+      &=x(ax^2+bx+c)+(x+1)(2ax+b)\\
+      &=ax^3+(b+2a)x^2+(c+2a+b)x+b
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \left\{
+      \begin{aligned}
+      a&=1\\
+      b+2a&=0\\
+      c+2a+b&=0\\
+      b&=-2
+      \end{aligned}
+      \right.
+      \quad\Longrightarrow\quad
+      \left\{
+      \begin{aligned}
+      a&=1\\
+      b&=-2\\
+      c&=0
+      \end{aligned}
+      \right.
+      \]
+    </div>
+
+    <div class="math-block">\[\therefore \boxed{P(x)=x^2-2x}\]</div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span></p>
+
+    <p>Assume such \(P(x),Q(x)\) exist and \(\text{gcd}(P,Q)=1\)</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \frac{d}{dx}\left(\frac{P(x)e^x}{Q(x)}\right)&=\frac1{x+1}e^x\\
+      \frac{e^x\left(Q(x)(P(x)+P'(x))-P(x)Q'(x)\right)}{Q(x)^2}&=\frac1{x+1}e^x
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">\[\therefore \Bigl[Q(x)(P(x)+P'(x))-P(x)Q'(x)\Bigr](x+1)=Q(x)^2\]</div>
+
+    <p>When \(\displaystyle x=-1\implies0=Q(-1)^2\implies Q(-1)=0\)</p>
+
+    <p>Let \(Q(x)=(x+1)R(x)\)</p>
+
+    <div class="math-block">\[Q'(x)=R(x)+(x+1)R'(x)\]</div>
+
+    <div class="math-block">\[(x+1)R(x)(P(x)+P'(x))-P(x)(R(x)+(x+1)R'(x))=(x+1)R(x)^2\]</div>
+
+    <p>When \(\displaystyle x=-1\implies -P(-1)R(-1)=0\)</p>
+
+    <p>\(\because \displaystyle \text{gcd}(P,Q)=1\) and \(x+1\mid Q(x) \quad \therefore \displaystyle R(-1)=0 \implies (x+1)^2\mid Q(x)\)</p>
+
+    <p>Let \(\displaystyle Q(x)=(x+1)^nS(x),\qquad n\geq2,\qquad S(-1)\neq0\)</p>
+
+    <div class="math-block">\[Q'(x)=n(x+1)^{n-1}S(x)+(x+1)^nS'(x)\]</div>
+
+    <div class="math-block">\[\Bigl[Q(x)(P(x)+P'(x))-P(x)Q'(x)\Bigr](x+1)=Q(x)^2\]</div>
+
+    <div class="math-block">\[(x+1)^n\Bigl[(x+1)S(x)(P(x)+P'(x))-P(x)(nS(x)+(x+1)S'(x))\Bigr]=(x+1)^{2n}S(x)^2\]</div>
+
+    <div class="math-block">\[(x+1)S(x)(P(x)+P'(x))-P(x)(nS(x)+(x+1)S'(x))=(x+1)^nS(x)^2\]</div>
+
+    <p>When \(x=-1\implies -nP(-1)S(-1)=0\)</p>
+
+    <div class="math-block">\[\because n\neq0,\qquad P(-1)\neq0,\qquad S(-1)\neq0\]</div>
+
+    <p>Contradiction</p>
+
+    <div class="math-block">\[\therefore \boxed{\text{No such polynomials }P(x),Q(x)}\]</div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong>.</p>
+      <p>Published and refined by <strong>Jon</strong>.</p>
+      <p><em>Last updated: June 23, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,129 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\textbf{(i)}
+
+\begin{align*}
+\frac{d}{dx}\left(\frac{P(x)}{Q(x)}e^x\right)
+&=\left(\frac{P(x)}{Q(x)}\right)'e^x+\frac{P(x)}{Q(x)}e^x\\
+&=\frac{P'(x)Q(x)-P(x)Q'(x)}{Q(x)^2}e^x+\frac{P(x)Q(x)}{Q(x)^2}e^x\\
+&=\frac{e^x\left(Q(x)(P(x)+P'(x))-P(x)Q'(x)\right)}{Q(x)^2}\\
+&=\frac{x^3-2}{(x+1)^2}e^x
+\end{align*}
+
+
+$$\therefore \bigl[Q(x)(P(x)+P'(x))-P(x)Q'(x)\bigr](x+1)^2=(x^3-2)Q(x)^2$$
+
+When $\ds x=-1\implies0=-3Q(-1)^2\implies Q(-1)=0$
+
+$$\therefore \boxed{x+1\text{ is a factor of }Q(x)}$$
+
+Let $\ds\deg(P(x))=p,\ \deg(Q(x))=q \implies \deg(P(x)+P'(x))=p,\  \deg\bigl(Q(x)(P(x)+P'(x))\bigr)=p+q, \  \deg\bigl(P(x)Q'(x)\bigr)=p+q-1$
+
+$$\deg\left(Q(x)(P(x)+P'(x))-P(x)Q'(x)\right)=p+q$$
+
+$$\therefore \deg\left(\bigl[Q(x)(P(x)+P'(x))-P(x)Q'(x)\bigr](x+1)^2\right)=p+q+2$$
+
+$$\deg\left((x^3-2)Q(x)^2\right)=2q+3$$
+
+$$p+q+2=2q+3\implies p=q+1$$
+
+$$\therefore \boxed{\deg(P(x))=\deg(Q(x))+1}$$
+
+When $Q(x)=x+1$, $Q'(x)=1$
+
+\begin{align*}
+\bigl[Q(x)(P(x)+P'(x))-P(x)Q'(x)\bigr](x+1)^2&=(x^3-2)Q(x)^2\\
+\bigl[(x+1)(P(x)+P'(x))-P(x)\bigr](x+1)^2&=(x^3-2)(x+1)^2\\
+(x+1)(P(x)+P'(x))-P(x)&=x^3-2\\
+xP(x)+(x+1)P'(x)&=x^3-2
+\end{align*}
+
+Let $P(x)=ax^2+bx+c$
+\begin{align*}
+xP(x)+(x+1)P'(x)
+&=x(ax^2+bx+c)+(x+1)(2ax+b)\\
+&=ax^3+(b+2a)x^2+(c+2a+b)x+b
+\end{align*}
+
+$$
+\left\{
+\begin{aligned}
+a&=1\\
+b+2a&=0\\
+c+2a+b&=0\\
+b&=-2
+\end{aligned}
+\right.
+\quad\Longrightarrow\quad
+\left\{
+\begin{aligned}
+a&=1\\
+b&=-2\\
+c&=0
+\end{aligned}
+\right.
+$$
+
+$$\therefore \boxed{P(x)=x^2-2x}$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)}
+
+Assume such $P(x),Q(x)$ exist and $\text{gcd}(P,Q)=1$
+
+\begin{align*}
+\frac{d}{dx}\left(\frac{P(x)e^x}{Q(x)}\right)&=\frac1{x+1}e^x\\
+\frac{e^x\left(Q(x)(P(x)+P'(x))-P(x)Q'(x)\right)}{Q(x)^2}&=\frac1{x+1}e^x
+\end{align*}
+
+$$\therefore \Bigl[Q(x)(P(x)+P'(x))-P(x)Q'(x)\Bigr](x+1)=Q(x)^2$$
+
+When $\ds x=-1\implies0=Q(-1)^2\implies Q(-1)=0$
+
+Let $Q(x)=(x+1)R(x)$
+
+$$Q'(x)=R(x)+(x+1)R'(x)$$
+
+$$
+(x+1)R(x)(P(x)+P'(x))-P(x)(R(x)+(x+1)R'(x))=(x+1)R(x)^2
+$$
+
+When $\ds x=-1\implies -P(-1)R(-1)=0$
+
+$\because \ds \text{gcd}(P,Q)=1$ and $x+1\mid Q(x) \quad \therefore \ds R(-1)=0 \implies (x+1)^2\mid Q(x)$
+
+Let $\ds Q(x)=(x+1)^nS(x),\qquad n\geq2,\qquad S(-1)\neq0$
+
+$$Q'(x)=n(x+1)^{n-1}S(x)+(x+1)^nS'(x)$$
+
+$$\Bigl[Q(x)(P(x)+P'(x))-P(x)Q'(x)\Bigr](x+1)=Q(x)^2$$
+
+$$
+(x+1)^n\Bigl[(x+1)S(x)(P(x)+P'(x))-P(x)(nS(x)+(x+1)S'(x))\Bigr]=(x+1)^{2n}S(x)^2
+$$
+
+$$(x+1)S(x)(P(x)+P'(x))-P(x)(nS(x)+(x+1)S'(x))=(x+1)^nS(x)^2$$
+
+When $x=-1\implies -nP(-1)S(-1)=0$
+
+$$\because n\neq0,\qquad P(-1)\neq0,\qquad S(-1)\neq0$$
+
+Contradiction
+
+$$\therefore \boxed{\text{No such polynomials }P(x),Q(x)}$$
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: June 23, 2026}
+\end{center}
+
+\end{document}
