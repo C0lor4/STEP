@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2025 II Q4 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span> Let \(\displaystyle a=\left\lfloor x\right\rfloor,\  b=x-\left\lfloor x\right\rfloor\)</p>
+
+    <div class="math-block">\[x=a+b,\qquad 0\leq b&lt;1\]</div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \because n\in \mathbb{Z^+}\\
+      \therefore\left\lfloor x+n\right\rfloor
+      &=\left\lfloor a+b+n\right\rfloor\\
+      &=a+n\\
+      &=\left\lfloor x\right\rfloor+n
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)(a)</span></p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      f_n\left(x+\frac1n\right)
+      &=\left\lfloor x+\frac1n\right\rfloor+\left\lfloor x+\frac2n\right\rfloor+\cdots+\left\lfloor x+1\right\rfloor-\left\lfloor nx+1\right\rfloor\\
+      &=\left\lfloor x+\frac1n\right\rfloor+\left\lfloor x+\frac2n\right\rfloor+\cdots+\left\lfloor x+\frac{n-1}{n}\right\rfloor
+      +\left\lfloor x\right\rfloor+1-\left\lfloor nx\right\rfloor-1\\
+      &=\left\lfloor x\right\rfloor+\left\lfloor x+\frac1n\right\rfloor+\cdots+\left\lfloor x+\frac{n-1}{n}\right\rfloor-\left\lfloor nx\right\rfloor\\
+      &=f_n(x)
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">\[\boxed{f_n\left(x+\frac1n\right)=f_n(x)}\]</div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)(b)</span> If \(0\leq t&lt;\dfrac{1}{n}\implies 0\leq t&lt;1\)</p>
+
+    <p>For \(0\leq t&lt;\dfrac1n\implies 0\leq nt&lt;1\implies\lfloor nt\rfloor=0\)</p>
+
+    <p>For \(\displaystyle r=0,1,\dots,n-1 \implies  0\leq t+\frac rn&lt;\frac1n+\frac rn=\frac{r+1}{n}\leq1\)</p>
+
+    <p>\(\displaystyle\because t&lt;\dfrac1n\quad \therefore  t+\frac rn&lt;1 \implies \left\lfloor t+\frac rn\right\rfloor=0\)</p>
+
+    <div class="math-block">\[\implies \boxed{f_n(t)=0}\]</div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)(c)</span> Let \(\displaystyle t=x-\frac{k}{n} \text{ and } 0\leq x-\frac{k}{n}&lt;\frac1n\implies x=t+\dfrac{k}{n}\)</p>
+
+    <p>From part(ii)(a)\(\displaystyle \implies f_n(x)=f_n\left(t+\frac{k}{n}\right)=f_n(t)\)</p>
+
+    <div class="math-block">\[\because f_n(t)=0 \therefore \boxed{f_n(x)=0}\]</div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iii)(a)</span> When \(n=2\) for part (ii)(c)</p>
+
+    <div class="math-block">\[f_2(u)=\left\lfloor u\right\rfloor+\left\lfloor u+\frac12\right\rfloor-\left\lfloor 2u\right\rfloor=0\]</div>
+
+    <p>Let \(\displaystyle u=\dfrac{x}{2} \quad \implies \left\lfloor\frac{x}{2}\right\rfloor+\left\lfloor\frac{x+1}{2}\right\rfloor-\left\lfloor x\right\rfloor=0 \implies \boxed{\left\lfloor\frac{x}{2}\right\rfloor+\left\lfloor\frac{x+1}{2}\right\rfloor=\left\lfloor x\right\rfloor}\)</p>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iii)(b)</span> Let</p>
+
+    <div class="math-block">\[S=\left\lfloor\frac{x+1}{2}\right\rfloor+\left\lfloor\frac{x+2}{2^2}\right\rfloor+\cdots+\left\lfloor\frac{x+2^k}{2^{k+1}}\right\rfloor+\cdots\]</div>
+
+    <p>When \(x=\dfrac{u}{2^k}\), from part (iii)(a),</p>
+
+    <div class="math-block">\[\left\lfloor\frac{u}{2^{k+1}}\right\rfloor+\left\lfloor\frac{u+2^k}{2^{k+1}}\right\rfloor=\left\lfloor\frac{u}{2^k}\right\rfloor \implies \left\lfloor\frac{u+2^k}{2^{k+1}}\right\rfloor=\left\lfloor\frac{u}{2^k}\right\rfloor-\left\lfloor\frac{u}{2^{k+1}}\right\rfloor\]</div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \therefore S_N
+      &=\sum_{k=0}^{N}\left\lfloor\frac{x+2^k}{2^{k+1}}\right\rfloor\\
+      &=\sum_{k=0}^{N}\left(\left\lfloor\frac{x}{2^k}\right\rfloor-\left\lfloor\frac{x}{2^{k+1}}\right\rfloor\right)\\
+      &=\left\lfloor x\right\rfloor-\left\lfloor\frac{x}{2^{N+1}}\right\rfloor
+      \end{aligned}
+      \]
+    </div>
+
+    <p>As \(N\to\infty\), \(\implies\left\lfloor\frac{x}{2^{N+1}}\right\rfloor=0\)</p>
+
+    <div class="math-block">\[\implies\boxed{S=\lfloor x\rfloor}\]</div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Camile</strong>.</p>
+      <p>Published and refined by <strong>Jon</strong>.</p>
+      <p><em>Last updated: June 20, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>
