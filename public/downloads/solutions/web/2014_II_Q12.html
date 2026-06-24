@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2014 II Q12 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .graph-block {
+      margin: 18px 0 22px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .graph-block img {
+      width: min(700px, 100%);
+      height: auto;
+      display: block;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span></p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      P(t\leq T&lt;t+\delta t\mid T\geq t)
+      &=\frac{P(t\leq T&lt;t+\delta t)}{P(T\geq t)}\\
+      &=\frac{F(t+\delta t)-F(t)}{1-F(t)}\\
+      &\approx \frac{f(t)\delta t}{1-F(t)}\\
+      &=h(t)\delta t
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span></p>
+
+    <div class="math-block">\[F(t)=\frac ta,\qquad 0&lt;t&lt;a\]</div>
+
+    <div class="math-block">\[f(t)=F'(t)=\frac1a\]</div>
+
+    <div class="math-block">\[h(t)=\frac{f(t)}{1-F(t)}=\frac{1/a}{1-\frac ta}=\boxed{\frac1{a-t}}\]</div>
+
+    <div class="graph-block">
+      <img src="./2014_II_Q12_graph1.png" alt="Graphs of f(t) and h(t) for part (ii)" />
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iii)</span></p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      h(t)=\frac{f(t)}{1-F(t)}&=\frac1t\\
+      \frac{F'(t)}{1-F(t)}&=\frac1t\\
+      -\ln(1-F(t))&=\ln t+C\\
+      1-F(t)&=\frac{C}{t}
+      \end{aligned}
+      \]
+    </div>
+
+    <p>\(\because T&gt;a,\  F(a)=0 \implies C=a\)</p>
+
+    <div class="math-block">\[\implies F(t)=1-\frac at\]</div>
+
+    <div class="math-block">\[\therefore \boxed{f(t)=F'(t)=\frac{a}{t^2},\qquad t&gt;a}\]</div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iv)</span> When \(\displaystyle h(t)=k,\qquad t&gt;b\)</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \frac{F'(t)}{1-F(t)}&=k\\
+      -\ln(1-F(t))&=kt+C\\
+      1-F(t)&=Ce^{-kt}
+      \end{aligned}
+      \]
+    </div>
+
+    <p>\(\because h(t)=0\) for \(t\leq b,\quad F(b)=0\)</p>
+
+    <div class="math-block">\[1=Ce^{-kb}\implies C=e^{kb}\]</div>
+
+    <div class="math-block">\[1-F(t)=e^{-k(t-b)}\]</div>
+
+    <div class="math-block">\[F(t)=1-e^{-k(t-b)}\]</div>
+
+    <div class="math-block">\[\therefore f(t)=F'(t)=ke^{-k(t-b)},\qquad t&gt;b\]</div>
+
+    <div class="math-block">\[\therefore h(t)=\frac{ke^{-k(t-b)}}{e^{-k(t-b)}}=k\]</div>
+
+    <div class="math-block">\[\boxed{h(t)\text{ is constant for }t&gt;b\iff f(t)=ke^{-k(t-b)}}\]</div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(v)</span></p>
+
+    <div class="math-block">\[h(t)=\left(\frac{\lambda}{\theta^\lambda}\right)t^{\lambda-1}\]</div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \frac{F'(t)}{1-F(t)}&=\frac{\lambda}{\theta^\lambda}t^{\lambda-1}\\
+      -\ln(1-F(t))&=\int_0^t \frac{\lambda}{\theta^\lambda}u^{\lambda-1}\,du\\
+      -\ln(1-F(t))&=\frac{t^\lambda}{\theta^\lambda}\\
+      1-F(t)&=e^{-(t/\theta)^\lambda}
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">\[\therefore f(t)=h(t)(1-F(t))\]</div>
+
+    <div class="math-block">\[\boxed{f(t)=\frac{\lambda}{\theta^\lambda}t^{\lambda-1}e^{-(t/\theta)^\lambda},\qquad t&gt;0}\]</div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong>.</p>
+      <p>Published and refined by <strong>Jon</strong>.</p>
+      <p><em>Last updated: June 24, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,118 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{tikz}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\textbf{(i)}
+
+\begin{align*}
+P(t\leq T<t+\delta t\mid T\geq t)
+&=\frac{P(t\leq T<t+\delta t)}{P(T\geq t)}\\
+&=\frac{F(t+\delta t)-F(t)}{1-F(t)}\\
+&\approx \frac{f(t)\delta t}{1-F(t)}\\
+&=h(t)\delta t
+\end{align*}
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)}
+
+$$F(t)=\frac ta,\qquad 0<t<a$$
+
+$$f(t)=F'(t)=\frac1a$$
+
+$$h(t)=\frac{f(t)}{1-F(t)}=\frac{1/a}{1-\frac ta}=\boxed{\frac1{a-t}}$$
+
+
+\begin{center}
+\begin{tikzpicture}[scale=1.1]
+\draw[->] (0,0) -- (4.5,0) node[right] {$t$};
+\draw[->] (0,0) -- (0,2) node[above] {$f(t)$};
+\draw[thick] (0.4,1.1) -- (3.6,1.1);
+\draw[dashed] (3.6,0) -- (3.6,1.1);
+\node[below] at (0.4,0) {$0$};
+\node[below] at (3.6,0) {$a$};
+\node at (2,1.45) {$f(t)=\frac1a$};
+\end{tikzpicture}
+\qquad
+\begin{tikzpicture}[scale=1.1]
+\draw[->] (0,0) -- (4.5,0) node[right] {$t$};
+\draw[->] (0,0) -- (0,3) node[above] {$h(t)$};
+\draw[dashed] (3.6,0) -- (3.6,3);
+\draw[thick, domain=0.25:3.37, samples=100] plot (\x,{0.7/(3.6-\x)});
+\node[below] at (0.4,0) {$0$};
+\node[below] at (3.6,0) {$a$};
+\node at (2.0,1.3) {$h(t)=\frac1{a-t}$};
+\end{tikzpicture}
+\end{center}
+
+\bigskip\hrule\bigskip
+
+\textbf{(iii)}
+
+\begin{align*}
+h(t)=\frac{f(t)}{1-F(t)}&=\frac1t\\
+\frac{F'(t)}{1-F(t)}&=\frac1t\\
+-\ln(1-F(t))&=\ln t+C\\
+1-F(t)&=\frac{C}{t}
+\end{align*}
+
+$\because T>a,\  F(a)=0 \implies C=a$
+
+$$\implies F(t)=1-\frac at$$
+
+$$\therefore \boxed{f(t)=F'(t)=\frac{a}{t^2},\qquad t>a}$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(iv)} When $\ds h(t)=k,\qquad t>b$
+
+\begin{align*}
+\frac{F'(t)}{1-F(t)}&=k\\
+-\ln(1-F(t))&=kt+C\\
+1-F(t)&=Ce^{-kt}
+\end{align*}
+
+$\because h(t)=0$ for $t\leq b,\quad F(b)=0$
+
+$$1=Ce^{-kb}\implies C=e^{kb}$$
+
+$$1-F(t)=e^{-k(t-b)}$$
+
+$$F(t)=1-e^{-k(t-b)}$$
+
+$$\therefore f(t)=F'(t)=ke^{-k(t-b)},\qquad t>b$$
+
+$$\therefore h(t)=\frac{ke^{-k(t-b)}}{e^{-k(t-b)}}=k$$
+
+$$ \boxed{h(t)\text{ is constant for }t>b\iff f(t)=ke^{-k(t-b)}}$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(v)}
+
+$$h(t)=\left(\frac{\lambda}{\theta^\lambda}\right)t^{\lambda-1}$$
+
+\begin{align*}
+\frac{F'(t)}{1-F(t)}&=\frac{\lambda}{\theta^\lambda}t^{\lambda-1}\\
+-\ln(1-F(t))&=\int_0^t \frac{\lambda}{\theta^\lambda}u^{\lambda-1}\,du\\
+-\ln(1-F(t))&=\frac{t^\lambda}{\theta^\lambda}\\
+1-F(t)&=e^{-(t/\theta)^\lambda}
+\end{align*}
+
+$$\therefore f(t)=h(t)(1-F(t))$$
+
+$$ \boxed{f(t)=\frac{\lambda}{\theta^\lambda}t^{\lambda-1}e^{-(t/\theta)^\lambda},\qquad t>0}$$
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: June 24, 2026}
+\end{center}
+
+\end{document}
