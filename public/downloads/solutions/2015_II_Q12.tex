@@ -1,0 +1,76 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+
+\textbf{(i)} Consider the first two tosses
+
+If the first toss is $\mathrm{T}$, two consecutive heads must need for either to win, which $THH$ occurs first
+
+If they are $\mathrm{HH}$, then the first later tail gives $\mathrm{HHT}$, so $A$ wins
+
+If they are $\mathrm{HT}$, similarly to the first reason, $B$ will win
+
+The first two tosses are equally likely to be $\mathrm{HH},\mathrm{HT},\mathrm{TH},\mathrm{TT}$
+
+$$P(A\text{ wins})=\frac14(1+0+0+0)=\boxed{\frac14}$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)} Consider the first two tosses
+
+If they are $\mathrm{HH}$, then the first later tail gives $\mathrm{HHT}$, so $A$ will win
+
+If they are $\mathrm{TT}$, then the first later head gives $\mathrm{TTH}$, so $C$ will win
+
+If they are $\mathrm{HT}$ or $\mathrm{TH}$, only $B$ or $D$ can win
+
+By symmetry, the total probabilities of $B$ and $D$ winning from these two cases are equal
+
+$$\therefore \boxed{P(A)=P(B)=P(C)=P(D)=\frac14}$$
+
+
+\bigskip\hrule\bigskip
+
+\textbf{(iii)} If the first two tosses are $\mathrm{TT}$, then $\mathrm{T}$ loops and the first later $\mathrm{H}$ gives $\mathrm{TTH}$
+
+$$\boxed{P(C\text{ wins}\mid \mathrm{TT})=1}$$
+
+$$p=P(C\mid \mathrm{HT}),\qquad q=P(C\mid \mathrm{TH}),\qquad r=P(C\mid \mathrm{HH})$$
+
+From $\mathrm{HT}$, the next toss is either $\mathrm{T}$, giving $\mathrm{TT}$, or $\mathrm{H}$, giving $\mathrm{TH}$
+
+$$p=\frac12\cdot1+\frac12q$$
+
+From $\mathrm{TH}$, the next toss is either $\mathrm{H}$, giving $\mathrm{THH}$, so $B$ wins, or $\mathrm{T}$, giving $\mathrm{HT}$
+
+$$q=\frac12\cdot0+\frac12p=\frac12p$$
+
+From $\mathrm{HH}$, the next toss is either $\mathrm{T}$, giving $\mathrm{HT}$, or $\mathrm{H}$, staying at $\mathrm{HH}$
+
+$$r=\frac12p+\frac12r$$
+
+$$\implies p=\frac23,\qquad q=\frac13,\qquad r=\frac23$$
+
+The first two tosses are equally likely to be $\mathrm{HH},\mathrm{HT},\mathrm{TH},\mathrm{TT}$
+
+\begin{align*}
+P(C\text{ wins})
+&=\frac14(r+p+q+1)\\
+&=\frac14\left(\frac23+\frac23+\frac13+1\right)\\
+&=\boxed{\frac23}
+\end{align*}
+
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: June 24, 2026}
+\end{center}
+
+\end{document}

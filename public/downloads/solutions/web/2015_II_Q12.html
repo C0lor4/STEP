@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2015 II Q12 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span> Consider the first two tosses</p>
+
+    <p>If the first toss is \(\mathrm{T}\), two consecutive heads must need for either to win, which \(\mathrm{THH}\) occurs first</p>
+
+    <p>If they are \(\mathrm{HH}\), then the first later tail gives \(\mathrm{HHT}\), so \(A\) wins</p>
+
+    <p>If they are \(\mathrm{HT}\), similarly to the first reason, \(B\) will win</p>
+
+    <p>The first two tosses are equally likely to be \(\mathrm{HH},\mathrm{HT},\mathrm{TH},\mathrm{TT}\)</p>
+
+    <div class="math-block">\[P(A\text{ wins})=\frac14(1+0+0+0)=\boxed{\frac14}\]</div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span> Consider the first two tosses</p>
+
+    <p>If they are \(\mathrm{HH}\), then the first later tail gives \(\mathrm{HHT}\), so \(A\) will win</p>
+
+    <p>If they are \(\mathrm{TT}\), then the first later head gives \(\mathrm{TTH}\), so \(C\) will win</p>
+
+    <p>If they are \(\mathrm{HT}\) or \(\mathrm{TH}\), only \(B\) or \(D\) can win</p>
+
+    <p>By symmetry, the total probabilities of \(B\) and \(D\) winning from these two cases are equal</p>
+
+    <div class="math-block">\[\therefore \boxed{P(A)=P(B)=P(C)=P(D)=\frac14}\]</div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iii)</span> If the first two tosses are \(\mathrm{TT}\), then \(\mathrm{T}\) loops and the first later \(\mathrm{H}\) gives \(\mathrm{TTH}\)</p>
+
+    <div class="math-block">\[\boxed{P(C\text{ wins}\mid \mathrm{TT})=1}\]</div>
+
+    <div class="math-block">\[p=P(C\mid \mathrm{HT}),\qquad q=P(C\mid \mathrm{TH}),\qquad r=P(C\mid \mathrm{HH})\]</div>
+
+    <p>From \(\mathrm{HT}\), the next toss is either \(\mathrm{T}\), giving \(\mathrm{TT}\), or \(\mathrm{H}\), giving \(\mathrm{TH}\)</p>
+
+    <div class="math-block">\[p=\frac12\cdot1+\frac12q\]</div>
+
+    <p>From \(\mathrm{TH}\), the next toss is either \(\mathrm{H}\), giving \(\mathrm{THH}\), so \(B\) wins, or \(\mathrm{T}\), giving \(\mathrm{HT}\)</p>
+
+    <div class="math-block">\[q=\frac12\cdot0+\frac12p=\frac12p\]</div>
+
+    <p>From \(\mathrm{HH}\), the next toss is either \(\mathrm{T}\), giving \(\mathrm{HT}\), or \(\mathrm{H}\), staying at \(\mathrm{HH}\)</p>
+
+    <div class="math-block">\[r=\frac12p+\frac12r\]</div>
+
+    <div class="math-block">\[\implies p=\frac23,\qquad q=\frac13,\qquad r=\frac23\]</div>
+
+    <p>The first two tosses are equally likely to be \(\mathrm{HH},\mathrm{HT},\mathrm{TH},\mathrm{TT}\)</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      P(C\text{ wins})
+      &=\frac14(r+p+q+1)\\
+      &=\frac14\left(\frac23+\frac23+\frac13+1\right)\\
+      &=\boxed{\frac23}
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong>.</p>
+      <p>Published and refined by <strong>Jon</strong>.</p>
+      <p><em>Last updated: June 24, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>
