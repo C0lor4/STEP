@@ -1,0 +1,72 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\textbf{(i)}
+
+$\because e^x$ is increasing,
+
+$$\therefore P(Y\leq e^{x_m})=P(e^X\leq e^{x_m})=P(X\leq x_m)=\frac12$$
+
+$$\therefore \boxed{y_m=e^{x_m}}$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)}
+
+$$P(Y\leq y)=P(e^X\leq y)=P(X\leq \ln y)=F(\ln y)$$
+$$\implies g(y)=\frac{d}{dy}F(\ln y)=f(\ln y)\cdot\frac1y$$
+
+When $y=\lambda\implies g'(\lambda)=0$
+$$g'(y)=\frac{d}{dy}\left(\frac{f(\ln y)}{y}\right)=\frac{f'(\ln y)-f(\ln y)}{y^2}$$
+
+$$\implies f'(\ln\lambda)-f(\ln\lambda)=0$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(iii)} Since the sum of $f(x) = 1$
+
+$$\int^\infty_{-\infty} \frac{1}{\sigma\sqrt{2\pi}}e^{-(x-\mu)^2/(2\sigma^2)}\,dx=1$$
+
+When $x=v-\sigma^2\ds\implies \frac{1}{\sigma\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-(v-\mu-\sigma^2)^2/(2\sigma^2)}dv=1$
+
+$$\mathrm{E}(Y)=\mathrm{E}(e^X)=\frac{1}{\sigma\sqrt{2\pi}}\int_{-\infty}^{\infty}e^x e^{-(x-\mu)^2/(2\sigma^2)}\,dx=\frac{1}{\sigma\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{x-(x-\mu)^2/(2\sigma^2)}\,dx$$
+
+
+$$x-\frac{(x-\mu)^2}{2\sigma^2}
+=\mu+\frac12\sigma^2-\frac{(x-\mu-\sigma^2)^2}{2\sigma^2}$$
+
+$$\implies\mathrm{E}(Y)=e^{\mu+\frac12\sigma^2}
+\cdot\frac{1}{\sigma\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-(x-\mu-\sigma^2)^2/(2\sigma^2)}\,dx=\boxed{e^{\mu+\frac12\sigma^2}}$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(iv)} From part (i), $\ds x_m=\mu \implies y_m=e^\mu$
+
+$$f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-(x-\mu)^2/(2\sigma^2)} \implies f'(x)=-\frac{x-\mu}{\sigma^2}f(x)$$
+
+From part (ii), $\ds f'(\ln\lambda)=f(\ln\lambda)$
+
+$$-\frac{\ln\lambda-\mu}{\sigma^2}f(\ln\lambda)=f(\ln\lambda)$$
+
+$$\implies \ln\lambda=\mu-\sigma^2 \implies \lambda=e^{\mu-\sigma^2}$$
+
+$$\because \mathrm{E}(Y)=e^{\mu+\frac12\sigma^2}$$
+Since $\sigma^2>0$,
+
+$$\therefore e^{\mu-\sigma^2}<e^\mu<e^{\mu+\frac12\sigma^2}$$
+
+$$\boxed{\lambda<y_m<\mathrm{E}(Y)}$$
+
+\bigskip
+\hrule
+\begin{center}
+This solution was submitted by \textbf{Jon}\\[4pt]
+Published and refined by \textbf{Jon}\\[8pt]
+\textit{Last updated: June 24, 2026}
+\end{center}
+
+\end{document}

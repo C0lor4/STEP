@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2014 III Q12 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span></p>
+
+    <div class="math-block">\[\because e^x \text{ is increasing,}\]</div>
+
+    <div class="math-block">\[\therefore P(Y\leq e^{x_m})=P(e^X\leq e^{x_m})=P(X\leq x_m)=\frac12\]</div>
+
+    <div class="math-block">\[\therefore \boxed{y_m=e^{x_m}}\]</div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span></p>
+
+    <div class="math-block">\[P(Y\leq y)=P(e^X\leq y)=P(X\leq \ln y)=F(\ln y)\]</div>
+
+    <div class="math-block">\[\implies g(y)=\frac{d}{dy}F(\ln y)=f(\ln y)\cdot\frac1y\]</div>
+
+    <p>When \(y=\lambda\implies g'(\lambda)=0\)</p>
+
+    <div class="math-block">\[g'(y)=\frac{d}{dy}\left(\frac{f(\ln y)}{y}\right)=\frac{f'(\ln y)-f(\ln y)}{y^2}\]</div>
+
+    <div class="math-block">\[\implies f'(\ln\lambda)-f(\ln\lambda)=0\]</div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iii)</span> Since the sum of \(f(x) = 1\)</p>
+
+    <div class="math-block">\[\int^\infty_{-\infty} \frac{1}{\sigma\sqrt{2\pi}}e^{-(x-\mu)^2/(2\sigma^2)}\,dx=1\]</div>
+
+    <p>When \(x=v-\sigma^2\displaystyle\implies \frac{1}{\sigma\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-(v-\mu-\sigma^2)^2/(2\sigma^2)}dv=1\)</p>
+
+    <div class="math-block">\[\mathrm{E}(Y)=\mathrm{E}(e^X)=\frac{1}{\sigma\sqrt{2\pi}}\int_{-\infty}^{\infty}e^x e^{-(x-\mu)^2/(2\sigma^2)}\,dx=\frac{1}{\sigma\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{x-(x-\mu)^2/(2\sigma^2)}\,dx\]</div>
+
+    <div class="math-block">\[x-\frac{(x-\mu)^2}{2\sigma^2}=\mu+\frac12\sigma^2-\frac{(x-\mu-\sigma^2)^2}{2\sigma^2}\]</div>
+
+    <div class="math-block">\[\implies\mathrm{E}(Y)=e^{\mu+\frac12\sigma^2}\cdot\frac{1}{\sigma\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-(x-\mu-\sigma^2)^2/(2\sigma^2)}\,dx=\boxed{e^{\mu+\frac12\sigma^2}}\]</div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iv)</span> From part (i), \(\displaystyle x_m=\mu \implies y_m=e^\mu\)</p>
+
+    <div class="math-block">\[f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-(x-\mu)^2/(2\sigma^2)} \implies f'(x)=-\frac{x-\mu}{\sigma^2}f(x)\]</div>
+
+    <p>From part (ii), \(\displaystyle f'(\ln\lambda)=f(\ln\lambda)\)</p>
+
+    <div class="math-block">\[-\frac{\ln\lambda-\mu}{\sigma^2}f(\ln\lambda)=f(\ln\lambda)\]</div>
+
+    <div class="math-block">\[\implies \ln\lambda=\mu-\sigma^2 \implies \lambda=e^{\mu-\sigma^2}\]</div>
+
+    <div class="math-block">\[\because \mathrm{E}(Y)=e^{\mu+\frac12\sigma^2}\]</div>
+
+    <p>Since \(\sigma^2>0\),</p>
+
+    <div class="math-block">\[\therefore e^{\mu-\sigma^2}&lt;e^\mu&lt;e^{\mu+\frac12\sigma^2}\]</div>
+
+    <div class="math-block">\[\boxed{\lambda&lt;y_m&lt;\mathrm{E}(Y)}\]</div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong>.</p>
+      <p>Published and refined by <strong>Jon</strong>.</p>
+      <p><em>Last updated: June 24, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>
