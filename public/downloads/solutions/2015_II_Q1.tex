@@ -1,0 +1,54 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\textbf{(i)} Let $\ds f(x)=x-\ln\bigl(1+x\bigr)$
+
+$$f(0)=0,\qquad f'(x)=1-\frac1{1+x}=\frac{x}{1+x}>0$$
+
+$$\therefore x-\ln\bigl(1+x\bigr)>0 \implies x>\ln\bigl(1+x\bigr)\qquad(x>0)$$
+
+When $\ds x=\frac1k$
+
+$$\frac1k>\ln\bigl(1+\frac1k\bigr)=\ln\frac{k+1}{k}=\ln\bigl(k+1\bigr)-\ln\bigl(k\bigr)$$
+
+$$\sum_{k=1}^{n}\frac1k>\sum_{k=1}^{n}\bigl(\ln(k+1)-\ln(k)\Bigr)=\ln(n+1)$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)} Let $\ds g(x)=x+\ln\bigl(1-x\bigr)$
+
+$$g(0)=0,\qquad g'(x)=1-\frac1{1-x}=-\frac{x}{1-x}<0$$
+
+$$\therefore x+\ln(1-x)<0\implies x< -\ln\bigl(1-x\bigr)\qquad(0<x<1)$$
+
+When $\ds x=\frac1{k^2}$, where $k\geq2$
+
+$$\frac1{k^2}<-\ln\bigl(1-\frac1{k^2}\bigr)=\ln(\frac{k^2}{k^2-1})=2\ln k-\ln(k-1)-\ln(k+1)$$
+
+\begin{align*}
+\sum_{k=2}^{n}\frac1{k^2}
+&<\sum_{k=2}^{n}\bigl(2\ln k-\ln(k-1)-\ln(k+1)\bigr)\\
+&=\ln2+\ln n-\ln(n+1)
+\end{align*}
+
+When $n\to\infty$
+
+$$\sum_{k=2}^{\infty}\frac1{k^2}<\ln2$$
+
+$$\implies \sum_{k=1}^{\infty}\frac1{k^2}=1+\sum_{k=2}^{\infty}\frac1{k^2}<1+\ln2$$
+
+
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: June 24, 2026}
+\end{center}
+
+\end{document}

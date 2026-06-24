@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2015 II Q1 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span> Let \(\displaystyle f(x)=x-\ln\bigl(1+x\bigr)\)</p>
+
+    <div class="math-block">\[f(0)=0,\qquad f'(x)=1-\frac1{1+x}=\frac{x}{1+x}>0\]</div>
+
+    <div class="math-block">\[\therefore x-\ln\bigl(1+x\bigr)>0 \implies x>\ln\bigl(1+x\bigr)\qquad(x>0)\]</div>
+
+    <p>When \(\displaystyle x=\frac1k\)</p>
+
+    <div class="math-block">\[\frac1k>\ln\bigl(1+\frac1k\bigr)=\ln\frac{k+1}{k}=\ln\bigl(k+1\bigr)-\ln\bigl(k\bigr)\]</div>
+
+    <div class="math-block">\[\sum_{k=1}^{n}\frac1k>\sum_{k=1}^{n}\bigl(\ln(k+1)-\ln(k)\bigr)=\ln(n+1)\]</div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span> Let \(\displaystyle g(x)=x+\ln\bigl(1-x\bigr)\)</p>
+
+    <div class="math-block">\[g(0)=0,\qquad g'(x)=1-\frac1{1-x}=-\frac{x}{1-x}&lt;0\]</div>
+
+    <div class="math-block">\[\therefore x+\ln(1-x)&lt;0\implies x&lt; -\ln\bigl(1-x\bigr)\qquad(0&lt;x&lt;1)\]</div>
+
+    <p>When \(\displaystyle x=\frac1{k^2}\), where \(k\geq2\)</p>
+
+    <div class="math-block">\[\frac1{k^2}&lt;-\ln\bigl(1-\frac1{k^2}\bigr)=\ln(\frac{k^2}{k^2-1})=2\ln k-\ln(k-1)-\ln(k+1)\]</div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \sum_{k=2}^{n}\frac1{k^2}
+      &lt;\sum_{k=2}^{n}\bigl(2\ln k-\ln(k-1)-\ln(k+1)\bigr)\\
+      &=\ln2+\ln n-\ln(n+1)
+      \end{aligned}
+      \]
+    </div>
+
+    <p>When \(n\to\infty\)</p>
+
+    <div class="math-block">\[\sum_{k=2}^{\infty}\frac1{k^2}&lt;\ln2\]</div>
+
+    <div class="math-block">\[\implies \sum_{k=1}^{\infty}\frac1{k^2}=1+\sum_{k=2}^{\infty}\frac1{k^2}&lt;1+\ln2\]</div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong>.</p>
+      <p>Published and refined by <strong>Jon</strong>.</p>
+      <p><em>Last updated: June 24, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>
