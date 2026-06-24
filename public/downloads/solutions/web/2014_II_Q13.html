@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2014 II Q13 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <div class="math-block">\[\bigl( \text{First num.} \neq \text{Second num.} \bigr)\times \bigl( \text{Third num.} \neq \text{First two num.} \bigr)\times \bigl( \text{Fourth num.} = \text{One of the num.} \bigr)\]</div>
+
+    <div class="math-block">\[P(X=4)=\left(1-\frac1n\right)\left(1-\frac2n\right)\frac3n\]</div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(i)</span></p>
+
+    <div class="math-block">\[P(X=r)=\left(1-\frac1n\right)\left(1-\frac2n\right)\cdots\left(1-\frac{r-2}{n}\right)\frac{r-1}{n}\]</div>
+
+    <p>where \(2\leq r\leq n+1\)</p>
+
+    <p>\(\because X\in\{2,3,\dots,n+1\}\), the sum of the probability \(=1\)</p>
+
+    <div class="math-block">\[\therefore \sum_{r=2}^{n+1}P(X=r)=1\]</div>
+
+    <div class="math-block">\[\therefore \frac1n+\left(1-\frac1n\right)\frac2n+\left(1-\frac1n\right)\left(1-\frac2n\right)\frac3n+\cdots=1\]</div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span></p>
+
+    <div class="math-block">\[\boxed{\mathrm{E}(X)=\sum_{r=2}^{n+1}r\left(1-\frac1n\right)\left(1-\frac2n\right)\cdots\left(1-\frac{r-2}{n}\right)\frac{r-1}{n}}\]</div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iii)</span> \(\displaystyle X\geq k\iff I_1,I_2,\dots,I_{k-1}\) are distinct</p>
+
+    <div class="math-block">\[\boxed{P(X\geq k)=\left(1-\frac1n\right)\left(1-\frac2n\right)\cdots\left(1-\frac{k-2}{n}\right)}\]</div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iv)</span></p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \mathrm{E}(Y)
+      &=\sum_{r=1}^{N}rP(Y=r)\\
+      &=\sum_{r=1}^{N}\sum_{k=1}^{r}P(Y=r)\\
+      &=\sum_{k=1}^{N}\sum_{r=k}^{N}P(Y=r)\\
+      &=\sum_{k=1}^{N}P(Y\geq k)
+      \end{aligned}
+      \]
+    </div>
+
+    <p>Let \(\displaystyle S_k=\left(1-\frac1n\right)\left(1-\frac2n\right)\cdots\left(1-\frac{k-1}{n}\right)\), where \(S_1=1\)</p>
+
+    <p>From part (iii) \(\implies \displaystyle P(X\geq k+1)=S_k,\quad 1\leq k\leq n\)</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \mathrm{E}(X)
+      &=\sum_{k=1}^{n+1}P(X\geq k)\\
+      &=P(X\geq1)+\sum_{k=1}^{n}P(X\geq k+1)\\
+      &=1+\sum_{k=1}^{n}S_k
+      \end{aligned}
+      \]
+    </div>
+
+    <p>From part (ii) \(\implies \displaystyle P(X=k+1)=S_k\,\frac{k}{n},\quad 1\leq k\leq n\)</p>
+
+    <p>\(\because \displaystyle \sum_{k=1}^{n}P(X=k+1)=1\quad \therefore \sum_{k=1}^{n}\frac{k}{n}S_k=1\)</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \mathrm{E}(X)
+      &=\sum_{k=1}^{n}(k+1)P(X=k+1)\\
+      &=\sum_{k=1}^{n}(k+1)\frac{k}{n}S_k\\
+      &=\sum_{k=1}^{n}\frac{k^2}{n}S_k+\sum_{k=1}^{n}\frac{k}{n}S_k\\
+      &=1+\sum_{k=1}^{n}\frac{k^2}{n}S_k
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">\[1+\sum_{k=1}^{n}S_k=1+\sum_{k=1}^{n}\frac{k^2}{n}S_k\]</div>
+
+    <div class="math-block">\[\therefore \sum_{k=1}^{n}S_k\left(1-\frac{k^2}{n}\right)=0\]</div>
+
+    <div class="math-block">\[\boxed{\left(1-\frac{1^2}{n}\right)+\left(1-\frac1n\right)\left(1-\frac{2^2}{n}\right)+\left(1-\frac1n\right)\left(1-\frac2n\right)\left(1-\frac{3^2}{n}\right)+\cdots=0}\]</div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong>.</p>
+      <p>Published and refined by <strong>Jon</strong>.</p>
+      <p><em>Last updated: June 24, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>
