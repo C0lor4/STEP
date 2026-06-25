@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2009 III Q4 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span></p>
+
+    <div class="math-block">\[\int_0^\infty e^{-st}e^{-bt}f(t)\,dt=\int_0^\infty e^{-(s+b)t}f(t)\,dt=F(s+b)\]</div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span> Let \(u=at, \ du = a dt\).</p>
+
+    <div class="math-block">\[\int_0^\infty e^{-st}f(at)\,dt=\frac1a\int_0^\infty e^{-(s/a)u}f(u)\,du=a^{-1}F\bigl(\frac{s}{a}\bigr)\]</div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iii)</span></p>
+
+    <div class="math-block">\[\int_0^\infty e^{-st}f'(t)\,dt=\bigl[e^{-st}f(t)\bigr]_0^\infty+s\int_0^\infty e^{-st}f(t)\,dt=sF(s)-f(0)\]</div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iv)</span></p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      F(s)&=\int_0^\infty e^{-st}\sin t\,dt\\
+      &=\left[-e^{-st}\cos t\right]_0^\infty-s\int_0^\infty e^{-st}\cos t\,dt\\
+      &=1-s\int_0^\infty e^{-st}\cos t\,dt\\
+      &=1-s\left(\left[e^{-st}\sin t\right]_0^\infty+s\int_0^\infty e^{-st}\sin t\,dt\right)\\
+      &=1-s^2F(s)
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">\[\implies \boxed{F(s)=\frac1{s^2+1}}\]</div>
+
+    <hr class="divider" />
+
+    <p>Let \(f(t)=\sin t, \ f'(t)=\cos t,\  f(0)=0\).</p>
+
+    <div class="math-block">\[\int_0^\infty e^{-st}f(t) \,dt=\frac1{s^2+1}\]</div>
+
+    <div class="math-block">\[\int_0^\infty e^{-st} f'(t)\,dt=s\cdot\frac1{s^2+1}-0=\frac{s}{s^2+1}\]</div>
+
+    <div class="math-block">\[\int_0^\infty e^{-st}f'(qt)\,dtx=\frac1q\cdot\frac{\frac{s}{q}}{\bigl(\frac{s}{q}\bigr)^2+1}=\frac{s}{s^2+q^2}\]</div>
+
+    <div class="math-block">\[\int_0^\infty e^{-st}e^{-pt}\cos(qt)\,dt=\frac{s+p}{(s+p)^2+q^2}\]</div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong>.</p>
+      <p>Published and refined by <strong>Jon</strong>.</p>
+      <p><em>Last updated: June 25, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>

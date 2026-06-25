@@ -1,0 +1,60 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\textbf{(i)}
+
+$$\int_0^\infty e^{-st}e^{-bt}f(t)\,dt
+=\int_0^\infty e^{-(s+b)t}f(t)\,dt=F(s+b)$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)} Let $u=at, \ du = a dt$
+
+$$\int_0^\infty e^{-st}f(at)\,dt
+=\frac1a\int_0^\infty e^{-(s/a)u}f(u)\,du
+=a^{-1}F\bigl(\frac{s}{a}\bigr)$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(iii)}
+$$\int_0^\infty e^{-st}f'(t)\,dt=\bigl[e^{-st}f(t)\bigr]_0^\infty+s\int_0^\infty e^{-st}f(t)\,dt=sF(s)-f(0)$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(iv)}
+
+
+\begin{align*}
+F(s)&=\int_0^\infty e^{-st}\sin t\,dt\\
+&=\left[-e^{-st}\cos t\right]_0^\infty-s\int_0^\infty e^{-st}\cos t\,dt\\
+&=1-s\int_0^\infty e^{-st}\cos t\,dt\\
+&=1-s\left(\left[e^{-st}\sin t\right]_0^\infty+s\int_0^\infty e^{-st}\sin t\,dt\right)\\
+&=1-s^2F(s)
+\end{align*}
+$$\implies \boxed{F(s)=\frac1{s^2+1}}$$
+
+
+\bigskip\hrule\bigskip
+Let $f(t)=\sin t, \ f'(t)=\cos t,\  f(0)=0$
+
+$$\int_0^\infty e^{-st}f(t) \,dt=\frac1{s^2+1}$$
+
+$$\int_0^\infty e^{-st} f'(t)\,dt=s\cdot\frac1{s^2+1}-0=\frac{s}{s^2+1}$$
+
+$$\int_0^\infty e^{-st}f'(qt)\,dtx=\frac1q\cdot\frac{\frac{s}{q}}{\bigl(\frac{s}{q}\bigr)^2+1}=\frac{s}{s^2+q^2}$$
+
+$$\int_0^\infty e^{-st}e^{-pt}\cos(qt)\,dt=\frac{s+p}{(s+p)^2+q^2}$$
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: June 25, 2026}
+\end{center}
+
+\end{document}
