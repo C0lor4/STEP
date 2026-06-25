@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2010 I Q3 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \sin(x+y)-\sin(x-y)
+      &=(\sin x\cos y+\cos x\sin y)-(\sin x\cos y-\cos x\sin y)\\
+      &=2\cos x\sin y
+      \end{aligned}
+      \]
+    </div>
+
+    <p>Let \(\displaystyle x=\frac{A+B}{2},\  y=\frac{A-B}{2} \implies x+y=A,\  x-y=B\).</p>
+
+    <div class="math-block">\[\sin A-\sin B=2\cos\frac{A+B}{2}\sin\frac{A-B}{2}\]</div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \cos A-\cos B
+      &=\cos\bigl(x+y\bigr)-\cos\bigl(x-y\bigr)\\
+      &=(\cos x\cos y-\sin x\sin y)-(\cos x\cos y+\sin x\sin y)\\
+      &=-2\sin x\sin y
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">\[\cos A-\cos B=-2\sin\frac{A+B}{2}\sin\frac{A-B}{2}\]</div>
+
+    <hr class="divider" />
+
+    <p>Gradient of \(PQ\):</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      m_{PQ}
+      &=\frac{b\sin q-b\sin p}{a\cos q-a\cos p}\\
+      &=\frac{b}{a}\cdot
+      \frac{2\cos\frac{p+q}{2}\sin\frac{q-p}{2}}
+      {-2\sin\frac{p+q}{2}\sin\frac{q-p}{2}}\\
+      &=-\frac ba\cot\frac{p+q}{2}
+      \end{aligned}
+      \]
+    </div>
+
+    <p>Gradient of \(SR\):</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      m_{SR}
+      &=\frac{b\sin s-b\sin r}{a\cos s-a\cos r}\\
+      &=-\frac ba\cot\frac{r+s}{2}
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">\[PQ\parallel SR\iff m_{PQ}=m_{SR}\]</div>
+
+    <div class="math-block">\[\iff \cot\frac{p+q}{2}=\cot\frac{r+s}{2}\]</div>
+
+    <div class="math-block">\[\iff \frac{r+s}{2}=\frac{p+q}{2}+k\pi,\qquad k\in\mathbb Z\]</div>
+
+    <div class="math-block">\[\iff r+s-p-q=2k\pi\]</div>
+
+    <p>Since</p>
+
+    <div class="math-block">\[0\leq p&lt;q&lt;r&lt;s&lt;2\pi\]</div>
+
+    <div class="math-block">\[0&lt;r+s-p-q&lt;4\pi\]</div>
+
+    <div class="math-block">\[\therefore k=1\]</div>
+
+    <div class="math-block">\[\therefore PQ\parallel SR\iff r+s-p-q=2\pi\]</div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong>.</p>
+      <p>Published and refined by <strong>Jon</strong>.</p>
+      <p><em>Last updated: June 25, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>

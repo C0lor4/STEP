@@ -1,0 +1,73 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\begin{align*}
+\sin(x+y)-\sin(x-y)
+&=(\sin x\cos y+\cos x\sin y)-(\sin x\cos y-\cos x\sin y)\\
+&=2\cos x\sin y
+\end{align*}
+
+Let $\ds x=\frac{A+B}{2},\  y=\frac{A-B}{2} \implies x+y=A,\  x-y=B$
+
+$$\sin A-\sin B=2\cos\frac{A+B}{2}\sin\frac{A-B}{2}$$
+
+\begin{align*}
+\cos A-\cos B
+&=\cos\bigl(x+y\bigr)-\cos\bigl(x-y\bigr)\\
+&=(\cos x\cos y-\sin x\sin y)-(\cos x\cos y+\sin x\sin y)\\
+&=-2\sin x\sin y
+\end{align*}
+$$\cos A-\cos B=-2\sin\frac{A+B}{2}\sin\frac{A-B}{2}$$
+
+\bigskip\hrule\bigskip
+
+Gradient of $PQ$:
+
+\begin{align*}
+m_{PQ}
+&=\frac{b\sin q-b\sin p}{a\cos q-a\cos p}\\
+&=\frac{b}{a}\cdot
+\frac{2\cos\frac{p+q}{2}\sin\frac{q-p}{2}}
+{-2\sin\frac{p+q}{2}\sin\frac{q-p}{2}}\\
+&=-\frac ba\cot\frac{p+q}{2}
+\end{align*}
+
+Gradient of $SR$:
+
+\begin{align*}
+m_{SR}
+&=\frac{b\sin s-b\sin r}{a\cos s-a\cos r}\\
+&=-\frac ba\cot\frac{r+s}{2}
+\end{align*}
+
+$$PQ\parallel SR\iff m_{PQ}=m_{SR}$$
+
+$$\iff \cot\frac{p+q}{2}=\cot\frac{r+s}{2}$$
+
+$$\iff \frac{r+s}{2}=\frac{p+q}{2}+k\pi,\qquad k\in\mathbb Z$$
+
+$$\iff r+s-p-q=2k\pi$$
+
+Since
+
+$$0\leq p<q<r<s<2\pi$$
+
+$$0<r+s-p-q<4\pi$$
+
+$$\therefore k=1$$
+
+$$\therefore PQ\parallel SR\iff r+s-p-q=2\pi$$
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: June 25, 2026}
+\end{center}
+
+\end{document}
