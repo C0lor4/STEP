@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2009 I Q2 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <div class="math-block">\[3y^2\frac{dy}{dx}=3x^2 \implies \frac{dy}{dx}=\frac{x^2}{y^2}\]</div>
+
+    <p>At \((-a,b)\), \(\displaystyle \frac{dy}{dx}=\frac{a^2}{b^2}\).</p>
+
+    <p>Tangent: \(\displaystyle y-b=\frac{a^2}{b^2}(x+a)\implies b^2y-a^2x=a^3+b^3\).</p>
+
+    <hr class="divider" />
+
+    <p>When \(a=1,\ b=2 \implies y^3=x^3+9\).</p>
+
+    <p>Tangent: \(4y-x=9\).</p>
+
+    <div class="math-block">\[\implies \left(\frac{x+9}{4}\right)^3=x^3+9\]</div>
+
+    <div class="math-block">\[x^3+27x^2+243x+729=64x^3+576\]</div>
+
+    <div class="math-block">\[\therefore 7x^3-3x^2-27x-17=0\]</div>
+
+    <hr class="divider" />
+
+    <div class="math-block">\[7x^3-3x^2-27x-17=(x+1)^2(7x-17)\]</div>
+
+    <p>When \(\displaystyle x=\frac{17}{7}\implies y=\frac{20}{7}\).</p>
+
+    <div class="math-block">\[\because y^3=x^3+1^3+2^3\]</div>
+
+    <div class="math-block">\[\therefore \left(\frac{20}{7}\right)^3=\left(\frac{17}{7}\right)^3+1^3+2^3\]</div>
+
+    <div class="math-block">\[\therefore 20^3=17^3+7^3+14^3\]</div>
+
+    <div class="math-block">\[\implies \boxed{p=20,\quad q=17,\quad r=7,\quad s=14}\]</div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong>.</p>
+      <p>Published and refined by <strong>Jon</strong>.</p>
+      <p><em>Last updated: June 25, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>
