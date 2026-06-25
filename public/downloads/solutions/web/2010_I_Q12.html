@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2010 I Q12 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \sum_{n=1}^{\infty}P(X\geq n)
+      &=\sum_{n=1}^{\infty}\sum_{r=n}^{\infty}P(X=r)\\
+      &=\sum_{r=1}^{\infty}\sum_{n=1}^{r}P(X=r)\\
+      &=\sum_{r=1}^{\infty}rP(X=r)\\
+      &=\mathrm{E}(X)
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="math-block">\[X\geq4\iff \text{first three boxes are all daddy or all mummy}\]</div>
+
+    <div class="math-block">\[P(X\geq4)=p^3+q^3\]</div>
+
+    <div class="math-block">\[X\geq n\iff \text{first }n-1\text{ boxes are all daddy or all mummy}\]</div>
+
+    <div class="math-block">\[P(X\geq n)=p^{n-1}+q^{n-1}\]</div>
+
+    <div class="math-block">\[P(X\geq1)=1,\  P(X\geq2)=1\]</div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \mathrm{E}(X)
+      &=1+1+\sum_{n=3}^{\infty}\bigl(p^{n-1}+q^{n-1}\bigr)\\
+      &=2+\frac{p^2}{1-p}+\frac{q^2}{1-q}\\
+      &=2+\frac{p^2}{q}+\frac{q^2}{p}\\
+      &=2+\frac{p^3+q^3}{pq}
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">\[p+q=1\implies p^3+q^3=(p+q)^3-3pq(p+q)=1-3pq\]</div>
+
+    <div class="math-block">\[\therefore \mathrm{E}(X)=2+\frac{1-3pq}{pq}=\frac1{pq}-1\]</div>
+
+    <div class="math-block">\[pq\leq\left(\frac{p+q}{2}\right)^2=\frac14\]</div>
+
+    <div class="math-block">\[\therefore \mathrm{E}(X)=\frac1{pq}-1\geq4-1=3\]</div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong>.</p>
+      <p>Published and refined by <strong>Jon</strong>.</p>
+      <p><em>Last updated: June 25, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>
