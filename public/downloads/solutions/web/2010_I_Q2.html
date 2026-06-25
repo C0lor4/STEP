@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2010 I Q2 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    .graph-block {
+      margin: 16px auto 8px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .graph-block svg {
+      width: min(420px, 100%);
+      height: auto;
+      overflow: visible;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <div class="math-block">\[y=\frac{x-a}{x-b}e^x\]</div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \frac{dy}{dx}
+      &=e^x\left(\frac{x-a}{x-b}+\frac{a-b}{(x-b)^2}\right)\\
+      &=\frac{e^x}{(x-b)^2}\bigl((x-a)(x-b)+a-b\bigr)\\
+      &=\frac{e^x}{(x-b)^2}\bigl(x^2-(a+b)x+ab+a-b\bigr)
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \Delta >0\implies \bigl(a+b\bigr)^2-4(ab+a-b)&>0\\
+      (a-b)(a-b-4)&>0
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">\[a-b&lt;0\quad\text{or}\quad a-b>4\]</div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(i)</span></p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      x^2-\frac12x-\frac12&=0\\
+      2x^2-x-1&=0\\
+      (2x+1)(x-1)&=0
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">\[x=-\frac12,\quad x=1\]</div>
+
+    <p>Vertical asymptote: \(\displaystyle x=\frac12\)</p>
+
+    <div class="math-block">\[\therefore -\frac12&lt;\frac12&lt;1\]</div>
+
+    <div class="math-block">
+      \[
+      \renewcommand{\arraystretch}{1.4}
+      \begin{array}{c!{\vrule width 1.2pt}c|c|c|c|c|c|c}
+      x&-\infty&-\frac12&0&\frac12^-&\frac12^+&1&\infty\\[4pt]
+      \hline
+      \rule[5pt]{0pt}{14pt}y&0&\frac{e^{-1/2}}{2}&0&-\infty&\infty&2e&\infty
+      \end{array}
+      \]
+    </div>
+
+    <div class="graph-block">
+      <svg viewBox="0 0 420 280" aria-label="Graph for part i">
+        <defs>
+          <marker id="arrow1" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+            <path d="M0,0 L8,4 L0,8 Z" fill="#111827"></path>
+          </marker>
+        </defs>
+        <line x1="40" y1="140" x2="390" y2="140" stroke="#111827" stroke-width="1.8" marker-end="url(#arrow1)"/>
+        <line x1="170" y1="250" x2="170" y2="20" stroke="#111827" stroke-width="1.8" marker-end="url(#arrow1)"/>
+        <line x1="250" y1="250" x2="250" y2="20" stroke="#111827" stroke-dasharray="5 5" stroke-width="1.4"/>
+        <path d="M35 139 C85 140, 120 141, 169 140" fill="none" stroke="#111827" stroke-dasharray="5 5" stroke-width="1.2"/>
+        <path d="M251 138 C300 131, 345 103, 390 45" fill="none" stroke="#111827" stroke-dasharray="5 5" stroke-width="1.2"/>
+        <path d="M35 111 C95 118, 135 129, 158 137 C164 139, 167 140, 169 140" fill="none" stroke="#111827" stroke-width="2"/>
+        <path d="M172 138 C190 128, 213 95, 247 28" fill="none" stroke="#111827" stroke-width="2"/>
+        <path d="M253 22 C287 42, 333 78, 390 26" fill="none" stroke="#111827" stroke-width="2"/>
+        <circle cx="170" cy="140" r="3" fill="#111827"/>
+        <circle cx="120" cy="111" r="3" fill="#111827"/>
+        <circle cx="310" cy="78" r="3" fill="#111827"/>
+        <text x="397" y="147" font-size="18">x</text>
+        <text x="176" y="22" font-size="18">y</text>
+        <text x="240" y="155" font-size="16">\( \frac12 \)</text>
+        <text x="108" y="158" font-size="16">\( -\frac12 \)</text>
+        <text x="166" y="158" font-size="16">\( 0 \)</text>
+        <text x="307" y="158" font-size="16">\( 1 \)</text>
+        <text x="326" y="56" font-size="16">\( y=e^x \)</text>
+      </svg>
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span></p>
+
+    <div class="math-block">\[x^2-\frac92x+\frac92=0\implies (2x-3)(x-3)=0\]</div>
+
+    <div class="math-block">\[x=\frac32,\qquad x=3\]</div>
+
+    <p>Vertical asymptote: \(x=0\)</p>
+
+    <div class="math-block">
+      \[
+      \renewcommand{\arraystretch}{1.4}
+      \begin{array}{c!{\vrule width 1.2pt}c|c|c|c|c|c}
+      x&-\infty&0^-&0^+&\frac32&3&\infty\\
+      \hline
+      \rule[-4pt]{0pt}{14pt}y&0&\infty&-\infty&-\frac{3}{2}e^{3/2}&-\frac12e^3&\infty
+      \end{array}
+      \]
+    </div>
+
+    <div class="graph-block">
+      <svg viewBox="0 0 420 280" aria-label="Graph for part ii">
+        <defs>
+          <marker id="arrow2" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+            <path d="M0,0 L8,4 L0,8 Z" fill="#111827"></path>
+          </marker>
+        </defs>
+        <line x1="35" y1="115" x2="390" y2="115" stroke="#111827" stroke-width="1.8" marker-end="url(#arrow2)"/>
+        <line x1="120" y1="250" x2="120" y2="20" stroke="#111827" stroke-width="1.8" marker-end="url(#arrow2)"/>
+        <line x1="120" y1="250" x2="120" y2="20" stroke="#111827" stroke-dasharray="5 5" stroke-width="1.4"/>
+        <path d="M35 113 C70 112, 92 110, 117 55" fill="none" stroke="#111827" stroke-width="2"/>
+        <path d="M123 245 C135 210, 165 160, 210 184 C250 205, 292 218, 390 40" fill="none" stroke="#111827" stroke-width="2"/>
+        <path d="M35 113 C90 112, 145 105, 210 85 C270 63, 335 25, 390 -35" fill="none" stroke="#111827" stroke-dasharray="5 5" stroke-width="1.2"/>
+        <circle cx="210" cy="184" r="3" fill="#111827"/>
+        <circle cx="270" cy="205" r="3" fill="#111827"/>
+        <text x="397" y="122" font-size="18">x</text>
+        <text x="126" y="22" font-size="18">y</text>
+        <text x="114" y="132" font-size="16">\( 0 \)</text>
+        <text x="201" y="132" font-size="16">\( \frac32 \)</text>
+        <text x="266" y="132" font-size="16">\( 3 \)</text>
+        <text x="332" y="132" font-size="16">\( \frac92 \)</text>
+        <text x="314" y="56" font-size="16">\( y=e^x \)</text>
+      </svg>
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong>.</p>
+      <p>Published and refined by <strong>Jon</strong>.</p>
+      <p><em>Last updated: June 25, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>

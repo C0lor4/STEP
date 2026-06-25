@@ -1,0 +1,122 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+$$y=\frac{x-a}{x-b}e^x$$
+
+\begin{align*}
+\frac{dy}{dx}
+&=e^x\left(\frac{x-a}{x-b}+\frac{a-b}{(x-b)^2}\right)\\
+&=\frac{e^x}{(x-b)^2}\bigl((x-a)(x-b)+a-b\bigr)\\
+&=\frac{e^x}{(x-b)^2}\bigl(x^2-(a+b)x+ab+a-b\bigr)
+\end{align*}
+
+\begin{align*}
+\Delta >0\implies \bigl(a+b\bigr)^2-4(ab+a-b)&>0\\
+(a-b)(a-b-4)&>0
+\end{align*}
+
+$$a-b<0\quad\text{or}\quad a-b>4$$
+\bigskip\hrule\bigskip
+
+\textbf{(i)} 
+
+\begin{align*}
+x^2-\frac12x-\frac12&=0\\
+2x^2-x-1&=0\\
+(2x+1)(x-1)&=0
+\end{align*}
+$$x=-\frac12,\quad x=1$$
+
+Vertical asymptote: $\ds x=\frac12$
+$$\therefore -\frac12<\frac12<1$$
+
+$$
+\renewcommand{\arraystretch}{1.4}
+\begin{array}{c!{\vrule width 1.2pt}c|c|c|c|c|c|c}
+x&-\infty&-\frac12&0&\frac12^-&\frac12^+&1&\infty\\[4pt]
+\hline
+\rule[5pt]{0pt}{14pt}y&0&\frac{e^{-1/2}}{2}&0&-\infty&\infty&2e&\infty
+\end{array}
+$$
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+axis lines=middle,
+xmin=-2.2,xmax=2.2,
+ymin=-6,ymax=10,
+width=9cm,height=6cm,
+xlabel={$x$}, ylabel={$y$},
+xtick={-0.5,0,0.5,1},
+xticklabels={$-\frac12$,$0$,, $1$},
+ytick=\empty,
+samples=200
+]
+\addplot[dashed] coordinates {(0.5,-6) (0.5,10)};
+\addplot[dashed,domain=-2.2:2.2] {exp(x)};
+\addplot[domain=-2.2:0.48] {exp(x)*x/(x-0.5)};
+\addplot[domain=0.52:1.65] {exp(x)*x/(x-0.5)};
+\addplot[only marks] coordinates {(-0.5,0.303265) (1,5.43656) (0,0)};
+\node at (axis cs:0.65,-1.2) {$\frac12$};
+\node at (axis cs:1.55,4.9) {$y=e^x$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)} 
+$$x^2-\frac92x+\frac92=0\implies (2x-3)(x-3)=0$$
+
+$$x=\frac32,\qquad x=3$$
+
+Vertical asymptote: $x=0$
+
+$$
+\renewcommand{\arraystretch}{1.4}
+\begin{array}{c!{\vrule width 1.2pt}c|c|c|c|c|c}
+x&-\infty&0^-&0^+&\frac32&3&\infty\\
+\hline
+\rule[-4pt]{0pt}{14pt}y&0&\infty&-\infty&-\frac{3}{2}e^{3/2}&-\frac12e^3&\infty
+\end{array}
+$$
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+axis lines=middle,
+xmin=-4,xmax=5.5,
+ymin=-15,ymax=12,
+width=9cm,height=6cm,
+xlabel={$x$}, ylabel={$y$},
+xtick={0,1.5,3,4.5},
+xticklabels={$0$,$\frac32$,$3$,$\frac92$},
+ytick=\empty,
+samples=250
+]
+\addplot[dashed] coordinates {(0,-15) (0,12)};
+\addplot[dashed,domain=-4:2.45] {exp(x)};
+\addplot[domain=-4:-0.05] {exp(x)*(x-4.5)/x};
+\addplot[domain=0.05:5.15] {exp(x)*(x-4.5)/x};
+\addplot[only marks] coordinates {(1.5,-8.96338) (3,-10.0428) (4.5,0)};
+\node at (axis cs:3,6.1) {$y=e^x$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: June 25, 2026}
+\end{center}
+
+\end{document}

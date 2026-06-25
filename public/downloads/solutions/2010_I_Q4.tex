@@ -1,0 +1,46 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+$$x=\frac1{t^2-1}, \ x+1=\frac{t^2}{t^2-1},\ t=\frac{\sqrt{x+1}}{\sqrt{x}}$$
+
+$$\sqrt{x(x+1)}=\frac{t}{t^2-1}\  dx=-\frac{2t}{(t^2-1)^2}\,dt$$
+
+\begin{align*}
+\int\frac1{\sqrt{x(x+1)}}\,dx
+&=\int \frac{t^2-1}{t}\cdot\left(-\frac{2t}{(t^2-1)^2}\right)\,dt\\
+&=-2\int\frac1{t^2-1}\,dt\\
+&=\ln\left|\frac{t+1}{t-1}\right|+c
+\end{align*}
+
+
+$$\frac{t+1}{t-1}=\frac{\sqrt{x+1}+\sqrt{x}}{\sqrt{x+1}-\sqrt{x}}=\bigl(\sqrt{x+1}+\sqrt{x}\bigr)^2$$
+
+$$\int\frac1{\sqrt{x(x+1)}}\,dx=2\ln\bigl(\sqrt{x}+\sqrt{x+1}\bigr)+c$$
+
+\bigskip\hrule\bigskip
+
+$$y=\frac1{\sqrt{x}}-\frac1{\sqrt{x+1}}$$
+
+\begin{align*}
+V
+&=\pi\int_{1/8}^{9/16}y^2\,dx\\
+&=\pi\int_{1/8}^{9/16}\left(\frac1x+\frac1{x+1}-\frac2{\sqrt{x(x+1)}}\right)\,dx\\
+&=\pi\left[\ln x+\ln(x+1)-4\ln\bigl(\sqrt{x}+\sqrt{x+1}\bigr)\right]_{1/8}^{9/16}\\
+&=\pi\left(\ln\frac{225}{256}-4\ln2-\left(\ln\frac9{64}-4\ln\sqrt2\right)\right)\\
+&=\pi\left(\ln\frac{225}{4096}-\ln\frac9{256}\right)\\
+&=2\pi\ln\frac54
+\end{align*}
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: June 25, 2026}
+\end{center}
+
+\end{document}
