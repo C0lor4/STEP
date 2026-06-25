@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2009 I Q6 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span></p>
+
+    <div class="math-block">\[\frac{x^2}{x+1}=x-1+\frac1{x+1}\]</div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \int_{1/m}^{m}\frac{x^2}{x+1}\,dx
+      &=\left[\frac{x^2}{2}-x+\ln(x+1)\right]_{1/m}^{m}\\
+      &=\frac{m^2}{2}-m-\frac1{2m^2}+\frac1m+\ln\frac{m+1}{1+\frac1m}\\
+      &=\frac{(m-1)^3(m+1)}{2m^2}+\ln m
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span> Let \(\displaystyle u=\frac1x,\ dx=-\frac1{u^2}\,du\).</p>
+
+    <div class="math-block">\[\int_{1/m}^{m}\frac{1}{x^n(x+1)}\,dx=\int_{m}^{1/m}\frac{u^{n+1}}{u+1}\left(-\frac1{u^2}\right)\,du=\int_{1/m}^{m}\frac{u^{n-1}}{u+1}\,du\]</div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iii)(a)</span></p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \int_{1/2}^{2}\frac{x^5+3}{x^3(x+1)}\,dx
+      &=\int_{1/2}^{2}\frac{x^2}{x+1}\,dx
+      +3\int_{1/2}^{2}\frac1{x^3(x+1)}\,dx\\
+      &=\int_{1/2}^{2}\frac{x^2}{x+1}\,dx
+      +3\int_{1/2}^{2}\frac{x^2}{x+1}\,dx\\
+      &=4\left(\frac38+\ln2\right)\\
+      &=\frac32+4\ln2
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iii)(b)</span></p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \int_{1}^{2}\frac{x^5+x^3+1}{x^3(x+1)}\,dx
+      &=\int_{1}^{2}\frac{x^2}{x+1}\,dx
+      +\int_{1}^{2}\frac1{x+1}\,dx
+      +\int_{1}^{2}\frac1{x^3(x+1)}\,dx
+      \end{aligned}
+      \]
+    </div>
+
+    <p>Let \(u=1/x,\ du=-x^{-2}dx=u^2dx\).</p>
+
+    <div class="math-block">\[\int_{1}^{2}\frac1{x^3(x+1)}\,dx=\int_{1/2}^{1}\frac{u^2}{u+1}\,du\]</div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \int_{1}^{2}\frac{x^5+x^3+1}{x^3(x+1)}\,dx
+      &=\int_{1/2}^{2}\frac{x^2}{x+1}\,dx+\int_{1}^{2}\frac1{x+1}\,dx\\
+      &=\frac38+\ln2+\ln\frac32\\
+      &=\frac38+\ln3
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong>.</p>
+      <p>Published and refined by <strong>Jon</strong>.</p>
+      <p><em>Last updated: June 25, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>
