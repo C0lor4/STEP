@@ -1,0 +1,79 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+$$\because \alpha>0,\quad \beta>0,\quad q>0,\quad \beta-\alpha>q$$
+
+$$\therefore (\beta-\alpha)^2>q^2$$
+
+$$\beta^2+\alpha^2-2\alpha\beta-q^2>0$$
+
+$$\frac{\alpha^2+\beta^2-q^2}{\alpha\beta}-2>0$$
+
+\bigskip\hrule\bigskip
+$$u_{n+2}=\frac{u_{n+1}^2-q^2}{u_n},\qquad u_{n-1}=\frac{u_n^2-q^2}{u_{n+1}}$$
+
+\begin{align*}
+\text{LHS}
+&=u_n(u_n+u_{n+2})\\
+&=u_n\left(u_n+\frac{u_{n+1}^2-q^2}{u_n}\right)\\
+&=u_n^2+u_{n+1}^2-q^2
+\end{align*}
+
+\begin{align*}
+\text{RHS}
+&=u_{n+1}(u_{n-1}+u_{n+1})\\
+&=u_{n+1}\left(\frac{u_n^2-q^2}{u_{n+1}}+u_{n+1}\right)\\
+&=u_n^2+u_{n+1}^2-q^2
+\end{align*}
+
+$$\therefore \boxed{\text{LHS}=\text{RHS}}$$
+
+
+$$u_n(u_n+u_{n+2})=u_{n+1}(u_{n-1}+u_{n+1})$$
+
+$$\implies \frac{u_{n+2}+u_n}{u_{n+1}}=\frac{u_{n+1}+u_{n-1}}{u_n}=\text{constant}$$
+
+Let $\ds p=\frac{u_{n+1}+u_{n-1}}{u_n}$
+
+$$p=\frac{u_2+u_0}{u_1}
+=\frac{\frac{\beta^2-q^2}{\alpha}+\alpha}{\beta}
+=\frac{\alpha^2+\beta^2-q^2}{\alpha\beta}$$
+
+$$u_{n+1}-pu_n+u_{n-1}=0$$
+
+
+\bigskip\hrule\bigskip
+
+$$p=\frac{\alpha^2+\beta^2-q^2}{\alpha\beta}>2$$
+
+$$u_{n+1}-u_n=pu_n-u_{n-1}-u_n=(p-2)u_n+(u_n-u_{n-1})$$
+
+$$\because u_1-u_0=\beta-\alpha>q>0$$
+
+$$\therefore u_{n+1}-u_n>u_n-u_{n-1}>0$$
+
+When $\beta=\alpha+q$,
+
+$$p=\frac{\alpha^2+\beta^2-q^2}{\alpha\beta}=2$$
+
+$$u_{n+1}-2u_n+u_{n-1}=0$$
+
+$$\implies u_{n+1}-u_n=u_n-u_{n-1}$$
+
+$$\therefore u_{n+1}-u_n=u_1-u_0=q>0$$
+
+The sequence is strictly increasing.
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: June 26, 2026}
+\end{center}
+
+\end{document}

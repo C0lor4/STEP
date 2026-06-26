@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2012 II Q8 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <div class="math-block">\[\because \alpha>0,\quad \beta>0,\quad q>0,\quad \beta-\alpha>q\]</div>
+
+    <div class="math-block">\[\therefore (\beta-\alpha)^2>q^2\]</div>
+
+    <div class="math-block">\[\beta^2+\alpha^2-2\alpha\beta-q^2>0\]</div>
+
+    <div class="math-block">\[\frac{\alpha^2+\beta^2-q^2}{\alpha\beta}-2>0\]</div>
+
+    <hr class="divider" />
+
+    <div class="math-block">\[u_{n+2}=\frac{u_{n+1}^2-q^2}{u_n},\qquad u_{n-1}=\frac{u_n^2-q^2}{u_{n+1}}\]</div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \text{LHS}
+      &=u_n(u_n+u_{n+2})\\
+      &=u_n\left(u_n+\frac{u_{n+1}^2-q^2}{u_n}\right)\\
+      &=u_n^2+u_{n+1}^2-q^2
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \text{RHS}
+      &=u_{n+1}(u_{n-1}+u_{n+1})\\
+      &=u_{n+1}\left(\frac{u_n^2-q^2}{u_{n+1}}+u_{n+1}\right)\\
+      &=u_n^2+u_{n+1}^2-q^2
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">\[\therefore \boxed{\text{LHS}=\text{RHS}}\]</div>
+
+    <div class="math-block">\[u_n(u_n+u_{n+2})=u_{n+1}(u_{n-1}+u_{n+1})\]</div>
+
+    <div class="math-block">\[\implies \frac{u_{n+2}+u_n}{u_{n+1}}=\frac{u_{n+1}+u_{n-1}}{u_n}=\text{constant}\]</div>
+
+    <p>Let \(\displaystyle p=\frac{u_{n+1}+u_{n-1}}{u_n}\)</p>
+
+    <div class="math-block">\[p=\frac{u_2+u_0}{u_1}=\frac{\frac{\beta^2-q^2}{\alpha}+\alpha}{\beta}=\frac{\alpha^2+\beta^2-q^2}{\alpha\beta}\]</div>
+
+    <div class="math-block">\[u_{n+1}-pu_n+u_{n-1}=0\]</div>
+
+    <hr class="divider" />
+
+    <div class="math-block">\[p=\frac{\alpha^2+\beta^2-q^2}{\alpha\beta}>2\]</div>
+
+    <div class="math-block">\[u_{n+1}-u_n=pu_n-u_{n-1}-u_n=(p-2)u_n+(u_n-u_{n-1})\]</div>
+
+    <div class="math-block">\[\because u_1-u_0=\beta-\alpha>q>0\]</div>
+
+    <div class="math-block">\[\therefore u_{n+1}-u_n>u_n-u_{n-1}>0\]</div>
+
+    <p>When \(\beta=\alpha+q\),</p>
+
+    <div class="math-block">\[p=\frac{\alpha^2+\beta^2-q^2}{\alpha\beta}=2\]</div>
+
+    <div class="math-block">\[u_{n+1}-2u_n+u_{n-1}=0\]</div>
+
+    <div class="math-block">\[\implies u_{n+1}-u_n=u_n-u_{n-1}\]</div>
+
+    <div class="math-block">\[\therefore u_{n+1}-u_n=u_1-u_0=q>0\]</div>
+
+    <p>The sequence is strictly increasing.</p>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong>.</p>
+      <p>Published and refined by <strong>Jon</strong>.</p>
+      <p><em>Last updated: June 26, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>
