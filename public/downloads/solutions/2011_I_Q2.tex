@@ -1,0 +1,57 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\begin{align*}
+\int_0^1\frac{xe^x}{1+x}\,dx
+&=\int_0^1 e^x\,dx-\int_0^1\frac{e^x}{1+x}\,dx\\
+&=e-1-E
+\end{align*}
+
+
+
+\begin{align*}
+\int_0^1\frac{x^2e^x}{1+x}\,dx
+&=\int_0^1xe^x\,dx-\int_0^1e^x\,dx+\int_0^1\frac{e^x}{1+x}\,dx\\
+&=\bigl[e^x(x-1)\bigr]_0^1-(e-1)+E\\
+&=E+2-e
+\end{align*}
+
+\bigskip\hrule\bigskip
+
+\textbf{(i)} Let $\ds u=\frac{1-x}{1+x},\ x=\frac{1-u}{1+u},\  dx=-\frac2{(1+u)^2}\,du,\  1+x=\frac2{1+u}$
+
+\begin{align*}
+\int_0^1\frac{e^{\frac{1-x}{1+x}}}{1+x}\,dx
+&=\int_1^0 e^u\cdot\frac{1+u}{2}\cdot\left(-\frac2{(1+u)^2}\right)\,du\\
+&=\int_0^1\frac{e^u}{1+u}\,du\\
+&=E
+\end{align*}
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)} Let $\ds u=x^2,\ \frac{du}{dx}=2x,\  \frac{dx}{x}=\frac{du}{2u}$
+
+\begin{align*}
+\int_1^{\sqrt2}\frac{e^{x^2}}{x}\,dx
+&=\frac12\int_1^2\frac{e^u}{u}\,du
+\end{align*}
+
+Let $v=x+1$,
+
+$$E=\int_0^1\frac{e^x}{1+x}\,dx=\int_1^2\frac{e^{v-1}}{v}\,dv=\frac1e\int_1^2\frac{e^v}{v}\,dv$$
+
+$$\therefore \int_1^{\sqrt2}\frac{e^{x^2}}{x}\,dx=\frac{eE}{2}$$
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: June 26, 2026}
+\end{center}
+
+\end{document}

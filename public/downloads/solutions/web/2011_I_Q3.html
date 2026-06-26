@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2011 I Q3 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <div class="math-block">\[2\sin A\sin B=\cos(A-B)-\cos(A+B)\]</div>
+
+    <div class="math-block">\[2\sin A\cos B=\sin(A+B)+\sin(A-B)\]</div>
+
+    <p>Let \(\displaystyle A=\frac{\pi}{3}-\theta,\quad B=\frac{\pi}{3}+\theta\)</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      4\sin\theta\sin\bigl(\frac{\pi}{3}-\theta\bigr)\sin\bigl(\frac{\pi}{3}+\theta\bigr)
+      &=2\sin\theta\left(\cos(-2\theta)-\cos\frac{2\pi}{3}\right)\\
+      &=2\sin\theta\left(\cos2\theta+\frac12\right)\\
+      &=2\sin\theta\cos2\theta+\sin\theta\\
+      &=\sin(3\theta)+\sin(-\theta)+\sin\theta\\
+      &=\sin3\theta
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(i)</span></p>
+
+    <div class="math-block">\[\ln4+\ln\sin\theta+\ln\sin\bigl(\frac{\pi}{3}-\theta\bigr)+\ln\sin\bigl(\frac{\pi}{3}+\theta\bigr)=\ln\sin3\theta\]</div>
+
+    <div class="math-block">\[\implies \cot\theta-\cot\bigl(\frac{\pi}{3}-\theta\bigr)+\cot\bigl(\frac{\pi}{3}+\theta\bigr)=3\cot3\theta\]</div>
+
+    <p>When \(\displaystyle \theta=\frac{\pi}{9}\)</p>
+
+    <div class="math-block">\[\cot\frac{\pi}{9}-\cot\frac{2\pi}{9}+\cot\frac{4\pi}{9}=3\cot\frac{\pi}{3}=\sqrt3\]</div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span></p>
+
+    <div class="math-block">\[4\sin\bigl(\frac{\pi}{6}-\phi\bigr)\sin\bigl(\frac{\pi}{6}+\phi\bigr)\cos\phi=\cos3\phi\]</div>
+
+    <div class="math-block">\[4\cos\phi\cos\bigl(\frac{\pi}{3}+\phi\bigr)\cos\bigl(\frac{\pi}{3}-\phi\bigr)=\cos3\phi\]</div>
+
+    <div class="math-block">\[4\cos\theta\cos\bigl(\frac{\pi}{3}-\theta\bigr)\cos\bigl(\frac{\pi}{3}+\theta\bigr)=\cos3\theta\]</div>
+
+    <p>Change \(\theta \text{ to } \phi\) and divide by \((*)\):</p>
+
+    <div class="math-block">\[\cot\theta\cot\bigl(\frac{\pi}{3}-\theta\bigr)\cot\bigl(\frac{\pi}{3}+\theta\bigr)=\cot3\theta\]</div>
+
+    <div class="math-block">\[4\sin\frac{\pi}{9}\sin\frac{2\pi}{9}\sin\frac{4\pi}{9}=\sin\frac{\pi}{3}=\frac{\sqrt3}{2}\]</div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \operatorname{cosec}\frac{\pi}{9}-\operatorname{cosec}\frac{5\pi}{9}+\operatorname{cosec}\frac{7\pi}{9}
+      &=\frac{1}{\sin\frac{\pi}{9}}-\frac{1}{\sin\frac{4\pi}{9}}+\frac{1}{\sin\frac{2\pi}{9}}\\
+      &=\frac{\sin\frac{2\pi}{9}\sin\frac{4\pi}{9}-\sin\frac{\pi}{9}\sin\frac{2\pi}{9}+\sin\frac{\pi}{9}\sin\frac{4\pi}{9}}{\frac{\sqrt3}{8}}
+      \end{aligned}
+      \]
+    </div>
+
+    <p>Let \(\displaystyle N=\sin\frac{2\pi}{9}\sin\frac{4\pi}{9}-\sin\frac{\pi}{9}\sin\frac{2\pi}{9}+\sin\frac{\pi}{9}\sin\frac{4\pi}{9}\)</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      N
+      &=\frac12\left(\cos\frac{2\pi}{9}+\frac12\right)-\frac12\left(\cos\frac{\pi}{9}-\frac12\right)+\frac12\left(\frac12-\cos\frac{5\pi}{9}\right)\\
+      &=\frac12\left(\cos\frac{2\pi}{9}+\cos\frac{4\pi}{9}-\cos\frac{\pi}{9}\right)+\frac34\\
+      &=\frac12\left(2\cos\frac{\pi}{3}\cos\frac{\pi}{9}-\cos\frac{\pi}{9}\right)+\frac34\\
+      &=\frac12\left(\cos\frac{\pi}{9}-\cos\frac{\pi}{9}\right)+\frac34\\
+      &=\frac34
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">\[\operatorname{cosec}\frac{\pi}{9}-\operatorname{cosec}\frac{5\pi}{9}+\operatorname{cosec}\frac{7\pi}{9}=\frac{N}{\frac{\sqrt3}{8}}=\frac{3/4}{\sqrt3/8}=2\sqrt3\]</div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong>.</p>
+      <p>Published and refined by <strong>Jon</strong>.</p>
+      <p><em>Last updated: June 26, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>

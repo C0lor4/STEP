@@ -1,0 +1,81 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\cosec}{\operatorname{cosec}}
+
+
+$$2\sin A\sin B=\cos(A-B)-\cos(A+B)$$
+
+$$2\sin A\cos B=\sin(A+B)+\sin(A-B)$$
+
+Let $\ds A=\frac{\pi}{3}-\theta,\quad B=\frac{\pi}{3}+\theta$
+
+\begin{align*}
+4\sin\theta\sin\bigl(\frac{\pi}{3}-\theta\bigr)\sin\bigl(\frac{\pi}{3}+\theta\bigr)
+&=2\sin\theta\left(\cos(-2\theta)-\cos\frac{2\pi}{3}\right)\\
+&=2\sin\theta\left(\cos2\theta+\frac12\right)\\
+&=2\sin\theta\cos2\theta+\sin\theta\\
+&=\sin(3\theta)+\sin(-\theta)+\sin\theta\\
+&=\sin3\theta
+\end{align*}
+
+\bigskip\hrule\bigskip
+
+\textbf{(i)}
+
+$$\ln4+\ln\sin\theta+\ln\sin\bigl(\frac{\pi}{3}-\theta\bigr)+\ln\sin\bigl(\frac{\pi}{3}+\theta\bigr)=\ln\sin3\theta$$
+
+$$\implies \cot\theta-\cot\bigl(\frac{\pi}{3}-\theta\bigr)+\cot\bigl(\frac{\pi}{3}+\theta\bigr)=3\cot3\theta$$
+
+When $\ds \theta=\frac{\pi}{9}$
+
+$$\cot\frac{\pi}{9}-\cot\frac{2\pi}{9}+\cot\frac{4\pi}{9}=3\cot\frac{\pi}{3}=\sqrt3$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)} 
+
+$$4\sin\bigl(\frac{\pi}{6}-\phi\bigr)\sin\bigl(\frac{\pi}{6}+\phi\bigr)\cos\phi=\cos3\phi$$
+
+$$4\cos\phi\cos\bigl(\frac{\pi}{3}+\phi\bigr)\cos\bigl(\frac{\pi}{3}-\phi\bigr)=\cos3\phi$$
+
+$$4\cos\theta\cos\bigl(\frac{\pi}{3}-\theta\bigr)\cos\bigl(\frac{\pi}{3}+\theta\bigr)=\cos3\theta$$
+
+Change $\theta \text{ to } \phi$ and divide by $(*)$:
+
+$$\cot\theta\cot\bigl(\frac{\pi}{3}-\theta\bigr)\cot\bigl(\frac{\pi}{3}+\theta\bigr)=\cot3\theta$$
+
+$$4\sin\frac{\pi}{9}\sin\frac{2\pi}{9}\sin\frac{4\pi}{9}=\sin\frac{\pi}{3}=\frac{\sqrt3}{2}$$
+
+
+\begin{align*}
+\cosec\frac{\pi}{9}-\cosec\frac{5\pi}{9}+\cosec\frac{7\pi}{9}&=\frac{1}{\sin\frac{\pi}{9}}-\frac{1}{\sin\frac{4\pi}{9}}+\frac{1}{\sin\frac{2\pi}{9}}\\
+&=\frac{\sin\frac{2\pi}{9}\sin\frac{4\pi}{9}-\sin\frac{\pi}{9}\sin\frac{2\pi}{9}+\sin\frac{\pi}{9}\sin\frac{4\pi}{9}}{\frac{\sqrt3}{8}}
+\end{align*}
+
+Let $\ds N=\sin\frac{2\pi}{9}\sin\frac{4\pi}{9}-\sin\frac{\pi}{9}\sin\frac{2\pi}{9}+\sin\frac{\pi}{9}\sin\frac{4\pi}{9}$
+
+\begin{align*}
+N
+&=\frac12\left(\cos\frac{2\pi}{9}+\frac12\right)-\frac12\left(\cos\frac{\pi}{9}-\frac12\right)+\frac12\left(\frac12-\cos\frac{5\pi}{9}\right)\\
+&=\frac12\left(\cos\frac{2\pi}{9}+\cos\frac{4\pi}{9}-\cos\frac{\pi}{9}\right)+\frac34\\
+&=\frac12\left(2\cos\frac{\pi}{3}\cos\frac{\pi}{9}-\cos\frac{\pi}{9}\right)+\frac34\\
+&=\frac12\left(\cos\frac{\pi}{9}-\cos\frac{\pi}{9}\right)+\frac34\\
+&=\frac34
+\end{align*}
+
+
+$$\cosec\frac{\pi}{9}-\cosec\frac{5\pi}{9}+\cosec\frac{7\pi}{9}=\frac{N}{\frac{\sqrt3}{8}}=\frac{3/4}{\sqrt3/8}=2\sqrt3$$
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: June 26, 2026}
+\end{center}
+
+\end{document}
