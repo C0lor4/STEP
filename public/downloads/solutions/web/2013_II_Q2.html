@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2013 II Q2 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span> Let \(\displaystyle t=1-x, \ dx=-dt,\ 
+      \begin{array}{c|cc}
+      x&0&1\\
+      \hline
+      t&1&0
+      \end{array}
+    \)</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \int_0^1 x^{n-1}(1-x)^n\,dx
+      &=\int_1^0 (1-t)^{n-1}t^n(-dt)\\
+      &=\int_0^1 t^n(1-t)^{n-1}\,dt\\
+      &=\int_0^1 x^n(1-x)^{n-1}\,dx
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      I_{n-1}
+      &=\int_0^1 x^{n-1}(1-x)^{n-1}\,dx\\
+      &=\int_0^1 x^{n-1}(1-x)^{n-1}\bigl(x+1-x\bigr)\,dx\\
+      &=\int_0^1 x^n(1-x)^{n-1}\,dx+\int_0^1 x^{n-1}(1-x)^n\,dx\\
+      &=2\int_0^1 x^{n-1}(1-x)^n\,dx
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">\[u=x^n,\  dv=(1-x)^n\,dx,\ du=nx^{n-1}\,dx,\  v=-\frac{(1-x)^{n+1}}{n+1}\]</div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      I_n
+      &=\left[-\frac{x^n(1-x)^{n+1}}{n+1}\right]_0^1+\frac{n}{n+1}\int_0^1 x^{n-1}(1-x)^{n+1}\,dx\\
+      &=\frac{n}{n+1}\int_0^1 x^{n-1}(1-x)^{n+1}\,dx
+      \end{aligned}
+      \]
+    </div>
+
+    <p>Let \(\displaystyle A=\int_0^1 x^{n-1}(1-x)^n\,dx=\frac12 I_{n-1}\)</p>
+
+    <div class="math-block">\[\int_0^1 x^{n-1}(1-x)^{n+1}\,dx=\int_0^1 x^{n-1}(1-x)^n(1-x)\,dx=A-I_n\]</div>
+
+    <div class="math-block">\[I_n=\frac{n}{n+1}(A-I_n)\]</div>
+
+    <div class="math-block">\[I_n=\frac{n}{n+1}\left(\frac12 I_{n-1}-I_n\right)\]</div>
+
+    <div class="math-block">\[\left(1+\frac{n}{n+1}\right)I_n=\frac{n}{2(n+1)}I_{n-1}\]</div>
+
+    <div class="math-block">\[\therefore I_n=\frac{n}{2(2n+1)}I_{n-1}\]</div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span></p>
+
+    <div class="math-block">\[I_0=\int_0^1 1\,dx=1\]</div>
+
+    <div class="math-block">\[I_n=\frac{n}{2(2n+1)}I_{n-1}\]</div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      I_n
+      &=\frac{n}{2(2n+1)}\cdot\frac{n-1}{2(2n-1)}\cdots\frac{1}{2\cdot3}\cdot I_0\\
+      &=\frac{n!}{2^n\cdot3\cdot5\cdots(2n+1)}\\
+      &=\frac{n!}{2^n\cdot\frac{(2n+1)!}{2^n n!}}=\frac{(n!)^2}{(2n+1)!}
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iii)</span> When \(\displaystyle x=\sin^2\theta, \ dx=2\sin\theta\cos\theta\,d\theta,\  x=0\Rightarrow \theta=0,\  x=1\Rightarrow \theta=\frac{\pi}{2}\)</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      I_{\frac12}
+      &=\int_0^1 x^{1/2}(1-x)^{1/2}\,dx\\
+      &=\int_0^{\pi/2}\sin\theta\cos\theta\cdot2\sin\theta\cos\theta\,d\theta\\
+      &=2\int_0^{\pi/2}\sin^2\theta\cos^2\theta\,d\theta\\
+      &=\frac12\int_0^{\pi/2}\sin^2 2\theta\,d\theta\\
+      &=\frac14\int_0^{\pi/2}(1-\cos4\theta)\,d\theta\\
+      &=\frac14\left[\theta-\frac14\sin4\theta\right]_0^{\pi/2}\\
+      &=\frac{\pi}{8}
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">\[I_{\frac32}=\frac{\frac32}{2(2\cdot\frac32+1)}I_{\frac12}=\frac{3}{16}\cdot\frac{\pi}{8}=\frac{3\pi}{128}\]</div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong>[4pt]</p>
+      <p>Published and refined by <strong>Jon</strong>[8pt]</p>
+      <p><em>Last updated: June 26, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>
