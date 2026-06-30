@@ -36,6 +36,7 @@ const questionSourceIds = [
   '2017_II_Q1',
   '2017_II_Q4',
   '2017_I_Q1',
+  '2017_I_Q8',
   '2017_III_Q1',
   '2017_III_Q11',
   '2017_III_Q12',

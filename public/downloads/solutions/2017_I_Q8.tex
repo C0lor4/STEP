@@ -1,0 +1,74 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+When $\ds n=1,\ a_1^2+2a_1b_1-b_1^2=1+4-4=1$
+
+Assume $\ds a_k^2+2a_kb_k-b_k^2=1$ is true
+\begin{align*}
+a_{k+1}^2+2a_{k+1}b_{k+1}-b_{k+1}^2
+&=(a_k+2b_k)^2+2(a_k+2b_k)(2a_k+5b_k)-(2a_k+5b_k)^2\\
+&=a_k^2+2a_kb_k-b_k^2\\
+&=1
+\end{align*}
+
+By mathematical induction, $\ds a_n^2+2a_nb_n-b_n^2=1$ is true for all $n\geq 1$.
+
+\bigskip\hrule\bigskip
+
+(i)
+
+$$b_{n+1}=2a_n+5b_n\geq 5b_n$$
+
+$$b_1=2\implies b_n\geq 2\cdot 5^{n-1}$$
+Dividing $(*)$ by $\ds b_n^2\implies c_n^2+2c_n-1=\frac1{b_n^2}$
+
+$$b_n\geq 2\cdot 5^{n-1}\implies \lim_{n\to\infty}\frac1{b_n^2}=0$$
+
+$$(c_n+1)^2=2+\frac1{b_n^2}$$
+
+$$c_n+1>0\implies c_n+1=\sqrt{2+\frac1{b_n^2}}$$
+
+$$\lim_{n\to\infty}(c_n+1)
+=\lim_{n\to\infty}\sqrt{2+\frac1{b_n^2}}
+=\sqrt2$$
+
+$$\lim_{n\to\infty}c_n=\sqrt2-1$$
+
+\bigskip\hrule\bigskip
+
+(ii)
+
+$$c_n^2+2c_n-1=\frac1{b_n^2}>0$$
+
+$$(c_n-(\sqrt2-1))(c_n+\sqrt2+1)>0$$
+
+$$c_n+\sqrt2+1>0\implies c_n>\sqrt2-1$$
+
+$$c_n+1>\sqrt2 \implies \frac2{c_n+1}<\frac2{\sqrt2}=\sqrt2$$
+
+$$\therefore\quad \frac2{c_n+1}<\sqrt2<c_n+1$$
+
+
+$$a_2=1+2(2)=5,\  b_2=2(1)+5(2)=12$$
+
+$$a_3=5+2(12)=29,\  b_3=2(5)+5(12)=70$$
+
+$$\implies c_3=\frac{29}{70}$$
+
+$$\frac2{c_3+1}<\sqrt2<c_3+1$$
+
+$$\frac{140}{99}<\sqrt2<\frac{99}{70}$$
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: June 30, 2026}
+\end{center}
+
+\end{document}

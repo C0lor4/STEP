@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2017 I Q8 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p>When \(\displaystyle n=1,\ a_1^2+2a_1b_1-b_1^2=1+4-4=1\)</p>
+
+    <p>Assume \(\displaystyle a_k^2+2a_kb_k-b_k^2=1\) is true</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      a_{k+1}^2+2a_{k+1}b_{k+1}-b_{k+1}^2
+      &=(a_k+2b_k)^2+2(a_k+2b_k)(2a_k+5b_k)-(2a_k+5b_k)^2\\
+      &=a_k^2+2a_kb_k-b_k^2\\
+      &=1
+      \end{aligned}
+      \]
+    </div>
+
+    <p>By mathematical induction, \(\displaystyle a_n^2+2a_nb_n-b_n^2=1\) is true for all \(n\geq 1\)</p>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(i)</span></p>
+
+    <div class="math-block">
+      \[
+      b_{n+1}=2a_n+5b_n\geq 5b_n
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      b_1=2\implies b_n\geq 2\cdot 5^{n-1}
+      \]
+    </div>
+
+    <p>Dividing \((*)\) by \(\displaystyle b_n^2\implies c_n^2+2c_n-1=\frac1{b_n^2}\)</p>
+
+    <div class="math-block">
+      \[
+      b_n\geq 2\cdot 5^{n-1}\implies \lim_{n\to\infty}\frac1{b_n^2}=0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      (c_n+1)^2=2+\frac1{b_n^2}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      c_n+1>0\implies c_n+1=\sqrt{2+\frac1{b_n^2}}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \lim_{n\to\infty}(c_n+1)
+      =\lim_{n\to\infty}\sqrt{2+\frac1{b_n^2}}
+      =\sqrt2
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \lim_{n\to\infty}c_n=\sqrt2-1
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span></p>
+
+    <div class="math-block">
+      \[
+      c_n^2+2c_n-1=\frac1{b_n^2}>0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      (c_n-(\sqrt2-1))(c_n+\sqrt2+1)>0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      c_n+\sqrt2+1>0\implies c_n>\sqrt2-1
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      c_n+1>\sqrt2 \implies \frac2{c_n+1}<\frac2{\sqrt2}=\sqrt2
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore\quad \frac2{c_n+1}<\sqrt2<c_n+1
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      a_2=1+2(2)=5,\  b_2=2(1)+5(2)=12
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      a_3=5+2(12)=29,\  b_3=2(5)+5(12)=70
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \implies c_3=\frac{29}{70}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \frac2{c_3+1}<\sqrt2<c_3+1
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \frac{140}{99}<\sqrt2<\frac{99}{70}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong></p>
+      <p>Published and refined by <strong>Jon</strong></p>
+      <p><em>Last updated: June 30, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>
