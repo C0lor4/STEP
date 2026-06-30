@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2013 I Q3 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span></p>
+
+    <div class="math-block">
+      \[
+      X*Y=\lambda\mathbf{x}+(1-\lambda)\mathbf{y}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      Y*X=\lambda\mathbf{y}+(1-\lambda)\mathbf{x}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      X*Y=Y*X
+      &\implies \lambda\mathbf{x}+(1-\lambda)\mathbf{y}
+      =\lambda\mathbf{y}+(1-\lambda)\mathbf{x}\\
+      &\implies (2\lambda-1)(\mathbf{x}-\mathbf{y})=\mathbf{0}
+      \end{aligned}
+      \]
+    </div>
+
+    <p>\(\because X,Y\) are distinct \( \therefore  \mathbf{x}\neq \mathbf{y}\)</p>
+
+    <div class="math-block">
+      \[
+      2\lambda-1=0\implies \lambda=\frac12
+      \]
+    </div>
+
+    <p>\(X*Y\) and \(Y*X\) are distinct unless \(\displaystyle \lambda=\frac12\)</p>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span></p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      (X*Y)*Z
+      &=\lambda\bigl(\lambda\mathbf{x}+(1-\lambda)\mathbf{y}\bigr)+(1-\lambda)\mathbf{z}\\
+      &=\lambda^2\mathbf{x}+\lambda(1-\lambda)\mathbf{y}+(1-\lambda)\mathbf{z}
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      X*(Y*Z)
+      &=\lambda\mathbf{x}+(1-\lambda)\bigl(\lambda\mathbf{y}+(1-\lambda)\mathbf{z}\bigr)\\
+      &=\lambda\mathbf{x}+\lambda(1-\lambda)\mathbf{y}+(1-\lambda)^2\mathbf{z}
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      (X*Y)*Z-X*(Y*Z)
+      &=(\lambda^2-\lambda)\mathbf{x}+\bigl((1-\lambda)-(1-\lambda)^2\bigr)\mathbf{z}\\
+      &=\lambda(1-\lambda)(\mathbf{z}-\mathbf{x})
+      \end{aligned}
+      \]
+    </div>
+
+    <p>They are distinct when \(\lambda\neq 0,\  \lambda\neq 1,\  X\neq Z\)</p>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iii)</span></p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      (X*Z)*(Y*Z)
+      &=\lambda\bigl(\lambda\mathbf{x}+(1-\lambda)\mathbf{z}\bigr)
+      +(1-\lambda)\bigl(\lambda\mathbf{y}+(1-\lambda)\mathbf{z}\bigr)\\
+      &=\lambda^2\mathbf{x}+\lambda(1-\lambda)\mathbf{y}+(1-\lambda)\mathbf{z}\\
+      &=(X*Y)*Z
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore (X*Y)*Z=(X*Z)*(Y*Z)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      (X*Y)*(X*Z)
+      &=\lambda\bigl(\lambda\mathbf{x}+(1-\lambda)\mathbf{y}\bigr)
+      +(1-\lambda)\bigl(\lambda\mathbf{x}+(1-\lambda)\mathbf{z}\bigr)\\
+      &=\lambda\mathbf{x}+\lambda(1-\lambda)\mathbf{y}+(1-\lambda)^2\mathbf{z}\\
+      &=X*(Y*Z)
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore X*(Y*Z)=(X*Y)*(X*Z)
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iv)</span> Let \(\mathbf{p}_n\) be the position vector of \(P_n\). \(\displaystyle \mathbf{p}_1=\lambda\mathbf{x}+(1-\lambda)\mathbf{y}\)</p>
+
+    <p>Assume \(\displaystyle \mathbf{p}_k=\lambda^k\mathbf{x}+(1-\lambda^k)\mathbf{y}\) is true</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \mathbf{p}_{k+1}
+      &=\lambda\mathbf{p}_k+(1-\lambda)\mathbf{y}\\
+      &=\lambda\bigl(\lambda^k\mathbf{x}+(1-\lambda^k)\mathbf{y}\bigr)+(1-\lambda)\mathbf{y}\\
+      &=\lambda^{k+1}\mathbf{x}+(1-\lambda^{k+1})\mathbf{y}
+      \end{aligned}
+      \]
+    </div>
+
+    <p>By mathematical induction, \(\mathbf{p}_n=\lambda^n\mathbf{x}+(1-\lambda^n)\mathbf{y}\) is true</p>
+
+    <p>When \(0&lt;\lambda&lt;1\),</p>
+
+    <div class="math-block">
+      \[
+      XP_n:P_nY=(1-\lambda^n):\lambda^n
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong></p>
+      <p>Published and refined by <strong>Jon</strong></p>
+      <p><em>Last updated: June 30, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>

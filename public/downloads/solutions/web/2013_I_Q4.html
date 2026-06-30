@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2013 I Q4 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span> Let \(\displaystyle u=\tan x,\ du=\sec^2x\,dx,\ 
+    \renewcommand{\arraystretch}{1}
+    \begin{array}{c!{\vrule width 1.1pt}c|c}
+    x & 0 & \pi/4\\
+    \hline
+    \rule{0pt}{12pt}
+    u & 0 & 1
+    \end{array}\)</p>
+
+    <div class="math-block">
+      \[
+      \int_0^{\frac14\pi}\tan^n x\sec^2x\,dx
+      =\int_0^1 u^n\,du
+      =\left[\frac{u^{n+1}}{n+1}\right]_0^1
+      =\frac1{n+1}
+      \]
+    </div>
+
+    <p>Let \(\displaystyle u=\sec x,\ du=\sec x\tan x\,dx,\
+    \renewcommand{\arraystretch}{1}
+    \begin{array}{c!{\vrule width 1.1pt}c|c}
+    x & 0 & \pi/4\\
+    \hline
+    \rule{0pt}{12pt}
+    u & 1 & \sqrt2
+    \end{array}\)</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \int_0^{\frac14\pi}\sec^n x\tan x\,dx
+      &=\int_1^{\sqrt2}u^{n-1}\,du\\
+      &=\left[\frac{u^n}{n}\right]_1^{\sqrt2}\\
+      &=\frac{(\sqrt2)^n-1}{n}
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span></p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \int_0^{\frac14\pi}x\sec^4x\tan x\,dx
+      &=\left[\frac14x\sec^4x\right]_0^{\frac14\pi}
+      -\frac14\int_0^{\frac14\pi}\sec^4x\,dx\\
+      &=\frac{\pi}{4}-\frac14\int_0^{\frac14\pi}(1+\tan^2x)\sec^2x\,dx\\
+      &=\frac{\pi}{4}-\frac14\left(1+\frac13\right)\\
+      &=\frac{\pi}{4}-\frac13
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \int_0^{\frac14\pi}x^2\sec^2x\tan x\,dx
+      &=\left[\frac12x^2\sec^2x\right]_0^{\frac14\pi}
+      -\int_0^{\frac14\pi}x\sec^2x\,dx\\
+      &=\frac{\pi^2}{16}
+      -\left(\Bigl[x\tan x\Bigr]_0^{\frac14\pi}-\int_0^{\frac14\pi}\tan x\,dx\right)\\
+      &=\frac{\pi^2}{16}-\left(\frac{\pi}{4}-\frac12\ln2\right)\\
+      &=\frac{\pi^2}{16}-\frac{\pi}{4}+\frac12\ln2
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong></p>
+      <p>Published and refined by <strong>Jon</strong></p>
+      <p><em>Last updated: June 30, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>

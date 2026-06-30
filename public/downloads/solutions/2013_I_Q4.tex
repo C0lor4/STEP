@@ -1,0 +1,73 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\textbf{(i)} Let $\ds u=\tan x,\ du=\sec^2x\,dx, \ 
+\renewcommand{\arraystretch}{1}
+\begin{array}{c!{\vrule width 1.1pt}c|c}
+x & 0 & \pi/4\\
+\hline
+\rule{0pt}{12pt}
+u & 0 & 1
+\end{array}
+$
+
+
+$$\int_0^{\frac14\pi}\tan^n x\sec^2x\,dx
+=\int_0^1 u^n\,du
+=\left[\frac{u^{n+1}}{n+1}\right]_0^1
+=\frac1{n+1}$$
+
+Let $\ds u=\sec x,\ du=\sec x\tan x\,dx,\
+\renewcommand{\arraystretch}{1}
+\begin{array}{c!{\vrule width 1.1pt}c|c}
+x & 0 & \pi/4\\
+\hline
+\rule{0pt}{12pt}
+u & 1 & \sqrt2
+\end{array}
+$
+
+\begin{align*}
+\int_0^{\frac14\pi}\sec^n x\tan x\,dx
+&=\int_1^{\sqrt2}u^{n-1}\,du\\
+&=\left[\frac{u^n}{n}\right]_1^{\sqrt2}\\
+&=\frac{(\sqrt2)^n-1}{n}
+\end{align*}
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)}
+
+\begin{align*}
+\int_0^{\frac14\pi}x\sec^4x\tan x\,dx
+&=\left[\frac14x\sec^4x\right]_0^{\frac14\pi}
+-\frac14\int_0^{\frac14\pi}\sec^4x\,dx\\
+&=\frac{\pi}{4}-\frac14\int_0^{\frac14\pi}(1+\tan^2x)\sec^2x\,dx\\
+&=\frac{\pi}{4}-\frac14\left(1+\frac13\right)\\
+&=\frac{\pi}{4}-\frac13
+\end{align*}
+
+\begin{align*}
+\int_0^{\frac14\pi}x^2\sec^2x\tan x\,dx
+&=\left[\frac12x^2\sec^2x\right]_0^{\frac14\pi}
+-\int_0^{\frac14\pi}x\sec^2x\,dx\\
+&=\frac{\pi^2}{16}
+-\left(\Bigl[x\tan x\Bigr]_0^{\frac14\pi}-\int_0^{\frac14\pi}\tan x\,dx\right)\\
+&=\frac{\pi^2}{16}-\left(\frac{\pi}{4}-\frac12\ln2\right)\\
+&=\frac{\pi^2}{16}-\frac{\pi}{4}+\frac12\ln2
+\end{align*}
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: June 30, 2026}
+\end{center}
+
+\end{document}

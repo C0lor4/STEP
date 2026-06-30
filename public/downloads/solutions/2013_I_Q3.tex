@@ -1,0 +1,103 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\textbf{(i)}
+
+$$X*Y=\lambda\mathbf{x}+(1-\lambda)\mathbf{y}$$
+
+$$Y*X=\lambda\mathbf{y}+(1-\lambda)\mathbf{x}$$
+
+\begin{align*}
+X*Y=Y*X
+&\implies \lambda\mathbf{x}+(1-\lambda)\mathbf{y}
+=\lambda\mathbf{y}+(1-\lambda)\mathbf{x}\\
+&\implies (2\lambda-1)(\mathbf{x}-\mathbf{y})=\mathbf{0}
+\end{align*}
+
+$\because X,Y$ are distinct $ \therefore  \mathbf{x}\neq \mathbf{y}$
+
+$$2\lambda-1=0\implies \lambda=\frac12$$
+
+$X*Y$ and $Y*X$ are distinct unless $\ds \lambda=\frac12$.
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)}
+
+\begin{align*}
+(X*Y)*Z
+&=\lambda\bigl(\lambda\mathbf{x}+(1-\lambda)\mathbf{y}\bigr)+(1-\lambda)\mathbf{z}\\
+&=\lambda^2\mathbf{x}+\lambda(1-\lambda)\mathbf{y}+(1-\lambda)\mathbf{z}
+\end{align*}
+
+\begin{align*}
+X*(Y*Z)
+&=\lambda\mathbf{x}+(1-\lambda)\bigl(\lambda\mathbf{y}+(1-\lambda)\mathbf{z}\bigr)\\
+&=\lambda\mathbf{x}+\lambda(1-\lambda)\mathbf{y}+(1-\lambda)^2\mathbf{z}
+\end{align*}
+
+\begin{align*}
+(X*Y)*Z-X*(Y*Z)
+&=(\lambda^2-\lambda)\mathbf{x}+\bigl((1-\lambda)-(1-\lambda)^2\bigr)\mathbf{z}\\
+&=\lambda(1-\lambda)(\mathbf{z}-\mathbf{x})
+\end{align*}
+
+They are distinct when $\lambda\neq 0,\  \lambda\neq 1,\  X\neq Z$
+
+\bigskip\hrule\bigskip
+
+\textbf{(iii)}
+
+\begin{align*}
+(X*Z)*(Y*Z)
+&=\lambda\bigl(\lambda\mathbf{x}+(1-\lambda)\mathbf{z}\bigr)
++(1-\lambda)\bigl(\lambda\mathbf{y}+(1-\lambda)\mathbf{z}\bigr)\\
+&=\lambda^2\mathbf{x}+\lambda(1-\lambda)\mathbf{y}+(1-\lambda)\mathbf{z}\\
+&=(X*Y)*Z
+\end{align*}
+
+$$\therefore (X*Y)*Z=(X*Z)*(Y*Z)$$
+
+\begin{align*}
+(X*Y)*(X*Z)
+&=\lambda\bigl(\lambda\mathbf{x}+(1-\lambda)\mathbf{y}\bigr)
++(1-\lambda)\bigl(\lambda\mathbf{x}+(1-\lambda)\mathbf{z}\bigr)\\
+&=\lambda\mathbf{x}+\lambda(1-\lambda)\mathbf{y}+(1-\lambda)^2\mathbf{z}\\
+&=X*(Y*Z)
+\end{align*}
+
+$$\therefore X*(Y*Z)=(X*Y)*(X*Z)$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(iv)} Let $\mathbf{p}_n$ be the position vector of $P_n$. $\ds \mathbf{p}_1=\lambda\mathbf{x}+(1-\lambda)\mathbf{y}$
+
+Assume $\ds \mathbf{p}_k=\lambda^k\mathbf{x}+(1-\lambda^k)\mathbf{y}$ is true
+
+\begin{align*}
+\mathbf{p}_{k+1}
+&=\lambda\mathbf{p}_k+(1-\lambda)\mathbf{y}\\
+&=\lambda\bigl(\lambda^k\mathbf{x}+(1-\lambda^k)\mathbf{y}\bigr)+(1-\lambda)\mathbf{y}\\
+&=\lambda^{k+1}\mathbf{x}+(1-\lambda^{k+1})\mathbf{y}
+\end{align*}
+
+By mathematical induction, $\mathbf{p}_n=\lambda^n\mathbf{x}+(1-\lambda^n)\mathbf{y}$ is true
+
+When $0<\lambda<1$,
+
+$$XP_n:P_nY=(1-\lambda^n):\lambda^n$$
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: June 30, 2026}
+\end{center}
+
+\end{document}

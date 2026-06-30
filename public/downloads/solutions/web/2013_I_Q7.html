@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2013 I Q7 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span>\(\displaystyle \frac{dy}{dx}=u+x\frac{du}{dx}\)</p>
+
+    <div class="math-block">
+      \[
+      u+x\frac{du}{dx}=\frac{x}{ux}+\frac{ux}{x}=\frac1u+u
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \implies u\frac{du}{dx}=\frac1x
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \frac12u^2=\ln x+C
+      \]
+    </div>
+
+    <p>When \(\displaystyle x=1,\ y=2,\ u=2\implies C=4\)</p>
+
+    <div class="math-block">
+      \[
+      u^2=2\ln x+4
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      y=ux=x\sqrt{2\ln x+4}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \because 2\ln x+4>0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore x>e^{-2}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span> Let \(\displaystyle y=ux,\ \frac{dy}{dx}=u+x\frac{du}{dx}\)</p>
+
+    <div class="math-block">
+      \[
+      u+x\frac{du}{dx}=\frac{x}{ux}+\frac{2ux}{x}=\frac1u+2u
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \frac{u}{1+u^2}\frac{du}{dx}=\frac1x
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \frac12\ln(1+u^2)=\ln x+C
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      1+u^2=Cx^2
+      \]
+    </div>
+
+    <p>When \(\displaystyle x=1,\ y=2,\ u=2\implies C=5\)</p>
+
+    <div class="math-block">
+      \[
+      1+\frac{y^2}{x^2}=5x^2
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      y^2=5x^4-x^2=x^2(5x^2-1)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      y=x\sqrt{5x^2-1},\quad x>\frac1{\sqrt5}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iii)</span> Let \(\displaystyle y=ux^2,\ \frac{dy}{dx}=x^2\frac{du}{dx}+2ux\)</p>
+
+    <div class="math-block">
+      \[
+      x^2\frac{du}{dx}+2ux=\frac{x^2}{ux^2}+\frac{2ux^2}{x}=\frac1u+2ux
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      u\frac{du}{dx}=\frac1{x^2}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \frac12u^2=-\frac1x+C
+      \]
+    </div>
+
+    <p>When \(\displaystyle x=1,\ y=2,\ u=2 \implies C=6\)</p>
+
+    <div class="math-block">
+      \[
+      \frac{y^2}{x^4}=u^2=6-\frac2x
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      y^2=6x^4-2x^3=x^3(6x-2)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      y=x^{\frac32}\sqrt{6x-2},\quad x>\frac13
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong></p>
+      <p>Published and refined by <strong>Jon</strong></p>
+      <p><em>Last updated: June 30, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>
