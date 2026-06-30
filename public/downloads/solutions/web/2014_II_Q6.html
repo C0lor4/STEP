@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2014 II Q6 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .graph-block {
+      margin: 16px 0 20px;
+      text-align: center;
+    }
+
+    .graph-block img {
+      width: min(760px, 100%);
+      height: auto;
+      display: inline-block;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <div class="math-block">
+      \[
+      \sin(\alpha+\beta)-\sin(\alpha-\beta)=2\cos\alpha\sin\beta
+      \]
+    </div>
+
+    <p>Let \(\displaystyle \alpha=rx,\quad \beta=\frac{x}{2}\)</p>
+
+    <div class="math-block">
+      \[
+      \sin\left(r+\frac12\right)x-\sin\left(r-\frac12\right)x=2\sin\frac{x}{2}\cos rx
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      2\sin\frac{x}{2}\bigl(\cos x+\cos2x+\cdots+\cos nx\bigr)
+      &=\sum_{r=1}^{n}\left(\sin\left(r+\frac12\right)x-\sin\left(r-\frac12\right)x\right)\\
+      &=\sin\left(n+\frac12\right)x-\sin\frac{x}{2}
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore \cos x+\cos2x+\cdots+\cos nx=\frac{\sin\left(n+\frac12\right)x-\sin\frac{x}{2}}{2\sin\frac{x}{2}}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(i)</span></p>
+
+    <div class="math-block">
+      \[
+      S_2(x)=\sin x+\frac12\sin2x
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      S_2'(x)=\cos x+\cos2x
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      S_2'(x)=0\implies \cos x+\cos2x=0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \cos x+2\cos^2x-1=0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      (2\cos x-1)(\cos x+1)=0\implies x=\frac{\pi}{3},\ \pi
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \renewcommand{\arraystretch}{1.4}
+      \begin{array}{c!{\vrule width 1.2pt}c|c}
+      x & \frac{\pi}{3} & \pi\\
+      \hline
+      \rule[-4pt]{0pt}{14pt}
+      y & \frac{3\sqrt3}{4} & 0
+      \end{array}
+      \]
+    </div>
+
+    <div class="graph-block">
+      <img src="2014_II_Q6_graph1.png" alt="Graph for part (i)" />
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span></p>
+
+    <div class="math-block">
+      \[
+      S_n'(x)=\sum_{r=1}^{n}\cos rx
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \frac{\sin\left(n+\frac12\right)x_0-\sin\frac{x_0}{2}}{2\sin\frac{x_0}{2}}=0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \sin\left(n+\frac12\right)x_0=\sin\frac{x_0}{2}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \sin nx_0\cos\frac{x_0}{2}+\cos nx_0\sin\frac{x_0}{2}=\sin\frac{x_0}{2}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \sin nx_0\cos\frac{x_0}{2}=(1-\cos nx_0)\sin\frac{x_0}{2}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \sin nx_0=(1-\cos nx_0)\tan\frac{x_0}{2}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      S_n(x_0)-S_{n-1}(x_0)=\frac1n\sin nx_0=\frac1n(1-\cos nx_0)\tan\frac{x_0}{2}\ge0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore S_n(x_0)\ge S_{n-1}(x_0)
+      \]
+    </div>
+
+    <p>If \(S_n(x)\le0\) for some \(0&lt;x&lt;\pi\), let \(x_0\) be a minimum point of \(S_n(x)\) in \(0&lt;x&lt;\pi\)</p>
+
+    <div class="math-block">
+      \[
+      S_n'(x_0)=0 \implies S_n(x_0)\ge S_{n-1}(x_0)>0
+      \]
+    </div>
+
+    <p>Contradiction</p>
+
+    <div class="math-block">
+      \[
+      \therefore S_n(x)>0\qquad (0&lt;x&lt;\pi)
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iii)</span></p>
+
+    <div class="math-block">
+      \[
+      S_1(x)=\sin x>0\qquad (0&lt;x&lt;\pi)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      S_{n-1}(x)>0\implies S_n(x)>0\qquad (0&lt;x&lt;\pi)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \because S_n(0)=S_n(\pi)=0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore S_n(x)\ge0\qquad (0\le x\le\pi)
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong></p>
+      <p>Published and refined by <strong>Jon</strong></p>
+      <p><em>Last updated: June 26, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>

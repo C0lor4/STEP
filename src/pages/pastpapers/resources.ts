@@ -25,6 +25,7 @@ const questionSourceIds = [
   '2010_III_Q13',
   '2014_II_Q12',
   '2014_II_Q13',
+  '2014_II_Q6',
   '2014_III_Q12',
   '2015_II_Q13',
   '2015_II_Q12',

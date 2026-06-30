@@ -10,7 +10,7 @@ const FormulaSheets: React.FC = () => {
         <div className="mb-5 flex items-center justify-between gap-3">
           <div>
             <p className="text-xs uppercase tracking-[0.24em] text-zinc-400">Past Papers</p>
-            <h1 className="mt-2 text-3xl font-semibold">Formula Sheets</h1>
+            <h1 className="mt-2 text-3xl font-semibold">Reference Sheet</h1>
           </div>
           <Link
             to="/pastpapers"

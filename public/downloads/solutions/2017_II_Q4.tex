@@ -20,66 +20,66 @@
 
 \begin{document}
 
-	\textbf{(i)} When $f(x)=1$, $g(x)=e^x$, $a=0$, $b=t$:
-	$$\displaystyle \left( \int_0^t e^x\,dx \right)^2\le \left( \int_0^t 1\,dx \right)\left( \int_0^t e^{2x}\,dx \right)$$
-	$$\implies (e^t-1)^2\le t\cdot \frac{e^{2t}-1}{2}$$
-	$$\implies (e^t-1)^2\le \frac{t}{2}(e^t-1)(e^t+1)$$
+\textbf{(i)} When $f(x)=1$, $g(x)=e^x$, $a=0$, $b=t$:
+$$\displaystyle \left( \int_0^t e^x\,dx \right)^2\le \left( \int_0^t 1\,dx \right)\left( \int_0^t e^{2x}\,dx \right)$$
+$$\implies (e^t-1)^2\le t\cdot \frac{e^{2t}-1}{2}$$
+$$\implies (e^t-1)^2\le \frac{t}{2}(e^t-1)(e^t+1)$$
 
-	$\because t>0\quad\therefore e^t-1>0$
-	$$\frac{e^t-1}{e^t+1}\le \frac{t}{2}\\$$
-
-
-	
-	\bigskip\hrule\bigskip
-	\textbf{(ii)} When $f(x)=x$, $g(x)=e^{-\frac{x^2}{4}}$, $a=0$, $b=1$:
-	$$\displaystyle \left( \int_0^1 xe^{-\frac{x^2}{4}}\,dx \right)^2\le
-	\left( \int_0^1 x^2\,dx \right)\left( \int_0^1 e^{-\frac{x^2}{2}}\,dx \right)$$
-
-	$$ \because \int_0^1 x^2\,dx=\frac13\quad\&\&\quad
-	\int_0^1 xe^{-x^2/4}\,dx=\left[-2e^{-x^2/4}\right]_0^1=2(1-e^{-1/4})$$
-
-	$$\therefore 4(1-e^{-1/4})^2\le \frac13\int_0^1 e^{-\frac{x^2}{2}}\,dx $$
-	
-	$$\implies \int_0^1 e^{-x^2/2}\,dx\ge 12(1-e^{-1/4})^2$$
-	
+$\because t>0\quad\therefore e^t-1>0$
+$$\frac{e^t-1}{e^t+1}\le \frac{t}{2}\\$$
 
 
-	\bigskip\hrule\bigskip
-	\textbf{(iii)} When $f(x)=1$, $g(x)=\sqrt{\sin x}$, $a=0$, $b=\frac{\pi}{2}$:
 
-	$$\displaystyle \left( \int_0^{\pi/2} \sqrt{\sin x}\,dx \right)^2\le \left( \int_0^{\pi/2} 1\,dx \right)\left( \int_0^{\pi/2} \sin x\,dx \right)$$
-	
-	$$\implies \left( \int_0^{\pi/2} \sqrt{\sin x}\,dx \right)^2\le \frac{\pi}{2}$$
-	
-	$$\because \sin x>0,\quad x \in [0,\frac{\pi}{2}]$$
-	$$\therefore \int_0^{\pi/2} \sqrt{\sin x}\,dx\le \sqrt{\frac{\pi}{2}}$$
+\bigskip\hrule\bigskip
+\textbf{(ii)} When $f(x)=x$, $g(x)=e^{-\frac{x^2}{4}}$, $a=0$, $b=1$:
+$$\displaystyle \left( \int_0^1 xe^{-\frac{x^2}{4}}\,dx \right)^2\le
+\left( \int_0^1 x^2\,dx \right)\left( \int_0^1 e^{-\frac{x^2}{2}}\,dx \right)$$
 
+$$ \because \int_0^1 x^2\,dx=\frac13\quad\&\&\quad
+\int_0^1 xe^{-x^2/4}\,dx=\left[-2e^{-x^2/4}\right]_0^1=2(1-e^{-1/4})$$
 
-	When $f(x)=\cos x$, $g(x)=(\sin x)^\frac{1}{4}$, $a=0$, $b=\frac{\pi}{2}$:
+$$\therefore 4(1-e^{-1/4})^2\le \frac13\int_0^1 e^{-\frac{x^2}{2}}\,dx $$
 
-	$$\displaystyle \left( \int_0^{\pi/2} (\sin x)^{1/4} \cos x\,dx \right)^2\le \left( \int_0^{\pi/2} \cos^2 x\,dx \right)\left( \int_0^{\pi/2} \sqrt{\sin x}\,dx \right)$$
-
-	$$\because \int_0^{\pi/2} (\sin x)^{1/4} \cos x\,dx = \left[ \frac{4}{5}(\sin x)^{5/4} \right]_0^{\pi/2} = \frac{4}{5}$$
-
-	$$\because \int_0^{\pi/2} \cos^2 x\,dx = \int_0^{\pi/2} \frac{1+\cos(2x)}{2}\,dx = \left[ \frac{x}{2} + \frac{\sin(2x)}{4} \right]_0^{\pi/2} = \frac{\pi}{4}$$
+$$\implies \int_0^1 e^{-x^2/2}\,dx\ge 12(1-e^{-1/4})^2$$
 
 
-	$$\therefore \left( \frac{4}{5} \right)^2 \le \frac{\pi}{4} \cdot \int_0^{\pi/2} \sqrt{\sin x}\,dx$$
 
-	$$\implies \frac{16}{25} \le \frac{\pi}{4} \cdot \int_0^{\pi/2} \sqrt{\sin x}\,dx$$
+\bigskip\hrule\bigskip
+\textbf{(iii)} When $f(x)=1$, $g(x)=\sqrt{\sin x}$, $a=0$, $b=\frac{\pi}{2}$:
 
-	$$\implies \frac{64}{25\pi} \le \int_0^{\pi/2} \sqrt{\sin x}\,dx$$
+$$\displaystyle \left( \int_0^{\pi/2} \sqrt{\sin x}\,dx \right)^2\le \left( \int_0^{\pi/2} 1\,dx \right)\left( \int_0^{\pi/2} \sin x\,dx \right)$$
 
-	$$\implies \frac{64}{25\pi} \le \int_0^{\pi/2} \sqrt{\sin x}\,dx \le \sqrt{\frac{\pi}{2}}$$
+$$\implies \left( \int_0^{\pi/2} \sqrt{\sin x}\,dx \right)^2\le \frac{\pi}{2}$$
+
+$$\because \sin x>0,\quad x \in [0,\frac{\pi}{2}]$$
+$$\therefore \int_0^{\pi/2} \sqrt{\sin x}\,dx\le \sqrt{\frac{\pi}{2}}$$
+
+
+When $f(x)=\cos x$, $g(x)=(\sin x)^\frac{1}{4}$, $a=0$, $b=\frac{\pi}{2}$:
+
+$$\displaystyle \left( \int_0^{\pi/2} (\sin x)^{1/4} \cos x\,dx \right)^2\le \left( \int_0^{\pi/2} \cos^2 x\,dx \right)\left( \int_0^{\pi/2} \sqrt{\sin x}\,dx \right)$$
+
+$$\because \int_0^{\pi/2} (\sin x)^{1/4} \cos x\,dx = \left[ \frac{4}{5}(\sin x)^{5/4} \right]_0^{\pi/2} = \frac{4}{5}$$
+
+$$\because \int_0^{\pi/2} \cos^2 x\,dx = \int_0^{\pi/2} \frac{1+\cos(2x)}{2}\,dx = \left[ \frac{x}{2} + \frac{\sin(2x)}{4} \right]_0^{\pi/2} = \frac{\pi}{4}$$
+
+
+$$\therefore \left( \frac{4}{5} \right)^2 \le \frac{\pi}{4} \cdot \int_0^{\pi/2} \sqrt{\sin x}\,dx$$
+
+$$\implies \frac{16}{25} \le \frac{\pi}{4} \cdot \int_0^{\pi/2} \sqrt{\sin x}\,dx$$
+
+$$\implies \frac{64}{25\pi} \le \int_0^{\pi/2} \sqrt{\sin x}\,dx$$
+
+$$\implies \frac{64}{25\pi} \le \int_0^{\pi/2} \sqrt{\sin x}\,dx \le \sqrt{\frac{\pi}{2}}$$
 
 
 \bigskip
 \hrule
-	\begin{center}
-		This solution was submitted by \textbf{Jon}.\\[4pt]
-		Published and refined by \textbf{Jon}.\\[8pt]
-		\textit{Last updated: April 6, 2026}
-	\end{center}
+\begin{center}
+	This solution was submitted by \textbf{Jon}\\[4pt]
+	Published and refined by \textbf{Jon}\\[8pt]
+	\textit{Last updated: April 6, 2026}
+\end{center}
 	
 \end{document}
 

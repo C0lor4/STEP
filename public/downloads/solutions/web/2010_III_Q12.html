@@ -106,7 +106,7 @@
 
     <div class="math-block">
       \[
-      S(1-r)=1+\cdot \frac{rd}{1-r}
+      S(1-r)=1+\frac{rd}{1-r}
       \]
     </div>
 
@@ -116,11 +116,11 @@
       \]
     </div>
 
-    <p>\(E(x)\) is the expected number of shots Arthur takes to hit the target</p>
+    <p>\(\mathbb{E}(x)\) is the expected number of shots Arthur takes to hit the target</p>
 
     <div class="math-block">
       \[
-      E(x)=a\cdot 1+(1-a)(1+E(x))=\frac{1}{a}
+      \mathbb{E}(x)=a\cdot 1+(1-a)(1+\mathbb{E}(x))=\frac{1}{a}
       \]
     </div>
 
@@ -153,7 +153,7 @@
     <div class="math-block">
       \[
       \begin{aligned}
-      E(x)&=\sum_{n=1}^{\infty}(2n-1)(a'b')^{n-1}a+\sum_{n=1}^{\infty}2n(a'b')^{n-1}a'b
+      \mathbb{E}(x)&=\sum_{n=1}^{\infty}(2n-1)(a'b')^{n-1}a+\sum_{n=1}^{\infty}2n(a'b')^{n-1}a'b
       \end{aligned}
       \]
     </div>
@@ -161,7 +161,7 @@
     <div class="math-block">
       \[
       \begin{aligned}
-      E(x)
+      \mathbb{E}(x)
       &=a\sum_{n=1}^{\infty}(2n-1)(a'b')^{n-1}+a'b\sum_{n=1}^{\infty}2n(a'b')^{n-1}\\
       &=a\left(2\sum_{n=1}^{\infty}n(a'b')^{n-1}-\sum_{n=1}^{\infty}(a'b')^{n-1}\right)
       +2a'b\sum_{n=1}^{\infty}n(a'b')^{n-1}
@@ -178,14 +178,14 @@
 
     <div class="math-block">
       \[
-      E(x)=a\left(\frac{2}{(1-a'b')^2}-\frac{1}{1-a'b'}\right)
-      +2a'b\cdot \frac{1}{(1-a'b')^2}=\frac{a+a'b}{(1-a'b')^2}\\
+      \mathbb{E}(x)=a\left(\frac{2}{(1-a'b')^2}-\frac{1}{1-a'b'}\right)
+      +2a'b\cdot \frac{1}{(1-a'b')^2}=\frac{a+a'b}{(1-a'b')^2}
       \]
     </div>
 
     <div class="math-block">
       \[
-      \because a+a'b=a(1+b')=a(2-b)\qquad \therefore E(x)=\frac{a(2-b)}{(1-a'b')^2}
+      \because a+a'b=a(1+b')=a(2-b)\qquad \therefore \mathbb{E}(x)=\frac{a(2-b)}{(1-a'b')^2}
       \]
     </div>
 
@@ -203,15 +203,15 @@
 
     <div class="math-block">
       \[
-      \implies \boxed{E=\frac{\alpha}{a}+\frac{\beta}{b}}
+      \implies \boxed{\mathbb{E}=\frac{\alpha}{a}+\frac{\beta}{b}}
       \]
     </div>
 
     <hr class="divider" />
 
     <div class="footer-note">
-      <p>This solution was submitted by <strong>Jon</strong>.</p>
-      <p>Published and refined by <strong>Jon</strong>.</p>
+      <p>This solution was submitted by <strong>Jon</strong></p>
+      <p>Published and refined by <strong>Jon</strong></p>
       <p><em>Last updated: April 15, 2026</em></p>
     </div>
   </main>

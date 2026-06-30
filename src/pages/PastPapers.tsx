@@ -31,8 +31,8 @@ type PaperCollection = {
 
 const downloadItems: DownloadItem[] = [
   {
-    title: 'Formula Sheets',
-    description: 'Quick reference sheets for calculus and algebra',
+    title: 'Reference Sheet',
+    description: 'Useful formulas for calculus and algebra.',
     path: '/pastpapers/formula-sheets',
   },
   {
@@ -40,7 +40,7 @@ const downloadItems: DownloadItem[] = [
     description: 'Some important formulas and tips for STEP',
     path: '/pastpapers/tips',
   },
-].map((item) => ({ ...item, available: item.title === 'Formula Sheets' }));
+].map((item) => ({ ...item, available: item.path === '/pastpapers/formula-sheets' }));
 
 const buildStepCollection = (year: string): PaperCollection => {
   const yearNumber = Number(year);

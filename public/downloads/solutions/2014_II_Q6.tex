@@ -1,0 +1,119 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+$$\sin(\alpha+\beta)-\sin(\alpha-\beta)=2\cos\alpha\sin\beta$$
+
+Let $\ds \alpha=rx,\quad \beta=\frac{x}{2}$
+
+$$\sin\left(r+\frac12\right)x-\sin\left(r-\frac12\right)x=2\sin\frac{x}{2}\cos rx$$
+
+\begin{align*}
+2\sin\frac{x}{2}\bigl(\cos x+\cos2x+\cdots+\cos nx\bigr)
+&=\sum_{r=1}^{n}\left(\sin\left(r+\frac12\right)x-\sin\left(r-\frac12\right)x\right)\\
+&=\sin\left(n+\frac12\right)x-\sin\frac{x}{2}
+\end{align*}
+
+$$\therefore \cos x+\cos2x+\cdots+\cos nx=\frac{\sin\left(n+\frac12\right)x-\sin\frac{x}{2}}{2\sin\frac{x}{2}}$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(i)}
+
+$$S_2(x)=\sin x+\frac12\sin2x$$
+
+$$S_2'(x)=\cos x+\cos2x$$
+
+$$S_2'(x)=0\implies \cos x+\cos2x=0$$
+
+$$\cos x+2\cos^2x-1=0$$
+
+$$(2\cos x-1)(\cos x+1)=0\implies x=\frac{\pi}{3},\ \pi$$
+
+$$
+\renewcommand{\arraystretch}{1.4}
+\begin{array}{c!{\vrule width 1.2pt}c|c}
+x & \frac{\pi}{3} & \pi\\
+\hline
+\rule[-4pt]{0pt}{14pt}
+y & \frac{3\sqrt3}{4} & 0
+\end{array}
+$$
+
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+axis lines=middle,
+xmin=0,xmax=3.35,
+ymin=-0.15,ymax=1.55,
+width=9cm,height=6cm,
+xlabel={$x$}, ylabel={$y$},
+xtick={0,1.0472,3.14159},
+xticklabels={$0$,$\frac{\pi}{3}$,$\pi$},
+ytick={0,1.29904},
+yticklabels={$0$,$\frac{3\sqrt3}{4}$},
+samples=200
+]
+\addplot[domain=0:3.14159] {sin(deg(x))+0.5*sin(deg(2*x))};
+\addplot[only marks] coordinates {(0,0) (1.0472,1.29904) (3.14159,0)};
+\node at (axis cs:1.2,1.43) {$S_2(x)$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)}
+
+$$S_n'(x)=\sum_{r=1}^{n}\cos rx$$
+
+$$\frac{\sin\left(n+\frac12\right)x_0-\sin\frac{x_0}{2}}{2\sin\frac{x_0}{2}}=0$$
+
+$$\sin\left(n+\frac12\right)x_0=\sin\frac{x_0}{2}$$
+
+$$\sin nx_0\cos\frac{x_0}{2}+\cos nx_0\sin\frac{x_0}{2}=\sin\frac{x_0}{2}$$
+
+$$\sin nx_0\cos\frac{x_0}{2}=(1-\cos nx_0)\sin\frac{x_0}{2}$$
+
+$$\sin nx_0=(1-\cos nx_0)\tan\frac{x_0}{2}$$
+
+$$S_n(x_0)-S_{n-1}(x_0)=\frac1n\sin nx_0=\frac1n(1-\cos nx_0)\tan\frac{x_0}{2}\ge0$$
+
+$$\therefore S_n(x_0)\ge S_{n-1}(x_0)$$
+
+If $S_n(x)\le0$ for some $0<x<\pi$, let $x_0$ be a minimum point of $S_n(x)$ in $0<x<\pi$.
+
+$$S_n'(x_0)=0 \implies S_n(x_0)\ge S_{n-1}(x_0)>0$$
+
+Contradiction.
+
+$$\therefore S_n(x)>0\qquad (0<x<\pi)$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(iii)}
+
+$$S_1(x)=\sin x>0\qquad (0<x<\pi)$$
+
+$$S_{n-1}(x)>0\implies S_n(x)>0\qquad (0<x<\pi)$$
+
+$$\because S_n(0)=S_n(\pi)=0$$
+
+$$\therefore S_n(x)\ge0\qquad (0\le x\le\pi)$$
+
+\bigskip
+\hrule
+\begin{center}
+This solution was submitted by \textbf{Jon}\\[4pt]
+Published and refined by \textbf{Jon}\\[8pt]
+\textit{Last updated: June 26, 2026}
+\end{center}
+
+\end{document}
