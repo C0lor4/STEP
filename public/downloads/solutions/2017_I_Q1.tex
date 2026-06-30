@@ -1,0 +1,52 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+(i) $du=x\cos x\,dx$
+
+\begin{align*}\int \frac{x}{x\tan x+1}\,dx
+&=\int \frac{x\cos x}{x\sin x+\cos x}\,dx\\
+&=\int \frac1u\,du\\
+&=\ln|x\sin x+\cos x|+C
+\end{align*}
+
+Let $u=x\cos x-\sin x,\  du=-x\sin x\,dx$
+
+\begin{align*}
+\int \frac{x}{x\cot x-1}\,dx&=\int \frac{x\sin x}{x\cos x-\sin x}\,dx\\
+&=-\int \frac1u\,du\\
+&=-\ln|x\cos x-\sin x|+C
+\end{align*}
+
+\bigskip\hrule\bigskip
+
+(ii) Let $u=x\sec^2x-\tan x$
+$$du=\sec^2x+2x\sec^2x\tan x-\sec^2x\,dx
+=2x\sec^2x\tan x\,dx$$
+
+\begin{align*}\int \frac{x\sec^2x\tan x}{x\sec^2x-\tan x}\,dx
+&=\frac12\int \frac1u\,du\\
+&=\frac12\ln|x\sec^2x-\tan x|+C
+\end{align*}
+
+
+\begin{align*}
+\int \frac{x\sin x\cos x}{(x-\sin x\cos x)^2}\,dx
+&=\int \frac{x\sec^2x\tan x}{(x\sec^2x-\tan x)^2}\,dx\\
+&=\frac12\int \frac1{u^2}\,du\\
+&=-\frac1{2u}+C\\
+&=-\frac{1}{2(x\sec^2x-\tan x)}+C
+\end{align*}
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: June 30, 2026}
+\end{center}
+
+\end{document}

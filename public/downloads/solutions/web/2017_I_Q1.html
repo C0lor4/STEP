@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2017 I Q1 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span> \(du=x\cos x\,dx\)</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \int \frac{x}{x\tan x+1}\,dx
+      &=\int \frac{x\cos x}{x\sin x+\cos x}\,dx\\
+      &=\int \frac1u\,du\\
+      &=\ln|x\sin x+\cos x|+C
+      \end{aligned}
+      \]
+    </div>
+
+    <p>Let \(u=x\cos x-\sin x,\  du=-x\sin x\,dx\)</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \int \frac{x}{x\cot x-1}\,dx
+      &=\int \frac{x\sin x}{x\cos x-\sin x}\,dx\\
+      &=-\int \frac1u\,du\\
+      &=-\ln|x\cos x-\sin x|+C
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span> Let \(u=x\sec^2x-\tan x\)</p>
+
+    <div class="math-block">
+      \[
+      du=\sec^2x+2x\sec^2x\tan x-\sec^2x\,dx
+      =2x\sec^2x\tan x\,dx
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \int \frac{x\sec^2x\tan x}{x\sec^2x-\tan x}\,dx
+      &=\frac12\int \frac1u\,du\\
+      &=\frac12\ln|x\sec^2x-\tan x|+C
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \int \frac{x\sin x\cos x}{(x-\sin x\cos x)^2}\,dx
+      &=\int \frac{x\sec^2x\tan x}{(x\sec^2x-\tan x)^2}\,dx\\
+      &=\frac12\int \frac1{u^2}\,du\\
+      &=-\frac1{2u}+C\\
+      &=-\frac{1}{2(x\sec^2x-\tan x)}+C
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong></p>
+      <p>Published and refined by <strong>Jon</strong></p>
+      <p><em>Last updated: June 30, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>
