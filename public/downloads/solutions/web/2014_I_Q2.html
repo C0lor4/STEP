@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2014 I Q2 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .graph-block {
+      margin: 14px 0 18px;
+      text-align: center;
+    }
+
+    .graph-block img {
+      width: min(760px, 100%);
+      height: auto;
+      display: inline-block;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span> Let \(\displaystyle u=2-x,\ du=-dx\)</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \int \ln(2-x)\,dx
+      &=-\int \ln u\,du\\
+      &=-(u\ln u-u)+C\\
+      &=-(2-x)\ln(2-x)+(2-x)+C
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span></p>
+
+    <div class="math-block">
+      \[
+      y=\ln|x^2-4|
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      |x^2-4|=1\implies x=\pm\sqrt3,\ \pm\sqrt5
+      \]
+    </div>
+
+    <p>Vertical asymptotes: \(\displaystyle x=\pm2\)</p>
+
+    <div class="graph-block">
+      <img src="2014_I_Q2_graph1.png" alt="Graph for part (ii)" />
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iii)</span> In the first quadrant,</p>
+
+    <div class="math-block">
+      \[
+      y=\ln(4-x^2)
+      \]
+    </div>
+
+    <p>The curve meets the positive \(x\)-axis when</p>
+
+    <div class="math-block">
+      \[
+      \ln(4-x^2)=0\implies x=\sqrt3
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \text{Area}
+      &=\int_0^{\sqrt3}\ln(4-x^2)\,dx\\
+      &=\Big[x\ln(4-x^2)\Big]_0^{\sqrt3}
+      +2\int_0^{\sqrt3}\frac{x^2}{4-x^2}\,dx\\
+      &=2\int_0^{\sqrt3}\left(-1+\frac4{4-x^2}\right)\,dx\\
+      &=\left[-2x+2\ln\left(\frac{2+x}{2-x}\right)\right]_0^{\sqrt3}\\
+      &=-2\sqrt3+2\ln\left(\frac{2+\sqrt3}{2-\sqrt3}\right)\\
+      &=-2\sqrt3+4\ln\left(2+\sqrt3\right)
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iv)</span></p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \int_0^2 \ln(4-x^2)\,dx
+      &=\Big[-(2-x)\ln(2-x)+(2+x)\ln(2+x)-2x\Big]_0^2\\
+      &=4\ln4-4
+      \end{aligned}
+      \]
+    </div>
+
+    <p>\(\because \ln(4-x^2)\geq 0\) on \(\displaystyle 0\leq x\leq\sqrt3\) and \(\displaystyle \ln(4-x^2)&lt;0\) on \(\displaystyle \sqrt3&lt;x&lt;2\),</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \therefore \text{Area}
+      &=2\left(\int_0^{\sqrt3}\ln(4-x^2)\,dx-\int_{\sqrt3}^{2}\ln(4-x^2)\,dx\right)\\
+      &=2\left(2\int_0^{\sqrt3}\ln(4-x^2)\,dx-\int_0^2\ln(4-x^2)\,dx\right)\\
+      &=4\left(4\ln(2+\sqrt3)-2\sqrt3\right)-2(4\ln4-4)\\
+      &=8+16\ln(2+\sqrt3)-16\ln2-8\sqrt3
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong></p>
+      <p>Published and refined by <strong>Jon</strong></p>
+      <p><em>Last updated: July 1, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2014 I Q3 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .graph-block {
+      margin: 14px 0 18px;
+      text-align: center;
+    }
+
+    .graph-block img {
+      width: min(640px, 70%);
+      height: auto;
+      display: inline-block;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span> When \(\displaystyle a=0\),</p>
+
+    <div class="math-block">
+      \[
+      \int_0^b x^2\,dx=\left(\int_0^b x\,dx\right)^2
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \frac{b^3}{3}=\left(\frac{b^2}{2}\right)^2
+      \]
+    </div>
+
+    <p>\(\because b>0\)</p>
+
+    <div class="math-block">
+      \[
+      \therefore b=\frac43
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span> When \(\displaystyle a=1\),</p>
+
+    <div class="math-block">
+      \[
+      \int_1^b x^2\,dx=\left(\int_1^b x\,dx\right)^2
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \frac{b^3-1}{3}=\left(\frac{b^2-1}{2}\right)^2
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      3b^4-4b^3-6b^2+7=0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      (b-1)(3b^3-b^2-7b-7)=0
+      \]
+    </div>
+
+    <p>\(\because b>a=1\)</p>
+
+    <div class="math-block">
+      \[
+      \therefore 3b^3-b^2-7b-7=0
+      \]
+    </div>
+
+    <p>Let \(\displaystyle f(b)=3b^3-b^2-7b-7\)</p>
+
+    <div class="math-block">
+      \[
+      f'(b)=9b^2-2b-7=(b-1)(9b+7)
+      \]
+    </div>
+
+    <p>Stationary points occur at \(\displaystyle b=-\frac79,\ 1\)</p>
+
+    <div class="math-block">
+      \[
+      f\left(-\frac79\right)=-\frac{868}{243}&lt;0,\qquad f(1)=-12&lt;0
+      \]
+    </div>
+
+    <div class="graph-block">
+      <img src="2014_I_Q3_graph1.png" alt="Graph for part (ii)" />
+    </div>
+
+    <p>The two stationary points are below the \(b\)-axis, so there is only one real root</p>
+
+    <div class="math-block">
+      \[
+      f(2)=-1&lt;0,\qquad f(3)=44>0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore 2&lt;b&lt;3
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iii)</span> Let \(\displaystyle p=b+a,\ q=b-a\)</p>
+
+    <div class="math-block">
+      \[
+      b^2-a^2=(b-a)(b+a)=pq
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      b^3-a^3=(b-a)(b^2+ab+a^2)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      b^2+ab+a^2=\frac{3p^2+q^2}{4}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \int_a^b x^2\,dx&=\left(\int_a^b x\,dx\right)^2\\
+      \frac{b^3-a^3}{3}&=\left(\frac{b^2-a^2}{2}\right)^2\\
+      \frac{q(3p^2+q^2)}{12}&=\frac{p^2q^2}{4}
+      \end{aligned}
+      \]
+    </div>
+
+    <p>\(\because q>0\)</p>
+
+    <div class="math-block">
+      \[
+      \therefore 3p^2+q^2=3p^2q
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      p^2=\frac{q^2}{3(q-1)}
+      \]
+    </div>
+
+    <p>\(\because \displaystyle p=b+a\geq b-a=q,\)</p>
+
+    <div class="math-block">
+      \[
+      \therefore p^2\geq q^2
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \frac{q^2}{3(q-1)}\geq q^2
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \implies q\leq \frac43
+      \]
+    </div>
+
+    <p>\(\displaystyle p^2=\frac{q^2}{3(q-1)}>0\implies q>1\)</p>
+
+    <div class="math-block">
+      \[
+      1&lt;q\leq \frac43\implies 1&lt;b-a\leq \frac43
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong></p>
+      <p>Published and refined by <strong>Jon</strong></p>
+      <p><em>Last updated: July 1, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>

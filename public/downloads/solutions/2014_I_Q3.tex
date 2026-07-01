@@ -1,0 +1,119 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\textbf{(i)} When $\ds a=0$,
+
+$$\int_0^b x^2\,dx=\left(\int_0^b x\,dx\right)^2$$
+
+$$\frac{b^3}{3}=\left(\frac{b^2}{2}\right)^2$$
+
+$\because b>0$
+$$\therefore b=\frac43$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)} When $\ds a=1$,
+
+$$\int_1^b x^2\,dx=\left(\int_1^b x\,dx\right)^2$$
+
+$$\frac{b^3-1}{3}=\left(\frac{b^2-1}{2}\right)^2$$
+
+$$3b^4-4b^3-6b^2+7=0$$
+
+$$(b-1)(3b^3-b^2-7b-7)=0$$
+
+$\because b>a=1$
+
+$$\therefore 3b^3-b^2-7b-7=0$$
+
+Let $\ds f(b)=3b^3-b^2-7b-7$
+
+$$f'(b)=9b^2-2b-7=(b-1)(9b+7)$$
+
+Stationary points occur at $\ds b=-\frac79,\ 1$
+
+$$f\left(-\frac79\right)=-\frac{868}{243}<0,\qquad f(1)=-12<0$$
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines=middle,
+    axis line style={->},
+    xmin=-1.5,xmax=4.1,
+    ymin=-20,ymax=65,
+    xtick=\empty,
+    ytick=\empty,
+    width=9cm,
+    height=7cm,
+    samples=200,
+    clip=false
+]
+\addplot[black,domain=-1.4:3.3] {3*x^3-x^2-7*x-7};
+\addplot[only marks,mark=*] coordinates {(2,-1) (3,44)};
+
+\node at (axis cs:2,-1) [below right] {$f(2)<0$};
+\node at (axis cs:3,44) [above left] {$f(3)>0$};
+
+\node at (axis cs:4.1,0) [right] {$x$};
+\node at (axis cs:0,65) [above right] {$y$};
+
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+The two stationary points are below the $b$-axis, so there is only one real root
+
+$$f(2)=-1<0,\qquad f(3)=44>0$$
+
+$$\therefore 2<b<3$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(iii)} Let $\ds p=b+a,\ q=b-a$
+
+$$b^2-a^2=(b-a)(b+a)=pq$$
+
+$$b^3-a^3=(b-a)(b^2+ab+a^2)$$
+
+$$b^2+ab+a^2=\frac{3p^2+q^2}{4}$$
+
+\begin{align*}
+\int_a^b x^2\,dx&=\left(\int_a^b x\,dx\right)^2\\
+\frac{b^3-a^3}{3}&=\left(\frac{b^2-a^2}{2}\right)^2\\
+\frac{q(3p^2+q^2)}{12}&=\frac{p^2q^2}{4}
+\end{align*}
+
+$\because q>0$
+
+$$\therefore 3p^2+q^2=3p^2q$$
+
+$$p^2=\frac{q^2}{3(q-1)}$$
+
+$\because \ds p=b+a\geq b-a=q$,
+
+$$\therefore p^2\geq q^2$$
+
+$$\frac{q^2}{3(q-1)}\geq q^2$$
+
+$$\implies q\leq \frac43$$
+
+$\ds p^2=\frac{q^2}{3(q-1)}>0\implies q>1$
+
+$$1<q\leq \frac43\implies 1<b-a\leq \frac43$$
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: July 1, 2026}
+\end{center}
+
+\end{document}

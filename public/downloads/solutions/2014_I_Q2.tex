@@ -1,0 +1,123 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\textbf{(i)} Let $\ds u=2-x,\ du=-dx$
+
+\begin{align*}
+\int \ln(2-x)\,dx
+&=-\int \ln u\,du\\
+&=-(u\ln u-u)+C\\
+&=-(2-x)\ln(2-x)+(2-x)+C
+\end{align*}
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)}
+
+$$y=\ln|x^2-4|$$
+
+$$|x^2-4|=1\implies x=\pm\sqrt3,\ \pm\sqrt5$$
+
+Vertical asymptotes: $\ds x=\pm2$
+$$
+\renewcommand{\arraystretch}{1.4}
+\begin{array}{c!{\vrule width 1.2pt}c|c|c|c|c|c|c}
+x & -\sqrt5 & -2 & -\sqrt3 & 0 & \sqrt3 & 2 & \sqrt5\\
+\hline
+\rule[-4pt]{0pt}{14pt}
+y & 0 & -\infty & 0 & \ln4 & 0 & -\infty & 0
+\end{array}
+$$
+
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines=middle,
+    axis line style={->},
+    xmin=-4,xmax=4,
+    ymin=-5,ymax=4,
+    xtick=\empty,
+    ytick=\empty,
+    width=10cm,
+    height=7cm,
+    samples=200,
+    clip=false
+]
+\addplot[black,domain=-4:-1.9] {ln(x^2-4)};
+\addplot[black,domain=-2.1:1.993] {ln(4-x^2)};
+\addplot[black,domain=1.9:4] {ln(x^2-4)};
+
+\addplot[black,dashed] coordinates {(-2,-5) (-2,4)};
+\addplot[black,dashed] coordinates {(2,-5) (2,4)};
+
+\addplot[only marks,mark=*] coordinates {(-2.236,0) (-1.732,0) (1.732,0) (2.236,0) (0,1.386)};
+
+\node at (axis cs:-2.236,0) [below left] {$-\sqrt5$};
+\node at (axis cs:-1.732,0) [below right] {$-\sqrt3$};
+\node at (axis cs:1.732,0) [below left] {$\sqrt3$};
+\node at (axis cs:2.236,0) [below right] {$\sqrt5$};
+\node at (axis cs:0,1.386) [above right] {$(0,\ln4)$};
+
+\node at (axis cs:4,0) [right] {$x$};
+\node at (axis cs:0,4) [above right] {$y$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\bigskip\hrule\bigskip
+
+\textbf{(iii)} In the first quadrant,
+
+$$y=\ln(4-x^2)$$
+
+The curve meets the positive $x$-axis when
+
+$$\ln(4-x^2)=0\implies x=\sqrt3$$
+
+\begin{align*}
+\text{Area}
+&=\int_0^{\sqrt3}\ln(4-x^2)\,dx\\
+&=\Big[x\ln(4-x^2)\Big]_0^{\sqrt3}
++2\int_0^{\sqrt3}\frac{x^2}{4-x^2}\,dx\\
+&=2\int_0^{\sqrt3}\left(-1+\frac4{4-x^2}\right)\,dx\\
+&=\left[-2x+2\ln\left(\frac{2+x}{2-x}\right)\right]_0^{\sqrt3}\\
+&=-2\sqrt3+2\ln\left(\frac{2+\sqrt3}{2-\sqrt3}\right)\\
+&=-2\sqrt3+4\ln\left(2+\sqrt3\right)
+\end{align*}
+
+\bigskip\hrule\bigskip
+
+\textbf{(iv)}
+\begin{align*}
+\int_0^2 \ln(4-x^2)\,dx
+&=\Big[-(2-x)\ln(2-x)+(2+x)\ln(2+x)-2x\Big]_0^2\\
+&=4\ln4-4
+\end{align*}
+
+$\because \ln(4-x^2)\geq 0$ on $\ds 0\leq x\leq\sqrt3$ and $\ds \ln(4-x^2)<0$ on $\ds \sqrt3<x<2$,
+
+\begin{align*}
+\therefore \text{Area}
+&=2\left(\int_0^{\sqrt3}\ln(4-x^2)\,dx-\int_{\sqrt3}^{2}\ln(4-x^2)\,dx\right)\\
+&=2\left(2\int_0^{\sqrt3}\ln(4-x^2)\,dx-\int_0^2\ln(4-x^2)\,dx\right)\\
+&=4\left(4\ln(2+\sqrt3)-2\sqrt3\right)-2(4\ln4-4)\\
+&=8+16\ln(2+\sqrt3)-16\ln2-8\sqrt3
+\end{align*}
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: July 1, 2026}
+\end{center}
+
+\end{document}
