@@ -1,0 +1,114 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\textbf{(i)}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines=middle,
+    xmin=0,xmax=1.8,
+    ymin=0,ymax=1.8,
+    xtick=\empty,
+    ytick=\empty,
+    width=9cm,
+    height=7cm,
+    samples=200,
+    clip=false
+]
+\def\b{1.05}
+\def\sineb{0.867423}
+\addplot[black,domain=0:1.5708] {sin(deg(x))};
+\addplot[black,dashed,domain=0:1.45] {x};
+\addplot[black,dotted,thick,domain=0:\b] {(\sineb/\b)*x};
+\addplot[only marks,mark=*] coordinates {(0,0) (\b,\sineb)};
+\node at (axis cs:0,0) [below left] {$(0,0)$};
+\node at (axis cs:\b,\sineb) [below right] {$(b,\sin b)$};
+\node at (axis cs:1.45,1.45) [above] {$y=x$};
+\node at (axis cs:1.32,1.14) [right] {$y=\sin x$};
+\node at (axis cs:1.78,0) [below right] {$x$};
+\node at (axis cs:0,1.78) [above left] {$y$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+For $0<x<b$,
+
+$$\frac{x\sin b}{b}<\sin x<x$$
+
+Area under chord $<$ Area under curve $<$ Area under tangent
+
+$$\frac12b\sin b<\int_0^b\sin x\,dx<\frac12b^2$$
+
+$$\frac12b\sin b<1-\cos b<\frac12b^2$$
+
+$$1-\frac12b^2<\cos b<1-\frac12b\sin b$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines=middle,
+    xmin=-0.25,xmax=1.2,
+    ymin=0.8,ymax=2.6,
+    xtick=\empty,
+    ytick=\empty,
+    width=9cm,
+    height=7cm,
+    samples=200,
+    clip=false
+]
+\def\a{2.2}
+\addplot[black,domain=0:1] {\a^x};
+\addplot[black,dashed,domain=0:1.05] {1+ln(\a)*x};
+\addplot[black,dotted,domain=0:1] {1+(\a-1)*x};
+\addplot[only marks,mark=*] coordinates {(0,1) (1,\a)};
+\node at (axis cs:0,1) [left] {$(0,1)$};
+\node at (axis cs:1,\a) [right] {$(1,a)$};
+\node at (axis cs:0.75,2.15) [above right ] {$y=a^x$};
+\node at (axis cs:0.82,1.45) [below] {$y=1+x\ln a$};
+\node at (axis cs:1.18,0.8) [below right] {$x$};
+\node at (axis cs:0,2.58) [above left] {$y$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+Area under tagent $<$ Area under curve:
+$$\int_0^1a^x\,dx<\frac{a+1}{2}$$
+
+$$\frac{a-1}{\ln a}<\frac{a+1}{2}$$
+
+$$\frac{2(a-1)}{a+1}<\ln a$$
+
+Area under tangent $<$ area under curve:
+
+$$\int_0^1a^x\,dx>\int_0^1(1+x\ln a)\,dx$$
+
+$$\frac{a-1}{\ln a}>1+\frac12\ln a$$
+
+$$(\ln a)^2+2\ln a<2a-2$$
+
+$$(\ln a+1)^2<2a-1$$
+
+$$\ln a<-1+\sqrt{2a-1}$$
+
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: June 30, 2026}
+\end{center}
+
+\end{document}

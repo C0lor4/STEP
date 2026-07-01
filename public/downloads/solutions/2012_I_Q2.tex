@@ -1,0 +1,156 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\textbf{(i)}
+
+$$y=x^4-6x^2+9=(x^2-3)^2$$
+
+$$\frac{dy}{dx}=4x^3-12x=4x(x^2-3)$$
+
+$$\frac{dy}{dx}=0\implies x=0,\ \pm\sqrt3$$
+
+$$y(0)=9,\qquad y(\pm\sqrt3)=0$$
+
+Stationary points are
+
+$$(-\sqrt3,0),\quad (0,9),\quad (\sqrt3,0)$$
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines=middle,
+    xmin=-3,xmax=3,
+    ymin=-2,ymax=11,
+    xtick=\empty,
+    ytick=\empty,
+    width=10cm,
+    height=7cm,
+    samples=200,
+    clip=false
+]
+\addplot[black,domain=-2.5:2.5] {x^4-6*x^2+9};
+\addplot[only marks,mark=*] coordinates {(-1.732,0) (0,9) (1.732,0)};
+\node at (axis cs:-1.732,0) [below] {$(-\sqrt3,0)$};
+\node at (axis cs:0.5,9) [above] {$(0,9)$};
+\node at (axis cs:1.732,0) [below] {$(\sqrt3,0)$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+$$x^4-6x^2+b=0\iff x^4-6x^2=-b$$
+
+$$x^4-6x^2=(x^2-3)^2-9$$
+
+$$
+\renewcommand{\arraystretch}{1.4}
+\begin{array}{c!{\vrule width 1.2pt}c|c|c|c|c}
+n & 0 & 1 & 2 & 3 & 4\\
+\hline
+\rule[-4pt]{0pt}{14pt}
+b & b>9 & \text{none} & b<0\text{ or }b=9 & b=0 & 0<b<9
+\end{array}
+$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)}
+
+$$\frac{dy}{dx}=4x^3-12x+a,\qquad \frac{d^2y}{dx^2}=12x^2-12$$
+
+$$\frac{d^2y}{dx^2}=0\implies x=\pm1$$
+
+When $\ds x=1,\ 4-12+a=0\implies a=8$
+
+When $\ds x=-1, \ -4+12+a=0\implies a=-8$
+
+When $a=8$,
+
+$$y=x^4-6x^2+8x+b,\qquad \frac{dy}{dx}=4(x-1)^2(x+2)$$
+
+$$\frac{dy}{dx}<0\quad (x<-2),\qquad \frac{dy}{dx}\geq 0\quad(x>-2)$$
+
+Minimum point has $x=-2,\ y(-2)=b-24$
+
+$$
+\renewcommand{\arraystretch}{1.4}
+\begin{array}{c!{\vrule width 1.2pt}c|c|c}
+b & b>24 & b=24 & b<24\\
+\hline
+\rule[-4pt]{0pt}{14pt}
+\text{roots} & 0 & 1 & 2
+\end{array}
+$$
+
+$\because$ When $\ds a=-8,\ x^4-6x^2-8x+b=f_8(-x)$
+
+$\therefore$ The roots count is the same for $\ds a=-8$
+
+
+\bigskip\hrule\bigskip
+
+\textbf{(iii)}
+
+$$y=x^4-6x^2+ax,\qquad a>8$$
+
+$$\frac{dy}{dx}=4x^3-12x+a$$
+
+Let $\ds g(x)=4x^3-12x+a$
+
+$$g'(x)=12x^2-12$$
+
+$$g(-1)=a+8>0,\qquad g(1)=a-8>0$$
+
+$$g(-2)=a-8>0,\qquad \lim_{x\to-\infty}g(x)=-\infty$$
+
+There is one stationary point at $x=\alpha$, where $\alpha<-2$
+
+$$4\alpha^3-12\alpha+a=0$$
+
+$$a=12\alpha-4\alpha^3$$
+
+$$y(\alpha)=\alpha^4-6\alpha^2+a\alpha
+=3\alpha^2(2-\alpha^2)<0$$
+
+$$y=x(x^3-6x+a)$$
+
+Let $\beta$ be the negative root of $\ds x^3-6x+a=0$
+
+$$\beta<\alpha<-2,\qquad y=0\text{ at }x=\beta,0$$
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines=middle,
+    xmin=-4.2,xmax=2.2,
+    ymin=-19,ymax=18,
+    xtick=\empty,
+    ytick=\empty,
+    width=10cm,
+    height=7cm,
+    samples=200,
+    clip=false
+]
+\addplot[black,domain=-3.35:2.1] {x^4-6*x^2+10*x};
+\addplot[only marks,mark=*] coordinates {(-3.05,0) (0,0)};
+\node at (axis cs:-3.05,0) [above left] {$(\beta,0)$};
+\node at (axis cs:0,0) [below right] {$(0,0)$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: June 30, 2026}
+\end{center}
+
+\end{document}
