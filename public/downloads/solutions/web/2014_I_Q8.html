@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2014 I Q8 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span></p>
+
+    <p>For \(L_a\),</p>
+
+    <div class="math-block">
+      \[
+      y-0=\frac{(1-a)-0}{0-a}(x-a)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      y=-\frac{1-a}{a}x+1-a
+      \]
+    </div>
+
+    <p>For \(L_b\),</p>
+
+    <div class="math-block">
+      \[
+      y=-\frac{1-b}{b}x+1-b
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      y=-\frac{1-a}{a}x+1-a=-\frac{1-b}{b}x+1-b
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \frac{b-a}{ab}x=b-a
+      \]
+    </div>
+
+    <p>\(\displaystyle \because a\neq b,\quad \therefore x=ab\)</p>
+
+    <div class="math-block">
+      \[
+      y=(1-a)(1-b)
+      \]
+    </div>
+
+    <p>Points of intersection: \(\displaystyle (ab,\ (1-a)(1-b))\)</p>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span></p>
+
+    <div class="math-block">
+      \[
+      b\to a\implies (ab,\ (1-a)(1-b))\to (a^2,\ (1-a)^2)
+      \]
+    </div>
+
+    <p>Let \(\displaystyle x=a^2\quad (0&lt;a&lt;1)\),</p>
+
+    <div class="math-block">
+      \[
+      y=(1-a)^2=(1-\sqrt{x})^2
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iii)</span></p>
+
+    <div class="math-block">
+      \[
+      C:\ y=(1-\sqrt{x})^2=1-2\sqrt{x}+x
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \frac{dy}{dx}=1-\frac1{\sqrt{x}}=1-\frac1a=-\frac{1-a}{a}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      y-(1-a)^2&=-\frac{1-a}{a}(x-a^2)\\
+      y&=-\frac{1-a}{a}x+1-a
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore L_a \text{ is tangent to } C \text{ at } (a^2,(1-a)^2)
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong></p>
+      <p>Published and refined by <strong>Jon</strong></p>
+      <p><em>Last updated: July 1, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>

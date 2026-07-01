@@ -1,0 +1,59 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\textbf{(i)}
+
+For $L_a$,
+$$y-0=\frac{(1-a)-0}{0-a}(x-a)$$
+$$y=-\frac{1-a}{a}x+1-a$$
+
+For $L_b$,
+$$y=-\frac{1-b}{b}x+1-b$$
+
+
+$$y=-\frac{1-a}{a}x+1-a=-\frac{1-b}{b}x+1-b$$
+
+$$\frac{b-a}{ab}x=b-a$$
+
+$\ds \because a\neq b,\quad \therefore x=ab$
+
+$$y=(1-a)(1-b)$$
+Points of intersection:  $ \ds (ab,\ (1-a)(1-b))$
+
+\bigskip\hrule\bigskip
+\textbf{(ii)}
+
+$$b\to a\implies (ab,\ (1-a)(1-b))\to (a^2,\ (1-a)^2)$$
+
+Let $\ds x=a^2\quad (0<a<1)$, 
+
+$$y=(1-a)^2=(1-\sqrt{x})^2$$
+
+\bigskip\hrule\bigskip
+\textbf{(iii)}
+
+$$C:\ y=(1-\sqrt{x})^2=1-2\sqrt{x}+x$$
+
+$$\frac{dy}{dx}=1-\frac1{\sqrt{x}}=1-\frac1a=-\frac{1-a}{a}$$
+
+\begin{align*}
+y-(1-a)^2&=-\frac{1-a}{a}(x-a^2)\\
+y&=-\frac{1-a}{a}x+1-a
+\end{align*}
+
+$$\therefore L_a \text{ is tangent to } C \text{ at } (a^2,(1-a)^2)$$
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: July 1, 2026}
+\end{center}
+
+\end{document}
