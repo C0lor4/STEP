@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2012 I Q5 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p>Let \(\displaystyle u=\cos^2x,\ du=-\sin(2x)\,dx,\qquad
+    \renewcommand{\arraystretch}{1.4}
+    \begin{array}{c!{\vrule width 1.2pt}c|c}
+    x & 0 & \frac{\pi}{4}\\
+    \hline
+    \rule[-4pt]{0pt}{14pt}
+    u & 1 & \frac12
+    \end{array}\)</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \int_0^{\frac14\pi}\sin(2x)\ln(\cos x)\,dx
+      &=\frac12\int_{\frac12}^{1}\ln u\,du\\
+      &=\frac12[u\ln u-u]_{\frac12}^{1}\\
+      &=\frac14(\ln2-1)
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \int_0^{\frac14\pi}\cos(2x)\ln(\cos x)\,dx
+      &=\left[\frac12\sin(2x)\ln(\cos x)\right]_0^{\frac14\pi}
+      +\frac12\int_0^{\frac14\pi}\sin(2x)\tan x\,dx\\
+      &=-\frac14\ln2+\frac12\int_0^{\frac14\pi}2\sin^2x\,dx\\
+      &=-\frac14\ln2+\frac12\int_0^{\frac14\pi}(1-\cos2x)\,dx\\
+      &=-\frac14\ln2+\frac12\left[x-\frac12\sin2x\right]_0^{\frac14\pi}\\
+      &=\frac18(\pi-\ln4-2)
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p>Let \(\displaystyle t=x-\frac{\pi}{4},\ dx=dt, \qquad
+    \renewcommand{\arraystretch}{1.4}
+    \begin{array}{c!{\vrule width 1.2pt}c|c}
+    x & \frac{\pi}{4} & \frac{\pi}{2}\\
+    \hline
+    \rule[-4pt]{0pt}{14pt}
+    t & 0 & \frac{\pi}{4}
+    \end{array}\)</p>
+
+    <div class="math-block">
+      \[
+      \cos x+\sin x=\sqrt2\cos t
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \cos(2x)+\sin(2x)=\cos2t-\sin2t
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \int_{\frac14\pi}^{\frac12\pi}(\cos(2x)+\sin(2x))&\ln(\cos x+\sin x)\,dx=\int_0^{\frac14\pi}(\cos2t-\sin2t)\ln(\sqrt2\cos t)\,dt\\
+      &=\int_0^{\frac14\pi}(\cos2t-\sin2t)\left(\frac12\ln2+\ln(\cos t)\right)\,dt\\
+      &=\frac12\ln2\int_0^{\frac14\pi}(\cos2t-\sin2t)\,dt+\int_0^{\frac14\pi}\cos2t\ln(\cos t)\,dt-\int_0^{\frac14\pi}\sin2t\ln(\cos t)\,dt
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \int_0^{\frac14\pi}(\cos2t-\sin2t)\,dt
+      =\left[\frac12\sin2t+\frac12\cos2t\right]_0^{\frac14\pi}=0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      &\int_{\frac14\pi}^{\frac12\pi}(\cos(2x)+\sin(2x))\ln(\cos x+\sin x)\,dx\\
+      &=\frac12\ln2\cdot 0
+      +\int_0^{\frac14\pi}\cos2t\ln(\cos t)\,dt
+      -\int_0^{\frac14\pi}\sin2t\ln(\cos t)\,dt\\
+      &=\frac{\pi}{8}-\frac12\ln2
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong></p>
+      <p>Published and refined by <strong>Jon</strong></p>
+      <p><em>Last updated: July 1, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>

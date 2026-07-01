@@ -1,0 +1,80 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+Let $\ds u=\cos^2x,\ du=-\sin(2x)\,dx,\qquad
+\renewcommand{\arraystretch}{1.4}
+\begin{array}{c!{\vrule width 1.2pt}c|c}
+x & 0 & \frac{\pi}{4}\\
+\hline
+\rule[-4pt]{0pt}{14pt}
+u & 1 & \frac12
+\end{array}
+$
+
+\begin{align*}
+\int_0^{\frac14\pi}\sin(2x)\ln(\cos x)\,dx
+&=\frac12\int_{\frac12}^{1}\ln u\,du\\
+&=\frac12[u\ln u-u]_{\frac12}^{1}\\
+&=\frac14(\ln2-1)
+\end{align*}
+
+\bigskip\hrule\bigskip
+
+\begin{align*}
+\int_0^{\frac14\pi}\cos(2x)\ln(\cos x)\,dx
+&=\left[\frac12\sin(2x)\ln(\cos x)\right]_0^{\frac14\pi}
++\frac12\int_0^{\frac14\pi}\sin(2x)\tan x\,dx\\
+&=-\frac14\ln2+\frac12\int_0^{\frac14\pi}2\sin^2x\,dx\\
+&=-\frac14\ln2+\frac12\int_0^{\frac14\pi}(1-\cos2x)\,dx\\
+&=-\frac14\ln2+\frac12\left[x-\frac12\sin2x\right]_0^{\frac14\pi}\\
+&=\frac18(\pi-\ln4-2)
+\end{align*}
+
+\bigskip\hrule\bigskip
+
+Let $\ds t=x-\frac{\pi}{4},\ dx=dt, \qquad
+\renewcommand{\arraystretch}{1.4}
+\begin{array}{c!{\vrule width 1.2pt}c|c}
+x & \frac{\pi}{4} & \frac{\pi}{2}\\
+\hline
+\rule[-4pt]{0pt}{14pt}
+t & 0 & \frac{\pi}{4}
+\end{array}
+$
+
+$$\cos x+\sin x=\sqrt2\cos t$$
+
+$$\cos(2x)+\sin(2x)=\cos2t-\sin2t$$
+
+\begin{align*}
+\int_{\frac14\pi}^{\frac12\pi}(\cos(2x)+\sin(2x))&\ln(\cos x+\sin x)\,dx=\int_0^{\frac14\pi}(\cos2t-\sin2t)\ln(\sqrt2\cos t)\,dt\\
+&=\int_0^{\frac14\pi}(\cos2t-\sin2t)\left(\frac12\ln2+\ln(\cos t)\right)\,dt\\
+=\frac12\ln2\int_0^{\frac14\pi}(\cos2t-&\sin2t)\,dt+\int_0^{\frac14\pi}\cos2t\ln(\cos t)\,dt-\int_0^{\frac14\pi}\sin2t\ln(\cos t)\,dt
+\end{align*}
+
+$$\int_0^{\frac14\pi}(\cos2t-\sin2t)\,dt
+=\left[\frac12\sin2t+\frac12\cos2t\right]_0^{\frac14\pi}=0$$
+
+
+\begin{align*}
+&\int_{\frac14\pi}^{\frac12\pi}(\cos(2x)+\sin(2x))\ln(\cos x+\sin x)\,dx\\
+&=\frac12\ln2\cdot 0
++\int_0^{\frac14\pi}\cos2t\ln(\cos t)\,dt
+-\int_0^{\frac14\pi}\sin2t\ln(\cos t)\,dt\\
+&=\frac{\pi}{8}-\frac12\ln2
+\end{align*}
+\bigskip
+
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: July 1, 2026}
+\end{center}
+
+\end{document}
