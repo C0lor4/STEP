@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2009 II Q5 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <div class="math-block">
+      \[
+      (\sqrt{x-1}+1)^2=x+2\sqrt{x-1}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      (\sqrt{x-1}-1)^2=x-2\sqrt{x-1}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(i)</span></p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \int_5^{10}\frac{\sqrt{x+2\sqrt{x-1}}+\sqrt{x-2\sqrt{x-1}}}{\sqrt{x-1}}\,dx
+      &=\int_5^{10}\frac{\sqrt{x-1}+1+\sqrt{x-1}-1}{\sqrt{x-1}}\,dx\\
+      &=\int_5^{10}2\,dx\\
+      &=10
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span> Let \(\displaystyle u=\sqrt{x-1},\ x=\frac54\implies u=\frac12,\  x=10\implies u=3\)</p>
+
+    <div class="math-block">
+      \[
+      dx=2u\,du
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      y=\frac{\sqrt{x-2\sqrt{x-1}}}{\sqrt{x-1}}=\frac{|u-1|}{u}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \text{Area}
+      &=\int_{\frac12}^{1}\frac{1-u}{u}\cdot 2u\,du
+      +\int_1^3\frac{u-1}{u}\cdot 2u\,du\\
+      &=\int_{\frac12}^{1}(2-2u)\,du+\int_1^3(2u-2)\,du\\
+      &=\left[2u-u^2\right]_{\frac12}^{1}+\left[u^2-2u\right]_1^3\\
+      &=\frac14+4\\
+      &=\frac{17}{4}
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iii)</span></p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      &\int_{\frac54}^{10}\frac{\sqrt{x+2\sqrt{x-1}}+\sqrt{x-2\sqrt{x+1}+2}}{\sqrt{x^2-1}}\,dx\\
+      &=\int_{\frac54}^{10}\frac{\sqrt{x-1}+1+\sqrt{x+1}-1}{\sqrt{x-1}\sqrt{x+1}}\,dx\\
+      &=\int_{\frac54}^{10}\left(\frac1{\sqrt{x+1}}+\frac1{\sqrt{x-1}}\right)\,dx\\
+      &=\left[2\sqrt{x+1}+2\sqrt{x-1}\right]_{\frac54}^{10}\\
+      &=2\sqrt{11}+2
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong></p>
+      <p>Published and refined by <strong>Jon</strong></p>
+      <p><em>Last updated: July 2, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>

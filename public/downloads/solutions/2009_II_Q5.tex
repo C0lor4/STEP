@@ -1,0 +1,62 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+$$(\sqrt{x-1}+1)^2=x+2\sqrt{x-1}$$
+
+$$(\sqrt{x-1}-1)^2=x-2\sqrt{x-1}$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(i)}
+
+\begin{align*}
+\int_5^{10}\frac{\sqrt{x+2\sqrt{x-1}}+\sqrt{x-2\sqrt{x-1}}}{\sqrt{x-1}}\,dx
+&=\int_5^{10}\frac{\sqrt{x-1}+1+\sqrt{x-1}-1}{\sqrt{x-1}}\,dx\\
+&=\int_5^{10}2\,dx\\
+&=10
+\end{align*}
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)} Let $\ds u=\sqrt{x-1},\ x=\frac54\implies u=\frac12,\  x=10\implies u=3$
+
+$$dx=2u\,du$$
+
+$$y=\frac{\sqrt{x-2\sqrt{x-1}}}{\sqrt{x-1}}=\frac{|u-1|}{u}$$
+
+\begin{align*}
+\text{Area}
+&=\int_{\frac12}^{1}\frac{1-u}{u}\cdot 2u\,du
++\int_1^3\frac{u-1}{u}\cdot 2u\,du\\
+&=\int_{\frac12}^{1}(2-2u)\,du+\int_1^3(2u-2)\,du\\
+&=\left[2u-u^2\right]_{\frac12}^{1}+\left[u^2-2u\right]_1^3\\
+&=\frac14+4\\
+&=\frac{17}{4}
+\end{align*}
+
+\bigskip\hrule\bigskip
+
+\textbf{(iii)}
+
+\begin{align*}
+&\int_{\frac54}^{10}\frac{\sqrt{x+2\sqrt{x-1}}+\sqrt{x-2\sqrt{x+1}+2}}{\sqrt{x^2-1}}\,dx\\
+&=\int_{\frac54}^{10}\frac{\sqrt{x-1}+1+\sqrt{x+1}-1}{\sqrt{x-1}\sqrt{x+1}}\,dx\\
+&=\int_{\frac54}^{10}\left(\frac1{\sqrt{x+1}}+\frac1{\sqrt{x-1}}\right)\,dx\\
+&=\left[2\sqrt{x+1}+2\sqrt{x-1}\right]_{\frac54}^{10}\\
+&=2\sqrt{11}+2
+\end{align*}
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: July 2, 2026}
+\end{center}
+
+\end{document}
