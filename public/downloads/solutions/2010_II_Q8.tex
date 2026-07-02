@@ -1,0 +1,68 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines=middle,
+    axis line style={->},
+    xmin=0,xmax=13.5,
+    ymin=-1.15,ymax=1.2,
+    xtick={3.1416,6.2832,9.4248,12.5664},
+    xticklabels={$\pi$,$2\pi$,$3\pi$,$4\pi$},
+    ytick={1},
+    yticklabels={$1$},
+    width=12cm,
+    height=7cm,
+    samples=500,
+    clip=false
+]
+\addplot[black,domain=0:12.7] {exp(-x/4)};
+\addplot[black,domain=0:12.7] {exp(-x/4)*sin(deg(x))};
+
+\node at (axis cs:11.2,0.22) [above] {$y=e^{-x}$};
+\node at (axis cs:13.5,0) [right] {$x$};
+\node at (axis cs:0,1.2) [above right] {$y$};
+
+
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+Contact points:
+
+$$e^{-x}=e^{-x}\sin x$$
+
+$$\sin x=1\implies x_n=\frac{(4n-3)\pi}{2}$$
+
+\begin{align*}
+A_n
+&=\int_{x_n}^{x_{n+1}}e^{-x}(1-\sin x)\,dx\\
+&=\left[-e^{-x}+\frac12e^{-x}(\sin x+\cos x)\right]_{x_n}^{x_{n+1}}\\
+&=\frac12\left(e^{-\frac{(4n-3)\pi}{2}}-e^{-\frac{(4n+1)\pi}{2}}\right)\\
+&=\frac12(e^{2\pi}-1)e^{-(4n+1)\pi/2}
+\end{align*}
+
+\begin{align*}
+\sum_{n=1}^{\infty}A_n
+&=\frac12(e^{2\pi}-1)\sum_{n=1}^{\infty}e^{-\frac{(4n+1)\pi}{2}}\\
+&=\frac12(e^{2\pi}-1)\cdot \frac{e^{-\frac{5\pi}{2}}}{1-e^{-2\pi}}\\
+&=\frac12e^{-\frac{\pi}2}
+\end{align*}
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: July 2, 2026}
+\end{center}
+
+\end{document}

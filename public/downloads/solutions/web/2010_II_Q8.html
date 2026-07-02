@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2010 II Q8 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .graph-block {
+      margin: 0 0 18px;
+      text-align: center;
+    }
+
+    .graph-block img {
+      width: min(860px, 100%);
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <div class="graph-block">
+      <img src="2010_II_Q8_graph1.png" alt="Graph for 2010 II Q8" />
+    </div>
+
+    <p>Contact points:</p>
+
+    <div class="math-block">
+      \[
+      e^{-x}=e^{-x}\sin x
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \sin x=1\implies x_n=\frac{(4n-3)\pi}{2}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      A_n
+      &=\int_{x_n}^{x_{n+1}}e^{-x}(1-\sin x)\,dx\\
+      &=\left[-e^{-x}+\frac12e^{-x}(\sin x+\cos x)\right]_{x_n}^{x_{n+1}}\\
+      &=\frac12\left(e^{-\frac{(4n-3)\pi}{2}}-e^{-\frac{(4n+1)\pi}{2}}\right)\\
+      &=\frac12(e^{2\pi}-1)e^{-(4n+1)\pi/2}
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \sum_{n=1}^{\infty}A_n
+      &=\frac12(e^{2\pi}-1)\sum_{n=1}^{\infty}e^{-\frac{(4n+1)\pi}{2}}\\
+      &=\frac12(e^{2\pi}-1)\cdot \frac{e^{-\frac{5\pi}{2}}}{1-e^{-2\pi}}\\
+      &=\frac12e^{-\frac{\pi}2}
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong></p>
+      <p>Published and refined by <strong>Jon</strong></p>
+      <p><em>Last updated: July 2, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>
