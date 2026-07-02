@@ -1,0 +1,79 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+$$y=(x-a)^ne^{bx}\sqrt{1+x^2}$$
+
+\begin{align*}
+\frac{dy}{dx}
+&=n(x-a)^{n-1}e^{bx}\sqrt{1+x^2}
++b(x-a)^ne^{bx}\sqrt{1+x^2}
++\frac{x(x-a)^ne^{bx}}{\sqrt{1+x^2}}\\
+&=\frac{(x-a)^{n-1}e^{bx}}{\sqrt{1+x^2}}
+\left[n(1+x^2)+b(x-a)(1+x^2)+x(x-a)\right]
+\end{align*}
+
+$$q(x)=n(1+x^2)+b(x-a)(1+x^2)+x(x-a)$$
+
+$$q(x)=bx^3+(n+1-ab)x^2+(b-a)x+n-ab$$
+
+$\because b\neq 0,\ q(x)$ is cubic.
+
+\bigskip\hrule\bigskip
+
+\textbf{(i)} When $\ds a=4,\ b=4,\ n=15$,
+
+$$q(x)=4x^3+(16-16)x^2+(4-4)x+15-16=4x^3-1$$
+
+$$\int \frac{(x-4)^{14}e^{4x}(4x^3-1)}{\sqrt{1+x^2}}\,dx
+=(x-4)^{15}e^{4x}\sqrt{1+x^2}+C$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)}
+
+$$12x^4-x^2-11=(x-1)(12x^3+12x^2+11x+11)$$
+
+When $\ds a=1,\ b=12,\ n=23$,
+
+$$q(x)=12x^3+12x^2+11x+11$$
+
+\begin{align*}
+\int \frac{(x-1)^{21}e^{12x}(12x^4-x^2-11)}{\sqrt{1+x^2}}\,dx
+&=\int \frac{(x-1)^{22}e^{12x}q(x)}{\sqrt{1+x^2}}\,dx\\
+&=(x-1)^{23}e^{12x}\sqrt{1+x^2}+C
+\end{align*}
+
+\bigskip\hrule\bigskip
+\textbf{(iii)}Let $\ds a=2,\ b=4,\ n=7$,
+
+$$q(x)=4x^3+2x-1$$
+
+$$\frac{d}{dx}\left[(x-2)^7e^{4x}\sqrt{1+x^2}\right]
+=\frac{(x-2)^6e^{4x}(4x^3+2x-1)}{\sqrt{1+x^2}}$$
+
+\begin{align*}
+&\frac{d}{dx}\left[x(x-2)^7e^{4x}\sqrt{1+x^2}\right]\\
+&=x\cdot \frac{(x-2)^6e^{4x}(4x^3+2x-1)}{\sqrt{1+x^2}}
++(x-2)^7e^{4x}\sqrt{1+x^2}\\
+&=\frac{(x-2)^6e^{4x}}{\sqrt{1+x^2}}
+\left[x(4x^3+2x-1)+(x-2)(1+x^2)\right]\\
+&=\frac{(x-2)^6e^{4x}(4x^4+x^3-2)}{\sqrt{1+x^2}}
+\end{align*}
+
+$$\int \frac{(x-2)^6e^{4x}(4x^4+x^3-2)}{\sqrt{1+x^2}}\,dx
+=x(x-2)^7e^{4x}\sqrt{1+x^2}+C$$
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: July 2, 2026}
+\end{center}
+
+\end{document}
