@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2012 II Q1 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <div class="math-block">
+      \[
+      \frac1{1-u}=1+u+u^2+u^3+\cdots
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \frac1{(1-u)^2}=1+2u+3u^2+4u^3+\cdots
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      =\sum_{r=0}^{\infty}(r+1)u^r
+      \]
+    </div>
+
+    <p>When \(\displaystyle u=x^6\),</p>
+
+    <div class="math-block">
+      \[
+      \displaystyle (1-x^6)^{-2}=\sum_{r=0}^{\infty}(r+1)x^{6r}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(i)</span></p>
+
+    <div class="math-block">
+      \[
+      (1-x^3)^{-1}=\sum_{s=0}^{\infty}x^{3s}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      6r+3s=24\implies 2r+s=8\qquad (r=0,1,2,3,4)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \text{coefficient of }x^{24}=1+2+3+4+5=15
+      \]
+    </div>
+
+    <p>The coefficient of \(x^n\)</p>
+
+    <div class="math-block">
+      \[
+      \begin{cases}
+      0, & n=6k+\{1,2,4,5\}\\[6pt]
+      \displaystyle \frac12(k+1)(k+2), & n=6k\\[8pt]
+      \displaystyle \frac12(k+1)(k+2), & n=6k+3
+      \end{cases}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span></p>
+
+    <div class="math-block">
+      \[
+      (1-x)^{-1}=\sum_{t=0}^{\infty}x^t
+      \]
+    </div>
+
+    <p>For \(x^{24}\),</p>
+
+    <div class="math-block">
+      \[
+      6r+3s+t=24
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      s=0,1,\ldots,8-2r,\qquad (r=0,1,2,3,4)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \text{coefficient}
+      &=\sum_{r=0}^{4}(r+1)(9-2r)\\
+      &=1(9)+2(7)+3(5)+4(3)+5(1)\\
+      &=55
+      \end{aligned}
+      \]
+    </div>
+
+    <p>For \(x^{25}\),</p>
+
+    <div class="math-block">
+      \[
+      6r+3s+t=25
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      s=0,1,\ldots,8-2r,\qquad r=0,1,2,3,4
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \text{coefficient}=55
+      \]
+    </div>
+
+    <p>For \(x^{66}\),</p>
+
+    <div class="math-block">
+      \[
+      6r+3s+t=66
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      s=0,1,\ldots,22-2r,\qquad r=0,1,\ldots,11
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \text{coefficient}
+      &=\sum_{r=0}^{11}(r+1)(23-2r)\\
+      &=\sum_{j=1}^{12}j(25-2j)\\
+      &=25\sum_{j=1}^{12}j-2\sum_{j=1}^{12}j^2\\
+      &=25(78)-2(650)\\
+      &=650
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong></p>
+      <p>Published and refined by <strong>Jon</strong></p>
+      <p><em>Last updated: July 2, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>

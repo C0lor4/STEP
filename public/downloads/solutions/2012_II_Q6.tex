@@ -1,0 +1,62 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+
+\begin{align*}
+BD^2&=a^2+d^2-2ad\cos\theta\\
+BD^2&=b^2+c^2-2bc\cos(180^\circ-\theta)
+\end{align*}
+
+
+$$a^2+d^2-2ad\cos\theta=b^2+c^2+2bc\cos\theta$$
+
+$$\boxed{\cos\theta=\frac{a^2+d^2-b^2-c^2}{2(ad+bc)}}$$
+
+\begin{align*}
+Q_1&=\frac12ad\sin\theta\\
+Q_2&=\frac12bc\sin(180^\circ-\theta)
+\end{align*}
+
+$$Q=Q_1+Q_2=\frac12(ad+bc)\sin\theta$$
+
+$$\boxed{\sin\theta=\frac{2Q}{ad+bc}}$$
+
+$$\because\sin^2\theta+\cos^2\theta=1$$
+
+$$\therefore \left(\frac{2Q}{ad+bc}\right)^2+\left(\frac{a^2+d^2-b^2-c^2}{2(ad+bc)}\right)^2=1$$
+
+$$\implies \boxed{16Q^2=4(ad+bc)^2-(a^2+d^2-b^2-c^2)^2}$$
+
+\bigskip\hrule\bigskip
+
+\begin{align*}
+16Q^2
+&=\left(2(ad+bc)+a^2+d^2-b^2-c^2\right)\left(2(ad+bc)-a^2-d^2+b^2+c^2\right)\\
+&=\left((a+d)^2-(b-c)^2\right)\left((b+c)^2-(a-d)^2\right)\\
+&=(a+d-b+c)(a+d+b-c)(b+c-a+d)(b+c+a-d)\\
+&=16(s-a)(s-b)(s-c)(s-d)
+\end{align*}
+$$\boxed{Q^2=(s-a)(s-b)(s-c)(s-d)}$$
+
+\bigskip\hrule\bigskip
+
+For a triangle with sides $\ds a,b,c$, let $\ds d=0$
+
+$$Q^2=s(s-a)(s-b)(s-c)$$
+
+$$Q=\sqrt{s(s-a)(s-b)(s-c)}$$
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: July 2, 2026}
+\end{center}
+
+\end{document}

@@ -1,0 +1,90 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+$$\frac1{1-u}=1+u+u^2+u^3+\cdots$$
+
+$$\frac1{(1-u)^2}=1+2u+3u^2+4u^3+\cdots$$
+
+$$=\sum_{r=0}^{\infty}(r+1)u^r$$
+
+When $\ds u=x^6$,
+
+$$\ds (1-x^6)^{-2}=\sum_{r=0}^{\infty}(r+1)x^{6r}$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(i)}
+
+$$(1-x^3)^{-1}=\sum_{s=0}^{\infty}x^{3s}$$
+
+
+$$6r+3s=24\implies 2r+s=8\qquad (r=0,1,2,3,4)$$
+
+$$\text{coefficient of }x^{24}=1+2+3+4+5=15$$
+
+The coefficient of $x^n$
+
+$$
+\begin{cases}
+0, & n=6k+\{1,2,4,5\}\\[6pt]
+\ds \frac12(k+1)(k+2), & n=6k\\[8pt]
+\ds \frac12(k+1)(k+2), & n=6k+3 
+\end{cases}
+$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)}
+
+$$(1-x)^{-1}=\sum_{t=0}^{\infty}x^t$$
+
+For $x^{24}$,
+
+$$6r+3s+t=24$$
+
+$$s=0,1,\ldots,8-2r,\qquad (r=0,1,2,3,4)$$
+
+\begin{align*}
+\text{coefficient}
+&=\sum_{r=0}^{4}(r+1)(9-2r)\\
+&=1(9)+2(7)+3(5)+4(3)+5(1)\\
+&=55
+\end{align*}
+
+For $x^{25}$,
+
+$$6r+3s+t=25$$
+
+$$s=0,1,\ldots,8-2r,\qquad r=0,1,2,3,4$$
+
+$$\text{coefficient}=55$$
+
+For $x^{66}$,
+
+$$6r+3s+t=66$$
+
+$$s=0,1,\ldots,22-2r,\qquad r=0,1,\ldots,11$$
+
+\begin{align*}
+\text{coefficient}
+&=\sum_{r=0}^{11}(r+1)(23-2r)\\
+&=\sum_{j=1}^{12}j(25-2j)\\
+&=25\sum_{j=1}^{12}j-2\sum_{j=1}^{12}j^2\\
+&=25(78)-2(650)\\
+&=650
+\end{align*}
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: July 2, 2026}
+\end{center}
+
+\end{document}

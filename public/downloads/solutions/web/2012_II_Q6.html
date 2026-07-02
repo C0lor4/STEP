@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2012 II Q6 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      BD^2&=a^2+d^2-2ad\cos\theta\\
+      BD^2&=b^2+c^2-2bc\cos(180^\circ-\theta)
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      a^2+d^2-2ad\cos\theta=b^2+c^2+2bc\cos\theta
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \boxed{\cos\theta=\frac{a^2+d^2-b^2-c^2}{2(ad+bc)}}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      Q_1&=\frac12ad\sin\theta\\
+      Q_2&=\frac12bc\sin(180^\circ-\theta)
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      Q=Q_1+Q_2=\frac12(ad+bc)\sin\theta
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \boxed{\sin\theta=\frac{2Q}{ad+bc}}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \because\sin^2\theta+\cos^2\theta=1
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore \left(\frac{2Q}{ad+bc}\right)^2+\left(\frac{a^2+d^2-b^2-c^2}{2(ad+bc)}\right)^2=1
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \implies \boxed{16Q^2=4(ad+bc)^2-(a^2+d^2-b^2-c^2)^2}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      16Q^2
+      &=\left(2(ad+bc)+a^2+d^2-b^2-c^2\right)\left(2(ad+bc)-a^2-d^2+b^2+c^2\right)\\
+      &=\left((a+d)^2-(b-c)^2\right)\left((b+c)^2-(a-d)^2\right)\\
+      &=(a+d-b+c)(a+d+b-c)(b+c-a+d)(b+c+a-d)\\
+      &=16(s-a)(s-b)(s-c)(s-d)
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \boxed{Q^2=(s-a)(s-b)(s-c)(s-d)}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p>For a triangle with sides \(\displaystyle a,b,c\), let \(\displaystyle d=0\)</p>
+
+    <div class="math-block">
+      \[
+      Q^2=s(s-a)(s-b)(s-c)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      Q=\sqrt{s(s-a)(s-b)(s-c)}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong></p>
+      <p>Published and refined by <strong>Jon</strong></p>
+      <p><em>Last updated: July 2, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>

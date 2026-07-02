@@ -1,0 +1,74 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\textbf{(i)}
+
+$$\because n>1,\ k\geq 1$$
+
+$$\therefore(k+1)n^{k+1}>kn^k$$
+
+$$ \frac1{(k+1)n^{k+1}}<\frac1{kn^k}$$
+
+When $\ds x=\frac1n$,
+
+$$\ln\left(1+\frac1n\right)=\frac1n-\frac1{2n^2}+\frac1{3n^3}-\frac1{4n^4}+\cdots$$
+
+\begin{align*}
+\ln\left(1+\frac1n\right)
+&=\frac1n-\left(\frac1{2n^2}-\frac1{3n^3}\right)-\left(\frac1{4n^4}-\frac1{5n^5}\right)-\cdots\\
+&<\frac1n
+\end{align*}
+
+$$\implies \ln\left(1+\frac1n\right)^n<1$$
+
+$$\left(1+\frac1n\right)^n<e$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)} Let $\ds u=\frac1{2y},\ y>\frac12\implies 0<u<1$
+
+\begin{align*}
+\ln\left(\frac{2y+1}{2y-1}\right)
+&=\ln\left(\frac{1+u}{1-u}\right)\\
+&=\ln(1+u)-\ln(1-u)\\
+&=\left(u-\frac{u^2}{2}+\frac{u^3}{3}-\cdots\right)
+-\left(-u-\frac{u^2}{2}-\frac{u^3}{3}-\cdots\right)\\
+&=2\left(u+\frac{u^3}{3}+\frac{u^5}{5}+\cdots\right)>\frac1y
+\end{align*}
+
+When $\ds y=n+\frac12$
+
+$$\frac{2y+1}{2y-1}=\frac{2n+2}{2n}=1+\frac1n$$
+
+$$\ln\left(1+\frac1n\right)>\frac1{n+\frac12}$$
+
+$$\implies e<\left(1+\frac1n\right)^{n+\frac12}$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(iii)}
+
+
+$$e<\left(1+\frac1n\right)^{n+\frac12}
+=\left(1+\frac1n\right)^n\sqrt{1+\frac1n}$$
+
+$$\frac{e}{\sqrt{1+\frac1n}}<\left(1+\frac1n\right)^n<e\qquad \text{Parts (i)(ii)}$$
+
+$$\lim_{n\to\infty}\frac{e}{\sqrt{1+\frac1n}}=e<\lim_{n\to\infty}\left(1+\frac1n\right)^n<e$$
+
+$$\therefore \left(1+\frac1n\right)^n\to e$$
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: July 2, 2026}
+\end{center}
+
+\end{document}
