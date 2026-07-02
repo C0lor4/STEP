@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2009 II Q12 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 90%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .graph-block {
+      margin: -18px 0 18px;
+      text-align: center;
+    }
+
+    .graph-block img {
+      width: min(760px, 100%);
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span></p>
+
+    <div class="graph-block">
+      <img src="2009_II_Q12_graph1.png" alt="Graph for part (i)" />
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span></p>
+
+    <p>By the normal distribution formula, \(\displaystyle \sqrt{\frac2\pi}e^{-2x^2}\) is the density of \(\displaystyle N\left(0,\frac14\right)\)</p>
+
+    <div class="math-block">
+      \[
+      \therefore \int_{-\infty}^{\infty}\sqrt{\frac2\pi}e^{-2x^2}\,dx=1
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \implies \int_0^\infty e^{-2x^2}\,dx=\frac12\sqrt{\frac{\pi}{2}}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \because \int_0^\infty ke^{-2x^2}\,dx=1
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore \frac{k}{2}\sqrt{\frac{\pi}{2}}=1\implies k=2\sqrt{\frac2\pi}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iii)</span></p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      E(X)
+      &=\int_0^\infty xke^{-2x^2}\,dx\\
+      &=2\sqrt{\frac2\pi} \left[-\frac14e^{-2x^2}\right]_0^\infty\\
+      &=\frac1{\sqrt{2\pi}}
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \int_0^\infty x^2e^{-2x^2}\,dx
+      &=\int_0^\infty x\cdot xe^{-2x^2}\,dx\\
+      &=\left[-\frac14xe^{-2x^2}\right]_0^\infty+\frac14\int_0^\infty e^{-2x^2}\,dx\\
+      &=\frac14\cdot \frac12\sqrt{\frac{\pi}{2}}\\
+      &=\frac{\sqrt\pi}{8\sqrt2}
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      E(X^2)
+      &=k\int_0^\infty x^2e^{-2x^2}\,dx\\
+      &=2\sqrt{\frac2\pi}\cdot \frac{\sqrt\pi}{8\sqrt2}\\
+      &=\frac14
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \operatorname{Var}(X)=E(X^2)-[E(X)]^2
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \operatorname{Var}(X)=\frac14-\frac1{2\pi}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iv)</span></p>
+
+    <p>Let the median be \(m\).</p>
+
+    <div class="math-block">
+      \[
+      \frac12=\int_0^m \frac4{\sqrt{2\pi}}e^{-2x^2}\,dx
+      \]
+    </div>
+
+    <p>Put \(\displaystyle t=2x\),</p>
+
+    <div class="math-block">
+      \[
+      dx=\frac12\,dt
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \frac12
+      &=\frac4{\sqrt{2\pi}}\int_0^m e^{-2x^2}\,dx\\
+      &=\frac4{\sqrt{2\pi}}\int_0^{2m} e^{-\frac12t^2}\cdot \frac12\,dt\\
+      &=2\left(\frac1{\sqrt{2\pi}}\int_0^{2m}e^{-\frac12t^2}\,dt\right)\\
+      &=2\left(\Phi(2m)-\frac12\right)
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \Phi(2m)=\frac34
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      2m=0.6745\implies m=0.337 \quad  (3\  s.f.)
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong></p>
+      <p>Published and refined by <strong>Jon</strong></p>
+      <p><em>Last updated: July 2, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>

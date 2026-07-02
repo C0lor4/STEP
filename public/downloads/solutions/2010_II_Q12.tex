@@ -1,0 +1,89 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+$$\int_{0}^{1} f(x)\, dx=1$$
+
+$$ak+b(1-k)=1$$
+$$k=\frac{1-b}{a-b}$$
+
+$\because $ $0<k<1$, and $a>b$,
+
+$$\therefore a>1,\  b<1$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(i)}
+
+\begin{align*}
+E(X)
+&=\int_0^k ax\,dx+\int_k^1 bx\,dx\\
+&=\frac12ak^2+\frac12b(1-k^2)\\
+&=\frac12\left(b+\frac{(1-b)^2}{a-b}\right)\\
+&=\frac{1-2b+ab}{2(a-b)}
+\end{align*}
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)}
+
+$$F(k)=ak=\frac{a(1-b)}{a-b}=\frac{a-ab}{a-b}$$
+
+If $\ds M\in(0,k)$,
+
+$$ak\geq \frac12$$
+
+$$\frac{a-ab}{a-b}\geq \frac12\implies 2a-2ab\geq a-b\implies a+b\geq 2ab$$
+
+$$F(M)=\frac12\implies M=\frac1{2a}$$
+
+If $\ds M\in(k,1)$,
+
+$$ak\leq \frac12\implies a+b\leq 2ab$$
+
+$$ak+b(M-k)=\frac12$$
+$$bM+1-b=\frac12$$
+$$M=1-\frac1{2b}$$
+
+
+$$
+M=\begin{cases}
+\ds \frac1{2a}, & a+b\geq 2ab,\\[8pt]
+\ds 1-\frac1{2b}, & a+b\leq 2ab.
+\end{cases}
+$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(iii)} When $\ds a+b\geq 2ab$,
+
+\begin{align*}
+E(X)-M
+&=\frac{1-2b+ab}{2(a-b)}-\frac1{2a}\\
+&=\frac{b(a-1)^2}{2a(a-b)}\\
+&>0
+\end{align*}
+
+When $\ds a+b\leq 2ab$,
+
+\begin{align*}
+E(X)-M
+&=\frac{1-2b+ab}{2(a-b)}-\frac{2b-1}{2b}\\
+&=\frac{a(b-1)^2}{2b(a-b)}\\
+&>0
+\end{align*}
+
+$$\therefore M<E(X)$$
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: July 2, 2026}
+\end{center}
+
+\end{document}

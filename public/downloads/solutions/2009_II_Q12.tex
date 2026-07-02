@@ -1,0 +1,109 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\textbf{(i)}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines=middle,
+    axis line style={->},
+    xmin=-1,xmax=3,
+    ymin=0,ymax=1.8,
+    xtick=\empty,
+    ytick=\empty,
+    width=9cm,
+    height=6cm,
+    samples=200,
+    clip=false
+]
+\addplot[black,domain=-1:0] {0};
+\addplot[black,domain=0:3] {1.6*exp(-2*x^2)};
+\addplot[only marks,mark=*] coordinates {(0,1.6)};
+\node at (axis cs:0,1.6) [ left] {$(0,k)$};
+\node at (axis cs:3,0) [right] {$x$};
+\node at (axis cs:2,0) [above right] {$f(x)$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)}
+By the normal distribution formula, $\ds \sqrt{\frac2\pi}e^{-2x^2}$ is the density of $\ds N\left(0,\frac14\right)$
+
+$$\therefore \int_{-\infty}^{\infty}\sqrt{\frac2\pi}e^{-2x^2}\,dx=1$$
+
+$$\implies \int_0^\infty e^{-2x^2}\,dx=\frac12\sqrt{\frac{\pi}{2}}$$
+$$\because \int_0^\infty ke^{-2x^2}\,dx=1$$
+$$\therefore \frac{k}{2}\sqrt{\frac{\pi}{2}}=1\implies k=2\sqrt{\frac2\pi}$$
+\bigskip\hrule\bigskip
+
+\textbf{(iii)}
+
+\begin{align*}
+E(X)
+&=\int_0^\infty xke^{-2x^2}\,dx\\
+&=2\sqrt{\frac2\pi} \left[-\frac14e^{-2x^2}\right]_0^\infty\\
+&=\frac1{\sqrt{2\pi}}
+\end{align*}
+
+\begin{align*}
+\int_0^\infty x^2e^{-2x^2}\,dx
+&=\int_0^\infty x\cdot xe^{-2x^2}\,dx\\
+&=\left[-\frac14xe^{-2x^2}\right]_0^\infty+\frac14\int_0^\infty e^{-2x^2}\,dx\\
+&=\frac14\cdot \frac12\sqrt{\frac{\pi}{2}}\\
+&=\frac{\sqrt\pi}{8\sqrt2}
+\end{align*}
+
+\begin{align*}
+E(X^2)
+&=k\int_0^\infty x^2e^{-2x^2}\,dx\\
+&=2\sqrt{\frac2\pi}\cdot \frac{\sqrt\pi}{8\sqrt2}\\
+&=\frac14
+\end{align*}
+
+$$\operatorname{Var}(X)=E(X^2)-[E(X)]^2$$
+
+$$\operatorname{Var}(X)=\frac14-\frac1{2\pi}$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(iv)}
+
+Let the median be $m$.
+
+$$\frac12=\int_0^m \frac4{\sqrt{2\pi}}e^{-2x^2}\,dx$$
+
+Put $\ds t=2x$,
+
+$$dx=\frac12\,dt$$
+
+\begin{align*}
+\frac12
+&=\frac4{\sqrt{2\pi}}\int_0^m e^{-2x^2}\,dx\\
+&=\frac4{\sqrt{2\pi}}\int_0^{2m} e^{-\frac12t^2}\cdot \frac12\,dt\\
+&=2\left(\frac1{\sqrt{2\pi}}\int_0^{2m}e^{-\frac12t^2}\,dt\right)\\
+&=2\left(\Phi(2m)-\frac12\right)
+\end{align*}
+
+$$\Phi(2m)=\frac34$$
+
+$$2m=0.6745\implies m=0.337 \quad  (3\  s.f.)$$
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: July 2, 2026}
+\end{center}
+
+\end{document}
