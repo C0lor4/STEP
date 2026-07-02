@@ -1,0 +1,69 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\begin{align*}
+\tan\left(\frac{\pi}{4}-\frac{x}{2}\right)
+&=\frac{1-\tan\frac{x}{2}}{1+\tan\frac{x}{2}}\\
+&=\frac{1-\sin x}{\cos x}\\
+&=\frac1{\cos x}-\frac{\sin x}{\cos x}\\
+&=\sec x-\tan x
+\end{align*}
+
+\bigskip\hrule\bigskip
+
+\textbf{(i)} Using $(*)$ with $\ds x=\frac{\pi}{4}$,
+
+$$\tan\frac{\pi}{8}=\sec\frac{\pi}{4}-\tan\frac{\pi}{4}=\sqrt2-1$$
+
+\begin{align*}
+\tan\frac{11\pi}{24}
+&=\tan\left(\frac{\pi}{3}+\frac{\pi}{8}\right)\\
+&=\frac{\sqrt3+\sqrt2-1}{1-\sqrt3(\sqrt2-1)}\\
+&=\frac{\sqrt3+\sqrt2-1}{\sqrt3-\sqrt6+1}
+\end{align*}
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)}
+
+$$(\sqrt3-\sqrt6+1)(2+\sqrt2+\sqrt3+\sqrt6)=\sqrt3+\sqrt2-1$$
+
+
+$$\therefore \frac{\sqrt3+\sqrt2-1}{\sqrt3-\sqrt6+1}=2+\sqrt2+\sqrt3+\sqrt6$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(iii)}
+
+Using $(*)$ with $\ds x=\frac{11\pi}{24}$,
+
+$$\tan\frac\pi{48}=\sec\frac{11\pi}{24}-\tan\frac{11\pi}{24}$$
+
+\begin{align*}
+\sec\frac{11\pi}{24}
+&=\sqrt{1+\tan^2\frac{11\pi}{24}}\\
+&=\sqrt{1+(2+\sqrt2+\sqrt3+\sqrt6)^2}\\
+&=\sqrt{16+10\sqrt2+8\sqrt3+6\sqrt6}
+\end{align*}
+
+
+From part \textbf{(ii)},  $\ds \tan\frac{11\pi}{24}=2+\sqrt2+\sqrt3+\sqrt6$
+
+
+$$\therefore \tan\frac\pi{48}
+=\sqrt{16+10\sqrt2+8\sqrt3+6\sqrt6}-2-\sqrt2-\sqrt3-\sqrt6$$
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: July 2, 2026}
+\end{center}
+
+\end{document}
