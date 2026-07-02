@@ -1,0 +1,78 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+$$
+\renewcommand{\arraystretch}{1.4}
+\begin{array}{c!{\vrule width 1.2pt}c|c|c|c|c|c|c|c}
+n & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10\\
+\hline
+\rule[-4pt]{0pt}{14pt}
+F_n & 2 & 3 & 5 & 8 & 13 & 21 & 34 & 55
+\end{array}
+$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(i)}
+$$F_i=F_{i-1}+F_{i-2}<2F_{i-1}$$
+
+$$\therefore \frac1{F_i}>\frac1{2F_{i-1}}$$
+
+For $\ds i\geq 4$,
+
+$$\frac1{F_i}>\frac1{2F_{i-1}}$$
+
+$$\frac1{F_4}>\frac1{2F_3},\quad\frac1{F_5}>\frac1{2^2F_3},\quad\frac1{F_6}>\frac1{2^3F_3},\ \ldots$$
+
+$$S>1+1+\frac12+\frac1{2F_3}\left(1+\frac12+\frac14+\cdots\right)=3$$
+
+
+For $\ds i\geq 3$,
+
+$$F_{i+2}=F_{i+1}+F_i>2F_i$$
+
+$$\frac1{F_{i+2}}<\frac1{2F_i}$$
+
+\begin{align*}
+S
+&=1+1+\left(\frac1{F_3}+\frac1{F_5}+\cdots\right)
++\left(\frac1{F_4}+\frac1{F_6}+\cdots\right)\\
+S&<1+1+\frac1{F_3}\left(1+\frac12+\frac14+\cdots\right)
++\frac1{F_4}\left(1+\frac12+\frac14+\cdots\right)\\
+S&<3\frac23
+\end{align*}
+
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)}
+
+\begin{align*}
+S>1+1+\frac12+\frac13+\frac15+\frac18+\frac1{13}=\frac{5047}{1560}
+&>3.2
+\end{align*}
+
+\begin{align*}
+S
+&=1+1+\frac12+\frac13+\frac15
++\left(\frac1{F_6}+\frac1{F_8}+\cdots\right)
++\left(\frac1{F_7}+\frac1{F_9}+\cdots\right)\\
+&<\frac{91}{30}+\frac2{F_6}+\frac2{F_7}\approx3.03+0.24+0.15=3.42
+\end{align*}
+$$\because 3.42<3.5$$
+$$\therefore S<3.5$$
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: July 2, 2026}
+\end{center}
+
+\end{document}

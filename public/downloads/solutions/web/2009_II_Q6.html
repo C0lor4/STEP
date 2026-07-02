@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2009 II Q6 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    .fib-table-wrap {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+    }
+
+    .fib-table {
+      margin: 0 auto;
+      border-collapse: collapse;
+      font-size: 16px;
+      line-height: 1.4;
+    }
+
+    .fib-table td {
+      padding: 8px 14px;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .fib-table tr:first-child td {
+      border-bottom: 1.2px solid #111827;
+    }
+
+    .fib-table td:first-child {
+      border-right: 2.4px solid #111827;
+      padding-left: 10px;
+      padding-right: 20px;
+    }
+
+    .fib-table td:not(:last-child) {
+      border-right: 1.2px solid #111827;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <div class="fib-table-wrap">
+      <table class="fib-table">
+        <tr>
+          <td>\(n\)</td>
+          <td>3</td>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+          <td>7</td>
+          <td>8</td>
+          <td>9</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td>\(F_n\)</td>
+          <td>2</td>
+          <td>3</td>
+          <td>5</td>
+          <td>8</td>
+          <td>13</td>
+          <td>21</td>
+          <td>34</td>
+          <td>55</td>
+        </tr>
+      </table>
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(i)</span></p>
+
+    <div class="math-block">
+      \[
+      F_i=F_{i-1}+F_{i-2}\lt 2F_{i-1}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore \frac1{F_i}>\frac1{2F_{i-1}}
+      \]
+    </div>
+
+    <p>For \(\displaystyle i\geq 4\),</p>
+
+    <div class="math-block">
+      \[
+      \frac1{F_i}>\frac1{2F_{i-1}}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \frac1{F_4}>\frac1{2F_3},\quad\frac1{F_5}>\frac1{2^2F_3},\quad\frac1{F_6}>\frac1{2^3F_3},\ \ldots
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      S>1+1+\frac12+\frac1{2F_3}\left(1+\frac12+\frac14+\cdots\right)=3
+      \]
+    </div>
+
+    <p>For \(\displaystyle i\geq 3\),</p>
+
+    <div class="math-block">
+      \[
+      F_{i+2}=F_{i+1}+F_i>2F_i
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \frac1{F_{i+2}}\lt\frac1{2F_i}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      S
+      &=1+1+\left(\frac1{F_3}+\frac1{F_5}+\cdots\right)
+      +\left(\frac1{F_4}+\frac1{F_6}+\cdots\right)\\
+      S&\lt 1+1+\frac1{F_3}\left(1+\frac12+\frac14+\cdots\right)
+      +\frac1{F_4}\left(1+\frac12+\frac14+\cdots\right)\\
+      S&\lt 3\frac23
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span></p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      S&>1+1+\frac12+\frac13+\frac15+\frac18+\frac1{13}\\
+      &=\frac{5047}{1560}>3.2
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      S
+      &=1+1+\frac12+\frac13+\frac15
+      +\left(\frac1{F_6}+\frac1{F_8}+\cdots\right)
+      +\left(\frac1{F_7}+\frac1{F_9}+\cdots\right)\\
+      &\lt\frac{91}{30}+\frac2{F_6}+\frac2{F_7}\approx3.03+0.24+0.15=3.42
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \because 3.42\lt 3.5
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore S\lt 3.5
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong></p>
+      <p>Published and refined by <strong>Jon</strong></p>
+      <p><em>Last updated: July 2, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>
