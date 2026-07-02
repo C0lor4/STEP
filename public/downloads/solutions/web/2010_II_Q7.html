@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2010 II Q7 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span></p>
+
+    <div class="math-block">
+      \[
+      y=x^3-3qx-q(1+q)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \frac{dy}{dx}=3x^2-3q=3(x^2-q)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \frac{dy}{dx}=0\implies x=\pm\sqrt q
+      \]
+    </div>
+
+    <p>When \(\displaystyle x=-\sqrt q\),</p>
+
+    <div class="math-block">
+      \[
+      y=-q\sqrt q+3q\sqrt q-q-q^2=-q(\sqrt q-1)^2&lt;0
+      \]
+    </div>
+
+    <p>When \(\displaystyle x=\sqrt q\),</p>
+
+    <div class="math-block">
+      \[
+      y=q\sqrt q-3q\sqrt q-q-q^2=-q(\sqrt q+1)^2&lt;0
+      \]
+    </div>
+
+    <p>\(\because\) Both turning points are below the \(x\)-axis.</p>
+
+    <div class="math-block">
+      \[
+      x\to-\infty\implies y\to-\infty
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      x\to\infty\implies y\to\infty
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore \text{the curve crosses the }x\text{-axis once only}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span></p>
+
+    <div class="math-block">
+      \[
+      x=u+\frac qu
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      x^3-3qx-q(1+q)&=0\\
+      \left(u+\frac qu\right)^3-3q\left(u+\frac qu\right)&=q(1+q)\\
+      u^3+\frac{q^3}{u^3}&=q(1+q)
+      \end{aligned}
+      \]
+    </div>
+
+    <p>Let \(\displaystyle t=u^3\).</p>
+
+    <div class="math-block">
+      \[
+      t^2-q(1+q)t+q^3=0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      (t-q)(t-q^2)=0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      u^3=q\quad \text{or}\quad u^3=q^2
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      u=\sqrt[3]{q}\quad \text{or}\quad u=\sqrt[3]{q^2}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      x=u+\frac qu=\sqrt[3]{q}+\sqrt[3]{q^2}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iii)</span></p>
+
+    <div class="math-block">
+      \[
+      \alpha+\beta=p,\  \alpha\beta=q
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \alpha^3+\beta^3=(\alpha+\beta)^3-3\alpha\beta(\alpha+\beta)=p^3-3qp
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      (\alpha^2-\beta)(\beta^2-\alpha)&=0\\
+      \alpha^2\beta^2-(\alpha^3+\beta^3)+q&=0\\
+      q^2-(p^3-3qp)+q&=0\\
+      p^3-3qp-q(1+q)&=0
+      \end{aligned}
+      \]
+    </div>
+
+    <p>By <strong>(ii)</strong>, the real root is</p>
+
+    <div class="math-block">
+      \[
+      p=\sqrt[3]{q}+\sqrt[3]{q^2}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong></p>
+      <p>Published and refined by <strong>Jon</strong></p>
+      <p><em>Last updated: July 2, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>

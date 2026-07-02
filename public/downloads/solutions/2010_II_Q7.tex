@@ -1,0 +1,85 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\textbf{(i)}
+
+$$y=x^3-3qx-q(1+q)$$
+
+$$\frac{dy}{dx}=3x^2-3q=3(x^2-q)$$
+
+$$\frac{dy}{dx}=0\implies x=\pm\sqrt q$$
+
+When $\ds x=-\sqrt q$,
+
+$$y=-q\sqrt q+3q\sqrt q-q-q^2=-q(\sqrt q-1)^2<0$$
+
+
+When $\ds x=\sqrt q$,
+
+$$y=q\sqrt q-3q\sqrt q-q-q^2=-q(\sqrt q+1)^2<0$$
+
+
+$\because$ Both turning points are below the $x$-axis.
+
+$$x\to-\infty\implies y\to-\infty$$
+$$x\to\infty\implies y\to\infty$$
+$$\therefore \text{the curve crosses the }x\text{-axis once only}$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)}
+
+$$x=u+\frac qu$$
+
+
+\begin{align*}
+x^3-3qx-q(1+q)&=0\\
+\left(u+\frac qu\right)^3-3q\left(u+\frac qu\right)&=q(1+q)\\
+u^3+\frac{q^3}{u^3}&=q(1+q)
+\end{align*}
+
+Let $\ds t=u^3$
+
+$$t^2-q(1+q)t+q^3=0$$
+
+$$(t-q)(t-q^2)=0$$
+
+$$u^3=q\quad \text{or}\quad u^3=q^2$$
+
+$$u=\sqrt[3]{q}\quad \text{or}\quad u=\sqrt[3]{q^2}$$
+
+$$x=u+\frac qu=\sqrt[3]{q}+\sqrt[3]{q^2}$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(iii)}
+
+$$\alpha+\beta=p,\  \alpha\beta=q$$
+
+$$\alpha^3+\beta^3=(\alpha+\beta)^3-3\alpha\beta(\alpha+\beta)=p^3-3qp$$
+
+\begin{align*}
+(\alpha^2-\beta)(\beta^2-\alpha)&=0\\
+\alpha^2\beta^2-(\alpha^3+\beta^3)+q&=0\\
+q^2-(p^3-3qp)+q&=0\\
+p^3-3qp-q(1+q)&=0
+\end{align*}
+
+By \textbf{(ii)}, the real root is
+
+$$p=\sqrt[3]{q}+\sqrt[3]{q^2}$$
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: July 2, 2026}
+\end{center}
+
+\end{document}
