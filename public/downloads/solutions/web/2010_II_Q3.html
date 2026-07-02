@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2010 II Q3 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span></p>
+
+    <div class="math-block">
+      \[
+      F_0=0\implies a+b=0\implies b=-a
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      F_1=1\implies a(\lambda-\mu)=1
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      F_2=1\implies a(\lambda^2-\mu^2)=1\implies \lambda+\mu=1
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      F_3=2\implies a(\lambda^3-\mu^3)=2
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      a(\lambda-\mu)(\lambda^2+\lambda\mu+\mu^2)=2
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \lambda^2+\lambda\mu+\mu^2=2
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \lambda^2+\lambda\mu+\mu^2=(\lambda+\mu)^2-\lambda\mu
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \lambda\mu=-1
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      (t-\lambda)(t-\mu)
+      &=t^2-(\lambda+\mu)t+\lambda\mu\\
+      &=t^2-t-1
+      \end{aligned}
+      \]
+    </div>
+
+    <p>So \(\lambda,\mu\) are roots of</p>
+
+    <div class="math-block">
+      \[
+      t^2-t-1=0\implies t=\frac{1\pm\sqrt5}{2}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \lambda=\frac{1+\sqrt5}{2},\  \mu=\frac{1-\sqrt5}{2},\  a=\frac1{\sqrt5},\  b=-\frac1{\sqrt5}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span></p>
+
+    <div class="math-block">
+      \[
+      F_6=\frac1{\sqrt5}\left(\lambda^6-\mu^6\right)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \lambda^2=\lambda+1,\ \mu^2=\mu+1\implies\lambda^6=8\lambda+5,\  \mu^6=8\mu+5
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      F_6=\frac1{\sqrt5}\left[(8\lambda+5)-(8\mu+5)\right]=\frac{8(\lambda-\mu)}{\sqrt5}=8
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iii)</span></p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \sum_{n=0}^{\infty}\frac{F_n}{2^{n+1}}
+      &=\frac1{2\sqrt5}\sum_{n=0}^{\infty}\left[\left(\frac{\lambda}{2}\right)^n-\left(\frac{\mu}{2}\right)^n\right]\\
+      &=\frac1{2\sqrt5}\left(\frac1{1-\frac{\lambda}{2}}-\frac1{1-\frac{\mu}{2}}\right)\\
+      &=\frac1{\sqrt5}\cdot\frac{\lambda-\mu}{(2-\lambda)(2-\mu)}
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \lambda-\mu=\sqrt5
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      (2-\lambda)(2-\mu)=4-2(\lambda+\mu)+\lambda\mu=1
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \sum_{n=0}^{\infty}\frac{F_n}{2^{n+1}}=1
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong></p>
+      <p>Published and refined by <strong>Jon</strong></p>
+      <p><em>Last updated: July 2, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>

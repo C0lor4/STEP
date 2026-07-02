@@ -1,0 +1,74 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+\textbf{(i)}
+
+
+$$F_0=0\implies a+b=0\implies b=-a$$
+
+$$F_1=1\implies a(\lambda-\mu)=1$$
+
+$$F_2=1\implies a(\lambda^2-\mu^2)=1\implies \lambda+\mu=1$$
+
+$$F_3=2\implies a(\lambda^3-\mu^3)=2$$
+
+$$a(\lambda-\mu)(\lambda^2+\lambda\mu+\mu^2)=2$$
+
+$$\lambda^2+\lambda\mu+\mu^2=2$$
+
+$$\lambda^2+\lambda\mu+\mu^2=(\lambda+\mu)^2-\lambda\mu$$
+
+$$\lambda\mu=-1$$
+
+\begin{align*}
+(t-\lambda)(t-\mu)
+&=t^2-(\lambda+\mu)t+\lambda\mu\\
+&=t^2-t-1
+\end{align*}
+
+So $\lambda,\mu$ are roots of
+
+$$t^2-t-1=0\implies t=\frac{1\pm\sqrt5}{2}$$
+
+$$\lambda=\frac{1+\sqrt5}{2},\  \mu=\frac{1-\sqrt5}{2},\ a=\frac1{\sqrt5},\  b=-\frac1{\sqrt5}$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)}
+
+$$F_6=\frac1{\sqrt5}\left(\lambda^6-\mu^6\right)$$
+
+$$\lambda^2=\lambda+1,\ \mu^2=\mu+1\implies\lambda^6=8\lambda+5,\  \mu^6=8\mu+5$$
+
+$$F_6=\frac1{\sqrt5}\left[(8\lambda+5)-(8\mu+5)\right]=\frac{8(\lambda-\mu)}{\sqrt5}=8$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(iii)}
+
+\begin{align*}
+\sum_{n=0}^{\infty}\frac{F_n}{2^{n+1}}
+&=\frac1{2\sqrt5}\sum_{n=0}^{\infty}\left[\left(\frac{\lambda}{2}\right)^n-\left(\frac{\mu}{2}\right)^n\right]\\
+&=\frac1{2\sqrt5}\left(\frac1{1-\frac{\lambda}{2}}-\frac1{1-\frac{\mu}{2}}\right)\\
+&=\frac1{\sqrt5}\cdot\frac{\lambda-\mu}{(2-\lambda)(2-\mu)}
+\end{align*}
+
+$$\lambda-\mu=\sqrt5$$
+
+$$(2-\lambda)(2-\mu)=4-2(\lambda+\mu)+\lambda\mu=1$$
+
+$$\sum_{n=0}^{\infty}\frac{F_n}{2^{n+1}}=1$$
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: July 2, 2026}
+\end{center}
+
+\end{document}
