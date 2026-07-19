@@ -1,0 +1,61 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\textbf{(i)}
+
+$$u=\frac{x-1}{x},\ dx=\frac1{(1-u)^2}\,du,\ x^{\frac32}(x-1)^{\frac12}=\frac{\sqrt u}{(1-u)^2}$$
+
+$$\int \frac1{x^{\frac32}(x-1)^{\frac12}}\,dx=\int \frac1{\sqrt u}\,du=2\sqrt u+C=2\sqrt{\frac{x-1}{x}}+C$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)}
+
+
+$$\because \frac{d}{dx}\left(\sqrt{\frac{x+1}{x-2}}\right)=\frac12\left(\frac{x+1}{x-2}\right)^{-\frac12}\cdot \frac{-3}{(x-2)^2}=-\frac3{2(x-2)^{\frac32}(x+1)^{\frac12}}$$
+
+$$\therefore \int \frac1{(x-2)^{\frac32}(x+1)^{\frac12}}\,dx
+=-\frac23\sqrt{\frac{x+1}{x-2}}+C$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(iii)}
+
+$$u=\frac1{x-1},\ x-2=\frac{1-u}{u}$$
+
+$$3x-2=\frac{u+3}{u},\ dx=-\frac1{u^2}\,du,\ 
+\renewcommand{\arraystretch}{1.1}
+\begin{array}{c!{\vrule width 1.2pt}c|c}
+x & 2 & \infty\\
+\hline
+\rule[-4pt]{0pt}{14pt}
+u & 1 & 0
+\end{array}
+$$
+
+\begin{align*}
+\int_2^\infty \frac1{(x-1)(x-2)^{\frac12}(3x-2)^{\frac12}}\,dx
+&=\int_1^0
+\frac{-\frac1{u^2}}
+{\frac1u\cdot \sqrt{\frac{1-u}{u}}\cdot \sqrt{\frac{u+3}{u}}}\,du\\
+&=\int_0^1 \frac1{\sqrt{(1-u)(u+3)}}\,du\\
+&=\int_0^1 \frac1{\sqrt{4-(u+1)^2}}\,du\\
+&=\left[\sin^{-1}\left(\frac{u+1}{2}\right)\right]_{0}^{1}\\
+&=\frac{\pi}{3}
+\end{align*}
+
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: July 18, 2026}
+\end{center}
+
+\end{document}

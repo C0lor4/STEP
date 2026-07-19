@@ -1,0 +1,152 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\textbf{(i)}
+
+$$y=e^x(2x^2-5x+2)=e^x(2x-1)(x-2)$$
+
+$$\frac{dy}{dx}=e^x(2x-3)(x+1)$$
+
+
+$$\frac{dy}{dx}=0\implies x=-1,\ \frac32$$
+
+$$
+\renewcommand{\arraystretch}{1.4}
+\begin{array}{c!{\vrule width 1.2pt}c|c|c|c|c|c}
+x & -\infty & -1 & \frac12 & \frac32 & 2 & \infty\\
+\hline
+\rule[-4pt]{0pt}{14pt}
+y & 0^+ & \frac9e & 0 & -e^{\frac32} & 0 & \infty
+\end{array}
+$$
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines=middle,
+    axis line style={->},
+    xmin=-4,xmax=2.55,
+    ymin=-5.6,ymax=6.2,
+    xtick=\empty,
+    ytick=\empty,
+    width=11cm,
+    height=7cm,
+    samples=400,
+    clip=false
+]
+\addplot[black,domain=-4:2.2] {exp(x)*(2*x^2-5*x+2)};
+
+\addplot[only marks,mark=*,mark size=1.3pt] coordinates {
+    (-1,3.3109)
+    (0.5,0)
+    (1.5,-4.4817)
+    (2,0)
+};
+
+\node at (axis cs:-1,3.3109) [above left] {$\left(-1,\frac9e\right)$};
+\node at (axis cs:1.5,-4.4817) [below] {$\left(\frac32,-e^{3/2}\right)$};
+
+\node at (axis cs:0.5,0) [above right] {$\frac12$};
+\node at (axis cs:2,0) [below right] {$2$};
+
+\node at (axis cs:2.55,0) [right] {$x$};
+\node at (axis cs:0,6.2) [above right] {$y$};
+\node at (axis cs:0,0) [below left] {$O$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+$$
+\renewcommand{\arraystretch}{1.4}
+\begin{array}{c!{\vrule width 1.2pt}c|c|c|c|c|c}
+k & k<-e^{\frac32} & k=-e^{\frac32} & -e^{\frac32}<k\leq0 & 0<k<\frac9e & k=\frac9e & k>\frac9e\\
+\hline
+\rule[-4pt]{0pt}{14pt}
+\#\text{ roots} & 0 & 1 & 2 & 3 & 2 & 1
+\end{array}
+$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)}
+
+$$f(x)=e^{x^2}(2x^4-5x^2+2)=e^{x^2}(2x^2-1)(x^2-2)$$
+
+$$f(x)=f(-x)$$
+
+\begin{align*}
+\frac{dy}{dx}
+&=2xe^{x^2}(2x^4-5x^2+2)+e^{x^2}(8x^3-10x)\\
+&=2xe^{x^2}(2x^2-3)(x^2+1)
+\end{align*}
+
+$$\frac{dy}{dx}=0\implies x=0,\ \pm\sqrt{\frac32}$$
+
+$$
+\renewcommand{\arraystretch}{1.4}
+\begin{array}{c!{\vrule width 1.2pt}c|c|c|c|c}
+x & 0 & \frac1{\sqrt2} & \sqrt{\frac32} & \sqrt2 & \infty\\
+\hline
+\rule[-4pt]{0pt}{14pt}
+y & 2 & 0 & -e^{\frac32} & 0 & \infty
+\end{array}
+$$
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines=middle,
+    axis line style={->},
+    xmin=-1.8,xmax=1.8,
+    ymin=-5.6,ymax=6.2,
+    xtick=\empty,
+    ytick=\empty,
+    width=11cm,
+    height=7cm,
+    samples=500,
+    clip=false
+]
+\addplot[black,domain=-1.47:1.47] {exp(x^2)*(2*x^4-5*x^2+2)};
+
+\addplot[only marks,mark=*,mark size=1.3pt] coordinates {
+    (-1.4142,0)
+    (-0.7071,0)
+    (0,2)
+    (0.7071,0)
+    (1.4142,0)
+    (-1.2247,-4.4817)
+    (1.2247,-4.4817)
+};
+
+\node at (axis cs:-1.4142,0) [above left] {$-\sqrt2$};
+\node at (axis cs:-0.7071,0) [below right] {$-1/\sqrt2$};
+\node at (axis cs:0.7071,0) [below left] {$1/\sqrt2$};
+\node at (axis cs:1.4142,0) [above right] {$\sqrt2$};
+
+\node at (axis cs:0,2) [above right] {$(0,2)$};
+\node at (axis cs:-1.2247,-4.4817) [below left] {$-e^{3/2}$};
+\node at (axis cs:1.2247,-4.4817) [below right] {$-e^{3/2}$};
+
+\node at (axis cs:1.8,0) [right] {$x$};
+\node at (axis cs:0,6.2) [above right] {$y$};
+\node at (axis cs:0,0) [above right ] {$O$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: July 5, 2026}
+\end{center}
+
+\end{document}

@@ -1,0 +1,150 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\textbf{(i)} Let $\ds u=t-1$
+
+$$f(x)=\int_0^2u^{x-1}\,du=\left[\frac{u^x}{x}\right]_0^2=\frac{2^x}{x}$$
+
+$$\frac{dy}{dx}=\frac{x2^x\ln2-2^x}{x^2}$$
+
+$$\frac{dy}{dx}=0\implies x=\frac1{\ln2}$$
+
+$$
+\renewcommand{\arraystretch}{1.4}
+\begin{array}{c!{\vrule width 1.2pt}c|c|c}
+x & 0^+ & \frac1{\ln2} & \infty\\
+\hline
+\rule[-4pt]{0pt}{14pt}
+y & \infty & e\ln2 & \infty
+\end{array}
+$$
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines=middle,
+    axis line style={->},
+    xmin=-0.4,xmax=6,
+    ymin=0,ymax=12,
+    xtick=\empty,
+    ytick=\empty,
+    width=11cm,
+    height=7cm,
+    samples=400,
+    clip=false
+]
+\addplot[black,domain=0.09:5.85] {exp(ln(2)*x)/x};
+
+\addplot[only marks,mark=*,mark size=1.3pt] coordinates {
+    (1.4427,1.8842)
+};
+
+\node at (axis cs:1.4427,1.8842) [below right] {$\left(\frac1{\ln2},e\ln2\right)$};
+\node at (axis cs:6,0) [right] {$x$};
+\node at (axis cs:0,12) [above right] {$y$};
+\node at (axis cs:0,0) [below left] {$O$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)}
+
+$$g(x)=\int_{-1}^{1}\frac1{\sqrt{1-2xt+x^2}}\,dt$$
+
+For $\ds x\neq0$,
+For $\ds x\neq 0$,
+
+Let $\ds u=1-2xt+x^2,\ \frac{du}{dt}=-2x$
+
+\begin{align*}
+\int \frac{1}{\sqrt{1-2xt+x^2}}\,dt
+&=\int u^{-\frac12}\cdot\left(-\frac1{2x}\right)\,du\\
+&=-\frac1x u^{\frac12}\\
+&=-\frac1x\sqrt{1-2xt+x^2}
+\end{align*}
+
+$$\therefore g(x)=\left[-\frac1x\sqrt{1-2xt+x^2}\right]_{-1}^{1}$$
+
+For $\ds x=0$,
+
+$$g(0)=\int_{-1}^{1}1\,dt=2$$
+
+\begin{align*}
+g(x)
+&=\left[-\frac1x\sqrt{1-2xt+x^2}\right]_{-1}^{1}\\
+&=\frac1x\left(\sqrt{x^2+2x+1}-\sqrt{x^2-2x+1}\right)\\
+&=\frac1x\left(|x+1|-|x-1|\right)
+\end{align*}
+
+$$g(0)=\int_{-1}^{1}1\,dt=2$$
+
+$$
+g(x)=
+\begin{cases}
+\ds -\frac2x, & x<-1,\\[6pt]
+2, & -1\leq x\leq 1,\\[6pt]
+\ds \frac2x, & x>1.
+\end{cases}
+$$
+
+$$
+\renewcommand{\arraystretch}{1.4}
+\begin{array}{c!{\vrule width 1.2pt}c|c|c|c|c}
+x & -\infty & -1 & 0 & 1 & \infty\\
+\hline
+\rule[-4pt]{0pt}{14pt}
+y & 0^+ & 2 & 2 & 2 & 0^+
+\end{array}
+$$
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines=middle,
+    axis line style={->},
+    xmin=-5,xmax=5,
+    ymin=0,ymax=3,
+    xtick=\empty,
+    ytick=\empty,
+    width=11cm,
+    height=6cm,
+    samples=300,
+    clip=false
+]
+\addplot[black,domain=-5:-1] {-2/x};
+\addplot[black,domain=-1:1] {2};
+\addplot[black,domain=1:5] {2/x};
+
+\addplot[only marks,mark=*,mark size=1.3pt] coordinates {
+    (-1,2)
+    (1,2)
+};
+
+\node at (axis cs:-1,2) [above left] {$(-1,2)$};
+\node at (axis cs:1,2) [above right] {$(1,2)$};
+
+\node at (axis cs:5,0) [right] {$x$};
+\node at (axis cs:0,3) [above right] {$y$};
+\node at (axis cs:0,0) [below left] {$O$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: July 5, 2026}
+\end{center}
+
+\end{document}
