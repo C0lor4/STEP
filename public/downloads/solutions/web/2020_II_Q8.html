@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2020 II Q8 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 80%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .table-wrap {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+    }
+
+    .math-table {
+      margin: 0 auto;
+      border-collapse: collapse;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+
+    .math-table td {
+      padding: 6px 14px;
+      text-align: center;
+      white-space: nowrap;
+      border-right: 1px solid #111827;
+    }
+
+    .math-table tr:first-child td {
+      border-bottom: 1px solid #111827;
+    }
+
+    .math-table td:first-child {
+      border-right: 2px solid #111827;
+      padding-left: 10px;
+      padding-right: 18px;
+    }
+
+    .math-table td:last-child {
+      border-right: 0;
+    }
+
+    .graph-block {
+      margin: 12px 0 16px;
+      text-align: center;
+    }
+
+    .graph-block img {
+      width: min(820px, 100%);
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+
+      .math-table {
+        font-size: 16px;
+      }
+
+      .math-table td {
+        padding: 6px 10px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span></p>
+
+    <div class="math-block">
+      \[
+      f(x)=x(x-a)(x-b)(x-c)
+      \]
+    </div>
+
+    <p>Area \(0\) to \(a\): \(A\)</p>
+
+    <div class="math-block">
+      \[
+      F(0)=0,\  F(a)=-A,\  F(b)=A,\  F(c)=0
+      \]
+    </div>
+
+    <p>Turning points: \(x=0,\ a,\ b,\ c\)</p>
+
+    <div class="table-wrap">
+      <table class="math-table">
+        <tr>
+          <td>\(x\)</td>
+          <td>\(-\infty\)</td>
+          <td>\(0\)</td>
+          <td>\(a\)</td>
+          <td>\(h\)</td>
+          <td>\(b\)</td>
+          <td>\(c\)</td>
+          <td>\(\infty\)</td>
+        </tr>
+        <tr>
+          <td>\(F(x)\)</td>
+          <td>\(-\infty\)</td>
+          <td>\(0\)</td>
+          <td>\(-A\)</td>
+          <td>\(0\)</td>
+          <td>\(A\)</td>
+          <td>\(0\)</td>
+          <td>\(\infty\)</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="graph-block">
+      <img src="2020_II_Q8_graph1.png" alt="Graph for part (i)" />
+    </div>
+
+    <div class="math-block">
+      \[
+      f(x)\text{ is monic quartic, so }F(x)\text{'s leading coefficient is }\frac15
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      F(0)=0,\  F'(0)=0,\ F(c)=0,\ F'(c)=0
+      \]
+    </div>
+
+    <p>So \(0,c\) are repeated roots of \(F(x)\)</p>
+
+    <div class="math-block">
+      \[
+      F(a)&lt;0,\  F(b)>0
+      \]
+    </div>
+
+    <p>So there is another root \(h\) between \(a\) and \(b\)</p>
+
+    <div class="math-block">
+      \[
+      F(x)=\frac15x^2(x-c)^2(x-h),\quad F(c-x)=\frac15x^2(x-c)^2(c-h-x)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      F(x)+F(c-x)
+      &=\frac15x^2(x-c)^2(x-h)
+      +\frac15x^2(x-c)^2(c-h-x)\\
+      &=\frac15x^2(x-c)^2(c-2h)
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span></p>
+
+    <p>For \(0\leq x\leq c\)</p>
+
+    <div class="math-block">
+      \[
+      F(x)\geq -A, \ F(x)=-A\iff x=a,\ F(b)=A
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore F(b)+F(x)\geq0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      F(b)+F(x)>0\quad (x\neq a)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      F(b)+F(c-b)=\frac15b^2(c-b)^2(c-2h)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      c-b=a\quad\text{or}\quad F(b)+F(c-b)>0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      c-b=a\quad\text{or}\quad c>2h
+      \]
+    </div>
+
+    <p>Similarly,</p>
+
+    <div class="math-block">
+      \[
+      F(a)+F(x)\leq0,\quad F(a)+F(x)&lt;0\quad (x\neq b)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      F(a)+F(c-a)=\frac15a^2(c-a)^2(c-2h)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      c-a=b\quad \text{or}\quad c&lt;2h
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      c>2h\text{ and }c&lt;2h\text{ cannot both hold}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore c=a+b
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      F(b)+F(a)=0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \frac15b^2(c-b)^2(c-2h)=0\implies c=2h
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iii)</span></p>
+
+    <div class="math-block">
+      \[
+      h=\frac c2
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      F(x)=\frac15x^2(x-c)^2\left(x-\frac c2\right)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      f(x)
+      &=F'(x)\\
+      &=\frac15x(x-c)(5x^2-5cx+c^2)\\
+      &=x(x-c)\left(x^2-cx+\frac{c^2}{5}\right)\\
+      &=\frac15(5x^4-10cx^3+6c^2x^2-c^3x)
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      f''(x)=\frac15(60x^2-60cx+12c^2)=12\left(x^2-cx+\frac{c^2}{5}\right)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \because f(x)=x(x-c)\left(x^2-cx+\frac{c^2}{5}\right)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore \text{When }f''(x)=0\implies f(x)=0
+      \]
+    </div>
+
+    <p>The points of inflection on \(y=f(x)\) lie on the \(x\)-axis</p>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong></p>
+      <p>Published and refined by <strong>Jon</strong></p>
+      <p><em>Last updated: July 18, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>
