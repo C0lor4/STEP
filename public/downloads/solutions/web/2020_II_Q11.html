@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2020 II Q11 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span> No ending after \(2n\) tosses: \(\displaystyle P=2(pq)^n\)</p>
+
+    <div class="math-block">
+      \[
+      \lim_{n\to\infty}2(pq)^n=0\implies P(\text{game never ends})=0
+      \]
+    </div>
+
+    <p>Let \(P_H=P(A\text{ wins}\mid \text{first toss is H}),\  P_T=P(A\text{ wins}\mid \text{first toss is T})\)</p>
+
+    <div class="math-block">
+      \[
+      P_H=p+qpP_H\implies P_H=\frac{p}{1-pq}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      P_T=pP_H=\frac{p^2}{1-pq}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      P(A\text{ wins})
+      &=pP_H+qP_T\\
+      &=p\cdot\frac{p}{1-pq}+q\cdot\frac{p^2}{1-pq}\\
+      &=\frac{p^2(1+q)}{1-pq}
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span></p>
+
+    <p>From \(H\):</p>
+
+    <div class="math-block">
+      \[
+      HH:\ p^2\Rightarrow A\text{ wins}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      T:\ q\Rightarrow P_T,\  HT:\ pq\Rightarrow P_T
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      P_H=p^2+(q+pq)P_T
+      \]
+    </div>
+
+    <p>From \(T\):</p>
+
+    <div class="math-block">
+      \[
+      TT:\ q^2\Rightarrow B\text{ wins}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      H:\ p\Rightarrow P_H,\  TH:\ pq\Rightarrow P_H
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      P_T=(p+pq)P_H=(1-q^2)P_H
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      P_H=p^2+(q+pq)(1-q^2)P_H=p^2+(1-p^2)(1-q^2)P_H
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      P_H=\frac{p^2}{1-(1-p^2)(1-q^2)}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      P(A\text{ wins})
+      &=pP_H+qP_T\\
+      &=pP_H+q(1-q^2)P_H\\
+      &=(1-q^3)P_H\\
+      &=\frac{p^2(1-q^3)}{1-(1-p^2)(1-q^2)}
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iii)</span></p>
+
+    <div class="math-block">
+      \[
+      P_H=p^{a-1}+q(1+p+\cdots+p^{a-2})P_T=p^{a-1}+(1-p^{a-1})P_T
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      P_T=(1-q^{b-1})P_H
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      P_H=p^{a-1}+(1-p^{a-1})(1-q^{b-1})P_H=\frac{p^{a-1}}{1-(1-p^{a-1})(1-q^{b-1})}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      P(A\text{ wins})
+      &=pP_H+qP_T\\
+      &=pP_H+q(1-q^{b-1})P_H\\
+      &=(1-q^b)P_H\\
+      &=\frac{p^{a-1}(1-q^b)}{1-(1-p^{a-1})(1-q^{b-1})}
+      \end{aligned}
+      \]
+    </div>
+
+    <p>When \(a=b=2\),</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      P(A\text{ wins})
+      &=\frac{p(1-q^2)}{1-(1-p)(1-q)}\\
+      &=\frac{p^2(1+q)}{1-pq}
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong></p>
+      <p>Published and refined by <strong>Jon</strong></p>
+      <p><em>Last updated: July 20, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>

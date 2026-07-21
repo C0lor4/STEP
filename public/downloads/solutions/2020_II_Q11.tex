@@ -1,0 +1,92 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\textbf{(i)} No ending after $2n$ tosses: $\ds P=2(pq)^n$
+
+$$\lim_{n\to\infty}2(pq)^n=0\implies P(\text{game never ends})=0$$
+
+Let $P_H=P(A\text{ wins}\mid \text{first toss is H}),\  P_T=P(A\text{ wins}\mid \text{first toss is T})$
+
+$$P_H=p+qpP_H\implies P_H=\frac{p}{1-pq}$$
+
+$$P_T=pP_H=\frac{p^2}{1-pq}$$
+\begin{align*}
+P(A\text{ wins})
+&=pP_H+qP_T\\
+&=p\cdot\frac{p}{1-pq}+q\cdot\frac{p^2}{1-pq}\\
+&=\frac{p^2(1+q)}{1-pq}
+\end{align*}
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)}
+
+From $H$:
+
+$$HH:\ p^2\Rightarrow A\text{ wins}$$
+
+$$T:\ q\Rightarrow P_T,\  HT:\ pq\Rightarrow P_T$$
+
+$$P_H=p^2+(q+pq)P_T$$
+
+From $T$:
+
+$$TT:\ q^2\Rightarrow B\text{ wins}$$
+
+$$H:\ p\Rightarrow P_H,\  TH:\ pq\Rightarrow P_H$$
+
+$$P_T=(p+pq)P_H=(1-q^2)P_H$$
+
+$$P_H=p^2+(q+pq)(1-q^2)P_H=p^2+(1-p^2)(1-q^2)P_H$$
+
+$$P_H=\frac{p^2}{1-(1-p^2)(1-q^2)}$$
+
+\begin{align*}
+P(A\text{ wins})
+&=pP_H+qP_T\\
+&=pP_H+q(1-q^2)P_H\\
+&=(1-q^3)P_H\\
+&=\frac{p^2(1-q^3)}{1-(1-p^2)(1-q^2)}
+\end{align*}
+
+\bigskip\hrule\bigskip
+
+\textbf{(iii)}
+$$P_H=p^{a-1}+q(1+p+\cdots+p^{a-2})P_T=p^{a-1}+(1-p^{a-1})P_T$$
+
+$$P_T=(1-q^{b-1})P_H$$
+
+$$P_H=p^{a-1}+(1-p^{a-1})(1-q^{b-1})P_H=\frac{p^{a-1}}{1-(1-p^{a-1})(1-q^{b-1})}$$
+
+
+\begin{align*}
+P(A\text{ wins})
+&=pP_H+qP_T\\
+&=pP_H+q(1-q^{b-1})P_H\\
+&=(1-q^b)P_H\\
+&=\frac{p^{a-1}(1-q^b)}{1-(1-p^{a-1})(1-q^{b-1})}
+\end{align*}
+
+When $a=b=2$,
+
+\begin{align*}
+P(A\text{ wins})
+&=\frac{p(1-q^2)}{1-(1-p)(1-q)}\\
+&=\frac{p^2(1+q)}{1-pq}
+\end{align*}
+
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: July 20, 2026}
+\end{center}
+
+\end{document}
