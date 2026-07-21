@@ -1,0 +1,103 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\textbf{(i)}
+
+$$\sum_{i=1}^n P(X=i)=1$$
+
+$$\implies \sum_{i=1}^n\left(\frac1n+\varepsilon_i\right)=1$$
+
+$$\implies \sum_{i=1}^n\varepsilon_i=0$$
+
+\begin{align*}
+P(\text{same score on two rolls})
+&=\sum_{i=1}^n\left(\frac1n+\varepsilon_i\right)^2\\
+&=\sum_{i=1}^n\left(\frac1{n^2}+\frac2n\varepsilon_i+\varepsilon_i^2\right)\\
+&=\frac1n+\frac2n\sum_{i=1}^n\varepsilon_i+\sum_{i=1}^n\varepsilon_i^2\\
+&=\frac1n+\sum_{i=1}^n\varepsilon_i^2
+\end{align*}
+
+Not all $\varepsilon_i$ are $0$, $\implies \ds \sum_{i=1}^n\varepsilon_i^2>0$
+
+$$P(\text{same score on two rolls})>\frac1n$$
+
+For a fair die,
+
+$$P(\text{same score on two rolls})=\frac1n$$
+
+$\therefore $ Biased die is more likely
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)} Let $S=\ds\sum_{i=1}^n x_i\quad p_i=\frac{x_i}{S}$
+
+$$\sum_{i=1}^n p_i=1$$
+
+By \textbf{(i)},
+
+$$\sum_{i=1}^n p_i^2\geq\frac1n$$
+
+$$\sum_{i=1}^n\left(\frac{x_i}{S}\right)^2\geq\frac1n$$
+
+$$\sum_{i=1}^n x_i^2\geq \frac1n\left(\sum_{i=1}^n x_i\right)^2$$
+
+\begin{align*}
+\left(\sum_{i=1}^n x_i\right)^2
+&=\sum_{i=1}^n x_i^2+2\sum_{i=2}^n\sum_{j=1}^{i-1}x_ix_j
+\end{align*}
+
+\begin{align*}
+2\sum_{i=2}^n\sum_{j=1}^{i-1}x_ix_j
+&=\left(\sum_{i=1}^n x_i\right)^2-\sum_{i=1}^n x_i^2\\
+&\leq \left(\sum_{i=1}^n x_i\right)^2-\frac1n\left(\sum_{i=1}^n x_i\right)^2\\
+&=\frac{n-1}{n}\left(\sum_{i=1}^n x_i\right)^2
+\end{align*}
+
+$$\implies \sum_{i=2}^n\sum_{j=1}^{i-1}x_ix_j\leq
+\frac{n-1}{2n}\left(\sum_{i=1}^n x_i\right)^2$$
+
+\bigskip\hrule\bigskip
+\textbf{(iii)}
+
+\begin{align*}
+P(\text{biased})
+&=\sum_{i=1}^n\left(\frac1n+\varepsilon_i\right)^3\\
+&=\sum_{i=1}^n\left(\frac1{n^3}+\frac{3\varepsilon_i}{n^2}
++\frac{3\varepsilon_i^2}{n}+\varepsilon_i^3\right)
+\end{align*}
+
+
+$$P(\text{fair})=n\left(\frac1n\right)^3=\frac1{n^2}$$
+
+\begin{align*}
+P(\text{biased})-P(\text{fair})&=\sum_{i=1}^n\frac{3\varepsilon_i}{n^2}
++\sum_{i=1}^n\frac{3\varepsilon_i^2}{n}
++\sum_{i=1}^n\varepsilon_i^3\\
+&=\sum_{i=1}^n\frac{3\varepsilon_i^2}{n}+\sum_{i=1}^n\varepsilon_i^3\\
+&=\sum_{i=1}^n\varepsilon_i^2\left(\frac3n+\varepsilon_i\right)
+\end{align*}
+
+$$\because \frac1n+\varepsilon_i\geq0$$
+
+$$\therefore \frac3n+\varepsilon_i\geq\frac2n>0$$
+
+Not all $\varepsilon_i$ are $0$,
+
+$$\sum_{i=1}^n\varepsilon_i^2\left(\frac3n+\varepsilon_i\right)>0$$
+
+$$P(\text{biased})>P(\text{fair})$$
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: July 21, 2026}
+\end{center}
+
+\end{document}
