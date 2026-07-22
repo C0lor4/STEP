@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2021 II Q1 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      2\cos\frac{a+b}{2}\cos\frac{a-b}{2}
+      &=2\left(\cos\frac a2\cos\frac b2-\sin\frac a2\sin\frac b2\right)
+      \left(\cos\frac a2\cos\frac b2+\sin\frac a2\sin\frac b2\right)\\
+      &=2\left(\cos^2\frac a2\cos^2\frac b2-\sin^2\frac a2\sin^2\frac b2\right)\\
+      &=2\left(\frac{1+\cos a}{2}\cdot\frac{1+\cos b}{2}
+      -\frac{1-\cos a}{2}\cdot\frac{1-\cos b}{2}\right)\\
+      &=\cos a+\cos b
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore \cos(4a)+\cos(2a)=2\cos3a\cos a
+      \]
+    </div>
+
+    <p>Similarly,</p>
+
+    <div class="math-block">
+      \[
+      2\sin\frac{a+b}{2}\cos\frac{a-b}{2}=\sin a+\sin b
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore \sin(4a)-\sin(2a)=2\sin a\cos3a
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(i)</span></p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      4\cos x\cos2x\cos3x
+      &=2\cos2x(\cos4x+\cos2x)\\
+      &=2\cos2x\cos4x+2\cos^22x\\
+      &=\cos6x+\cos2x+1+\cos4x
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \cos6x+\cos4x+\cos2x&=0\\
+      2\cos4x\cos2x+\cos4x&=0\\
+      \cos4x(2\cos2x+1)&=0
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \cos4x=0\quad &\text{or}\quad \cos2x=-\frac12\\
+      x=\frac{\pi}{8},\frac{3\pi}{8},\frac{5\pi}{8},\frac{7\pi}{8}\quad &\text{or}\quad x=\frac{\pi}{3},\frac{2\pi}{3}
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span></p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \tan x&=\tan2x\tan3x\tan4x\\
+      \sin x\cos2x\cos3x\cos4x
+      &=\cos x\sin2x\sin3x\sin4x\\
+      \frac12(\sin4x-\sin2x)\cos2x\cos4x
+      &=\frac12(\sin4x+\sin2x)\sin2x\sin4x\\
+      \sin4x(\cos2x\cos4x-\sin2x\sin4x)
+      &=\sin2x(\cos2x\cos4x+\sin2x\sin4x)\\
+      \sin4x\cos6x
+      &=\sin2x\cos2x\\
+      \sin4x\left(\cos6x-\frac12\right)
+      &=0\\
+      \cos6x=\frac12\quad &\text{or}\quad \sin4x=0\\
+      x=\frac{\pi}{18},\frac{5\pi}{18},\frac{13\pi}{18},\frac{17\pi}{18} &\text{ or } x=0,\frac{\pi}{4},\frac{\pi}{2},\frac{3\pi}{4},\pi
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      x=\frac{\pi}{4},\frac{\pi}{2},\frac{3\pi}{4}\text{ is not defined for } \tan x
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore x=0,\frac{\pi}{18},\frac{5\pi}{18},\frac{7\pi}{18},\frac{11\pi}{18},\frac{13\pi}{18},\frac{17\pi}{18},\pi
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong></p>
+      <p>Published and refined by <strong>Jon</strong></p>
+      <p><em>Last updated: July 21, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>

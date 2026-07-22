@@ -1,0 +1,82 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+
+
+\begin{align*}
+2\cos\frac{a+b}{2}\cos\frac{a-b}{2}
+&=2\left(\cos\frac a2\cos\frac b2-\sin\frac a2\sin\frac b2\right)
+\left(\cos\frac a2\cos\frac b2+\sin\frac a2\sin\frac b2\right)\\
+&=2\left(\cos^2\frac a2\cos^2\frac b2-\sin^2\frac a2\sin^2\frac b2\right)\\
+&=2\left(\frac{1+\cos a}{2}\cdot\frac{1+\cos b}{2}
+-\frac{1-\cos a}{2}\cdot\frac{1-\cos b}{2}\right)\\
+&=\cos a+\cos b
+\end{align*}
+
+$$\therefore \cos(4a)+\cos(2a)=2\cos3a\cos a$$
+
+
+Similarly, 
+$$2\sin\frac{a+b}{2}\cos\frac{a-b}{2}=\sin a+\sin b$$
+
+$$\therefore \sin(4a)-\sin(2a)=2\sin a\cos3a$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(i)}
+
+\begin{align*}
+4\cos x\cos2x\cos3x
+&=2\cos2x(\cos4x+\cos2x)\\
+&=2\cos2x\cos4x+2\cos^22x\\
+&=\cos6x+\cos2x+1+\cos4x
+\end{align*}
+
+\begin{align*}
+\cos6x+\cos4x+\cos2x&=0\\
+2\cos4x\cos2x+\cos4x&=0\\
+\cos4x(2\cos2x+1)&=0
+\end{align*}
+
+\begin{align*}
+\cos4x=0\quad &\text{or}\quad \cos2x=-\frac12\\
+x=\frac{\pi}{8},\frac{3\pi}{8},\frac{5\pi}{8},\frac{7\pi}{8}\quad &\text{or}\quad x=\frac{\pi}{3},\frac{2\pi}{3}
+\end{align*}
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)}
+\begin{align*}
+\tan x&=\tan2x\tan3x\tan4x\\
+\sin x\cos2x\cos3x\cos4x
+&=\cos x\sin2x\sin3x\sin4x\\
+\frac12(\sin4x-\sin2x)\cos2x\cos4x
+&=\frac12(\sin4x+\sin2x)\sin2x\sin4x\\
+\sin4x(\cos2x\cos4x-\sin2x\sin4x)
+&=\sin2x(\cos2x\cos4x+\sin2x\sin4x)\\
+\sin4x\cos6x
+&=\sin2x\cos2x\\
+\sin4x\left(\cos6x-\frac12\right)
+&=0\\
+\cos6x=\frac12\quad &\text{or}\quad \sin4x=0\\
+x=\frac{\pi}{18},\frac{5\pi}{18},\frac{13\pi}{18},\frac{17\pi}{18} &\text{ or } x=0,\frac{\pi}{4},\frac{\pi}{2},\frac{3\pi}{4},\pi
+\end{align*}
+
+$$x=\frac{\pi}{4},\frac{\pi}{2},\frac{3\pi}{4}\text{ is not defined for } \tan x$$
+
+$$\therefore x=0,\frac{\pi}{18},\frac{5\pi}{18},\frac{7\pi}{18},\frac{11\pi}{18},\frac{13\pi}{18},\frac{17\pi}{18},\pi$$
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: July 21, 2026}
+\end{center}
+
+\end{document}
