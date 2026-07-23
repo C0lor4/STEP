@@ -1,0 +1,92 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\textbf{(i)} Let $\ds d=1-p_A-p_B$
+
+The match is won by $A$ after $r$ draws followed by an $A$ win.
+
+\begin{align*}
+P(A\text{ wins})
+&=p_A+dp_A+d^2p_A+\cdots\\
+&=p_A(1+d+d^2+\cdots)\\
+&=\frac{p_A}{1-d}\\
+&=\frac{p_A}{p_A+p_B}
+\end{align*}
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)} After each game, the difference between the number of games won by $A$ and $B$ changes by $1$. The match ends when this difference is $2$ or $-2$.
+
+First two games:
+
+$$AA:\ p^2\Rightarrow A\text{ wins}$$
+
+$$BB:\ q^2\Rightarrow B\text{ wins}$$
+
+$$AB\text{ or }BA:\ 2pq\Rightarrow \text{back to }0$$
+
+\begin{align*}
+P_{A}&=p^2+2pqP_{A}\\
+&=\frac{p^2}{1-2pq}\\
+&=\frac{p^2}{p^2+q^2}
+\end{align*}
+
+\bigskip\hrule\bigskip
+
+\textbf{(iii)}
+
+\textbf{Cautious version}
+
+Let $C_i$ be the probability of winning with $i$ tokens.
+
+$$C_0=0,\  C_4=1$$
+
+$$C_i=pC_{i+1}+qC_{i-1}\quad (1\leq i\leq3)$$
+
+$$C_1=pC_2,\quad C_2=pC_3+qC_1,\quad C_3=p+qC_2$$
+
+
+\begin{align*}
+C_2&=p(p+qC_2)+qC_1\\
+&=p^2+pqC_2+qC_1\\
+&=p^2+pqC_2+pqC_2\\
+&=\frac{p^2}{p^2+q^2}
+\end{align*}
+
+$$C_1=pC_2=\frac{p^3}{p^2+q^2}$$
+
+\textbf{Bold version}
+
+The player must double twice before losing all tokens.
+
+$$B=p^2$$
+
+Comparison,
+
+\begin{align*}
+C_1-B
+&=\frac{p^3}{p^2+q^2}-p^2\\
+&=\frac{p^2(p-p^2-q^2)}{p^2+q^2}\\
+&=\frac{p^2q(p-q)}{p^2+q^2}
+\end{align*}
+
+$$p-q>0\iff p>\frac12$$
+
+So cautious is more likely if $\ds \frac12<p<1$
+
+bold is more likely if $\ds 0<p<\frac12$
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: July 23, 2026}
+\end{center}
+
+\end{document}

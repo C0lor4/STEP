@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2021 II Q12 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span> Let \(\displaystyle d=1-p_A-p_B\)</p>
+
+    <p>The match is won by \(A\) after \(r\) draws followed by an \(A\) win.</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      P(A\text{ wins})
+      &=p_A+dp_A+d^2p_A+\cdots\\
+      &=p_A(1+d+d^2+\cdots)\\
+      &=\frac{p_A}{1-d}\\
+      &=\frac{p_A}{p_A+p_B}
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span> After each game, the difference between the number of games won by \(A\) and \(B\) changes by \(1\). The match ends when this difference is \(2\) or \(-2\).</p>
+
+    <p>First two games:</p>
+
+    <div class="math-block">
+      \[
+      AA:\ p^2\Rightarrow A\text{ wins}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      BB:\ q^2\Rightarrow B\text{ wins}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      AB\text{ or }BA:\ 2pq\Rightarrow \text{back to }0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      P_{A}&=p^2+2pqP_{A}\\
+      &=\frac{p^2}{1-2pq}\\
+      &=\frac{p^2}{p^2+q^2}
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iii)</span></p>
+
+    <p><span class="part-title">Cautious version</span></p>
+
+    <p>Let \(C_i\) be the probability of winning with \(i\) tokens.</p>
+
+    <div class="math-block">
+      \[
+      C_0=0,\  C_4=1
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      C_i=pC_{i+1}+qC_{i-1}\quad (1\leq i\leq3)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      C_1=pC_2,\quad C_2=pC_3+qC_1,\quad C_3=p+qC_2
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      C_2&=p(p+qC_2)+qC_1\\
+      &=p^2+pqC_2+qC_1\\
+      &=p^2+pqC_2+pqC_2\\
+      &=\frac{p^2}{p^2+q^2}
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      C_1=pC_2=\frac{p^3}{p^2+q^2}
+      \]
+    </div>
+
+    <p><span class="part-title">Bold version</span></p>
+
+    <p>The player must double twice before losing all tokens.</p>
+
+    <div class="math-block">
+      \[
+      B=p^2
+      \]
+    </div>
+
+    <p>Comparison,</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      C_1-B
+      &=\frac{p^3}{p^2+q^2}-p^2\\
+      &=\frac{p^2(p-p^2-q^2)}{p^2+q^2}\\
+      &=\frac{p^2q(p-q)}{p^2+q^2}
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      p-q>0\iff p>\frac12
+      \]
+    </div>
+
+    <p>So cautious is more likely if \(\displaystyle \frac12&lt;p&lt;1\)</p>
+
+    <p>bold is more likely if \(\displaystyle 0&lt;p&lt;\frac12\)</p>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong></p>
+      <p>Published and refined by <strong>Jon</strong></p>
+      <p><em>Last updated: July 23, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>
