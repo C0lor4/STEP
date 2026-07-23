@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2021 II Q11 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span></p>
+
+    <div class="math-block">
+      \[
+      P_2=\frac12
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      T_1\text{ sits in }S_1:\ T_3\text{ can sits in }S_3
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      T_1\text{ sits in }S_2:\ T_2\text{ chooses }S_1\text{ or }S_3
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      T_1\text{ sits in }S_3:\ T_3\text{ cannot sit in }S_3
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      P_3=\frac13+\frac13\cdot\frac12=\frac12
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span></p>
+
+    <div class="math-block">
+      \[
+      T_1\text{ sits in }S_1:\quad P(T_n\text{ sits in }S_n)=1
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      T_1\text{ sits in }S_n:\quad P(T_n\text{ sits in }S_n)=0
+      \]
+    </div>
+
+    <p>If \(T_1\) sits in \(S_k\), where \(\displaystyle 2\leq k\leq n-1\),</p>
+
+    <p>If \(T_1\) sits in \(S_k\), where \(\displaystyle 2\leq k\leq n-1\), \(T_2,T_3,\ldots,T_{k-1}\text{ will sit in their own seats}\)</p>
+
+    <p>Then \(T_k\) is the first passenger whose seat is not available</p>
+
+    <p>There are \(n-k+1\) available seats left: \(\displaystyle S_1,S_{k+1},S_{k+2},\ldots,S_n\)</p>
+
+    <div class="math-block">
+      \[
+      P(T_n\text{ sits in }S_n\mid T_1\text{ sits in }S_k)=P_{n-k+1}
+      \]
+    </div>
+
+    <p>This becomes the same problem with \(n-k+1\) seats.</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      P_n
+      &=\frac1n\cdot 1+\frac1n\sum_{k=2}^{n-1}P_{n-k+1}+\frac1n\cdot 0\\
+      &=\frac1n\left(1+\sum_{k=2}^{n-1}P_{n-k+1}\right)\\
+      &=\frac1n\left(1+\sum_{r=2}^{n-1}P_r\right)
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iii)</span></p>
+
+    <p>Assume \(\displaystyle P_k=\frac12\quad (k\geq2)\)</p>
+
+    <p>Base case: \(\displaystyle P_2=\frac12\)</p>
+
+    <div class="math-block">
+      \[
+      P_k=\frac1k\left(1+\sum_{r=2}^{k-1}P_r\right)\implies 1+\sum_{r=2}^{k-1}P_r=kP_k
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      P_{k+1}
+      &=\frac1{k+1}\left(1+\sum_{r=2}^{k}P_r\right)\\
+      &=\frac1{k+1}\left(1+\sum_{r=2}^{k-1}P_r+P_k\right)\\
+      &=\frac1{k+1}(kP_k+P_k)\\
+      &=\frac12
+      \end{aligned}
+      \]
+    </div>
+
+    <p>By mathematical induction, \(\displaystyle P_n=\frac12\)</p>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iv)</span></p>
+
+    <div class="math-block">
+      \[
+      Q_2=\frac12
+      \]
+    </div>
+
+    <p>For \(n\geq3\), condition on the seat chosen by \(T_1\).</p>
+
+    <div class="math-block">
+      \[
+      T_1\text{ sits in }S_1 \text{ or }S_n:\ T_{n-1}\text{ sits in }S_{n-1}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      T_1\text{ sits in }S_{n-1}:\ T_{n-1}\text{ cannot sit in }S_{n-1}
+      \]
+    </div>
+
+    <p>If \(T_1\) sits in \(S_k\), where \(2\leq k\leq n-2\),</p>
+
+    <div class="math-block">
+      \[
+      T_k\text{ becomes the first displaced passenger}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      P(T_{n-1}\text{ sits in }S_{n-1}\mid T_1\text{ sits in }S_k)=Q_{n-k+1}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      Q_n
+      &=\frac1n\left(2+\sum_{k=2}^{n-2}Q_{n-k+1}\right)\\
+      &=\frac1n\left(2+\sum_{r=3}^{n-1}Q_r\right)
+      \end{aligned}
+      \]
+    </div>
+
+    <p>Base case: \(\displaystyle Q_3=\frac13+\frac13=\frac23\)</p>
+
+    <p>Assume \(\displaystyle Q_3=Q_4=\cdots=Q_{n-1}=\frac23\)</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      Q_n
+      &=\frac1n\left(2+\sum_{r=3}^{n-1}Q_r\right)\\
+      &=\frac1n\left(2+\frac{2(n-3)}{3}\right)\\
+      &=\frac23
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore Q_n=
+      \begin{cases}
+      \ds \frac12, & n=2,\\[6pt]
+      \ds \frac23, & n\geq3.
+      \end{cases}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong></p>
+      <p>Published and refined by <strong>Jon</strong></p>
+      <p><em>Last updated: July 22, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>

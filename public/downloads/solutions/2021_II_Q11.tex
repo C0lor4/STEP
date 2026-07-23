@@ -1,0 +1,122 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\textbf{(i)}
+
+$$P_2=\frac12$$
+
+$$T_1\text{ sits in }S_1:\ T_3\text{ can sits in }S_3$$
+
+$$T_1\text{ sits in }S_2:\ T_2\text{ chooses }S_1\text{ or }S_3$$
+
+$$T_1\text{ sits in }S_3:\ T_3\text{ cannot sit in }S_3$$
+
+$$P_3=\frac13+\frac13\cdot\frac12=\frac12$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)}
+
+$$T_1\text{ sits in }S_1:\quad P(T_n\text{ sits in }S_n)=1$$
+$$T_1\text{ sits in }S_n:\quad P(T_n\text{ sits in }S_n)=0$$
+
+If $T_1$ sits in $S_k$, where $\ds 2\leq k\leq n-1$,
+
+
+If $T_1$ sits in $S_k$, where $\ds 2\leq k\leq n-1$, $T_2,T_3,\ldots,T_{k-1}\text{ will sit in their own seats}$
+
+Then $T_k$ is the first passenger whose seat is not available
+
+There are $n-k+1$ available seats left: $\ds S_1,S_{k+1},S_{k+2},\ldots,S_n$
+$$P(T_n\text{ sits in }S_n\mid T_1\text{ sits in }S_k)=P_{n-k+1}$$
+
+
+This becomes the same problem with $n-k+1$ seats.
+
+\begin{align*}
+P_n
+&=\frac1n\cdot 1+\frac1n\sum_{k=2}^{n-1}P_{n-k+1}+\frac1n\cdot 0\\
+&=\frac1n\left(1+\sum_{k=2}^{n-1}P_{n-k+1}\right)\\
+&=\frac1n\left(1+\sum_{r=2}^{n-1}P_r\right)
+\end{align*}
+
+
+
+\bigskip\hrule\bigskip
+
+\textbf{(iii)}
+
+Assume $\ds P_k=\frac12\quad (k\geq2)$
+
+Base case: $\ds P_2=\frac12$
+
+
+$$P_k=\frac1k\left(1+\sum_{r=2}^{k-1}P_r\right)\implies 1+\sum_{r=2}^{k-1}P_r=kP_k$$
+
+\begin{align*}
+P_{k+1}
+&=\frac1{k+1}\left(1+\sum_{r=2}^{k}P_r\right)\\
+&=\frac1{k+1}\left(1+\sum_{r=2}^{k-1}P_r+P_k\right)\\
+&=\frac1{k+1}(kP_k+P_k)\\
+&=\frac12
+\end{align*}
+
+By mathematical induction, $\ds P_n=\frac12$
+
+\bigskip\hrule\bigskip
+
+\textbf{(iv)}
+
+
+$$Q_2=\frac12$$
+
+
+For $n\geq3$, condition on the seat chosen by $T_1$.
+
+$$T_1\text{ sits in }S_1 \text{ or }S_n:\ T_{n-1}\text{ sits in }S_{n-1}$$
+
+$$T_1\text{ sits in }S_{n-1}:\ T_{n-1}\text{ cannot sit in }S_{n-1}$$
+
+If $T_1$ sits in $S_k$, where $2\leq k\leq n-2$,
+
+$$T_k\text{ becomes the first displaced passenger}$$
+
+$$P(T_{n-1}\text{ sits in }S_{n-1}\mid T_1\text{ sits in }S_k)=Q_{n-k+1}$$
+
+\begin{align*}
+Q_n
+&=\frac1n\left(2+\sum_{k=2}^{n-2}Q_{n-k+1}\right)\\
+&=\frac1n\left(2+\sum_{r=3}^{n-1}Q_r\right)
+\end{align*}
+
+Base case: $\ds Q_3=\frac13+\frac13=\frac23$
+
+Assume $\ds Q_3=Q_4=\cdots=Q_{n-1}=\frac23$
+
+\begin{align*}
+Q_n
+&=\frac1n\left(2+\sum_{r=3}^{n-1}Q_r\right)\\
+&=\frac1n\left(2+\frac{2(n-3)}{3}\right)\\
+&=\frac23
+\end{align*}
+
+$$\therefore Q_n=
+\begin{cases}
+\ds \frac12, & n=2,\\[6pt]
+\ds \frac23, & n\geq3.
+\end{cases}$$
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: July 22, 2026}
+\end{center}
+
+\end{document}
