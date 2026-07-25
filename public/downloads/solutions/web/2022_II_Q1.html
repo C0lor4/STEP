@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2022 II Q1 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .graph-block {
+      margin: 18px 0 22px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .graph-block img {
+      width: min(600px, 80%);
+      height: auto;
+      display: block;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span></p>
+
+    <div class="math-block">
+      \[
+      \because \frac{d}{dx}\left(2x\sqrt{1+x^3}\right)
+      =2\sqrt{1+x^3}+2x\cdot\frac{3x^2}{2\sqrt{1+x^3}}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore \int\left(2\sqrt{1+x^3}+\frac{3x^3}{\sqrt{1+x^3}}\right)\,dx
+      =2x\sqrt{1+x^3}+C
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span></p>
+
+    <div class="math-block">
+      \[
+      (x^2+2)\frac{\sin x}{x^3}=\frac{\sin x}{x}+\frac{2\sin x}{x^3}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \int \frac{2\sin x}{x^3}\,dx
+      =-\frac{\sin x}{x^2}+\int \frac{\cos x}{x^2}\,dx
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \int \frac{\sin x}{x}\,dx
+      =-\frac{\cos x}{x}-\int \frac{\cos x}{x^2}\,dx
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \int (x^2+2)\frac{\sin x}{x^3}\,dx
+      &=\int \frac{\sin x}{x}\,dx
+      -\frac{\sin x}{x^2}
+      -\frac{\cos x}{x}
+      -\int \frac{\sin x}{x}\,dx\\
+      &=-\frac{\sin x+x\cos x}{x^2}+C
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iii)(a)</span></p>
+
+    <div class="math-block">
+      \[
+      \frac{dy}{dx}=\frac{e^x(x-1)}{x^2}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \frac{dy}{dx}=0\implies x=1
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{array}{c|c|c|c|c|c}
+      x & -\infty & 0^- & 0^+ & 1 & \infty\\
+      \hline
+      y & 0^- & -\infty & \infty & e & \infty
+      \end{array}
+      \]
+    </div>
+
+    <div class="graph-block">
+      <img src="./2022_II_Q1_graph1.png" alt="Graph of y equals e to the x divided by x, with minimum point (1, e)" />
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iii)(b)</span></p>
+
+    <div class="math-block">
+      \[
+      \int_a^{2a}\frac{e^x}{x}\,dx=\int_a^{2a}\frac{e^x}{x^2}\,dx
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \because \frac{d}{dx}\left(\frac{e^x}{x}\right)
+      =\frac{e^x}{x}-\frac{e^x}{x^2}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \left[\frac{e^x}{x}\right]_a^{2a}=0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \frac{e^{2a}}{2a}-\frac{e^a}{a}=0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      a=\ln 2
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iii)(c)</span> Assume distinct integers \(m,n\) exist and \(n&lt;m\).</p>
+
+    <div class="math-block">
+      \[
+      \left[\frac{e^x}{x}\right]_m^n=0
+      \implies\frac{e^n}{n}=\frac{e^m}{m}
+      \]
+    </div>
+
+    <p>From the graph in <strong>(iii)(a)</strong>, \(\displaystyle \frac{e^n}{n}\) must lie in \((0,1)\).</p>
+
+    <div class="math-block">
+      \[
+      \therefore \text{Contradiction, no distinct integers }m,n\text{ exist}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong></p>
+      <p>Published and refined by <strong>Jon</strong></p>
+      <p><em>Last updated: July 23, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>
