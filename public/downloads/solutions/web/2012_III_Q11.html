@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2012 III Q11 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .section-title {
+      font-weight: 700;
+    }
+
+    ul,
+    ol {
+      margin: 8px 0 18px;
+      padding-left: 30px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p>Let the horizontal plane containing the fixed point \(P\) be the zero potential energy reference level (with the downward direction as the positive \(y\)-axis). The rope is uniform with a linear mass density of \(\rho=\frac{2M}{2L}=\frac{M}{L}\).</p>
+
+    <p class="section-title">1. Initial State (\(t=0\)):</p>
+
+    <ul>
+      <li>Initial kinetic energy of the system: \(E_{k0}=0\)</li>
+      <li>Initial potential energy of the system (center of mass of the rope falls by \(\frac{L}{2}\)): \(E_{p0}=-2Mg\left(\frac{L}{2}\right)=-MgL\)</li>
+      <li><strong>Total initial mechanical energy:</strong> \(E_0=-MgL\)</li>
+    </ul>
+
+    <p class="section-title">2. Final State (particle has fallen a distance \(x\)):</p>
+
+    <ul>
+      <li>
+        <strong>Final kinetic energy:</strong> The particle and the moving section of the rope have the same speed \(v\).
+        <div class="math-block">
+          \[
+          E_k=\frac12mv^2+\frac12\left[\frac{M}{L}\left(L-\frac{x}{2}\right)\right]v^2
+          =\frac12\left(m+M-\frac{Mx}{2L}\right)v^2
+          \]
+        </div>
+      </li>
+      <li>
+        <strong>Final potential energy:</strong> Composed of three parts: the particle, the stationary section of the rope (length \(L+\frac{x}{2}\)), and the moving section of the rope (length \(L-\frac{x}{2}\)).
+        <div class="math-block">
+          \[
+          E_p=-mgx
+          -\underbrace{\frac{Mg}{L}\left(L+\frac{x}{2}\right)}_{\text{mass of stationary section}}
+          \underbrace{\frac12\left(L+\frac{x}{2}\right)}_{\text{COM of stationary section}}
+          -\underbrace{\frac{Mg}{L}\left(L-\frac{x}{2}\right)}_{\text{mass of moving section}}
+          \underbrace{\left(\frac{L}{2}+\frac{3x}{4}\right)}_{\text{COM of moving section}}
+          \]
+        </div>
+        <p>Expanding and simplifying yields:</p>
+        <div class="math-block">
+          \[
+          E_p=-mgx-MgL-Mgx+\frac{Mgx^2}{4L}
+          \]
+        </div>
+      </li>
+    </ul>
+
+    <p class="section-title">3. Conservation of Mechanical Energy (\(E_0=E_k+E_p\)):</p>
+
+    <div class="math-block">
+      \[
+      -MgL=\frac12\left(m+M-\frac{Mx}{2L}\right)v^2
+      -mgx-MgL-Mgx+\frac{Mgx^2}{4L}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \frac12\left(\frac{mL+ML-\frac12Mx}{L}\right)v^2
+      =gx(m+M)-\frac{Mgx^2}{4L}
+      \]
+    </div>
+
+    <p>Extracting the common factor and rearranging proves the expression:</p>
+
+    <div class="math-block">
+      \[
+      v^2=\frac{2gx\left(mL+ML-\frac14Mx\right)}
+      {mL+ML-\frac12Mx}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p>Using the kinematic differential relationship \(a=v\frac{dv}{dx}=\frac12\frac{d(v^2)}{dx}\), we differentiate the above expression for \(v^2\).</p>
+
+    <p>Let \(v^2=\frac{u}{w}\), where:</p>
+
+    <ul>
+      <li>Numerator \(u=2gL(m+M)x-\frac12Mgx^2\implies u'=2gL(m+M)-Mgx=2gw\)</li>
+      <li>Denominator \(w=L(m+M)-\frac12Mx\implies w'=-\frac12M\)</li>
+    </ul>
+
+    <p>According to the quotient rule:</p>
+
+    <div class="math-block">
+      \[
+      \frac{d(v^2)}{dx}
+      =\frac{u'w-uw'}{w^2}
+      =\frac{(2gw)w-u\left(-\frac12M\right)}{w^2}
+      =2g+\frac{Mu}{2w^2}
+      \]
+    </div>
+
+    <p>Substituting into \(a=\frac12\frac{d(v^2)}{dx}\):</p>
+
+    <div class="math-block">
+      \[
+      a=g+\frac{Mu}{4w^2}
+      \]
+    </div>
+
+    <p>Substituting the original expressions for \(u\) and \(w\) back and simplifying proves the expression:</p>
+
+    <div class="math-block">
+      \[
+      a=g+\frac{Mgx\left(mL+ML-\frac14Mx\right)}
+      {2\left(mL+ML-\frac12Mx\right)^2}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p>Observe the expression for acceleration:</p>
+
+    <div class="math-block">
+      \[
+      a=g+\frac{Mgx\left(mL+ML-\frac14Mx\right)}
+      {2\left(mL+ML-\frac12Mx\right)^2}
+      \]
+    </div>
+
+    <p>At any instant after the particle is released (\(x&gt;0\)):</p>
+
+    <ol>
+      <li><strong>Denominator:</strong> \(2\left(mL+ML-\frac12Mx\right)^2\) is a perfect square and is always strictly positive (\(&gt;0\)).</li>
+      <li>
+        <strong>Numerator:</strong> The problem states that \(x&lt;2L\), therefore \(\frac14Mx&lt;\frac14M(2L)=\frac12ML\). From this, we can deduce the term inside the parenthesis:
+        <div class="math-block">
+          \[
+          \left(mL+ML-\frac14Mx\right)
+          &gt;\left(mL+ML-\frac12ML\right)
+          =mL+\frac12ML&gt;0
+          \]
+        </div>
+      </li>
+    </ol>
+
+    <p>Since \(M,g,x\) are all positive numbers, and the term inside the parenthesis is also positive, the entire fractional term is strictly greater than \(0\). Therefore:</p>
+
+    <div class="math-block">
+      \[
+      a=g+(\text{positive number})&gt;g
+      \]
+    </div>
+
+    <p>The original proposition is proven.</p>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Roy</strong></p>
+      <p>Published and refined by <strong>Jon</strong></p>
+      <p><em>Last updated: July 25, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>

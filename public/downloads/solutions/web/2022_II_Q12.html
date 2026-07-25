@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2022 II Q12 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span></p>
+
+    <div class="math-block">
+      \[
+      1=\int_0^1 kx^n(1-x)\,dx
+      =k\left(\frac1{n+1}-\frac1{n+2}\right)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \implies k=(n+1)(n+2)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \mu
+      &=\int_0^1 xkx^n(1-x)\,dx\\
+      &=k\left(\frac1{n+2}-\frac1{n+3}\right)\\
+      &=\frac{n+1}{n+3}
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span></p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      F(x)
+      &=\int_0^x (n+1)(n+2)t^n(1-t)\,dt\\
+      &=(n+2)x^{n+1}-(n+1)x^{n+2}\\
+      &=x^{n+1}\left(n+2-(n+1)x\right)
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      F(\mu)
+      &=\left(\frac{n+1}{n+3}\right)^{n+1}
+      \left(n+2-(n+1)\frac{n+1}{n+3}\right)\\
+      &=\left(\frac{n+1}{n+3}\right)^{n+1}
+      \cdot\frac{3n+5}{n+3}
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      F(\mu)&lt;\frac12
+      &\iff
+      2\cdot\frac{3n+5}{n+3}
+      &lt;\left(\frac{n+3}{n+1}\right)^{n+1}\\
+      &\iff
+      6-\frac8{n+3}
+      &lt;\left(1+\frac2{n+1}\right)^{n+1}
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \left(1+\frac2{n+1}\right)^{n+1}
+      \geq 1+2+\binom{n+1}{2}\left(\frac2{n+1}\right)^2
+      =3+\frac{2n}{n+1}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      3+\frac{2n}{n+1}-\left(6-\frac8{n+3}\right)
+      =\frac{(n-1)(n+5)}{(n+1)(n+3)}&gt;0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \because F(\operatorname{median})=\frac12
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore \mu&lt;\operatorname{median}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iii)</span></p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      f'(x)
+      &=k\left(nx^{n-1}(1-x)-x^n\right)\\
+      &=kx^{n-1}\left(n-(n+1)x\right)
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      f'(x)=0\implies x=\frac n{n+1}=\operatorname{Mode}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      F(M)
+      &=\left(\frac n{n+1}\right)^{n+1}
+      \left(n+2-(n+1)\frac n{n+1}\right)\\
+      &=2\left(\frac n{n+1}\right)^{n+1}\\
+      &=\frac{2}{\left(1+\frac1n\right)^{n+1}}
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \because \left(1+\frac1x\right)^{x+1}\text{ is decreasing}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore n&gt;1
+      \implies \left(1+\frac1n\right)^{n+1}
+      &lt;\left(1+\frac11\right)^2=4
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      F(\operatorname{Mode})&gt;\frac12
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore \operatorname{Mode}&gt;\operatorname{Median}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong></p>
+      <p>Published and refined by <strong>Jon</strong></p>
+      <p><em>Last updated: July 25, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.7.24)  24 JUL 2026 23:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.7.24)  25 JUL 2026 17:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/projon/Desktop/STEP/STEP/public/downloads/solutions/test/2018_STEP_II.tex
-(c:/Users/projon/Desktop/STEP/STEP/public/downloads/solutions/test/2018_STEP_II.tex
+**c:/Users/projon/Desktop/STEP/STEP/public/downloads/solutions/2022_II_Q12.tex
+(c:/Users/projon/Desktop/STEP/STEP/public/downloads/solutions/2022_II_Q12.tex
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-06-18>
 (C:\Users\projon\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -109,6 +109,17 @@ LaTeX Info: Redefining \Relbar on input line 970.
 \mathdisplay@stack=\toks23
 LaTeX Info: Redefining \[ on input line 2965.
 LaTeX Info: Redefining \] on input line 2966.
+) (C:\Users\projon\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks24
+\thm@bodyfont=\toks25
+\thm@headfont=\toks26
+\thm@notefont=\toks27
+\thm@headpunct=\toks28
+\thm@preskip=\skip54
+\thm@postskip=\skip55
+\thm@headsep=\skip56
+\dth@everypar=\toks29
 ) (C:\Users\projon\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
  (C:\Users\projon\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
@@ -118,66 +129,65 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (C:\Users\projon\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.sty
-Package: enumitem 2025/02/06 v3.11 Customized lists
-\labelindent=\skip54
-\enit@outerparindent=\dimen168
-\enit@toks=\toks24
-\enit@inbox=\box55
-\enit@count@id=\count299
-\enitdp@description=\count300
-) (C:\Users\projon\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
-Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
-)
-
-c:/Users/projon/Desktop/STEP/STEP/public/downloads/solutions/test/2018_STEP_II.tex:9: LaTeX Error: Command \pounds already defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.9 \newcommand{\pounds}{\textsterling}
-                                       
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-(C:\Users\projon\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+)) (C:\Users\projon\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrextend.sty
+Package: scrextend 2026/02/02 v3.49.2 KOMA-Script package (extend other classes with features of KOMA-Script classes)
+ (C:\Users\projon\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrkbase.sty
+Package: scrkbase 2026/02/02 v3.49.2 KOMA-Script package (KOMA-Script-dependent basics and keyval usage)
+ (C:\Users\projon\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrbase.sty
+Package: scrbase 2026/02/02 v3.49.2 KOMA-Script package (KOMA-Script-independent basics and keyval usage)
+ (C:\Users\projon\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfile.sty
+Package: scrlfile 2026/02/02 v3.49.2 KOMA-Script package (file load hooks)
+ (C:\Users\projon\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfile-hook.sty
+Package: scrlfile-hook 2026/02/02 v3.49.2 KOMA-Script package (using LaTeX hooks)
+ (C:\Users\projon\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlogo.sty
+Package: scrlogo 2026/02/02 v3.49.2 KOMA-Script package (logo)
+)))
+Applying: [2021/05/01] Usage of raw or classic option list on input line 254.
+Already applied: [0000/00/00] Usage of raw or classic option list on input line 370.
+))) (C:\Users\projon\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+Package: array 2026/02/24 v2.7b Tabular extension package (FMi)
+\col@sep=\dimen168
+\ar@mcellbox=\box55
+\extrarowheight=\dimen169
+\NC@list=\toks30
+\extratabsurround=\skip57
+\backup@length=\skip58
+\ar@cellbox=\box56
+) (C:\Users\projon\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2026-02-18 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count301
-)
-No file 2018_STEP_II.aux.
-\openout1 = `2018_STEP_II.aux'.
+\l__color_backend_stack_int=\count299
+) (2022_II_Q12.aux)
+\openout1 = `2022_II_Q12.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
 * driver: pdftex
-* paper: a4paper
+* paper: <default>
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(72.26999pt, 452.9679pt, 72.26999pt)
-* v-part:(T,H,B)=(72.26999pt, 700.50687pt, 72.26999pt)
-* \paperwidth=597.50787pt
-* \paperheight=845.04684pt
-* \textwidth=452.9679pt
-* \textheight=700.50687pt
+* h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=469.75502pt
+* \textheight=650.43001pt
 * \oddsidemargin=0.0pt
 * \evensidemargin=0.0pt
 * \topmargin=-37.0pt
@@ -198,33 +208,33 @@ LaTeX Font Info:    ... okay on input line 11.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 20.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 12.
 (C:\Users\projon\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 20.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 12.
  (C:\Users\projon\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{C:/Users/projon/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] [3] [4] [5] [6] (2018_STEP_II.aux)
+{C:/Users/projon/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] (2022_II_Q12.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-06-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 2667 strings out of 467510
- 40373 string characters out of 5408308
- 462166 words of memory out of 5000000
- 31914 multiletter control sequences out of 15000+600000
- 634237 words of font info for 64 fonts, out of 8000000 for 9000
+ 3322 strings out of 467510
+ 53360 string characters out of 5408308
+ 501718 words of memory out of 5000000
+ 32551 multiletter control sequences out of 15000+600000
+ 633020 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,6n,65p,714b,413s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\projon\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/projon/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/projon/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/projon/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/projon/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/projon/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/projon/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/projon/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/projon/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on 2018_STEP_II.pdf (6 pages, 123840 bytes).
+ 108i,10n,107p,351b,139s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/projon/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/projon/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/projon/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/projon/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/projon/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/projon/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/projon/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/projon/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/projon/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/projon/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on 2022_II_Q12.pdf (2 pages, 109131 bytes).
 PDF statistics:
- 66 PDF objects out of 1000 (max. 8388607)
+ 59 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

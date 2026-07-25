@@ -1,0 +1,62 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\textbf{(i)} Outcomes:
+$$\text{all }N\text{ good: }\Pr=q^N,\quad \text{gain}=N-T$$
+$$\text{tested }T\text{ good, }N-T\text{ contains infected: }\Pr=q^T-q^N,\quad \text{gain}=-D$$
+$$\text{a tested stick infected: }\Pr=1-q^T,\quad \text{gain}=0$$
+
+$$E_{gain}=(N-T)q^N-D(q^T-q^N)=(N-T+D)q^N-Dq^T$$
+$$E_{loss}=-E_{gain}=Dq^T-(N-T+D)q^N$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)}
+
+$$\alpha=\frac{DT}{N(N-T+D)}=1-\frac{(N-T)(N+D)}{N(N-T+D)}$$
+
+$$\because 0\le T<N,\ D>0$$
+$$\therefore 0\le \alpha<1$$
+
+$$\frac{dE}{dq}=N(N-T+D)q^{N-1}-DT\,q^{T-1}=q^{T-1}\!\Bigl(N(N-T+D)q^{N-T}-DT\Bigr)$$
+$$\frac{dE}{dq}=0\implies q^{N-T}=\frac{DT}{N(N-T+D)}=\alpha$$
+
+$$E=(N-T+D)q^T\alpha-Dq^T=q^T\!\Bigl((N-T+D)\alpha-D\Bigr)$$
+$$\because q^T=\alpha^{T/(N-T)}$$
+$$\therefore E_{\min}=-\frac{D(N-T)}{N}\,q^T$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(iii)}
+
+\begin{align*}
+E_{loss}(T+1)-E_{loss}(T)
+&=Dq^{T+1}-(N-T-1+D)q^N-Dq^T+(N-T+D)q^N\\
+&=Dq^T(q-1)+q^N\\
+&=q^N-Dpq^T
+\end{align*}
+
+It is increasing when $q^{N-T}>Dp$
+
+As $p\to0$:
+$$q^{N-T}=(1-p)^{N-T}\to1,\qquad Dp\to0$$
+
+$\exists\,\beta>0$ such that for $0<p<\beta$, $q^{N-T}>Dp$ for all $T$.
+
+$$E_{loss}(T+1)-E_{loss}(T)>0\ \ \forall\,T$$
+
+$E_{loss}(T)$ increasing, minimized at $T=0$
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: July 25, 2026}
+\end{center}
+
+\end{document}

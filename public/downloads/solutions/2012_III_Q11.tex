@@ -1,0 +1,82 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+
+
+Let the horizontal plane containing the fixed point $P$ be the zero potential energy reference level (with the downward direction as the positive $y$-axis). The rope is uniform with a linear mass density of $\rho = \frac{2M}{2L} = \frac{M}{L}$.
+
+\textbf{1. Initial State ($t=0$):}
+\begin{itemize}
+    \item Initial kinetic energy of the system: $E_{k0} = 0$
+    \item Initial potential energy of the system (center of mass of the rope falls by $\frac{L}{2}$): $E_{p0} = -2Mg \left(\frac{L}{2}\right) = -MgL$
+    \item \textbf{Total initial mechanical energy:} $E_0 = -MgL$
+\end{itemize}
+
+\textbf{2. Final State (particle has fallen a distance $x$):}
+\begin{itemize}
+    \item \textbf{Final kinetic energy:} The particle and the moving section of the rope have the same speed $v$.
+    \[ E_{k} = \frac{1}{2}mv^2 + \frac{1}{2}\left[\frac{M}{L}\left(L - \frac{x}{2}\right)\right]v^2 = \frac{1}{2}\left(m + M - \frac{Mx}{2L}\right)v^2 \]
+    \item \textbf{Final potential energy:} Composed of three parts: the particle, the stationary section of the rope (length $L + \frac{x}{2}$), and the moving section of the rope (length $L - \frac{x}{2}$).
+    \[ E_{p} = -mgx - \underbrace{\frac{Mg}{L}\left(L + \frac{x}{2}\right)}_{\text{mass of stationary section}} \underbrace{\frac{1}{2}\left(L + \frac{x}{2}\right)}_{\text{COM of stationary section}} - \underbrace{\frac{Mg}{L}\left(L - \frac{x}{2}\right)}_{\text{mass of moving section}} \underbrace{\left(\frac{L}{2} + \frac{3x}{4}\right)}_{\text{COM of moving section}} \]
+    Expanding and simplifying yields:
+    \[ E_{p} = -mgx - MgL - Mgx + \frac{Mgx^2}{4L} \]
+\end{itemize}
+
+\textbf{3. Conservation of Mechanical Energy ($E_0 = E_k + E_p$):}
+\[ -MgL = \frac{1}{2}\left(m + M - \frac{Mx}{2L}\right)v^2 - mgx - MgL - Mgx + \frac{Mgx^2}{4L} \]
+\[ \frac{1}{2}\left(\frac{mL + ML - \frac{1}{2}Mx}{L}\right)v^2 = gx(m + M) - \frac{Mgx^2}{4L} \]
+Extracting the common factor and rearranging proves the expression:
+\[ v^2 = \frac{2gx(mL + ML - \frac{1}{4}Mx)}{mL + ML - \frac{1}{2}Mx} \]
+
+\noindent\rule{\textwidth}{0.4pt}
+
+
+Using the kinematic differential relationship $a = v\frac{dv}{dx} = \frac{1}{2}\frac{d(v^2)}{dx}$, we differentiate the above expression for $v^2$.
+
+Let $v^2 = \frac{u}{w}$, where:
+\begin{itemize}
+    \item Numerator $u = 2gL(m+M)x - \frac{1}{2}Mgx^2 \implies u' = 2gL(m+M) - Mgx = 2gw$
+    \item Denominator $w = L(m+M) - \frac{1}{2}Mx \implies w' = -\frac{1}{2}M$
+\end{itemize}
+
+According to the quotient rule:
+\[ \frac{d(v^2)}{dx} = \frac{u'w - uw'}{w^2} = \frac{(2gw)w - u(-\frac{1}{2}M)}{w^2} = 2g + \frac{Mu}{2w^2} \]
+
+Substituting into $a = \frac{1}{2}\frac{d(v^2)}{dx}$:
+\[ a = g + \frac{Mu}{4w^2} \]
+
+Substituting the original expressions for $u$ and $w$ back and simplifying proves the expression:
+\[ a = g + \frac{Mgx(mL + ML - \frac{1}{4}Mx)}{2\left(mL + ML - \frac{1}{2}Mx\right)^2} \]
+
+\noindent\rule{\textwidth}{0.4pt}
+
+Observe the expression for acceleration:
+\[ a = g + \frac{Mgx(mL + ML - \frac{1}{4}Mx)}{2\left(mL + ML - \frac{1}{2}Mx\right)^2} \]
+
+At any instant after the particle is released ($x > 0$):
+\begin{enumerate}
+    \item \textbf{Denominator:} $2\left(mL + ML - \frac{1}{2}Mx\right)^2$ is a perfect square and is always strictly positive ($> 0$).
+    \item \textbf{Numerator:} The problem states that $x < 2L$, therefore $\frac{1}{4}Mx < \frac{1}{4}M(2L) = \frac{1}{2}ML$.
+    From this, we can deduce the term inside the parenthesis:
+    \[ (mL + ML - \frac{1}{4}Mx) > \left(mL + ML - \frac{1}{2}ML\right) = mL + \frac{1}{2}ML > 0 \]
+\end{enumerate}
+
+Since $M, g, x$ are all positive numbers, and the term inside the parenthesis is also positive, the entire fractional term is strictly greater than $0$. Therefore:
+\[ a = g + (\text{positive number}) > g \]
+The original proposition is proven.
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Roy}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: July 25, 2026}
+\end{center}
+
+\end{document}

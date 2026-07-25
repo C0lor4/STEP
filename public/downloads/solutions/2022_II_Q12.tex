@@ -1,0 +1,92 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\textbf{(i)}
+
+$$1=\int_0^1 kx^n(1-x)\,dx=k\left(\frac1{n+1}-\frac1{n+2}\right)$$
+$$\implies k=(n+1)(n+2)$$
+
+\begin{align*}
+\mu&=\int_0^1 xkx^n(1-x)\,dx\\
+&=k\left(\frac1{n+2}-\frac1{n+3}\right)\\
+&=\frac{n+1}{n+3}
+\end{align*}
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)}
+\begin{align*}
+F(x)
+&=\int_0^x (n+1)(n+2)t^n(1-t)\,dt\\
+&=(n+2)x^{n+1}-(n+1)x^{n+2}\\
+&=x^{n+1}\left(n+2-(n+1)x\right)
+\end{align*}
+
+\begin{align*}
+F(\mu)&=\left(\frac{n+1}{n+3}\right)^{n+1}\left(n+2-(n+1)\frac{n+1}{n+3}\right)\\
+&=\left(\frac{n+1}{n+3}\right)^{n+1}\cdot\frac{3n+5}{n+3}
+\end{align*}
+
+\begin{align*}
+F(\mu)<\frac12
+&\iff
+2\cdot\frac{3n+5}{n+3}
+<
+\left(\frac{n+3}{n+1}\right)^{n+1}\\
+&\iff
+6-\frac8{n+3}
+<
+\left(1+\frac2{n+1}\right)^{n+1}
+\end{align*}
+
+$$\left(1+\frac2{n+1}\right)^{n+1}\geq 1+2+\binom{n+1}{2}\left(\frac2{n+1}\right)^2=3+\frac{2n}{n+1}$$
+
+$$3+\frac{2n}{n+1}-\left(6-\frac8{n+3}\right)=\frac{(n-1)(n+5)}{(n+1)(n+3)}>0$$
+
+$$\because F(median)=\frac12$$
+
+$$\therefore \mu < median$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(iii)}
+
+\begin{align*}
+f'(x)
+&=k\left(nx^{n-1}(1-x)-x^n\right)\\
+&=kx^{n-1}\left(n-(n+1)x\right)
+\end{align*}
+
+$$f'(x)=0\implies x=\frac n{n+1}=Mode$$
+
+\begin{align*}
+F(M)
+&=\left(\frac n{n+1}\right)^{n+1}
+\left(n+2-(n+1)\frac n{n+1}\right)\\
+&=2\left(\frac n{n+1}\right)^{n+1}\\
+&=\frac{2}{\left(1+\frac1n\right)^{n+1}}
+\end{align*}
+
+$$\because \left(1+\frac1x\right)^{x+1}\text{ is decreasing}$$
+
+$$\therefore n>1\implies \left(1+\frac1n\right)^{n+1}<\left(1+\frac11\right)^2=4$$
+
+$$F(Mode)>\frac12$$
+
+$$\therefore Mode>Median$$
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: July 25, 2026}
+\end{center}
+
+\end{document}
