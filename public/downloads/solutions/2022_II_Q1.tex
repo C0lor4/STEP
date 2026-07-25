@@ -1,0 +1,129 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{pgfplots}
+\usepackage{array}
+\setlength{\parindent}{0pt}
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\textbf{(i)}
+
+$$\because \frac{d}{dx}\left(2x\sqrt{1+x^3}\right)=2\sqrt{1+x^3}+2x\cdot \frac{3x^2}{2\sqrt{1+x^3}}$$
+
+$$\therefore \int\left(2\sqrt{1+x^3}+\frac{3x^3}{\sqrt{1+x^3}}\right)\,dx
+=2x\sqrt{1+x^3}+C$$
+
+\bigskip\hrule\bigskip
+\textbf{(ii)}
+
+$$(x^2+2)\frac{\sin x}{x^3}=\frac{\sin x}{x}+\frac{2\sin x}{x^3}$$
+
+$$\int \frac{2\sin x}{x^3}\,dx=-\frac{\sin x}{x^2}+\int \frac{\cos x}{x^2}\,dx$$
+
+$$\int \frac{\sin x}{x}\,dx=-\frac{\cos x}{x}-\int \frac{\cos x}{x^2}\,dx$$
+
+\begin{align*}
+\int (x^2+2)\frac{\sin x}{x^3}\,dx
+&=\int \frac{\sin x}{x}\,dx
+-\frac{\sin x}{x^2}
+-\frac{\cos x}{x}
+-\int \frac{\sin x}{x}\,dx\\
+&=-\frac{\sin x+x\cos x}{x^2}+C
+\end{align*}
+\bigskip\hrule\bigskip
+
+\textbf{(iii)(a)}
+
+$$\frac{dy}{dx}=\frac{e^x(x-1)}{x^2}$$
+
+$$\frac{dy}{dx}=0\implies x=1$$
+
+$$
+\renewcommand{\arraystretch}{1.4}
+\begin{array}{c!{\vrule width 1.2pt}c|c|c|c|c}
+x & -\infty & 0^- & 0^+ & 1 & \infty\\
+\hline
+\rule[-4pt]{0pt}{14pt}
+y & 0^- & -\infty & \infty & e & \infty
+\end{array}
+$$
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines=middle,
+    axis line style={->},
+    xmin=-5,xmax=5,
+    ymin=-8,ymax=10,
+    xtick=\empty,
+    ytick=\empty,
+    width=11cm,
+    height=7cm,
+    samples=300,
+    clip=false
+]
+\addplot[black,thick,domain=-5:-0.12] {exp(x)/x};
+\addplot[black,thick,domain=0.12:3.5] {exp(x)/x};
+
+\addplot[only marks,mark=*,mark size=1.5pt] coordinates {(1,2.71828)};
+
+\node at (axis cs:1,2.71828) [below right] {$(1,e)$};
+\node at (axis cs:5,0) [right] {$x$};
+\node at (axis cs:0,10) [above] {$y$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\bigskip\hrule\bigskip
+
+\textbf{(iii)(b)}
+
+$$\int_a^{2a}\frac{e^x}{x}\,dx=\int_a^{2a}\frac{e^x}{x^2}\,dx$$
+
+$$\because \frac{d}{dx}\left(\frac{e^x}{x}\right)=\frac{e^x}{x}-\frac{e^x}{x^2}$$
+
+$$\left[\frac{e^x}{x}\right]_a^{2a}=0$$
+
+$$\frac{e^{2a}}{2a}-\frac{e^a}{a}=0$$
+
+$$a=\ln2$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(iii)(c)}
+
+Assume distinct integers $m,n$ exist.
+
+$$\int_m^n\frac{e^x}{x}\,dx=\int_m^n\frac{e^x}{x^2}\,dx$$
+
+$$\int_m^n\left(\frac{e^x}{x}-\frac{e^x}{x^2}\right)\,dx=0$$
+
+$$\left[\frac{e^x}{x}\right]_m^n=0$$
+
+$$\frac{e^n}{n}=\frac{e^m}{m}$$
+
+From the graph in \textbf{(iii)(a)}, if $m,n$ are distinct positive values with
+
+$$\frac{e^n}{n}=\frac{e^m}{m},$$
+
+the smaller one must lie in $(0,1)$.
+
+This is not an integer.
+
+If $m,n<0$, the graph is one-to-one, so $m=n$.
+
+If one is negative and one is positive, the integral crosses $x=0$.
+
+$$\therefore \text{no distinct integers }m,n\text{ exist}$$
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: July 23, 2026}
+\end{center}
+
+\end{document}
