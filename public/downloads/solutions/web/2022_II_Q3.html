@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2022 II Q3 Answer</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p { margin: 0 0 14px; }
+    .part-title { font-weight: 700; }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      body { padding: 18px 16px 28px; }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span></p>
+
+    <div class="math-block">
+      \[
+      F_{k+1}=F_k+F_{k-1}\leq 2F_k
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      F_{n+2}\leq 2F_{n+1}\leq 2^2F_n
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      F_r\leq 2^{r-n}F_n\qquad (r\geq n)
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span></p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \sum_{r=1}^n\frac{F_{r+1}}{10^{r-1}}
+      &=\sum_{r=2}^{n+1}\frac{F_r}{10^{r-2}}\\
+      &=100\sum_{r=2}^{n+1}\frac{F_r}{10^r}\\
+      &=100S_n-10F_1+\frac{F_{n+1}}{10^{n-1}}
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \sum_{r=1}^n\frac{F_r}{10^{r-1}}=10S_n
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \sum_{r=1}^n\frac{F_{r-1}}{10^{r-1}}
+      =\sum_{r=0}^{n-1}\frac{F_r}{10^r}
+      =F_0+S_n-\frac{F_n}{10^n}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      &\sum_{r=1}^n\frac{F_{r+1}}{10^{r-1}}
+      -\sum_{r=1}^n\frac{F_r}{10^{r-1}}
+      -\sum_{r=1}^n\frac{F_{r-1}}{10^{r-1}}\\
+      &\quad=100S_n-10F_1+\frac{F_{n+1}}{10^{n-1}}
+      -10S_n-\left(F_0+S_n-\frac{F_n}{10^n}\right)\\
+      &\quad=89S_n-10F_1-F_0+\frac{F_n}{10^n}
+      +\frac{F_{n+1}}{10^{n-1}}
+      \end{aligned}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iii)</span></p>
+
+    <div class="math-block">
+      \[
+      \because F_{r+1}-F_r-F_{r-1}=0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore 0=89S_n-10F_1-F_0+\frac{F_n}{10^n}
+      +\frac{F_{n+1}}{10^{n-1}}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      F_1=1,\qquad F_0=0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      89S_n=10-\frac{F_n}{10^n}-\frac{F_{n+1}}{10^{n-1}}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \because F_n\leq 2^{n-1}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore \frac{F_n}{10^n}
+      \leq \frac{2^{n-1}}{10^n}
+      =\frac12\left(\frac15\right)^n\to0
+      \]
+    </div>
+
+    <p>Similarly, \(\displaystyle \frac{F_{n+1}}{10^{n-1}}\to0\).</p>
+
+    <div class="math-block">
+      \[
+      \therefore \sum_{r=1}^{\infty}\frac{F_r}{10^r}=\frac{10}{89}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      F_7=13
+      \]
+    </div>
+
+    <p>For \(r\geq7\),</p>
+
+    <div class="math-block">
+      \[
+      F_r\leq 2^{r-7}F_7=13\cdot 2^{r-7}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \sum_{r=7}^{\infty}\frac{F_r}{10^r}
+      &\leq \sum_{r=7}^{\infty}\frac{13\cdot2^{r-7}}{10^r}\\
+      &=\frac{13}{10^7}\left(1+\frac15+\frac1{5^2}+\cdots\right)\\
+      &=\frac{13}{10^7}\cdot\frac54\\
+      &lt;2\times10^{-6}
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      S_6=\frac1{10}+\frac1{10^2}+\frac2{10^3}+\frac3{10^4}
+      +\frac5{10^5}+\frac8{10^6}=0.112358
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \because S_6&lt;\frac{10}{89}
+      =S_6+\sum_{r=7}^{\infty}\frac{F_r}{10^r}
+      &lt;0.112358+10^{-6}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      0.112358&lt;\frac{10}{89}&lt;0.112360
+      \implies 0.0112358&lt;\frac1{89}&lt;0.0112360
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iv)</span> Let \(\displaystyle T_n=\sum_{r=1}^n\frac{F_r}{100^r}\).</p>
+
+    <div class="math-block">
+      \[
+      0=\sum_{r=1}^n\frac{F_{r+1}-F_r-F_{r-1}}{100^{r-1}}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \sum_{r=1}^n\frac{F_{r+1}}{100^{r-1}}
+      =10000T_n-100F_1+\frac{F_{n+1}}{100^{n-1}}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \sum_{r=1}^n\frac{F_r}{100^{r-1}}=100T_n
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \sum_{r=1}^n\frac{F_{r-1}}{100^{r-1}}
+      =F_0+T_n-\frac{F_n}{100^n}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      0=9899T_n-100+\frac{F_n}{100^n}
+      +\frac{F_{n+1}}{100^{n-1}}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \implies \frac1{9899}=\sum_{r=1}^{\infty}\frac{F_r}{100^{r+1}}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \frac1{9899}
+      &=\frac1{100^2}+\frac1{100^3}+\frac2{100^4}+\frac3{100^5}
+      +\frac5{100^6}+\frac8{100^7}\\
+      &\quad+\frac{13}{100^8}+\frac{21}{100^9}
+      +\frac{34}{100^{10}}+\frac{55}{100^{11}}
+      +\sum_{k=11}^{\infty}\frac{F_k}{100^{k+1}}
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \sum_{k=11}^{\infty}\frac{F_k}{100^{k+1}}
+      &\leq \sum_{r=11}^{\infty}
+      \frac{89\cdot2^{r-11}}{100^{r+1}}\\
+      &=\frac{89}{100^{12}}\left(1+\frac1{50}
+      +\frac1{50^2}+\cdots\right)\\
+      &lt;\frac1{100^{11}}
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore \frac1{9899}=0.0001010203050813213455\ldots
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong></p>
+      <p>Published and refined by <strong>Jon</strong></p>
+      <p><em>Last updated: July 24, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>

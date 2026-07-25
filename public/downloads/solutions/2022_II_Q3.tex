@@ -1,0 +1,121 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\textbf{(i)}
+
+$$F_{k+1}=F_k+F_{k-1}\leq 2F_k$$
+
+$$F_{n+2}\leq 2F_{n+1}\leq 2^2F_n$$
+
+$$F_r\leq 2^{r-n}F_n\qquad (r\geq n)$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)}
+
+\begin{align*}
+\sum_{r=1}^n\frac{F_{r+1}}{10^{r-1}}
+&=\sum_{r=2}^{n+1}\frac{F_r}{10^{r-2}}\\
+&=100\sum_{r=2}^{n+1}\frac{F_r}{10^r}\\
+&=100S_n-10F_1+\frac{F_{n+1}}{10^{n-1}}
+\end{align*}
+
+$$\sum_{r=1}^n\frac{F_r}{10^{r-1}}=10S_n$$
+
+$$\sum_{r=1}^n\frac{F_{r-1}}{10^{r-1}}=\sum_{r=0}^{n-1}\frac{F_r}{10^r}=F_0+S_n-\frac{F_n}{10^n}$$
+
+\begin{align*}
+&\sum_{r=1}^n\frac{F_{r+1}}{10^{r-1}}
+-\sum_{r=1}^n\frac{F_r}{10^{r-1}}
+-\sum_{r=1}^n\frac{F_{r-1}}{10^{r-1}}\\
+&=100S_n-10F_1+\frac{F_{n+1}}{10^{n-1}}
+-10S_n-\left(F_0+S_n-\frac{F_n}{10^n}\right)\\
+&=89S_n-10F_1-F_0+\frac{F_n}{10^n}+\frac{F_{n+1}}{10^{n-1}}
+\end{align*}
+
+\bigskip\hrule\bigskip
+
+\textbf{(iii)}
+$$\because F_{r+1}-F_r-F_{r-1}=0$$
+
+$$\therefore 0=89S_n-10F_1-F_0+\frac{F_n}{10^n}+\frac{F_{n+1}}{10^{n-1}}$$
+
+$$F_1=1,\  F_0=0$$
+
+$$89S_n=10-\frac{F_n}{10^n}-\frac{F_{n+1}}{10^{n-1}}$$
+
+$$\because F_n\leq 2^{n-1}$$
+
+$$\therefore \frac{F_n}{10^n}\leq \frac{2^{n-1}}{10^n}=\frac12\left(\frac15\right)^n\to0$$
+
+Similarly, $\ds \frac{F_{n+1}}{10^{n-1}}\to0$
+
+$$\therefore \sum_{r=1}^{\infty}\frac{F_r}{10^r}=\frac{10}{89}$$
+
+$$F_7=13$$
+
+For $r\geq7$,
+
+$$F_r\leq 2^{r-7}F_7=13\cdot 2^{r-7}$$
+
+\begin{align*}
+\sum_{r=7}^{\infty}\frac{F_r}{10^r}
+&\leq \sum_{r=7}^{\infty}\frac{13\cdot2^{r-7}}{10^r}\\
+&=\frac{13}{10^7}\left(1+\frac15+\frac1{5^2}+\cdots\right)\\
+&=\frac{13}{10^7}\cdot\frac54\\
+&<2\times10^{-6}
+\end{align*}
+
+$$S_6=\frac1{10}+\frac1{10^2}+\frac2{10^3}+\frac3{10^4}+\frac5{10^5}+\frac8{10^6}=0.112358$$
+
+$$\because S_6<\frac{10}{89}=S_6+\sum_{r=7}^{\infty}\frac{F_r}{10^r}<0.112358+10^{-6}$$
+
+$$0.112358<\frac{10}{89}<0.112360\implies 0.0112358<\frac1{89}<0.0112360$$
+
+\bigskip\hrule\bigskip
+\textbf{(iv)} Let $\ds T_n=\sum_{r=1}^n\frac{F_r}{100^r}$
+
+$$0=\sum_{r=1}^n\frac{F_{r+1}-F_r-F_{r-1}}{100^{r-1}}$$
+
+$$\sum_{r=1}^n\frac{F_{r+1}}{100^{r-1}}=10000T_n-100F_1+\frac{F_{n+1}}{100^{n-1}}$$
+
+$$\sum_{r=1}^n\frac{F_r}{100^{r-1}}=100T_n$$
+
+$$\sum_{r=1}^n\frac{F_{r-1}}{100^{r-1}}
+=F_0+T_n-\frac{F_n}{100^n}$$
+
+$$0=9899T_n-100+\frac{F_n}{100^n}+\frac{F_{n+1}}{100^{n-1}}$$
+
+$$\implies \frac1{9899}=\sum_{r=1}^{\infty}\frac{F_r}{100^{r+1}}$$
+
+\begin{align*}
+\frac1{9899}
+&=\frac1{100^2}+\frac1{100^3}+\frac2{100^4}+\frac3{100^5}
++\frac5{100^6}+\frac8{100^7}\\
+&\quad+\frac{13}{100^8}+\frac{21}{100^9}
++\frac{34}{100^{10}}+\frac{55}{100^{11}}+\sum_{k=11}^{\infty}\frac{F_k}{100^{k+1}}
+\end{align*}
+
+\begin{align*}
+\sum_{k=11}^{\infty}\frac{F_k}{100^{k+1}}
+&\leq \sum_{r=11}^{\infty}\frac{89\cdot2^{r-11}}{100^{r+1}}\\
+&=\frac{89}{100^{12}}\left(1+\frac1{50}+\frac1{50^2}+\cdots\right)\\
+&<\frac1{100^{11}}
+\end{align*}
+
+$$\therefore \frac1{9899}=0.0001010203050813213455\ldots$$
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: July 24, 2026}
+\end{center}
+
+\end{document}
