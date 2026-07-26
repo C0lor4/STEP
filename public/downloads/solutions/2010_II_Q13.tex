@@ -1,0 +1,77 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\textbf{(i)}
+
+Pardeep twice, Quentin once: 
+$$P_{PPQ}=q\left(1-(1-p)^2\right)=q(2p-p^2)$$
+
+Quentin twice, Pardeep once: 
+$$P_{PQQ}=p\left(1-(1-q)^2\right)=p(2q-q^2)$$
+
+$$P_{PPQ}-P_{PQQ}=q(2p-p^2)-p(2q-q^2)=pq(q-p)>0$$
+
+$$\therefore \text{Rosalind should play Pardeep twice.}$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)}
+
+Strategy 1:
+
+$$P_1=q\left(1-(1-p)^3\right)=pq(3-3p+p^2)$$
+
+Strategy 2:
+
+$$P_2=\left(1-(1-p)^2\right)\left(1-(1-q)^2\right)=pq(2-p)(2-q)$$
+
+Strategy 3:
+
+$$P_3=p\left(1-(1-q)^3\right)=pq(3-3q+q^2)$$
+
+$$P_1-P_3=pq(3-3p+p^2)-pq(3-3q+q^2)=pq(q-p)(3-p-q)>0$$
+
+\begin{align*}
+P_1-P_2
+&=pq(3-3p+p^2)-pq(2-p)(2-q)\\
+&=pq\left(p-1+(q-p)(2-p)\right)
+\end{align*}
+
+For $\ds q-p>\frac12$,
+
+$$p-1+(q-p)(2-p)>p-1+\frac12(2-p)=\frac p2$$
+
+$$\implies P_1-P_2>0$$
+
+$$\therefore \text{Rosalind should choose strategy 1.}$$
+For $\ds q-p<\frac12$, let $\ds p=\frac12,\  q=\frac34$
+
+$$p-1+(q-p)(2-p)=\frac12-1+\frac14\cdot\frac32=-\frac18<0$$
+
+$$\implies P_1<P_2$$
+
+Strategy 2 is better than strategy 1
+
+Let $\ds p=\frac12,\  q=\frac78$
+
+$$p-1+(q-p)(2-p)=\frac12-1+\frac38\cdot\frac32=\frac1{16}>0$$
+
+$$\implies P_1>P_2$$
+
+Strategy 2 is worse than strategy 1
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: July 25, 2026}
+\end{center}
+
+\end{document}

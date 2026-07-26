@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2010 II Q13 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span></p>
+
+    <p>Pardeep twice, Quentin once:</p>
+
+    <div class="math-block">
+      \[
+      P_{PPQ}=q\left(1-(1-p)^2\right)=q(2p-p^2)
+      \]
+    </div>
+
+    <p>Quentin twice, Pardeep once:</p>
+
+    <div class="math-block">
+      \[
+      P_{PQQ}=p\left(1-(1-q)^2\right)=p(2q-q^2)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      P_{PPQ}-P_{PQQ}
+      =q(2p-p^2)-p(2q-q^2)
+      =pq(q-p)&gt;0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore \text{Rosalind should play Pardeep twice.}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span></p>
+
+    <p>Strategy 1:</p>
+
+    <div class="math-block">
+      \[
+      P_1=q\left(1-(1-p)^3\right)=pq(3-3p+p^2)
+      \]
+    </div>
+
+    <p>Strategy 2:</p>
+
+    <div class="math-block">
+      \[
+      P_2=\left(1-(1-p)^2\right)\left(1-(1-q)^2\right)
+      =pq(2-p)(2-q)
+      \]
+    </div>
+
+    <p>Strategy 3:</p>
+
+    <div class="math-block">
+      \[
+      P_3=p\left(1-(1-q)^3\right)=pq(3-3q+q^2)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      P_1-P_3
+      =pq(3-3p+p^2)-pq(3-3q+q^2)
+      =pq(q-p)(3-p-q)&gt;0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      P_1-P_2
+      &=pq(3-3p+p^2)-pq(2-p)(2-q)\\
+      &=pq\left(p-1+(q-p)(2-p)\right)
+      \end{aligned}
+      \]
+    </div>
+
+    <p>For \(\displaystyle q-p&gt;\frac12\),</p>
+
+    <div class="math-block">
+      \[
+      p-1+(q-p)(2-p)
+      &gt;p-1+\frac12(2-p)
+      =\frac p2
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \implies P_1-P_2&gt;0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore \text{Rosalind should choose strategy 1.}
+      \]
+    </div>
+
+    <p>For \(\displaystyle q-p&lt;\frac12\), let \(\displaystyle p=\frac12,\ q=\frac34\).</p>
+
+    <div class="math-block">
+      \[
+      p-1+(q-p)(2-p)
+      =\frac12-1+\frac14\cdot\frac32
+      =-\frac18&lt;0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \implies P_1&lt;P_2
+      \]
+    </div>
+
+    <p>Strategy 2 is better than strategy 1.</p>
+
+    <p>Let \(\displaystyle p=\frac12,\ q=\frac78\).</p>
+
+    <div class="math-block">
+      \[
+      p-1+(q-p)(2-p)
+      =\frac12-1+\frac38\cdot\frac32
+      =\frac1{16}&gt;0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \implies P_1&gt;P_2
+      \]
+    </div>
+
+    <p>Strategy 2 is worse than strategy 1.</p>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong></p>
+      <p>Published and refined by <strong>Jon</strong></p>
+      <p><em>Last updated: July 25, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>
