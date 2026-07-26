@@ -1,0 +1,76 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\textbf{(i)} Let $B$ be the black counter
+
+$$P(B\text{ not moved from }P\text{ to }Q)=\frac{n-k}{n}$$
+
+$$P(B\text{ moved from }P\text{ to }Q)=\frac{k}{n}$$
+
+Nows bag $Q$ contains $n+k$ counters
+
+$$P(B\text{ moved back from }Q\text{ to }P)=\frac{k}{n+k}$$
+
+$$P(B\text{ ends in }P)=\frac{n-k}{n}+\frac{k}{n}\cdot\frac{k}{n+k}=\frac{n}{n+k}$$
+
+$$\frac{n}{n+k}\text{ is maximised at }k=0$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)} Let $B_p$ be the black counter in the Bag $P$, $B_q$ be the black counter in the Bag $Q$
+
+$B_P$ did not move, $B_Q$ transferred:
+
+$$\frac{n-k}{n}\cdot\frac{k}{n+k}$$
+
+$B_P$ transferred to bag $Q$, then $B_P$ and $B_Q$ are transfered:
+
+$$\frac{k}{n}\cdot\frac{k(k-1)}{(n+k)(n+k-1)}$$
+
+Black counters end up in bag $Q$:
+
+$$\frac{k}{n}\cdot\frac{n(n-1)}{(n+k)(n+k-1)}$$
+
+\begin{align*}
+P_k
+&=\frac{n-k}{n}\cdot\frac{k}{n+k}
++\frac{k}{n}\cdot\frac{k(k-1)}{(n+k)(n+k-1)}
++\frac{k}{n}\cdot\frac{n(n-1)}{(n+k)(n+k-1)}\\
+&=\frac{2k(n-1)}{(n+k)(n+k-1)}
+\end{align*}
+
+\begin{align*}
+\frac{dP_k}{dk}
+&=2(n-1)\cdot\frac{(n+k)(n+k-1)-k\left((n+k)+(n+k-1)\right)}{(n+k)^2(n+k-1)^2}\\
+&=2(n-1)\cdot\frac{n(n-1)-k^2}{(n+k)^2(n+k-1)^2}
+\end{align*}
+
+$$\frac{dP_k}{dk}=0\implies k^2=n(n-1)$$
+
+$$k=\sqrt{n(n-1)}$$
+
+$$k\text{ is an integer},\ n-1<\sqrt{n(n-1)}<n$$
+
+$$P_{n-1}=\frac{2(n-1)^2}{(2n-1)(2n-2)}=\frac{n-1}{2n-1}$$
+
+$$P_n=\frac{2n(n-1)}{(2n)(2n-1)}=\frac{n-1}{2n-1}$$
+
+$$P_{n-1}=P_n$$
+
+$$\therefore P_k\text{ is maximised at }k=n-1\text{ and }k=n$$
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: July 26, 2026}
+\end{center}
+
+\end{document}

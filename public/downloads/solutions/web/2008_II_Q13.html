@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2008 II Q13 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span> Let \(B\) be the black counter.</p>
+
+    <div class="math-block">
+      \[
+      P(B\text{ not moved from }P\text{ to }Q)=\frac{n-k}{n}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      P(B\text{ moved from }P\text{ to }Q)=\frac{k}{n}
+      \]
+    </div>
+
+    <p>Now bag \(Q\) contains \(n+k\) counters.</p>
+
+    <div class="math-block">
+      \[
+      P(B\text{ moved back from }Q\text{ to }P)=\frac{k}{n+k}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      P(B\text{ ends in }P)
+      =\frac{n-k}{n}+\frac{k}{n}\cdot\frac{k}{n+k}
+      =\frac{n}{n+k}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \frac{n}{n+k}\text{ is maximised at }k=0
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span> Let \(B_P\) be the black counter in bag \(P\), and \(B_Q\) be the black counter in bag \(Q\).</p>
+
+    <p>\(B_P\) did not move, \(B_Q\) transferred:</p>
+
+    <div class="math-block">
+      \[
+      \frac{n-k}{n}\cdot\frac{k}{n+k}
+      \]
+    </div>
+
+    <p>\(B_P\) transferred to bag \(Q\), then \(B_P\) and \(B_Q\) are transferred:</p>
+
+    <div class="math-block">
+      \[
+      \frac{k}{n}\cdot\frac{k(k-1)}{(n+k)(n+k-1)}
+      \]
+    </div>
+
+    <p>Black counters end up in bag \(Q\):</p>
+
+    <div class="math-block">
+      \[
+      \frac{k}{n}\cdot\frac{n(n-1)}{(n+k)(n+k-1)}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      P_k
+      &=\frac{n-k}{n}\cdot\frac{k}{n+k}
+      +\frac{k}{n}\cdot\frac{k(k-1)}{(n+k)(n+k-1)}
+      +\frac{k}{n}\cdot\frac{n(n-1)}{(n+k)(n+k-1)}\\
+      &=\frac{2k(n-1)}{(n+k)(n+k-1)}
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \frac{dP_k}{dk}
+      &=2(n-1)\cdot
+      \frac{(n+k)(n+k-1)-k\left((n+k)+(n+k-1)\right)}
+      {(n+k)^2(n+k-1)^2}\\
+      &=2(n-1)\cdot
+      \frac{n(n-1)-k^2}{(n+k)^2(n+k-1)^2}
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \frac{dP_k}{dk}=0\implies k^2=n(n-1)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      k=\sqrt{n(n-1)}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      k\text{ is an integer},\qquad
+      n-1&lt;\sqrt{n(n-1)}&lt;n
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      P_{n-1}
+      =\frac{2(n-1)^2}{(2n-1)(2n-2)}
+      =\frac{n-1}{2n-1}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      P_n
+      =\frac{2n(n-1)}{(2n)(2n-1)}
+      =\frac{n-1}{2n-1}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      P_{n-1}=P_n
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore P_k\text{ is maximised at }k=n-1\text{ and }k=n
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong></p>
+      <p>Published and refined by <strong>Jon</strong></p>
+      <p><em>Last updated: July 26, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>
