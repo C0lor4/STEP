@@ -1,0 +1,66 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+
+\textbf{Andover}
+
+\begin{align*}
+\frac{E_A}{K}
+&=1\cdot \binom41pq^3
++4\left(1-q^4-\binom41pq^3\right)\\
+&=4pq^3+4(1-q^4-4pq^3)\\
+&=4p(1+q+q^2-2q^3)
+\end{align*}
+
+\bigskip\hrule\bigskip
+
+\textbf{Basingstoke}
+
+\begin{align*}
+\frac{E_B}{K}
+&=1\cdot \binom61pq^5
++2\cdot \binom62p^2q^4
++6\left(1-q^6-\binom61pq^5-\binom62p^2q^4\right)\\
+&=6pq^5+30p^2q^4+6(1-q^6-6pq^5-15p^2q^4)\\
+&=6-60q^4+90q^5-36q^6\\
+&=6(1-q)(1+q+q^2+q^3-9q^4+6q^5)\\
+\end{align*}
+$$E_B=6Kp(1+q+q^2+q^3-9q^4+6q^5)$$
+
+\bigskip\hrule\bigskip
+
+$$E_A=\frac23E_B$$
+
+\begin{align*}
+4Kp(1+q+q^2-2q^3)
+&=\frac23\cdot 6Kp(1+q+q^2+q^3-9q^4+6q^5)
+\end{align*}
+
+For $p=0$,
+
+$$E_A=E_B=0$$
+
+For $p>0$,
+
+$$1+q+q^2-2q^3=1+q+q^2+q^3-9q^4+6q^5$$
+
+$$3q^3(1-q)(1-2q)=0$$
+
+$$\implies p=1,\ \frac12$$
+
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: July 26, 2026}
+\end{center}
+
+\end{document}
