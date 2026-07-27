@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 390" role="img" aria-labelledby="title desc">
+  <title id="title">Graph of the probability density f of x</title>
+  <desc id="desc">The density is zero up to x equals 1, rises logarithmically to log k, stays constant from k to 2k, then falls linearly to zero at 4k.</desc>
+  <rect width="760" height="390" fill="#fff"/>
+
+  <g fill="none" stroke="#111827" stroke-width="2">
+    <path d="M72 330H712"/>
+    <path d="M72 330V42"/>
+    <path d="M712 330l-11-6m11 6l-11 6"/>
+    <path d="M72 42l-6 11m6-11l6 11"/>
+
+    <path d="M72 330H145"/>
+    <path d="M145 330C159 301 176 256 220 188"/>
+    <path d="M220 188H365"/>
+    <path d="M365 188L655 330"/>
+    <path d="M655 330H700"/>
+
+    <path d="M220 330V188" stroke-dasharray="7 7" stroke-width="1.5"/>
+    <path d="M72 188H91" stroke-width="1.5"/>
+  </g>
+
+  <g fill="#111827" font-family="Times New Roman, Times, serif" font-size="25">
+    <text x="139" y="360">1</text>
+    <text x="214" y="360" font-style="italic">k</text>
+    <text x="353" y="360" font-style="italic">2k</text>
+    <text x="642" y="360" font-style="italic">4k</text>
+    <text x="21" y="196">ln <tspan font-style="italic">k</tspan></text>
+    <text x="721" y="339" font-style="italic">x</text>
+    <text x="57" y="29" font-style="italic">f</text>
+    <text x="67" y="29">(</text>
+    <text x="76" y="29" font-style="italic">x</text>
+    <text x="89" y="29">)</text>
+  </g>
+</svg>

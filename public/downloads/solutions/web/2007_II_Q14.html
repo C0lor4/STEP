@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2007 II Q14 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .graph-block {
+      margin: 18px 0 22px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .graph-block img {
+      width: min(760px, 80%);
+      height: auto;
+      display: block;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span></p>
+
+    <div class="graph-block">
+      <img src="./2007_II_Q14_graph1.svg" alt="Graph of the piecewise probability density f of x" />
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span></p>
+
+    <div class="math-block">
+      \[
+      \begin{cases}
+      a-2bk=\ln k\\
+      a-4bk=0
+      \end{cases}
+      \implies
+      \begin{cases}
+      a=2\ln k\\
+      b=\dfrac{\ln k}{2k}
+      \end{cases}
+      \]
+    </div>
+
+    <p>Area:</p>
+
+    <div class="math-block">
+      \[
+      \int_1^k\ln x\,dx
+      +\int_k^{2k}\ln k\,dx
+      +\int_{2k}^{4k}(a-bx)\,dx=1
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      (k\ln k-k+1)+k\ln k+k\ln k=1
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \implies k=e^{\frac13}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      a=\frac23,\qquad b=\frac{1}{6e^{\frac13}}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iii)</span></p>
+
+    <div class="math-block">
+      \[
+      e^{\frac13}&gt;1
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \int_1^k f(x)\,dx
+      =k\ln k-k+1
+      =1-\frac{2k}{3}&lt;\frac12
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \int_1^{2k}f(x)\,dx
+      =1-\frac{2k}{3}+\frac{k}{3}
+      =1-\frac{k}{3}&gt;\frac12
+      \]
+    </div>
+
+    <p>Median \(m\) lies in \([k,2k]\).</p>
+
+    <div class="math-block">
+      \[
+      \int_1^m f(x)\,dx=\frac12
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \int_1^k\ln x\,dx+\int_k^m\ln k\,dx=\frac12
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      1-\frac{2k}{3}+(m-k)\ln k=\frac12
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      m=3e^{\frac13}-\frac32
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong></p>
+      <p>Published and refined by <strong>Jon</strong></p>
+      <p><em>Last updated: July 26, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>

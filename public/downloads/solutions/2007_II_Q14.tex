@@ -1,0 +1,106 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{pgfplots}
+\usepackage{array}
+\setlength{\parindent}{0pt}
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\textbf{(i)}
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines=middle,
+    axis line style={->},
+    xmin=0,xmax=9.5,
+    ymin=0,ymax=0.55,
+    xtick=\empty,
+    ytick=\empty,
+    width=11cm,
+    height=6cm,
+    samples=300,
+    clip=false
+]
+\def\K{2.2}
+\def\L{0.36}
+
+\addplot[black,thick,domain=0:1] {0};
+
+\addplot[black,thick,smooth,domain=1:\K,samples=400] 
+{\L*ln(x)/ln(\K)};
+
+\addplot[black,thick,domain=\K:{2*\K}] {\L};
+
+\addplot[black,thick,domain={2*\K}:{4*\K}] 
+{\L*(4*\K-x)/(2*\K)};
+
+\addplot[black,thick,domain={4*\K}:9.2] {0};
+
+\draw[dashed] (axis cs:\K,0) -- (axis cs:\K,\L);
+\draw[black] (axis cs:0,\L) -- (axis cs:0.12,\L);
+
+\node at (axis cs:1,0) [below] {$1$};
+\node at (axis cs:\K,0) [below] {$k$};
+\node at (axis cs:{2*\K},0) [below] {$2k$};
+\node at (axis cs:{4*\K},0) [below] {$4k$};
+
+\node at (axis cs:-0.12,\L) [left] {$\ln k$};
+
+\node at (axis cs:9.5,0) [right] {$x$};
+\node at (axis cs:0,0.55) [above] {$f(x)$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)}
+
+$$
+\begin{cases}
+a-2bk=\ln k\\
+a-4bk=0
+\end{cases}
+\implies 
+\begin{cases}
+a=2\ln k\\
+b=\frac{\ln k}{2k}
+\end{cases}
+$$
+
+Area:
+$$\int_1^k \ln x\,dx+\int_k^{2k}\ln k\,dx+\int_{2k}^{4k}(a-bx)\,dx=1$$
+$$(k\ln k-k+1)+k\ln k+k\ln k=1$$
+$$\implies k=e^{\frac13}$$
+
+$$a=\frac23,\  b=\frac{1}{6\, e^{\frac13}}$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(iii)}
+
+$$e^{\frac13}>1$$
+
+$$\int_1^k f(x)\,dx=k\ln k-k+1=1-\frac{2k}{3}<\frac12$$
+
+$$\int_1^{2k}f(x)\,dx=1-\frac{2k}{3}+\frac{k}{3}=1-\frac{k}{3}>\frac12$$
+
+Median $m$ lies in $[k,2k]$
+
+$$\int_1^m f(x)\,dx=\frac12$$
+$$\int_1^k\ln x\,dx+\int_k^m\ln k\,dx=\frac12$$
+$$1-\frac{2k}{3}+(m-k)\ln k=\frac12$$
+$$m=3e^{\frac13}-\frac32$$
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: July 26, 2026}
+\end{center}
+
+\end{document}
