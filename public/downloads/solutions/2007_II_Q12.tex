@@ -1,0 +1,55 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\textbf{(i)} Both dice first show a six on throw $r$:
+
+$$q^{2r-2}p^2$$
+
+Exactly one die first shows a six on throw $s$, the other first shows a six on throw $r$:
+
+$$q^{2s-2}\cdot 2pq\cdot q^{r-s-1}\cdot p=2p^2q^{r+s-2}$$
+
+\begin{align*}
+P(R=r)
+&=p^2q^{2r-2}+\sum_{s=1}^{r-1}2p^2q^{r+s-2}\\
+&=p^2q^{2r-2}+2p^2q^{r-1}\cdot\frac{1-q^{r-1}}{1-q}\\
+&=pq^{r-1}(2-q^{r-1}-q^r)
+\end{align*}
+
+\begin{align*}
+E(R)
+&=\sum_{r=1}^{\infty}r\cdot pq^{r-1}(2-q^{r-1}-q^r)\\
+&=p\left(2\sum_{r=1}^{\infty}rq^{r-1}-\sum_{r=1}^{\infty}rq^{2r-2}-\sum_{r=1}^{\infty}rq^{2r-1}\right)\\
+&=p\left(\frac{2}{(1-q)^2}-\frac{1}{(1-q^2)^2}-\frac{q}{(1-q^2)^2}\right)\\
+&=\frac{3-2p}{p(2-p)}
+\end{align*}
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)}
+
+$$m=\frac{3-2p}{p(2-p)}$$
+
+$$\implies mp^2-(2m+2)p+3=0$$
+
+$$p=\frac{m+1\pm\sqrt{m^2-m+1}}{m}$$
+
+$$\because 0<p\leq1$$
+
+$$\therefore p=\frac{m+1-\sqrt{m^2-m+1}}{m}$$
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: July 26, 2026}
+\end{center}
+
+\end{document}
