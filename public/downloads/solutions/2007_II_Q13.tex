@@ -1,0 +1,65 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{array}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+$$\frac{n-r}{n}=1-\frac r n$$
+
+$$\because e^{-x}\approx 1-x$$
+
+$$\therefore \frac{n-r}{n}\approx e^{-\frac rn}$$
+
+\bigskip\hrule\bigskip
+
+No shared birthdays among $k$ guests:
+
+\begin{align*}
+P_0
+&=1\cdot\frac{364}{365}\cdot\frac{363}{365}\cdots\frac{365-k+1}{365}\\
+&=\prod_{r=1}^{k-1}\frac{365-r}{365}\\
+&\approx \prod_{r=1}^{k-1}e^{-\frac r{365}}\\
+&=e^{-\frac1{365}\sum_{r=1}^{k-1}r}\\
+&=e^{-\frac{k(k-1)}{730}}
+\end{align*}
+
+$$P(\text{at least two share a birthday})
+\approx 1-e^{-\frac{k(k-1)}{730}}$$
+
+\bigskip\hrule\bigskip
+
+$$1-e^{-\frac{k(k-1)}{730}}\geq\frac12$$
+
+$$\frac{k(k-1)}{730}\geq \ln2$$
+
+$$k(k-1)\geq 730\cdot\frac{253}{365}=506$$
+
+$$k^2-k-506\geq 0\implies (k-23)(k+22)\geq 0$$
+
+$$k\geq23$$
+
+\bigskip\hrule\bigskip
+
+Let $h$ be the number of guests
+
+No guest has the same birthday as the host: 
+$$\left(\frac{364}{365}\right)^h=\left(\frac{365-1}{365}\right)^h\approx e^{-\frac h{365}}$$
+
+$$P(\text{at least one guest matches the host})\approx 1-e^{-\frac h{365}}$$
+
+$$1-e^{-\frac h{365}}\geq\frac12\implies \frac h{365}\geq \ln2$$
+
+$$h\geq365\cdot\frac{253}{365}=253$$
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: July 26, 2026}
+\end{center}
+
+\end{document}

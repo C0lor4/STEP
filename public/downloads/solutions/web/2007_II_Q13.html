@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2007 II Q13 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <div class="math-block">
+      \[
+      \frac{n-r}{n}=1-\frac rn
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \because e^{-x}\approx1-x
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore \frac{n-r}{n}\approx e^{-\frac rn}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p>No shared birthdays among \(k\) guests:</p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      P_0
+      &=1\cdot\frac{364}{365}\cdot\frac{363}{365}
+      \cdots\frac{365-k+1}{365}\\
+      &=\prod_{r=1}^{k-1}\frac{365-r}{365}\\
+      &\approx\prod_{r=1}^{k-1}e^{-\frac r{365}}\\
+      &=e^{-\frac1{365}\sum_{r=1}^{k-1}r}\\
+      &=e^{-\frac{k(k-1)}{730}}
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      P(\text{at least two share a birthday})
+      \approx1-e^{-\frac{k(k-1)}{730}}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="math-block">
+      \[
+      1-e^{-\frac{k(k-1)}{730}}\geq\frac12
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \frac{k(k-1)}{730}\geq\ln2
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      k(k-1)\geq730\cdot\frac{253}{365}=506
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      k^2-k-506\geq0
+      \implies(k-23)(k+22)\geq0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      k\geq23
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p>Let \(h\) be the number of guests.</p>
+
+    <p>No guest has the same birthday as the host:</p>
+
+    <div class="math-block">
+      \[
+      \left(\frac{364}{365}\right)^h
+      =\left(\frac{365-1}{365}\right)^h
+      \approx e^{-\frac h{365}}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      P(\text{at least one guest matches the host})
+      \approx1-e^{-\frac h{365}}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      1-e^{-\frac h{365}}\geq\frac12
+      \implies\frac h{365}\geq\ln2
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      h\geq365\cdot\frac{253}{365}=253
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong></p>
+      <p>Published and refined by <strong>Jon</strong></p>
+      <p><em>Last updated: July 26, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>
