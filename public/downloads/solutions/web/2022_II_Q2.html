@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2022 II Q2 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span></p>
+
+    <div class="math-block">
+      \[
+      u_{n+1}=\tfrac12\left(u_{n+2}+u_n\right)\implies 2u_{n+1}=u_{n+2}+u_n
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \implies u_{n+2}-u_{n+1}=u_{n+1}-u_n
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore \boxed{\text{the difference between successive terms is constant}}
+      \]
+    </div>
+
+    <p>Let \(k=u_2-u_1\),</p>
+
+    <div class="math-block">
+      \[
+      u_n=u_1+(n-1)k
+      \]
+    </div>
+
+    <p>which is a polynomial in \(n\) of degree \(1\) if \(k\neq0\) and of degree \(0\) if \(k=0\)</p>
+
+    <div class="math-block">
+      \[
+      \therefore \boxed{u_n\text{ has degree at most }1}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span> Substituting \(v_n=t_n+pn^2\) into \(\displaystyle v_{n+1}=\tfrac12\left(v_{n+2}+v_n\right)-p\):</p>
+
+    <div class="math-block">
+      \[
+      t_{n+1}+p(n+1)^2=\tfrac12\left(t_{n+2}+p(n+2)^2+t_n+pn^2\right)-p
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \tfrac12\left(p(n+2)^2+pn^2\right)-p=p\left(n^2+2n+2\right)-p=p(n+1)^2
+      \]
+    </div>
+
+    <p>so the terms in \(p\) cancel</p>
+
+    <div class="math-block">
+      \[
+      \implies t_{n+1}=\tfrac12\left(t_{n+2}+t_n\right)
+      \]
+    </div>
+
+    <p>By part (i), \(t_n\) has degree at most \(1\), and \(p\neq0\)</p>
+
+    <div class="math-block">
+      \[
+      \therefore \boxed{v_n\text{ has degree }2}
+      \]
+    </div>
+
+    <p>Write \(v_n=pn^2+qn+r\)</p>
+
+    <div class="math-block">
+      \[
+      v_1=p+q+r=0,\qquad v_2=4p+2q+r=0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      3p+q=0\implies q=-3p,\qquad r=-p-q=2p
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore \boxed{v_n=p\left(n^2-3n+2\right)=p(n-1)(n-2)}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iii)</span> Substituting \(w_n=t_n+kn^3\) into \(\displaystyle w_{n+1}=\tfrac12\left(w_{n+2}+w_n\right)-an-b\):</p>
+
+    <div class="math-block">
+      \[
+      t_{n+1}+k(n+1)^3=\tfrac12\left(t_{n+2}+k(n+2)^3+t_n+kn^3\right)-an-b
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \tfrac12\left(k(n+2)^3+kn^3\right)=k\left(n^3+3n^2+6n+4\right),\qquad k(n+1)^3=k\left(n^3+3n^2+3n+1\right)
+      \]
+    </div>
+
+    <p>so the terms in \(kn^3\) and \(kn^2\) cancel, leaving</p>
+
+    <div class="math-block">
+      \[
+      t_{n+1}=\tfrac12\left(t_{n+2}+t_n\right)+(3k-a)n+(3k-b)
+      \]
+    </div>
+
+    <p>Choosing \(\displaystyle k=\tfrac13a\):</p>
+
+    <div class="math-block">
+      \[
+      t_{n+1}=\tfrac12\left(t_{n+2}+t_n\right)-(b-a)
+      \]
+    </div>
+
+    <p>\(b\neq a\): this is part (ii) with \(p=b-a\), so \(t_n\) has degree \(2\) with leading coefficient \(b-a\)</p>
+
+    <p>\(b=a\): this is part (i), so \(t_n\) has degree at most \(1\), and the coefficient of \(n^2\) is \(0=b-a\)</p>
+
+    <p>In both cases \(t_n\) has degree at most \(2\) and its coefficient of \(n^2\) is \(b-a\), and \(a\neq0\)</p>
+
+    <div class="math-block">
+      \[
+      \therefore \boxed{w_n\text{ has degree }3}
+      \]
+    </div>
+
+    <p>Write \(\displaystyle w_n=\tfrac13an^3+(b-a)n^2+qn+r\)</p>
+
+    <div class="math-block">
+      \[
+      w_1=\tfrac13a+(b-a)+q+r=0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      w_2=\tfrac83a+4(b-a)+2q+r=0
+      \]
+    </div>
+
+    <p>Subtracting: \(\ \tfrac73a+3(b-a)+q=0\)</p>
+
+    <div class="math-block">
+      \[
+      q=3a-\tfrac73a-3b=\tfrac23a-3b
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      r=-\tfrac13a-(b-a)-q=\tfrac23a-b-\tfrac23a+3b=2b
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore \boxed{w_n=\tfrac13an^3+(b-a)n^2+\left(\tfrac23a-3b\right)n+2b}
+      \]
+    </div>
+
+    <p>\(\because w_1=w_2=0\)</p>
+
+    <div class="math-block">
+      \[
+      \therefore w_n=\tfrac13(n-1)(n-2)(an+3b)
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong></p>
+      <p>Published and refined by <strong>Jon</strong></p>
+      <p><em>Last updated: August 21, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2022 II Q4 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .graph-block {
+      margin: 18px 0 20px;
+      text-align: center;
+    }
+
+    .graph-block img {
+      width: min(560px, 100%);
+      height: auto;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span></p>
+
+    <div class="math-block">
+      \[
+      x\leq0:\quad -x-(5-x)+1=-4
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      0\leq x\leq5:\quad x-(5-x)+1=2x-4
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      x\geq5:\quad x-(x-5)+1=6
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore \boxed{\mathrm{f}(x)=\begin{cases}-4&x\leq0\\ 2x-4&0\leq x\leq5\\ 6&5\leq x\end{cases}}
+      \]
+    </div>
+
+    <div class="graph-block">
+      <img src="2022_II_Q4_graph1.png" alt="Sketch of y = f(x)" />
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span> Let \(\displaystyle \mathrm{g}(x)=\alpha x+\beta|x|+\gamma|x-5|+\delta\)</p>
+
+    <p>The gradients on the three pieces are</p>
+
+    <div class="math-block">
+      \[
+      x&lt;0:\ \alpha-\beta-\gamma=-1,\quad 0&lt;x&lt;5:\ \alpha+\beta-\gamma=3,\quad x&gt;5:\ \alpha+\beta+\gamma=1
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \implies \beta=2,\quad \gamma=-1,\quad \alpha=0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \mathrm{g}(0)=0:\  5\gamma+\delta=0\implies \delta=5
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore \boxed{\mathrm{g}(x)=2|x|-|x-5|+5}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iii)</span> When \(x\leq0\) or \(x\geq5\), \(x(x-5)\geq0\)</p>
+
+    <div class="math-block">
+      \[
+      x\leq0:\quad x^2-x+4x+x^2-5x=2x^2-2x
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      0\leq x\leq5:\quad x^2-x-4x+5x-x^2=0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      x\geq5:\quad x^2-x-4x+x^2-5x=2x^2-10x
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore \boxed{\mathrm{h}(x)=\begin{cases}2x(x-1)&x\leq0\\ 0&0\leq x\leq5\\ 2x(x-5)&5\leq x\end{cases}}
+      \]
+    </div>
+
+    <div class="graph-block">
+      <img src="2022_II_Q4_graph2.png" alt="Sketch of y = h(x)" />
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iv)</span> As in part (iii), \(\ \left|x(x-5)\right|=x(x-5)\) for \(x\leq0\) and for \(x\geq5\), and \(\ \left|x(x-5)\right|=-x(x-5)\) for \(0\leq x\leq5\). Consider</p>
+
+    <div class="math-block">
+      \[
+      \mathrm{k}(x)-x^2+\left|x(x-5)\right|
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      x\leq0:\quad 10x-x^2+x(x-5)=5x
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      0\leq x\leq5:\quad 2x^2-x^2-x(x-5)=5x
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      x\geq5:\quad 50-x^2+x(x-5)=50-5x
+      \]
+    </div>
+
+    <p>This is piecewise linear with gradient \(5\) for \(x&lt;5\) and \(-5\) for \(x&gt;5\), so as in part (ii) it has the form \(a+b|x-5|\)</p>
+
+    <div class="math-block">
+      \[
+      x&lt;5:\ -b=5;\quad x&gt;5:\ b=-5
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      x=5:\ a=25
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore \boxed{\mathrm{k}(x)=x^2-\left|x(x-5)\right|+25-5|x-5|}
+      \]
+    </div>
+
+    <p>\(x\leq0\): \(\ \left|x(x-5)\right|=x^2-5x\) and \(|x-5|=5-x\)</p>
+
+    <div class="math-block">
+      \[
+      x^2-\left(x^2-5x\right)+25-5(5-x)=10x\ \checkmark
+      \]
+    </div>
+
+    <p>\(0\leq x\leq5\): \(\ \left|x(x-5)\right|=5x-x^2\) and \(|x-5|=5-x\)</p>
+
+    <div class="math-block">
+      \[
+      x^2-\left(5x-x^2\right)+25-5(5-x)=2x^2\ \checkmark
+      \]
+    </div>
+
+    <p>\(x\geq5\): \(\ \left|x(x-5)\right|=x^2-5x\) and \(|x-5|=x-5\)</p>
+
+    <div class="math-block">
+      \[
+      x^2-\left(x^2-5x\right)+25-5(x-5)=50\ \checkmark
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong></p>
+      <p>Published and refined by <strong>Jon</strong></p>
+      <p><em>Last updated: September 5, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>
