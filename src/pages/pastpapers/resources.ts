@@ -1,4 +1,4 @@
-import { createQuestionSource, type QuestionSource } from './answers/types';
+import { createQuestionSource, getQuestionSourceKey, type QuestionSource } from './answers/types';
 
 const questionSourceIds = [
   '2005_II_Q1',
@@ -48,6 +48,8 @@ const questionSourceIds = [
   '2010_III_Q13',
   '2014_II_Q12',
   '2014_II_Q13',
+  '2015_I_Q1',
+  '2015_I_Q5',
   '2014_II_Q6',
   '2014_III_Q12',
   '2015_II_Q13',
@@ -65,6 +67,20 @@ const questionSourceIds = [
   '2017_III_Q12',
   '2017_III_Q13',
   '2018_III_Q2',
+  '2020_II_Q1',
+  '2020_II_Q8',
+  '2020_II_Q11',
+  '2020_II_Q12',
+  '2021_II_Q1',
+  '2021_II_Q11',
+  '2021_II_Q12',
+  '2022_II_Q2',
+  '2022_II_Q4',
+  '2022_II_Q5',
+  '2022_II_Q6',
+  '2024_III_Q1',
+  '2024_III_Q2',
+  '2024_III_Q3',
   '2025_II_Q1',
   '2025_II_Q4',
   '2025_II_Q8',
@@ -75,27 +91,74 @@ const questionSources: QuestionSource[] = questionSourceIds.map((id) =>
   createQuestionSource(id)
 );
 
-const stepFolderByTitle: Record<string, string> = {
-  'STEP I': 'stepI',
-  'STEP II': 'stepII',
-  'STEP III': 'stepIII',
+/* ------------------------------------------------------------------ *
+ * 年份 / 卷别规则集中在这里，不要再散到页面组件里
+ * ------------------------------------------------------------------ */
+
+export type StepCode = 'I' | 'II' | 'III';
+
+/** STEP I 在这一年之后停考 */
+const LAST_STEP_I_YEAR = 2019;
+
+/** 最新一届有资料的年份（以后新增年份只改这两个常量） */
+export const LATEST_PAPER_YEAR = 2025;
+
+/** 收录的年份跨度 */
+export const PAPER_YEAR_COUNT = 26;
+
+/** 'STEP 2017' -> 2017；解析不出来返回 null */
+export const parseYearTitle = (yearTitle: string): number | null => {
+  const year = Number(yearTitle.replace('STEP ', ''));
+  return Number.isFinite(year) ? year : null;
 };
 
-export const buildProblemPdfPath = (year: string, step: 'I' | 'II' | 'III') =>
+/** 'STEP II' -> 'II'；不是合法卷别返回 null */
+export const parseStepTitle = (stepTitle: string): StepCode | null => {
+  const code = stepTitle.replace('STEP ', '');
+  return code === 'I' || code === 'II' || code === 'III' ? code : null;
+};
+
+/** 该年该卷是否存在（STEP I 在 2019 后停考） */
+export const stepExistsInYear = (year: number, step: StepCode) =>
+  step !== 'I' || year <= LAST_STEP_I_YEAR;
+
+/** 该年每卷有多少道题 */
+export const getQuestionCountForYear = (yearTitle: string): number => {
+  const year = parseYearTitle(yearTitle);
+
+  if (year === null) {
+    return 12;
+  }
+
+  if (year >= 2000 && year <= 2007) {
+    return 14;
+  }
+
+  if (year >= 2008 && year <= 2018) {
+    return 13;
+  }
+
+  return 12;
+};
+
+const stepFolderByCode: Record<StepCode, string> = {
+  I: 'stepI',
+  II: 'stepII',
+  III: 'stepIII',
+};
+
+export const buildProblemPdfPath = (year: string, step: StepCode) =>
   `/downloads/problems/${year} STEP ${step}.pdf`;
 
 export const hasProblemImages = (yearTitle: string, stepTitle: string) => {
-  const year = Number(yearTitle.replace('STEP ', ''));
+  const year = parseYearTitle(yearTitle);
+  const step = parseStepTitle(stepTitle);
 
-  if (!Number.isFinite(year)) {
+  if (year === null || step === null) {
     return false;
   }
 
-  if (stepTitle === 'STEP I') {
-    return year <= 2019;
-  }
-
-  return stepTitle === 'STEP II' || stepTitle === 'STEP III';
+  return stepExistsInYear(year, step);
 };
 
 export const buildProblemImagePath = (
@@ -103,34 +166,36 @@ export const buildProblemImagePath = (
   stepTitle: string,
   questionNumber: number
 ) => {
-  const year = yearTitle.replace('STEP ', '');
-  const stepFolder = stepFolderByTitle[stepTitle];
+  const year = parseYearTitle(yearTitle);
+  const step = parseStepTitle(stepTitle);
 
-  if (!stepFolder) {
+  if (year === null || step === null) {
     return null;
   }
 
-  return `/downloads/Split/${year}/${stepFolder}/Q${String(questionNumber).padStart(2, '0')}.png`;
+  return `/downloads/Split/${year}/${stepFolderByCode[step]}/Q${String(questionNumber).padStart(2, '0')}.png`;
 };
+
+/* ------------------------------------------------------------------ *
+ * 查找：改成 Map / Set，避免每个题号按钮都线性扫描 78 条记录
+ * ------------------------------------------------------------------ */
+
+const questionSourceByKey = new Map<string, QuestionSource>(
+  questionSources.map((source) => [getQuestionSourceKey(source), source])
+);
+
+/** 有答案的 (年份 + 卷别) 组合，用于判断 Answers 按钮是否可点 */
+const paperKeysWithAnswers = new Set<string>(
+  questionSources.map((source) => `${source.yearTitle}::${source.stepTitle}`)
+);
 
 export const findQuestionSource = (payload: {
   yearTitle: string;
   stepTitle: string;
   questionNumber: number;
-}) =>
-  questionSources.find(
-    (source) =>
-      source.yearTitle === payload.yearTitle &&
-      source.stepTitle === payload.stepTitle &&
-      source.questionNumber === payload.questionNumber
-  ) ?? null;
+}): QuestionSource | null => questionSourceByKey.get(getQuestionSourceKey(payload)) ?? null;
 
 export const hasAnyAnswerSource = (payload: {
   yearTitle: string;
   stepTitle: string;
-}) =>
-  questionSources.some(
-    (source) =>
-      source.yearTitle === payload.yearTitle &&
-      source.stepTitle === payload.stepTitle
-  );
+}) => paperKeysWithAnswers.has(`${payload.yearTitle}::${payload.stepTitle}`);

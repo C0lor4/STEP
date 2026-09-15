@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
-  loadScoreDistribution,
+  loadGradeCutoffs,
   type CompetitionStep,
-  type GradeCutoffs,
+  type GradeCutoffRecord,
   type GradeKey,
 } from '../pages/scoreDistributions';
 
@@ -19,14 +19,11 @@ type HoveredPoint = {
   year: number;
   score: number;
 };
-type TrendCutoffRecord = {
-  year: number;
-  step: CompetitionStep;
-  gradeCutoffs: GradeCutoffs | null;
-};
+type TrendCutoffRecord = GradeCutoffRecord;
 
-const trendYears = Array.from({ length: 26 }, (_, index) => 2025 - index).reverse();
-const trendAxisMaxYear = 2026;
+const trendYears = Array.from({ length: 27 }, (_, index) => 2026 - index).reverse();
+// 轴的右端留一年空白，2026 的数据点才不会贴在边框上（这个刻度不显示标签）
+const trendAxisMaxYear = 2027;
 const trendSteps: CompetitionStep[] = ['I', 'II', 'III'];
 
 const stepColors: Record<CompetitionStep, string> = {
@@ -108,18 +105,8 @@ const StatisticsSection: React.FC = () => {
     let cancelled = false;
 
     const loadTrendData = async () => {
-      const requests = trendYears.flatMap((year) =>
-        trendSteps.map(async (step) => {
-          const data = await loadScoreDistribution(year, step);
-          return {
-            year,
-            step,
-            gradeCutoffs: data?.gradeCutoffs ?? null,
-          };
-        })
-      );
-
-      const results = await Promise.all(requests);
+      // 一次请求拿到全部年份的分数线（旧版本是 26 x 3 = 78 个并发请求）
+      const results = await loadGradeCutoffs(trendYears, trendSteps);
       if (cancelled) {
         return;
       }

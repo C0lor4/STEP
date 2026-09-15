@@ -1,0 +1,132 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\textbf{(i)}
+
+$$x\leq0:\quad -x-(5-x)+1=-4$$
+
+$$0\leq x\leq5:\quad x-(5-x)+1=2x-4$$
+
+$$x\geq5:\quad x-(x-5)+1=6$$
+
+$$\therefore \boxed{\mathrm{f}(x)=\begin{cases}-4&x\leq0\\ 2x-4&0\leq x\leq5\\ 6&5\leq x\end{cases}}$$
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines=middle,
+    xmin=-3.5, xmax=8.5, ymin=-6.5, ymax=8,
+    width=11cm, height=6.8cm,
+    axis line style={->},
+    xlabel={$x$},
+    ylabel={},
+    xtick={2,5},
+    ytick={6},
+    yticklabel style={fill=white,inner sep=1.2pt},
+    tick style={draw=none},
+    samples=200,
+    clip=false
+]
+
+\addplot[domain=-3.5:8.5, thick] {abs(x)-abs(x-5)+1};
+\draw[dashed] (axis cs:0,6) -- (axis cs:5,6);
+\draw[dashed] (axis cs:5,0) -- (axis cs:5,6);
+\node[anchor=south] at (axis cs:0,8) {$y$};
+\node[anchor=north east, fill=white, inner sep=1pt] 
+    at (axis cs:0,-4) {$-4$};
+
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)} Let $\ds \mathrm{g}(x)=\alpha x+\beta|x|+\gamma|x-5|+\delta$
+
+The gradients on the three pieces are
+$$x<0:\ \alpha-\beta-\gamma=-1,\quad 0<x<5:\ \alpha+\beta-\gamma=3,\quad x>5:\ \alpha+\beta+\gamma=1$$
+
+$$\implies \beta=2,\quad \gamma=-1,\quad \alpha=0$$
+
+$$\mathrm{g}(0)=0:\  5\gamma+\delta=0\implies \delta=5$$
+
+$$\therefore \boxed{\mathrm{g}(x)=2|x|-|x-5|+5}$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(iii)} When $x\leq0$ or $x\geq5$, $x(x-5)\geq0$
+
+$$x\leq0:\quad x^2-x+4x+x^2-5x=2x^2-2x$$
+
+$$0\leq x\leq5:\quad x^2-x-4x+5x-x^2=0$$
+
+$$x\geq5:\quad x^2-x-4x+x^2-5x=2x^2-10x$$
+
+$$\therefore \boxed{\mathrm{h}(x)=\begin{cases}2x(x-1)&x\leq0\\ 0&0\leq x\leq5\\ 2x(x-5)&5\leq x\end{cases}}$$
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines=middle,
+    xmin=-3.6, xmax=8.6, ymin=-6, ymax=52,
+    width=11cm, height=7.4cm,
+    axis line style={->},
+    xlabel={$x$}, ylabel={$y$},
+    xtick={5}, ytick=\empty,
+    tick style={draw=none},
+    samples=300
+]
+\addplot[domain=-3.6:8.0, thick] {x^2-x-4*abs(x)+abs(x*(x-5))};
+\node at (axis cs:2.5,4.5) {$y=0$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\bigskip\hrule\bigskip
+
+\textbf{(iv)} As in part (iii), $\ \left|x(x-5)\right|=x(x-5)$ for $x\leq0$ and for $x\geq5$, and $\ \left|x(x-5)\right|=-x(x-5)$ for $0\leq x\leq5$. Consider
+
+$$\mathrm{k}(x)-x^2+\left|x(x-5)\right|$$
+
+$$x\leq0:\quad 10x-x^2+x(x-5)=5x$$
+
+$$0\leq x\leq5:\quad 2x^2-x^2-x(x-5)=5x$$
+
+$$x\geq5:\quad 50-x^2+x(x-5)=50-5x$$
+
+This is piecewise linear with gradient $5$ for $x<5$ and $-5$ for $x>5$, so as in part (ii) it has the form $a+b|x-5|$
+
+$$x<5:\ -b=5;\quad x>5:\ b=-5$$
+
+$$x=5:\ a=25$$
+
+$$\therefore \boxed{\mathrm{k}(x)=x^2-\left|x(x-5)\right|+25-5|x-5|}$$
+
+\bigskip
+
+$x\leq0$: $\ \left|x(x-5)\right|=x^2-5x$ and $|x-5|=5-x$
+
+$$x^2-\left(x^2-5x\right)+25-5(5-x)=10x\ \checkmark$$
+
+$0\leq x\leq5$: $\ \left|x(x-5)\right|=5x-x^2$ and $|x-5|=5-x$
+
+$$x^2-\left(5x-x^2\right)+25-5(5-x)=2x^2\ \checkmark$$
+
+$x\geq5$: $\ \left|x(x-5)\right|=x^2-5x$ and $|x-5|=x-5$
+
+$$x^2-\left(x^2-5x\right)+25-5(x-5)=50\ \checkmark$$
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: September 5, 2026}
+\end{center}
+
+\end{document}

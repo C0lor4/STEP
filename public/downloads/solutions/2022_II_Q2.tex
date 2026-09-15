@@ -1,0 +1,106 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\textbf{(i)}
+
+$$u_{n+1}=\tfrac12\left(u_{n+2}+u_n\right)\implies 2u_{n+1}=u_{n+2}+u_n$$
+
+$$\implies u_{n+2}-u_{n+1}=u_{n+1}-u_n$$
+
+$$\therefore \boxed{\text{the difference between successive terms is constant}}$$
+
+\bigskip
+
+Let $k=u_2-u_1$,
+
+$$u_n=u_1+(n-1)k$$
+
+which is a polynomial in $n$ of degree $1$ if $k\neq0$ and of degree $0$ if $k=0$
+
+$$\therefore \boxed{u_n\text{ has degree at most }1}$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)} Substituting $v_n=t_n+pn^2$ into $\ds v_{n+1}=\tfrac12\left(v_{n+2}+v_n\right)-p$:
+
+$$t_{n+1}+p(n+1)^2=\tfrac12\left(t_{n+2}+p(n+2)^2+t_n+pn^2\right)-p$$
+
+$$\tfrac12\left(p(n+2)^2+pn^2\right)-p=p\left(n^2+2n+2\right)-p=p(n+1)^2$$
+
+so the terms in $p$ cancel
+
+$$\implies t_{n+1}=\tfrac12\left(t_{n+2}+t_n\right)$$
+
+By part (i), $t_n$ has degree at most $1$, and $p\neq0$
+
+$$\therefore \boxed{v_n\text{ has degree }2}$$
+
+\bigskip
+
+Write $v_n=pn^2+qn+r$
+
+$$v_1=p+q+r=0,\qquad v_2=4p+2q+r=0$$
+
+$$3p+q=0\implies q=-3p,\qquad r=-p-q=2p$$
+
+$$\therefore \boxed{v_n=p\left(n^2-3n+2\right)=p(n-1)(n-2)}$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(iii)} Substituting $w_n=t_n+kn^3$ into $\ds w_{n+1}=\tfrac12\left(w_{n+2}+w_n\right)-an-b$:
+
+$$t_{n+1}+k(n+1)^3=\tfrac12\left(t_{n+2}+k(n+2)^3+t_n+kn^3\right)-an-b$$
+
+$$\tfrac12\left(k(n+2)^3+kn^3\right)=k\left(n^3+3n^2+6n+4\right),\qquad k(n+1)^3=k\left(n^3+3n^2+3n+1\right)$$
+
+so the terms in $kn^3$ and $kn^2$ cancel, leaving
+
+$$t_{n+1}=\tfrac12\left(t_{n+2}+t_n\right)+(3k-a)n+(3k-b)$$
+
+Choosing $\ds k=\tfrac13a$:
+
+$$t_{n+1}=\tfrac12\left(t_{n+2}+t_n\right)-(b-a)$$
+
+$b\neq a$: this is part (ii) with $p=b-a$, so $t_n$ has degree $2$ with leading coefficient $b-a$
+
+$b=a$: this is part (i), so $t_n$ has degree at most $1$, and the coefficient of $n^2$ is $0=b-a$
+
+In both cases $t_n$ has degree at most $2$ and its coefficient of $n^2$ is $b-a$, and $a\neq0$
+
+$$\therefore \boxed{w_n\text{ has degree }3}$$
+
+\bigskip
+
+Write $\ds w_n=\tfrac13an^3+(b-a)n^2+qn+r$
+
+$$w_1=\tfrac13a+(b-a)+q+r=0$$
+
+$$w_2=\tfrac83a+4(b-a)+2q+r=0$$
+
+Subtracting: $\ \tfrac73a+3(b-a)+q=0$
+
+$$q=3a-\tfrac73a-3b=\tfrac23a-3b$$
+
+$$r=-\tfrac13a-(b-a)-q=\tfrac23a-b-\tfrac23a+3b=2b$$
+
+$$\therefore \boxed{w_n=\tfrac13an^3+(b-a)n^2+\left(\tfrac23a-3b\right)n+2b}$$
+
+\bigskip
+
+$\because w_1=w_2=0$
+
+$$\therefore w_n=\tfrac13(n-1)(n-2)(an+3b)$$
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: August 21, 2026}
+\end{center}
+
+\end{document}

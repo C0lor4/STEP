@@ -1,14 +1,18 @@
-﻿import React from 'react';
+import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Header from '../components/Header';
 import { getQuestionSourceKey, type QuestionSource } from './pastpapers/answers/types';
 import {
+  LATEST_PAPER_YEAR,
+  PAPER_YEAR_COUNT,
   buildProblemImagePath,
   buildProblemPdfPath,
   findQuestionSource,
+  getQuestionCountForYear,
   hasAnyAnswerSource,
   hasProblemImages,
+  stepExistsInYear,
 } from './pastpapers/resources';
 
 type DownloadItem = {
@@ -34,63 +38,36 @@ const downloadItems: DownloadItem[] = [
     title: 'Reference Sheet',
     description: 'Useful formulas for calculus and algebra.',
     path: '/pastpapers/formula-sheets',
+    available: true,
   },
   {
     title: 'Tips & Tricks',
     description: 'Some important formulas and tips for STEP',
     path: '/pastpapers/tips',
+    available: false,
   },
-].map((item) => ({ ...item, available: item.path === '/pastpapers/formula-sheets' }));
+];
+
+const STEP_CODES = ['I', 'II', 'III'] as const;
 
 const buildStepCollection = (year: string): PaperCollection => {
   const yearNumber = Number(year);
-  const includeStepI = Number.isFinite(yearNumber) && yearNumber <= 2019;
-
-  const stepIPaper: PaperItem = {
-    title: 'STEP I',
-    problemPath: buildProblemPdfPath(year, 'I'),
-    answerPath: `/pastpapers/step-${year}/step-i/solution`,
-  };
 
   return {
     title: `STEP ${year}`,
-    papers: [
-      ...(includeStepI ? [stepIPaper] : []),
-      {
-        title: 'STEP II',
-        problemPath: buildProblemPdfPath(year, 'II'),
-        answerPath: `/pastpapers/step-${year}/step-ii/solution`,
-      },
-      {
-        title: 'STEP III',
-        problemPath: buildProblemPdfPath(year, 'III'),
-        answerPath: `/pastpapers/step-${year}/step-iii/solution`,
-      },
-    ],
+    papers: STEP_CODES.filter(
+      (code) => Number.isFinite(yearNumber) && stepExistsInYear(yearNumber, code)
+    ).map((code) => ({
+      title: `STEP ${code}`,
+      problemPath: buildProblemPdfPath(year, code),
+      answerPath: `/pastpapers/step-${year}/step-${code.toLowerCase()}/solution`,
+    })),
   };
 };
 
-const paperCollections: PaperCollection[] = Array.from({ length: 26 }, (_, i) =>
-  buildStepCollection(String(2025 - i))
+const paperCollections: PaperCollection[] = Array.from({ length: PAPER_YEAR_COUNT }, (_, i) =>
+  buildStepCollection(String(LATEST_PAPER_YEAR - i))
 );
-
-const getQuestionCountForYear = (yearTitle: string) => {
-  const year = Number(yearTitle.replace('STEP ', ''));
-
-  if (!Number.isFinite(year)) {
-    return 12;
-  }
-
-  if (year >= 2000 && year <= 2007) {
-    return 14;
-  }
-
-  if (year >= 2008 && year <= 2018) {
-    return 13;
-  }
-
-  return 12;
-};
 
 const SimpleCard: React.FC<{
   item: DownloadItem;
@@ -120,19 +97,18 @@ const SimpleCard: React.FC<{
           Open
         </button>
       ) : (
-        <Link
-          to="#"
-          onClick={(e) => e.preventDefault()}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border text-sm transition-colors border-zinc-700 text-zinc-500 cursor-not-allowed"
+        <span
+          aria-disabled="true"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border text-sm border-zinc-700 text-zinc-500 cursor-not-allowed"
         >
           Not yet available
-        </Link>
+        </span>
       )}
     </div>
   </motion.div>
 );
 
-const HoverPapersCard: React.FC<{
+type HoverPapersCardProps = {
   collection: PaperCollection;
   delay?: number;
   isPinnedExpanded?: boolean;
@@ -148,7 +124,9 @@ const HoverPapersCard: React.FC<{
     answerPath: string;
   }) => void;
   onRequestClose?: (yearTitle: string) => void;
-}> = ({
+};
+
+const HoverPapersCard: React.FC<HoverPapersCardProps> = React.memo(({
   collection,
   delay = 0,
   isPinnedExpanded,
@@ -379,7 +357,9 @@ const HoverPapersCard: React.FC<{
       </motion.div>
     </motion.div>
   );
-};
+});
+
+HoverPapersCard.displayName = 'HoverPapersCard';
 
 const PastPapers: React.FC = () => {
   const navigate = useNavigate();
@@ -427,8 +407,54 @@ const PastPapers: React.FC = () => {
   const activeAnswerIndex = selectedStep
     ? paperCollections.findIndex((collection) => collection.title === selectedStep.yearTitle)
     : -1;
+  // 详情面板插在被选中年份所在那一行的后面，其余年份保持原样显示
   const activeAnswerRow = activeAnswerIndex >= 0 ? Math.floor(activeAnswerIndex / columnCount) : -1;
   const selectedQuestionCount = selectedStep ? getQuestionCountForYear(selectedStep.yearTitle) : 12;
+  // 整卷是否有题目图，与题号无关，提到渲染循环外只算一次
+  const selectedHasProblemImages = selectedStep
+    ? hasProblemImages(selectedStep.yearTitle, selectedStep.stepTitle)
+    : false;
+
+  // 让下面几个 useCallback 能读到最新选中状态，同时保持函数引用稳定
+  // （引用一变，被 memo 包住的 26 张卡片就会全部重渲染）
+  const selectionRef = React.useRef({ expanded: expandedSelection, step: selectedStep });
+  selectionRef.current = { expanded: expandedSelection, step: selectedStep };
+
+  const handleYearToggle = React.useCallback((yearTitle: string) => {
+    setSelectedStep(null);
+    setSelectedProblemQuestion(null);
+    setSelectedQuestionSource(null);
+    setExpandedSelection((prev) =>
+      prev?.yearTitle === yearTitle && prev.stepTitle === null ? null : { yearTitle, stepTitle: null }
+    );
+  }, []);
+
+  const handleStepToggle = React.useCallback(
+    (payload: { yearTitle: string; stepTitle: string; problemPath: string; answerPath: string }) => {
+      const prev = selectionRef.current.step;
+      const isSameStep =
+        prev?.yearTitle === payload.yearTitle && prev.stepTitle === payload.stepTitle;
+
+      setSelectedProblemQuestion(null);
+      setSelectedQuestionSource(null);
+      setExpandedSelection(null);
+      setSelectedStep(isSameStep ? null : payload);
+    },
+    []
+  );
+
+  const handleRequestClose = React.useCallback((yearTitle: string) => {
+    const { expanded, step } = selectionRef.current;
+
+    if (expanded?.yearTitle !== yearTitle && step?.yearTitle !== yearTitle) {
+      return;
+    }
+
+    setExpandedSelection(null);
+    setSelectedStep(null);
+    setSelectedProblemQuestion(null);
+    setSelectedQuestionSource(null);
+  }, []);
 
   const handleOpenDownload = React.useCallback(
     (path: string) => {
@@ -523,6 +549,176 @@ const PastPapers: React.FC = () => {
     []
   );
 
+  const renderDetailPanel = () => {
+    if (!selectedStep) {
+      return null;
+    }
+
+    return (
+    <motion.div
+      key={`${selectedStep.answerPath}-question-row`}
+      ref={detailAreaRef}
+      initial={{ opacity: 0, y: 6 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.18, ease: 'easeOut' }}
+      className="col-span-1 sm:col-span-2 lg:col-span-3 mt-0"
+    >
+      <div className="flex w-full flex-col items-center gap-3">
+        <div className="grid w-fit max-w-full grid-cols-[132px,max-content] items-center gap-3">
+          <a
+            href={selectedStep.problemPath}
+            target="_blank"
+            rel="noreferrer"
+            title="Open all problems"
+            className="pastpaper-tab-btn pastpaper-tab-btn-available inline-flex w-[132px] shrink-0 whitespace-nowrap items-center justify-center rounded-lg border border-amber-300/35 bg-amber-300/5 px-4 py-2 text-sm font-medium tracking-[0.12em] text-amber-300 transition-colors hover:border-amber-200/50 hover:bg-amber-300/10 hover:text-amber-200 focus:outline-none focus:ring-2 focus:ring-amber-300/70"
+          >
+            Problems
+          </a>
+          <div className="flex flex-wrap items-center gap-2">
+            {Array.from({ length: selectedQuestionCount }, (_, index) => index + 1).map((questionNumber) => {
+              const isActiveProblem = selectedProblemQuestion === questionNumber;
+
+              return (
+                <button
+                  key={`${selectedStep.answerPath}-problem-q-${questionNumber}`}
+                  type="button"
+                  disabled={!selectedHasProblemImages}
+                  onClick={() => {
+                    if (!selectedHasProblemImages) {
+                      return;
+                    }
+
+                    setSelectedQuestionSource(null);
+                    setSelectedProblemQuestion((prev) =>
+                      prev === questionNumber ? null : questionNumber
+                    );
+                  }}
+                  className={`question-circle-btn ${
+                    selectedHasProblemImages ? 'question-circle-btn-available' : 'question-circle-btn-unavailable'
+                  } ${isActiveProblem ? 'question-circle-btn-active' : ''}`}
+                >
+                  Q{questionNumber}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="grid w-fit max-w-full grid-cols-[132px,max-content] items-center gap-3">
+          <button
+            type="button"
+            disabled={!hasAnyAnswerSource(selectedStep)}
+            onClick={() => {
+              setSelectedProblemQuestion(null);
+              setSelectedQuestionSource(null);
+            }}
+            className={`pastpaper-tab-btn pastpaper-answer-tab-btn inline-flex items-center justify-center rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] transition-colors ${
+              hasAnyAnswerSource(selectedStep)
+                ? 'pastpaper-tab-btn-available w-[132px] shrink-0 whitespace-nowrap rounded-lg border border-amber-300/35 bg-amber-300/5 px-4 py-2 text-sm font-medium tracking-[0.12em] text-amber-300 hover:border-amber-200/50 hover:bg-amber-300/10 hover:text-amber-200 focus:outline-none focus:ring-2 focus:ring-amber-300/70'
+                : 'pastpaper-tab-btn-unavailable w-[132px] cursor-not-allowed rounded-lg border border-zinc-800 bg-zinc-900/70 px-4 py-2 text-sm font-medium tracking-[0.12em] text-zinc-500'
+            }`}
+          >
+            Answers
+          </button>
+          <div className="flex flex-wrap items-center gap-2">
+            {Array.from({ length: selectedQuestionCount }, (_, index) => index + 1).map((questionNumber) => {
+              const matchedSource = findQuestionSource({
+                yearTitle: selectedStep.yearTitle,
+              stepTitle: selectedStep.stepTitle,
+              questionNumber,
+            });
+            const isActive =
+              matchedSource !== null &&
+              selectedQuestionSource !== null &&
+              getQuestionSourceKey(selectedQuestionSource) === getQuestionSourceKey(matchedSource);
+
+            return (
+              <button
+                key={`${selectedStep.answerPath}-answer-q-${questionNumber}`}
+                type="button"
+                disabled={!matchedSource}
+                onClick={() =>
+                  setSelectedQuestionSource((prev) => {
+                    setSelectedProblemQuestion(null);
+
+                    return matchedSource !== null &&
+                      prev !== null &&
+                      getQuestionSourceKey(prev) === getQuestionSourceKey(matchedSource)
+                      ? null
+                      : matchedSource;
+                  })
+                }
+                className={`question-circle-btn ${
+                  matchedSource ? 'question-circle-btn-available' : 'question-circle-btn-unavailable'
+                } ${isActive ? 'question-circle-btn-active' : ''}`}
+              >
+                Q{questionNumber}
+              </button>
+            );
+          })}
+        </div>
+        </div>
+
+        <div className="flex w-full justify-center">
+          <button
+            type="button"
+            onClick={() => {
+              setSelectedProblemQuestion(null);
+              setSelectedQuestionSource(null);
+              setExpandedSelection({
+                yearTitle: selectedStep.yearTitle,
+                stepTitle: null,
+                });
+                setSelectedStep(null);
+            }}
+            className="pastpaper-back-btn rounded-lg border border-sky-500/60 bg-sky-500/10 px-5 py-2 text-sm font-medium text-sky-200 transition-colors hover:bg-sky-500/20 hover:text-sky-100"
+          >
+            Back
+          </button>
+        </div>
+      </div>
+
+      {selectedProblemQuestion !== null && (
+        <div className="mx-auto mt-4 w-full max-w-5xl">
+          <div className="pastpaper-answer-title mb-4 text-center text-xl font-semibold text-emerald-200">
+            {`${selectedStep.yearTitle.replace('STEP ', '')} ${selectedStep.stepTitle.replace(
+              'STEP ',
+              ''
+            )} Q${selectedProblemQuestion} Question`}
+          </div>
+          <img
+            src={buildProblemImagePath(
+              selectedStep.yearTitle,
+              selectedStep.stepTitle,
+              selectedProblemQuestion
+            ) ?? undefined}
+            alt={`${selectedStep.yearTitle} ${selectedStep.stepTitle} Q${selectedProblemQuestion} question`}
+            className="mx-auto block h-auto w-full bg-white object-contain"
+          />
+        </div>
+      )}
+
+      {selectedQuestionSource && (
+        <div className="mx-auto mt-4 w-full max-w-5xl">
+          <div className="pastpaper-answer-title mb-4 text-center text-xl font-semibold text-emerald-200">
+            {selectedQuestionSource.title}
+          </div>
+          <iframe
+            key={selectedQuestionSource.htmlPath}
+            ref={answerFrameRef}
+            title={selectedQuestionSource.title}
+            src={selectedQuestionSource.htmlPath}
+            onLoad={handleAnswerFrameLoad}
+            scrolling="no"
+            className="block w-full border-0 bg-white"
+            style={{ height: `${answerFrameHeight}px` }}
+          />
+        </div>
+      )}
+    </motion.div>
+    );
+  };
+
   return (
     <>
       <Header />
@@ -572,233 +768,37 @@ const PastPapers: React.FC = () => {
             <div ref={interactiveAreaRef} className="-mx-8 sm:-mx-14 lg:-mx-20">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-2 px-8 sm:px-14 lg:px-20 items-start">
                 {paperCollections.map((collection, idx) => {
-                  const shouldFadeOut = activeAnswerRow >= 0 && Math.floor(idx / columnCount) > activeAnswerRow;
                   const isSelectedYear = effectiveSelection?.yearTitle === collection.title;
                   const pinnedStepTitle = isSelectedYear ? effectiveSelection?.stepTitle ?? null : null;
+                  // 该卡片是否是「选中年份那一行」的最后一张：详情面板插在它后面
+                  const isEndOfActiveRow =
+                    selectedStep !== null &&
+                    activeAnswerRow >= 0 &&
+                    Math.floor(idx / columnCount) === activeAnswerRow &&
+                    ((idx + 1) % columnCount === 0 || idx === paperCollections.length - 1);
 
                   return (
-                    <motion.div
-                      key={collection.title}
-                      layout
-                      initial={false}
-                      animate={shouldFadeOut ? { opacity: 0, height: 0, scale: 0.98 } : { opacity: 1, height: 'auto', scale: 1 }}
-                      transition={{ duration: 0.22, ease: 'easeOut' }}
-                      style={{ overflow: 'hidden', pointerEvents: shouldFadeOut ? 'none' : 'auto' }}
-                    >
-                      <HoverPapersCard
-                        collection={collection}
-                        delay={(idx + 1) * 0.05}
-                        isPinnedExpanded={isSelectedYear}
-                        pinnedStepTitle={pinnedStepTitle}
-                        selectedStepPath={selectedStep?.answerPath ?? null}
-                        detailAreaRef={isSelectedYear ? detailAreaRef : undefined}
-                        interactiveAreaRef={interactiveAreaRef}
-                        onYearToggle={(yearTitle) => {
-                          setSelectedStep(null);
-                          setSelectedProblemQuestion(null);
-                          setSelectedQuestionSource(null);
-                          setExpandedSelection((prev) =>
-                            prev?.yearTitle === yearTitle && prev.stepTitle === null ? null : { yearTitle, stepTitle: null }
-                          );
-                        }}
-                        onStepToggle={({ yearTitle, stepTitle, problemPath, answerPath }) => {
-                          setSelectedProblemQuestion(null);
-                          setSelectedQuestionSource(null);
-
-                          if (
-                            selectedStep?.yearTitle === yearTitle &&
-                            selectedStep.stepTitle === stepTitle
-                          ) {
-                            setSelectedStep(null);
-                            setExpandedSelection(null);
-                            return;
-                          }
-
-                          setExpandedSelection(null);
-                          setSelectedStep({ yearTitle, stepTitle, problemPath, answerPath });
-                        }}
-                        onRequestClose={(yearTitle) => {
-                          if (
-                            expandedSelection?.yearTitle !== yearTitle &&
-                            selectedStep?.yearTitle !== yearTitle
-                          ) {
-                            return;
-                          }
-
-                          setExpandedSelection(null);
-                          setSelectedStep(null);
-                          setSelectedProblemQuestion(null);
-                          setSelectedQuestionSource(null);
-                        }}
-                      />
-                    </motion.div>
+                    <React.Fragment key={collection.title}>
+                      <motion.div layout initial={false} transition={{ duration: 0.22, ease: 'easeOut' }}>
+                        <HoverPapersCard
+                          collection={collection}
+                          delay={(idx + 1) * 0.05}
+                          isPinnedExpanded={isSelectedYear}
+                          pinnedStepTitle={pinnedStepTitle}
+                          selectedStepPath={selectedStep?.answerPath ?? null}
+                          detailAreaRef={isSelectedYear ? detailAreaRef : undefined}
+                          interactiveAreaRef={interactiveAreaRef}
+                          onYearToggle={handleYearToggle}
+                          onStepToggle={handleStepToggle}
+                          onRequestClose={handleRequestClose}
+                        />
+                      </motion.div>
+                      {isEndOfActiveRow && renderDetailPanel()}
+                    </React.Fragment>
                   );
                 })}
 
-                {selectedStep && (
-                  <motion.div
-                    key={`${selectedStep.answerPath}-question-row`}
-                    ref={detailAreaRef}
-                    initial={{ opacity: 0, y: 6 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.18, ease: 'easeOut' }}
-                    className="col-span-1 sm:col-span-2 lg:col-span-3 mt-0"
-                  >
-                    <div className="flex w-full flex-col items-center gap-3">
-                      <div className="grid w-fit max-w-full grid-cols-[132px,max-content] items-center gap-3">
-                        <a
-                          href={selectedStep.problemPath}
-                          target="_blank"
-                          rel="noreferrer"
-                          title="Open all problems"
-                          className="pastpaper-tab-btn pastpaper-tab-btn-available inline-flex w-[132px] shrink-0 whitespace-nowrap items-center justify-center rounded-lg border border-amber-300/35 bg-amber-300/5 px-4 py-2 text-sm font-medium tracking-[0.12em] text-amber-300 transition-colors hover:border-amber-200/50 hover:bg-amber-300/10 hover:text-amber-200 focus:outline-none focus:ring-2 focus:ring-amber-300/70"
-                        >
-                          Problems
-                        </a>
-                        <div className="flex flex-wrap items-center gap-2">
-                          {Array.from({ length: selectedQuestionCount }, (_, index) => index + 1).map((questionNumber) => {
-                            const hasProblemImage = hasProblemImages(selectedStep.yearTitle, selectedStep.stepTitle);
-                            const isActiveProblem = selectedProblemQuestion === questionNumber;
-
-                            return (
-                              <button
-                                key={`${selectedStep.answerPath}-problem-q-${questionNumber}`}
-                                type="button"
-                                disabled={!hasProblemImage}
-                                onClick={() => {
-                                  if (!hasProblemImage) {
-                                    return;
-                                  }
-
-                                  setSelectedQuestionSource(null);
-                                  setSelectedProblemQuestion((prev) =>
-                                    prev === questionNumber ? null : questionNumber
-                                  );
-                                }}
-                                className={`question-circle-btn ${
-                                  hasProblemImage ? 'question-circle-btn-available' : 'question-circle-btn-unavailable'
-                                } ${isActiveProblem ? 'question-circle-btn-active' : ''}`}
-                              >
-                                Q{questionNumber}
-                              </button>
-                            );
-                          })}
-                        </div>
-                      </div>
-
-                      <div className="grid w-fit max-w-full grid-cols-[132px,max-content] items-center gap-3">
-                        <button
-                          type="button"
-                          disabled={!hasAnyAnswerSource(selectedStep)}
-                          onClick={() => {
-                            setSelectedProblemQuestion(null);
-                            setSelectedQuestionSource(null);
-                          }}
-                          className={`pastpaper-tab-btn pastpaper-answer-tab-btn inline-flex items-center justify-center rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] transition-colors ${
-                            hasAnyAnswerSource(selectedStep)
-                              ? 'pastpaper-tab-btn-available w-[132px] shrink-0 whitespace-nowrap rounded-lg border border-amber-300/35 bg-amber-300/5 px-4 py-2 text-sm font-medium tracking-[0.12em] text-amber-300 hover:border-amber-200/50 hover:bg-amber-300/10 hover:text-amber-200 focus:outline-none focus:ring-2 focus:ring-amber-300/70'
-                              : 'pastpaper-tab-btn-unavailable w-[132px] cursor-not-allowed rounded-lg border border-zinc-800 bg-zinc-900/70 px-4 py-2 text-sm font-medium tracking-[0.12em] text-zinc-500'
-                          }`}
-                        >
-                          Answers
-                        </button>
-                        <div className="flex flex-wrap items-center gap-2">
-                          {Array.from({ length: selectedQuestionCount }, (_, index) => index + 1).map((questionNumber) => {
-                            const matchedSource = findQuestionSource({
-                              yearTitle: selectedStep.yearTitle,
-                            stepTitle: selectedStep.stepTitle,
-                            questionNumber,
-                          });
-                          const isActive =
-                            matchedSource !== null &&
-                            selectedQuestionSource !== null &&
-                            getQuestionSourceKey(selectedQuestionSource) === getQuestionSourceKey(matchedSource);
-
-                          return (
-                            <button
-                              key={`${selectedStep.answerPath}-answer-q-${questionNumber}`}
-                              type="button"
-                              disabled={!matchedSource}
-                              onClick={() =>
-                                setSelectedQuestionSource((prev) => {
-                                  setSelectedProblemQuestion(null);
-
-                                  return matchedSource !== null &&
-                                    prev !== null &&
-                                    getQuestionSourceKey(prev) === getQuestionSourceKey(matchedSource)
-                                    ? null
-                                    : matchedSource;
-                                })
-                              }
-                              className={`question-circle-btn ${
-                                matchedSource ? 'question-circle-btn-available' : 'question-circle-btn-unavailable'
-                              } ${isActive ? 'question-circle-btn-active' : ''}`}
-                            >
-                              Q{questionNumber}
-                            </button>
-                          );
-                        })}
-                      </div>
-                      </div>
-
-                      <div className="flex w-full justify-center">
-                        <button
-                          type="button"
-                          onClick={() => {
-                            setSelectedProblemQuestion(null);
-                            setSelectedQuestionSource(null);
-                            setExpandedSelection({
-                              yearTitle: selectedStep.yearTitle,
-                              stepTitle: null,
-                              });
-                              setSelectedStep(null);
-                          }}
-                          className="pastpaper-back-btn rounded-lg border border-sky-500/60 bg-sky-500/10 px-5 py-2 text-sm font-medium text-sky-200 transition-colors hover:bg-sky-500/20 hover:text-sky-100"
-                        >
-                          Back
-                        </button>
-                      </div>
-                    </div>
-
-                    {selectedProblemQuestion !== null && (
-                      <div className="mx-auto mt-4 w-full max-w-5xl">
-                        <div className="pastpaper-answer-title mb-4 text-center text-xl font-semibold text-emerald-200">
-                          {`${selectedStep.yearTitle.replace('STEP ', '')} ${selectedStep.stepTitle.replace(
-                            'STEP ',
-                            ''
-                          )} Q${selectedProblemQuestion} Question`}
-                        </div>
-                        <img
-                          src={buildProblemImagePath(
-                            selectedStep.yearTitle,
-                            selectedStep.stepTitle,
-                            selectedProblemQuestion
-                          ) ?? undefined}
-                          alt={`${selectedStep.yearTitle} ${selectedStep.stepTitle} Q${selectedProblemQuestion} question`}
-                          className="mx-auto block h-auto w-full bg-white object-contain"
-                        />
-                      </div>
-                    )}
-
-                    {selectedQuestionSource && (
-                      <div className="mx-auto mt-4 w-full max-w-5xl">
-                        <div className="pastpaper-answer-title mb-4 text-center text-xl font-semibold text-emerald-200">
-                          {selectedQuestionSource.title}
-                        </div>
-                        <iframe
-                          key={selectedQuestionSource.htmlPath}
-                          ref={answerFrameRef}
-                          title={selectedQuestionSource.title}
-                          src={selectedQuestionSource.htmlPath}
-                          onLoad={handleAnswerFrameLoad}
-                          scrolling="no"
-                          className="block w-full border-0 bg-white"
-                          style={{ height: `${answerFrameHeight}px` }}
-                        />
-                      </div>
-                    )}
-                  </motion.div>
-                )}
+                {/* 详情面板由 renderDetailPanel() 插入到选中年份所在行之后 */}
               </div>
             </div>
           </div>

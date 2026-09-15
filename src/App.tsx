@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, lazy, useEffect, useState } from 'react';
 import '@radix-ui/themes/styles.css';
 import { Theme } from '@radix-ui/themes';
 import { ToastContainer } from 'react-toastify';
@@ -8,13 +8,19 @@ import { Moon, MousePointer2, Sun } from 'lucide-react';
 import {
   startSparkleTrail,
   stopSparkleTrail,
-} from './src/utils/sparkleTrail';
+} from './utils/sparkleTrail';
 
-import Home from './src/pages/Home';
-import NotFound from './src/pages/NotFound';
-import PastPapers from './src/pages/PastPapers';
-import Statistics from './src/pages/Statistics';
-import FormulaSheets from './src/pages/FormulaSheets';
+// 首页保持静态导入（它是首屏，懒加载反而多一次往返）；其余路由按需加载
+import Home from './pages/Home';
+
+const NotFound = lazy(() => import('./pages/NotFound'));
+const PastPapers = lazy(() => import('./pages/PastPapers'));
+const Statistics = lazy(() => import('./pages/Statistics'));
+const FormulaSheets = lazy(() => import('./pages/FormulaSheets'));
+
+const RouteFallback: React.FC = () => (
+  <div className="min-h-screen bg-zinc-900" aria-busy="true" />
+);
 
 type ThemeMode = 'dark' | 'light';
 
@@ -85,13 +91,15 @@ const App: React.FC = () => {
       <Router>
         <ScrollToTop />
         <main className="min-h-screen font-inter">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/statistics" element={<Statistics />} />
-            <Route path="/pastpapers" element={<PastPapers />} />
-            <Route path="/pastpapers/formula-sheets" element={<FormulaSheets />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <Suspense fallback={<RouteFallback />}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/statistics" element={<Statistics />} />
+              <Route path="/pastpapers" element={<PastPapers />} />
+              <Route path="/pastpapers/formula-sheets" element={<FormulaSheets />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
           <ToastContainer
             position="top-right"
             autoClose={3000}

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2024 III Q2 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .graph-block {
+      margin: 18px 0 20px;
+      text-align: center;
+    }
+
+    .graph-block img {
+      width: min(620px, 100%);
+      height: auto;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)(a)</span> Since Both sides are non-negative, squaring preserves the inequality</p>
+
+    <div class="math-block">
+      \[
+      4x^2-8x+64\leq x^2+16x+64
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      3x^2-24x\leq0\implies 3x(x-8)\leq0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \boxed{0\leq x\leq8}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(i)(b)</span></p>
+
+    <div class="math-block">
+      \[
+      4x^2-8x+64\leq 9x^2-48x+64
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      5x^2-40x\geq0\implies 5x(x-8)\geq0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \boxed{x\leq0\ \text{ or }\ x\geq8}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)(a)</span></p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \left(\sqrt{4x^2-8x+64}+2(x-1)\right)\mathrm{f}(x)
+      &=\left(4x^2-8x+64\right)-4(x-1)^2\\
+      &=\left(4x^2-8x+64\right)-\left(4x^2-8x+4\right)\\
+      &=60
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \mathrm{f}(x)=\frac{60}{\sqrt{4x^2-8x+64}+2(x-1)}
+      \]
+    </div>
+
+    <p>As \(\displaystyle x\to\infty\), the denominator \(\to\infty\)</p>
+
+    <div class="math-block">
+      \[
+      \implies \boxed{\mathrm{f}(x)\to0}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)(b)</span></p>
+
+    <div class="math-block">
+      \[
+      y=\sqrt{4x^2-8x+64}=2\sqrt{(x-1)^2+15}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \frac{y^2}{60}-\frac{(x-1)^2}{15}=1,\qquad y&gt;0
+      \]
+    </div>
+
+    <p>Minimum point \(\displaystyle \left(1,2\sqrt{15}\right)\), \(\displaystyle y\)-intercept \(8\), asymptotes \(\displaystyle y=\pm2(x-1)\)</p>
+
+    <div class="math-block">
+      \[
+      \mathrm{f}(x)&gt;0\implies \sqrt{4x^2-8x+64}&gt;2(x-1)\ \text{ for all }x
+      \]
+    </div>
+
+    <div class="graph-block">
+      <img src="2024_III_Q2_graph1.png" alt="Graphs of y = sqrt(4x^2-8x+64) and y = 2(x-1)" />
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iii)</span></p>
+
+    <div class="math-block">
+      \[
+      4x^2-5x+4=4\left(x-\frac58\right)^2+\frac{39}{16}&gt;0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      4x^2-5x+4\leq m^2x^2+2mcx+c^2
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \left(m^2-4\right)x^2+(2mc+5)x+c^2-4\geq0
+      \]
+    </div>
+
+    <p>The solution set \(\{x:x\geq3\}\) is a half-line, so the quadratic term must vanish.</p>
+
+    <div class="math-block">
+      \[
+      m^2-4=0\implies m=\pm2
+      \]
+    </div>
+
+    <p>Take \(\displaystyle m=2\):</p>
+
+    <div class="math-block">
+      \[
+      (4c+5)x+c^2-4\geq0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      4c+5&gt;0\quad\text{and}\quad c^2-4=-3(4c+5)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      c^2+12c+11=0\implies (c+1)(c+11)=0\implies c=-1,\ -11
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      c=-11\implies 4c+5=-39&lt;0\text{ (rejected)}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \boxed{m=2,\quad c=-1}
+      \]
+    </div>
+
+    <p>Check:</p>
+
+    <div class="math-block">
+      \[
+      4x^2-5x+4\leq(2x-1)^2=4x^2-4x+1\implies x\geq3
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iv)</span></p>
+
+    <div class="math-block">
+      \[
+      \left|x^2+px+q\right|\leq mx+c
+      \iff -(mx+c)\leq x^2+px+q\leq mx+c
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      x^2+(p-m)x+(q-c)\leq0\qquad\text{and}\qquad x^2+(p+m)x+(q+c)\geq0
+      \]
+    </div>
+
+    <p>The first gives a closed interval \([\alpha,\beta]\), the second gives everything outside an open interval \((\gamma,\delta)\).</p>
+
+    <div class="math-block">
+      \[
+      \{-5\leq x\leq1\}\cup\{5\leq x\leq7\}=[-5,7]\setminus(1,5)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \implies \alpha=-5,\ \beta=7,\ \gamma=1,\ \delta=5
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      x^2+(p-m)x+(q-c)=(x+5)(x-7)=x^2-2x-35
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      x^2+(p+m)x+(q+c)=(x-1)(x-5)=x^2-6x+5
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{cases}
+      p-m=-2 &\\
+      p+m=-6 &
+      \end{cases}
+      \implies
+      \begin{cases}
+      p=-4 &\\
+      m=-2 &
+      \end{cases}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{cases}
+      q-c=-35 &\\
+      q+c=-5 &
+      \end{cases}
+      \implies
+      \begin{cases}
+      q=-15 &\\
+      c=-20 &
+      \end{cases}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \text{Since }\left|x^2+px+q\right|\geq 0,\  mx+c=20-2x\geq0\text{ on }-5\leq x\leq7
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong></p>
+      <p>Published and refined by <strong>Jon</strong></p>
+      <p><em>Last updated: September 5, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>

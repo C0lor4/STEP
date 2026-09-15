@@ -44,9 +44,11 @@ $$(-\sqrt3,0),\quad (0,9),\quad (\sqrt3,0)$$
 \end{tikzpicture}
 \end{center}
 
-$$x^4-6x^2+b=0\iff x^4-6x^2=-b$$
-
 $$x^4-6x^2=(x^2-3)^2-9$$
+
+$$x^4-6x^2+b=0\iff \left(x^2-3\right)^2=9-b$$
+
+so $n$ is the number of points where the sketched curve meets the line $y=9-b$.
 
 $$
 \renewcommand{\arraystretch}{1.4}
@@ -60,7 +62,7 @@ $$
 
 \bigskip\hrule\bigskip
 
-\textbf{(ii)}
+\textbf{(ii)} Let $\ds \mathrm{f}_a(x)=x^4-6x^2+ax+b$
 
 $$\frac{dy}{dx}=4x^3-12x+a,\qquad \frac{d^2y}{dx^2}=12x^2-12$$
 
@@ -88,10 +90,9 @@ b & b>24 & b=24 & b<24\\
 \end{array}
 $$
 
-$\because$ When $\ds a=-8,\ x^4-6x^2-8x+b=f_8(-x)$
+$\because\ \ds \mathrm{f}_{-8}(x)=x^4-6x^2-8x+b=\mathrm{f}_{8}(-x)$
 
 $\therefore$ The roots count is the same for $\ds a=-8$
-
 
 \bigskip\hrule\bigskip
 
@@ -101,13 +102,13 @@ $$y=x^4-6x^2+ax,\qquad a>8$$
 
 $$\frac{dy}{dx}=4x^3-12x+a$$
 
-Let $\ds g(x)=4x^3-12x+a$
+Let $\ds \mathrm{g}(x)=4x^3-12x+a$
 
-$$g'(x)=12x^2-12$$
+$$\mathrm{g}'(x)=12x^2-12$$
 
-$$g(-1)=a+8>0,\qquad g(1)=a-8>0$$
+$$\mathrm{g}(-1)=a+8>0,\qquad \mathrm{g}(1)=a-8>0$$
 
-$$g(-2)=a-8>0,\qquad \lim_{x\to-\infty}g(x)=-\infty$$
+$$\mathrm{g}(-2)=a-8>0,\qquad \lim_{x\to-\infty}\mathrm{g}(x)=-\infty$$
 
 There is one stationary point at $x=\alpha$, where $\alpha<-2$
 
@@ -118,29 +119,33 @@ $$a=12\alpha-4\alpha^3$$
 $$y(\alpha)=\alpha^4-6\alpha^2+a\alpha
 =3\alpha^2(2-\alpha^2)<0$$
 
+$\ds\frac{dy}{dx}<0$ for $x<\alpha$ and $\ds\frac{dy}{dx}>0$ for $x>\alpha$, so $y=0$ has exactly two roots.
+
 $$y=x(x^3-6x+a)$$
 
 Let $\beta$ be the negative root of $\ds x^3-6x+a=0$
 
 $$\beta<\alpha<-2,\qquad y=0\text{ at }x=\beta,0$$
 
+$\ds\mathrm{g}$ has a minimum value $a-8$ at $x=1$, so the curve is close to flat near $x=1$ when $a$ is close to $8$.
+
 \begin{center}
 \begin{tikzpicture}
 \begin{axis}[
     axis lines=middle,
-    xmin=-4.2,xmax=2.2,
-    ymin=-19,ymax=18,
+    xmin=-4,xmax=2.7,
+    ymin=-32,ymax=32,
     xtick=\empty,
     ytick=\empty,
     width=10cm,
-    height=7cm,
-    samples=200,
-    clip=false
+    height=8cm,
+    samples=300
 ]
-\addplot[black,domain=-3.35:2.1] {x^4-6*x^2+10*x};
-\addplot[only marks,mark=*] coordinates {(-3.05,0) (0,0)};
-\node at (axis cs:-3.05,0) [above left] {$(\beta,0)$};
-\node at (axis cs:0,0) [below right] {$(0,0)$};
+\addplot[black,domain=-3.42:2.35] {x^4-6*x^2+10*x};
+\addplot[only marks,mark=*] coordinates {(-3.047,0) (0,0) (-2.054,-28.05)};
+\node at (axis cs:-3.047,0) [above left] {$(\beta,0)$};
+\node at (axis cs:0.22,0) [below right] {$O$};
+\node at (axis cs:-2.05,-30.6) {$\big(\alpha,\,3\alpha^2(2-\alpha^2)\big)$};
 \end{axis}
 \end{tikzpicture}
 \end{center}
@@ -150,7 +155,7 @@ $$\beta<\alpha<-2,\qquad y=0\text{ at }x=\beta,0$$
 \begin{center}
     This solution was submitted by \textbf{Jon}\\[4pt]
     Published and refined by \textbf{Jon}\\[8pt]
-    \textit{Last updated: June 30, 2026}
+    \textit{Last updated: June 20, 2026}
 \end{center}
 
 \end{document}

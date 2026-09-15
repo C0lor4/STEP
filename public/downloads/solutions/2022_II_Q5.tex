@@ -1,0 +1,83 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\textbf{(i)}
+
+$$a(x+y+z)-(ax+by+cz)=(a-b)y+(a-c)z$$
+
+$\because a>b$, $a>c$ and $y,z\geq0$
+
+$$\therefore \boxed{ax+by+cz\leq a(x+y+z)}$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)(a)} $\Delta$ is the sum of the areas of triangles $PBC$, $PCA$, $PAB$, with bases $a$, $b$, $c$ and heights $x$, $y$, $z$
+
+$$\therefore \boxed{\Delta=\tfrac12\left(ax+by+cz\right)}$$
+
+\bigskip
+
+\textbf{(ii)(b)} By part (i),
+
+$$2\Delta=ax+by+cz\leq a(x+y+z)\implies x+y+z\geq\frac{2\Delta}{a}$$
+
+Minimum occurs when $y=z=0$, giving $ax=2\Delta$
+
+$$\therefore \boxed{\min(x+y+z)=\frac{2\Delta}{a},\ \text{ at }x=\frac{2\Delta}{a},\ y=z=0}$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(iii)(a)}
+
+\begin{align*}
+(bx-ay)^2+(cy-bz)^2+(az-cx)^2+(ax+by+cz)^2
+&=b^2x^2-2abxy+a^2y^2\\
+&\quad+c^2y^2-2bcyz+b^2z^2\\
+&\quad+a^2z^2-2acxz+c^2x^2\\
+&\quad+a^2x^2+b^2y^2+c^2z^2\\
+&\quad+2abxy+2bcyz+2acxz
+\end{align*}
+
+$$=\left(a^2+b^2+c^2\right)\left(x^2+y^2+z^2\right)$$
+
+\bigskip
+
+\textbf{(iii)(b)} The first three squares are non-negative, so
+
+$$\left(a^2+b^2+c^2\right)\left(x^2+y^2+z^2\right)\geq(ax+by+cz)^2=4\Delta^2$$
+
+$$x^2+y^2+z^2\geq\frac{4\Delta^2}{a^2+b^2+c^2}$$
+
+Minimum occurs when $bx=ay$, $cy=bz$, $az=cx$, i.e.
+
+$$\frac xa=\frac yb=\frac zc=k,\qquad k\left(a^2+b^2+c^2\right)=2\Delta$$
+
+$$\therefore \boxed{\min\left(x^2+y^2+z^2\right)=\frac{4\Delta^2}{a^2+b^2+c^2},\ \text{ at }x=\frac{2a\Delta}{a^2+b^2+c^2},\ y=\frac{2b\Delta}{a^2+b^2+c^2},\ z=\frac{2c\Delta}{a^2+b^2+c^2}}$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(iv)} $c$ is the smallest of $a$, $b$, $c$, so as in part (i)
+
+$$c(x+y+z)\leq ax+by+cz=2\Delta\implies x+y+z\leq\frac{2\Delta}{c}$$
+
+$x,y,z\geq0$, so
+
+$$x^2+y^2+z^2\leq(x+y+z)^2\leq\frac{4\Delta^2}{c^2}$$
+
+Maximum occurs when $x=y=0$, giving $cz=2\Delta$
+
+$$\therefore \boxed{\max\left(x^2+y^2+z^2\right)=\frac{4\Delta^2}{c^2},\ \text{ at }x=y=0,\ z=\frac{2\Delta}{c}}$$
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: September 5, 2026}
+\end{center}
+
+\end{document}

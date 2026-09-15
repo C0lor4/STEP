@@ -27,6 +27,7 @@
     }
 
     .part-title {
+      margin-top: 18px;
       font-weight: 700;
     }
 
@@ -37,42 +38,25 @@
       padding-bottom: 2px;
     }
 
-    .divider {
-      margin: 28px 0 22px;
-      border: 0;
-      border-top: 1px solid #111827;
-    }
-
     .graph-block {
-      margin: 16px auto 12px;
-      display: flex;
-      justify-content: center;
+      margin: 18px 0 20px;
+      text-align: center;
     }
 
     .graph-block img {
-      height: auto;
-      display: block;
-    }
-
-    .graph-large img {
-      width: min(820px, 70%);
-    }
-
-    .graph-medium img {
-      width: min(620px, 100%);
-    }
-
-    .table-wide img {
-      width: min(950px, 35%);
-    }
-
-    .table-narrow img {
       width: min(560px, 100%);
+      height: auto;
     }
 
     .footer-note {
       margin-top: 28px;
       text-align: center;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
     }
 
     @media (max-width: 640px) {
@@ -98,85 +82,165 @@
   <main>
     <p><span class="part-title">(i)</span></p>
 
-    <div class="math-block">\[y=x^4-6x^2+9=(x^2-3)^2\]</div>
+    <div class="math-block">
+      \[
+      y=x^4-6x^2+9=(x^2-3)^2
+      \]
+    </div>
 
-    <div class="math-block">\[\frac{dy}{dx}=4x^3-12x=4x(x^2-3)\]</div>
+    <div class="math-block">
+      \[
+      \frac{dy}{dx}=4x^3-12x=4x(x^2-3)
+      \]
+    </div>
 
-    <div class="math-block">\[\frac{dy}{dx}=0\implies x=0,\ \pm\sqrt3\]</div>
+    <div class="math-block">
+      \[
+      \frac{dy}{dx}=0\implies x=0,\ \pm\sqrt3
+      \]
+    </div>
 
-    <div class="math-block">\[y(0)=9,\qquad y(\pm\sqrt3)=0\]</div>
+    <div class="math-block">
+      \[
+      y(0)=9,\qquad y(\pm\sqrt3)=0
+      \]
+    </div>
 
     <p>Stationary points are</p>
 
-    <div class="math-block">\[(-\sqrt3,0),\quad (0,9),\quad (\sqrt3,0)\]</div>
-
-    <div class="graph-block graph-large">
-      <img src="./2012_I_Q2_graph1.png" alt="Graph for part i" />
+    <div class="math-block">
+      \[
+      (-\sqrt3,0),\quad (0,9),\quad (\sqrt3,0)
+      \]
     </div>
 
-    <div class="math-block">\[x^4-6x^2+b=0\iff x^4-6x^2=-b\]</div>
+    <div class="graph-block">
+      <img src="2012_I_Q2_graph1.png" alt="Sketch of y = x^4 - 6x^2 + 9" />
+    </div>
 
-    <div class="math-block">\[x^4-6x^2=(x^2-3)^2-9\]</div>
+    <div class="math-block">
+      \[
+      x^4-6x^2=(x^2-3)^2-9
+      \]
+    </div>
 
-    <div class="graph-block table-wide">
-      <img src="./2012_I_Q2_table1.png" alt="Roots table for part i" />
+    <div class="math-block">
+      \[
+      x^4-6x^2+b=0\iff \left(x^2-3\right)^2=9-b
+      \]
+    </div>
+
+    <p>so \(n\) is the number of points where the sketched curve meets the line \(y=9-b\).</p>
+
+    <div class="math-block">
+      \[
+      \begin{array}{c||c|c|c|c|c}
+      n & 0 & 1 & 2 & 3 & 4\\
+      \hline
+      b & b&gt;9 & \text{none} & b&lt;0\text{ or }b=9 & b=0 & 0&lt;b&lt;9
+      \end{array}
+      \]
     </div>
 
     <hr class="divider" />
 
-    <p><span class="part-title">(ii)</span></p>
+    <p><span class="part-title">(ii)</span> Let \(\displaystyle \mathrm{f}_a(x)=x^4-6x^2+ax+b\)</p>
 
-    <div class="math-block">\[\frac{dy}{dx}=4x^3-12x+a,\qquad \frac{d^2y}{dx^2}=12x^2-12\]</div>
+    <div class="math-block">
+      \[
+      \frac{dy}{dx}=4x^3-12x+a,\qquad \frac{d^2y}{dx^2}=12x^2-12
+      \]
+    </div>
 
-    <div class="math-block">\[\frac{d^2y}{dx^2}=0\implies x=\pm1\]</div>
+    <div class="math-block">
+      \[
+      \frac{d^2y}{dx^2}=0\implies x=\pm1
+      \]
+    </div>
 
-    <p>When \(x=1\),</p>
+    <p>When \(\displaystyle x=1,\ 4-12+a=0\implies a=8\)</p>
 
-    <div class="math-block">\[4-12+a=0\implies a=8\]</div>
-
-    <p>When \(x=-1\),</p>
-
-    <div class="math-block">\[-4+12+a=0\implies a=-8\]</div>
-
-    <div class="math-block">\[a=\pm8\]</div>
+    <p>When \(\displaystyle x=-1, \ -4+12+a=0\implies a=-8\)</p>
 
     <p>When \(a=8\),</p>
 
-    <div class="math-block">\[y=x^4-6x^2+8x+b,\qquad \frac{dy}{dx}=4(x-1)^2(x+2)\]</div>
-
-    <p>Minimum point has \(x=-2\),</p>
-
-    <div class="math-block">\[y(-2)=16-24-16+b=b-24\]</div>
-
-    <p>When \(a=-8\),</p>
-
-    <div class="math-block">\[x^4-6x^2-8x+b=x^4-6x^2+8x+b\quad\text{with }x\text{ replaced by }-x\]</div>
-
-    <div class="graph-block table-narrow">
-      <img src="./2012_I_Q2_table2.png" alt="Roots table for part ii" />
+    <div class="math-block">
+      \[
+      y=x^4-6x^2+8x+b,\qquad \frac{dy}{dx}=4(x-1)^2(x+2)
+      \]
     </div>
+
+    <div class="math-block">
+      \[
+      \frac{dy}{dx}&lt;0\quad (x&lt;-2),\qquad \frac{dy}{dx}\geq 0\quad(x&gt;-2)
+      \]
+    </div>
+
+    <p>Minimum point has \(x=-2,\ y(-2)=b-24\)</p>
+
+    <div class="math-block">
+      \[
+      \begin{array}{c||c|c|c}
+      b & b&gt;24 & b=24 & b&lt;24\\
+      \hline
+      \text{roots} & 0 & 1 & 2
+      \end{array}
+      \]
+    </div>
+
+    <p>\(\because\ \displaystyle \mathrm{f}_{-8}(x)=x^4-6x^2-8x+b=\mathrm{f}_{8}(-x)\)</p>
+
+    <p>\(\therefore\) The roots count is the same for \(\displaystyle a=-8\)</p>
 
     <hr class="divider" />
 
     <p><span class="part-title">(iii)</span></p>
 
-    <div class="math-block">\[y=x^4-6x^2+ax,\qquad a>8\]</div>
+    <div class="math-block">
+      \[
+      y=x^4-6x^2+ax,\qquad a&gt;8
+      \]
+    </div>
 
-    <div class="math-block">\[\frac{dy}{dx}=4x^3-12x+a\]</div>
+    <div class="math-block">
+      \[
+      \frac{dy}{dx}=4x^3-12x+a
+      \]
+    </div>
 
-    <p>Let \(\displaystyle g(x)=4x^3-12x+a\)</p>
+    <p>Let \(\displaystyle \mathrm{g}(x)=4x^3-12x+a\)</p>
 
-    <div class="math-block">\[g'(x)=12x^2-12\]</div>
+    <div class="math-block">
+      \[
+      \mathrm{g}'(x)=12x^2-12
+      \]
+    </div>
 
-    <div class="math-block">\[g(-1)=a+8>0,\qquad g(1)=a-8>0\]</div>
+    <div class="math-block">
+      \[
+      \mathrm{g}(-1)=a+8&gt;0,\qquad \mathrm{g}(1)=a-8&gt;0
+      \]
+    </div>
 
-    <div class="math-block">\[g(-2)=a-8>0,\qquad \lim_{x\to-\infty}g(x)=-\infty\]</div>
+    <div class="math-block">
+      \[
+      \mathrm{g}(-2)=a-8&gt;0,\qquad \lim_{x\to-\infty}\mathrm{g}(x)=-\infty
+      \]
+    </div>
 
     <p>There is one stationary point at \(x=\alpha\), where \(\alpha&lt;-2\)</p>
 
-    <div class="math-block">\[4\alpha^3-12\alpha+a=0\]</div>
+    <div class="math-block">
+      \[
+      4\alpha^3-12\alpha+a=0
+      \]
+    </div>
 
-    <div class="math-block">\[a=12\alpha-4\alpha^3\]</div>
+    <div class="math-block">
+      \[
+      a=12\alpha-4\alpha^3
+      \]
+    </div>
 
     <div class="math-block">
       \[
@@ -185,14 +249,26 @@
       \]
     </div>
 
-    <div class="math-block">\[y=x(x^3-6x+a)\]</div>
+    <p>\(\displaystyle\frac{dy}{dx}&lt;0\) for \(x&lt;\alpha\) and \(\displaystyle\frac{dy}{dx}&gt;0\) for \(x&gt;\alpha\), so \(y=0\) has exactly two roots.</p>
+
+    <div class="math-block">
+      \[
+      y=x(x^3-6x+a)
+      \]
+    </div>
 
     <p>Let \(\beta\) be the negative root of \(\displaystyle x^3-6x+a=0\)</p>
 
-    <div class="math-block">\[\beta&lt;\alpha&lt;-2,\qquad y=0\text{ at }x=\beta,0\]</div>
+    <div class="math-block">
+      \[
+      \beta&lt;\alpha&lt;-2,\qquad y=0\text{ at }x=\beta,0
+      \]
+    </div>
 
-    <div class="graph-block graph-medium">
-      <img src="./2012_I_Q2_graph2.png" alt="Graph for part iii" />
+    <p>\(\displaystyle\mathrm{g}\) has a minimum value \(a-8\) at \(x=1\), so the curve is close to flat near \(x=1\) when \(a\) is close to \(8\).</p>
+
+    <div class="graph-block">
+      <img src="2012_I_Q2_graph2.png" alt="Sketch of y = x^4 - 6x^2 + ax for a &gt; 8" />
     </div>
 
     <hr class="divider" />
@@ -200,7 +276,7 @@
     <div class="footer-note">
       <p>This solution was submitted by <strong>Jon</strong></p>
       <p>Published and refined by <strong>Jon</strong></p>
-      <p><em>Last updated: June 30, 2026</em></p>
+      <p><em>Last updated: June 20, 2026</em></p>
     </div>
   </main>
 </body>

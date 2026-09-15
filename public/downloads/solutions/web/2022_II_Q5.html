@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2022 II Q5 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span></p>
+
+    <div class="math-block">
+      \[
+      a(x+y+z)-(ax+by+cz)=(a-b)y+(a-c)z
+      \]
+    </div>
+
+    <p>\(\because a&gt;b\), \(a&gt;c\) and \(y,z\geq0\)</p>
+
+    <div class="math-block">
+      \[
+      \therefore \boxed{ax+by+cz\leq a(x+y+z)}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)(a)</span> \(\Delta\) is the sum of the areas of triangles \(PBC\), \(PCA\), \(PAB\), with bases \(a\), \(b\), \(c\) and heights \(x\), \(y\), \(z\)</p>
+
+    <div class="math-block">
+      \[
+      \therefore \boxed{\Delta=\tfrac12\left(ax+by+cz\right)}
+      \]
+    </div>
+
+    <p><span class="part-title">(ii)(b)</span> By part (i),</p>
+
+    <div class="math-block">
+      \[
+      2\Delta=ax+by+cz\leq a(x+y+z)\implies x+y+z\geq\frac{2\Delta}{a}
+      \]
+    </div>
+
+    <p>Minimum occurs when \(y=z=0\), giving \(ax=2\Delta\)</p>
+
+    <div class="math-block">
+      \[
+      \therefore \boxed{\min(x+y+z)=\frac{2\Delta}{a},\ \text{ at }x=\frac{2\Delta}{a},\ y=z=0}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iii)(a)</span></p>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      (bx-ay)^2+(cy-bz)^2+(az-cx)^2+(ax+by+cz)^2
+      &=b^2x^2-2abxy+a^2y^2\\
+      &\quad+c^2y^2-2bcyz+b^2z^2\\
+      &\quad+a^2z^2-2acxz+c^2x^2\\
+      &\quad+a^2x^2+b^2y^2+c^2z^2\\
+      &\quad+2abxy+2bcyz+2acxz
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      =\left(a^2+b^2+c^2\right)\left(x^2+y^2+z^2\right)
+      \]
+    </div>
+
+    <p><span class="part-title">(iii)(b)</span> The first three squares are non-negative, so</p>
+
+    <div class="math-block">
+      \[
+      \left(a^2+b^2+c^2\right)\left(x^2+y^2+z^2\right)\geq(ax+by+cz)^2=4\Delta^2
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      x^2+y^2+z^2\geq\frac{4\Delta^2}{a^2+b^2+c^2}
+      \]
+    </div>
+
+    <p>Minimum occurs when \(bx=ay\), \(cy=bz\), \(az=cx\), i.e.</p>
+
+    <div class="math-block">
+      \[
+      \frac xa=\frac yb=\frac zc=k,\qquad k\left(a^2+b^2+c^2\right)=2\Delta
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore \boxed{\min\left(x^2+y^2+z^2\right)=\frac{4\Delta^2}{a^2+b^2+c^2},\ \text{ at }x=\frac{2a\Delta}{a^2+b^2+c^2},\ y=\frac{2b\Delta}{a^2+b^2+c^2},\ z=\frac{2c\Delta}{a^2+b^2+c^2}}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iv)</span> \(c\) is the smallest of \(a\), \(b\), \(c\), so as in part (i)</p>
+
+    <div class="math-block">
+      \[
+      c(x+y+z)\leq ax+by+cz=2\Delta\implies x+y+z\leq\frac{2\Delta}{c}
+      \]
+    </div>
+
+    <p>\(x,y,z\geq0\), so</p>
+
+    <div class="math-block">
+      \[
+      x^2+y^2+z^2\leq(x+y+z)^2\leq\frac{4\Delta^2}{c^2}
+      \]
+    </div>
+
+    <p>Maximum occurs when \(x=y=0\), giving \(cz=2\Delta\)</p>
+
+    <div class="math-block">
+      \[
+      \therefore \boxed{\max\left(x^2+y^2+z^2\right)=\frac{4\Delta^2}{c^2},\ \text{ at }x=y=0,\ z=\frac{2\Delta}{c}}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong></p>
+      <p>Published and refined by <strong>Jon</strong></p>
+      <p><em>Last updated: September 5, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>

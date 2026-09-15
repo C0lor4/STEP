@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2024 III Q3 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .graph-block {
+      margin: 18px 0 20px;
+      text-align: center;
+    }
+
+    .graph-block img {
+      width: min(560px, 100%);
+      height: auto;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)</span></p>
+
+    <div class="math-block">
+      \[
+      \mathrm{g}(x)=\ln(x+1)-\ln x-\frac{x+c}{x(x+1)}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \frac{d}{dx}\Big(\ln(x+1)-\ln x\Big)=\frac1{x+1}-\frac1x=-\frac1{x(x+1)}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \frac{d}{dx}\left(\frac{x+c}{x^2+x}\right)
+      &=\frac{\left(x^2+x\right)-(x+c)(2x+1)}{\left(x^2+x\right)^2}\\
+      &=\frac{x^2+x-\left(2x^2+x+2cx+c\right)}{x^2(x+1)^2}\\
+      &=-\frac{x^2+2cx+c}{x^2(x+1)^2}
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \mathrm{g}'(x)
+      &=-\frac1{x(x+1)}+\frac{x^2+2cx+c}{x^2(x+1)^2}\\
+      &=\frac{-x(x+1)+x^2+2cx+c}{x^2(x+1)^2}\\
+      &=\frac{(2c-1)x+c}{x^2(x+1)^2}
+      \end{aligned}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      x&gt;0\implies x^2(x+1)^2&gt;0
+      \]
+    </div>
+
+    <p><span class="part-title">(i)(a)</span> For \(\displaystyle c\geq\frac12\)</p>
+
+    <div class="math-block">
+      \[
+      2c-1\geq0,\quad c&gt;0\implies (2c-1)x+c&gt;0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore \boxed{\mathrm{g}'(x)&gt;0\text{ for all }x&gt;0}
+      \]
+    </div>
+
+    <p><span class="part-title">(i)(b)</span> For \(\displaystyle 0\leq c&lt;\frac12\)</p>
+
+    <div class="math-block">
+      \[
+      (2c-1)x+c&lt;0\iff x&gt;\frac{c}{1-2c}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \boxed{x&gt;\frac{c}{1-2c}}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span></p>
+
+    <p>As \(\displaystyle x\to\infty\), \(\displaystyle \ln\left(1+\frac1x\right)\to0\) and \(\displaystyle \frac{x+c}{x(x+1)}\to0 \implies \mathrm{g}(x)\to0\)</p>
+
+    <p><span class="part-title">(ii)(a)</span> \(\displaystyle c=\frac34\)</p>
+
+    <p>\(\because \mathrm{g}\) is increasing on \(x&gt;0\)</p>
+
+    <p>\(\therefore \mathrm{g}(x)&lt;0\)</p>
+
+    <div class="graph-block">
+      <img src="2024_III_Q3_graph1.png" alt="Sketch of y = g(x) for c = 3/4" />
+    </div>
+
+    <p><span class="part-title">(ii)(b)</span> \(\displaystyle c=\frac14\)</p>
+
+    <div class="math-block">
+      \[
+      \frac{c}{1-2c}=\frac12\implies \text{maximum point at }x=\frac12
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \mathrm{g}\left(\frac12\right)=\ln3-1&gt;0
+      \]
+    </div>
+
+    <div class="graph-block">
+      <img src="2024_III_Q3_graph2.png" alt="Sketch of y = g(x) for c = 1/4" />
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iii)</span></p>
+
+    <div class="math-block">
+      \[
+      \ln \mathrm{f}(x)=(x+c)\ln\left(1+\frac1x\right)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \begin{aligned}
+      \text{Let }\mathrm{g}(x)=\frac{\mathrm{f}'(x)}{\mathrm{f}(x)}
+      &=\ln\left(1+\frac1x\right)+(x+c)\left(-\frac1{x(x+1)}\right)\\
+      &=\ln\left(1+\frac1x\right)-\frac{x+c}{x(x+1)}
+      \end{aligned}
+      \]
+    </div>
+
+    <p><span class="part-title">(iii)(a)</span> For \(\displaystyle c\geq\frac12\), from part (ii), \(\mathrm{g}(x)&lt;0\) for all \(x&gt;0\)</p>
+
+    <div class="math-block">
+      \[
+      \implies \mathrm{f}'(x)&lt;0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore \boxed{\mathrm{f}\text{ is decreasing}}
+      \]
+    </div>
+
+    <p><span class="part-title">(iii)(b)</span> For \(\displaystyle 0&lt;c&lt;\frac12\), let \(\displaystyle a=\frac{c}{1-2c}\)</p>
+
+    <p>\(\mathrm{g}\) is continuous and increasing on \((0,a)\), with \(\mathrm{g}(x)\to-\infty\) as \(x\to0\) and \(\mathrm{g}(a)&gt;0\), so \(\mathrm{g}\) has exactly one root \(x_0\in(0,a)\).</p>
+
+    <div class="math-block">
+      \[
+      \mathrm{g}(x)&lt;0\text{ on }(0,x_0),\qquad \mathrm{g}(x)&gt;0\text{ on }(x_0,\infty)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \implies \mathrm{f}'(x)&lt;0\text{ on }(0,x_0),\qquad \mathrm{f}'(x)&gt;0\text{ on }(x_0,\infty)
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore \boxed{\mathrm{f}\text{ has a minimum point at }x=x_0}
+      \]
+    </div>
+
+    <p><span class="part-title">(iii)(c)</span> For \(c=0\)</p>
+
+    <div class="math-block">
+      \[
+      \mathrm{g}'(x)=\frac{-x}{x^2(x+1)^2}&lt;0
+      \]
+    </div>
+
+    <p>\(\mathrm{g}\) is decreasing on \(x&gt;0\) with \(\mathrm{g}(x)\to0\), so \(\mathrm{g}(x)&gt;0\) throughout.</p>
+
+    <div class="math-block">
+      \[
+      \implies \mathrm{f}'(x)&gt;0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore \boxed{\mathrm{f}\text{ is increasing}}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong></p>
+      <p>Published and refined by <strong>Jon</strong></p>
+      <p><em>Last updated: September 1, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>

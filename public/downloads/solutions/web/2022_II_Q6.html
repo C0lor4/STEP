@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2022 II Q6 Answer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 32px 40px;
+      background: #ffffff;
+      color: #111827;
+      font: 18px/1.7 "Times New Roman", Times, serif;
+    }
+
+    main {
+      width: min(940px, 100%);
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .part-title {
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .math-block {
+      margin: 12px 0 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .divider {
+      margin: 28px 0 22px;
+      border: 0;
+      border-top: 1px solid #111827;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 16px 28px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <main>
+    <p><span class="part-title">(i)(a)</span> \(x^2+y^2=2ax\)</p>
+
+    <div class="math-block">
+      \[
+      2x+2y\frac{dy}{dx}=2a\implies a=x+y\frac{dy}{dx}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      x^2+y^2=2x\left(x+y\frac{dy}{dx}\right)=2x^2+2xy\frac{dy}{dx}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore \boxed{2xy\frac{dy}{dx}=y^2-x^2}
+      \]
+    </div>
+
+    <p>\(x^2+y^2=2by\)</p>
+
+    <div class="math-block">
+      \[
+      2x+2y\frac{dy}{dx}=2b\frac{dy}{dx}\implies b=y+x\bigg/\frac{dy}{dx}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      x^2+y^2=2y\left(y+x\bigg/\frac{dy}{dx}\right)=2y^2+\frac{2xy}{\frac{dy}{dx}}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore \boxed{\left(x^2-y^2\right)\frac{dy}{dx}=2xy}
+      \]
+    </div>
+
+    <p><span class="part-title">(i)(b)</span> At a common point with \(y\neq x\), \(x,y&gt;0\):</p>
+
+    <div class="math-block">
+      \[
+      m_1=\frac{y^2-x^2}{2xy},\quad m_2=\frac{2xy}{x^2-y^2}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      m_1m_2=-1
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore \boxed{\text{the tangents are perpendicular}}
+      \]
+    </div>
+
+    <p>At \((c,c)\): \(a=c\) and \(b=c\), giving circles centre \((c,0)\) and \((0,c)\), both radius \(c\). The radii to \((c,c)\) are vertical and horizontal respectively</p>
+
+    <div class="math-block">
+      \[
+      \therefore \boxed{\text{tangents: }y=c\text{ and }x=c\text{ --- perpendicular}}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(ii)</span> \(y=c\ln x\)</p>
+
+    <div class="math-block">
+      \[
+      \frac{dy}{dx}=\frac cx,\quad c=\frac{y}{\ln x}\implies \frac{dy}{dx}=\frac{y}{x\ln x}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \frac{dy}{dx}=-\frac{x\ln x}{y}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \int y\,dy=-\int x\ln x\,dx
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \int x\ln x\,dx=\frac{x^2}{2}\ln x-\int\frac x2\,dx=\frac{x^2}{2}\ln x-\frac{x^2}{4}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \frac{y^2}{2}=-\frac{x^2}{2}\ln x+\frac{x^2}{4}+K
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore \boxed{y^2=\tfrac12x^2-x^2\ln x+C}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <p><span class="part-title">(iii)</span> \(y^2=4k(x+k)\)</p>
+
+    <div class="math-block">
+      \[
+      2y\frac{dy}{dx}=4k\implies k=\tfrac12y\frac{dy}{dx}
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      y^2=4\cdot\tfrac12y\frac{dy}{dx}\left(x+\tfrac12y\frac{dy}{dx}\right)=2xy\frac{dy}{dx}+y^2\left(\frac{dy}{dx}\right)^2
+      \]
+    </div>
+
+    <p>Dividing by \(y^2\) and writing \(\displaystyle m=\frac{dy}{dx}\):</p>
+
+    <div class="math-block">
+      \[
+      m^2+\frac{2x}{y}m-1=0
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      m_1m_2=-1
+      \]
+    </div>
+
+    <div class="math-block">
+      \[
+      \therefore \boxed{\text{the tangents to the two curves are perpendicular}}
+      \]
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-note">
+      <p>This solution was submitted by <strong>Jon</strong></p>
+      <p>Published and refined by <strong>Jon</strong></p>
+      <p><em>Last updated: September 5, 2026</em></p>
+    </div>
+  </main>
+</body>
+</html>

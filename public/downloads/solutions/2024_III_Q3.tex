@@ -1,0 +1,158 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\setlength{\parindent}{0pt}
+\begin{document}
+\newcommand{\ds}{\displaystyle}
+
+\textbf{(i)}
+
+$$\mathrm{g}(x)=\ln(x+1)-\ln x-\frac{x+c}{x(x+1)}$$
+
+$$\frac{d}{dx}\Big(\ln(x+1)-\ln x\Big)=\frac1{x+1}-\frac1x=-\frac1{x(x+1)}$$
+
+\begin{align*}
+\frac{d}{dx}\left(\frac{x+c}{x^2+x}\right)
+&=\frac{\left(x^2+x\right)-(x+c)(2x+1)}{\left(x^2+x\right)^2}\\
+&=\frac{x^2+x-\left(2x^2+x+2cx+c\right)}{x^2(x+1)^2}\\
+&=-\frac{x^2+2cx+c}{x^2(x+1)^2}
+\end{align*}
+
+\begin{align*}
+\mathrm{g}'(x)
+&=-\frac1{x(x+1)}+\frac{x^2+2cx+c}{x^2(x+1)^2}\\
+&=\frac{-x(x+1)+x^2+2cx+c}{x^2(x+1)^2}\\
+&=\frac{(2c-1)x+c}{x^2(x+1)^2}
+\end{align*}
+
+$$x>0\implies x^2(x+1)^2>0$$
+
+\textbf{(i)(a)} For $\ds c\geq\frac12$
+
+$$2c-1\geq0,\quad c>0\implies (2c-1)x+c>0$$
+
+$$\therefore \boxed{\mathrm{g}'(x)>0\text{ for all }x>0}$$
+
+\textbf{(i)(b)} For $\ds 0\leq c<\frac12$
+
+$$(2c-1)x+c<0\iff x>\frac{c}{1-2c}$$
+
+$$\boxed{x>\frac{c}{1-2c}}$$
+
+\bigskip\hrule\bigskip
+
+\textbf{(ii)}
+
+As $\ds x\to\infty$, $\ds \ln\left(1+\frac1x\right)\to0$ and $\ds \frac{x+c}{x(x+1)}\to0 \implies \mathrm{g}(x)\to0$
+
+\textbf{(ii)(a)} $\ds c=\frac34$
+
+$\because \mathrm{g}$ is increasing on $x>0$
+
+$\therefore \mathrm{g}(x)<0$
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines=middle,
+    xmin=-0.6, xmax=6,
+    ymin=-2.1, ymax=0.55,
+    width=10cm,
+    height=6.2cm,
+    axis line style={->, thick},
+    xlabel={$x$},
+    ylabel={$y$},
+    xtick=\empty,
+    ytick=\empty,
+    clip=false,
+    samples=300
+]
+\addplot[domain=0.22:6, thick] {ln(1+1/x)-(x+0.75)/(x*(x+1))};
+\node at (axis cs:0,0) [above left] {$0$};
+\node at (axis cs:4.3,0.3) {$y=\mathrm{g}(x)$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\textbf{(ii)(b)} $\ds c=\frac14$
+
+$$\frac{c}{1-2c}=\frac12\implies \text{maximum point at }x=\frac12$$
+
+$$\mathrm{g}\left(\frac12\right)=\ln3-1>0$$
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines=middle,
+    xmin=-0.6, xmax=6,
+    ymin=-0.42, ymax=0.19,
+    width=10cm,
+    height=6.2cm,
+    axis line style={->, thick},
+    xlabel={$x$},
+    ylabel={$y$},
+    xtick={0.5},
+    xticklabels={$\frac12$},
+    ytick=\empty,
+    tick style={draw=none},
+    clip=false,
+    samples=300
+]
+\addplot[domain=0.14:6, thick] {ln(1+1/x)-(x+0.25)/(x*(x+1))};
+\addplot[dashed] coordinates {(0.5,0) (0.5,0.0986)};
+\node at (axis cs:0,0) [above left] {$0$};
+\node at (axis cs:4.3,0.115) {$y=\mathrm{g}(x)$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\bigskip\hrule\bigskip
+
+\textbf{(iii)}
+
+$$\ln \mathrm{f}(x)=(x+c)\ln\left(1+\frac1x\right)$$
+
+\begin{align*}
+\text{Let }\mathrm{g}(x)=\frac{\mathrm{f}'(x)}{\mathrm{f}(x)}
+&=\ln\left(1+\frac1x\right)+(x+c)\left(-\frac1{x(x+1)}\right)\\
+&=\ln\left(1+\frac1x\right)-\frac{x+c}{x(x+1)}
+\end{align*}
+
+
+\textbf{(iii)(a)} For $\ds c\geq\frac12$, from part (ii), $\mathrm{g}(x)<0$ for all $x>0$
+
+$$\implies \mathrm{f}'(x)<0$$
+
+$$\therefore \boxed{\mathrm{f}\text{ is decreasing}}$$
+
+\textbf{(iii)(b)} For $\ds 0<c<\frac12$, let $\ds a=\frac{c}{1-2c}$
+
+$\mathrm{g}$ is continuous and increasing on $(0,a)$, with $\mathrm{g}(x)\to-\infty$ as $x\to0$ and $\mathrm{g}(a)>0$, so $\mathrm{g}$ has exactly one root $x_0\in(0,a)$.
+
+$$\mathrm{g}(x)<0\text{ on }(0,x_0),\qquad \mathrm{g}(x)>0\text{ on }(x_0,\infty)$$
+
+$$\implies \mathrm{f}'(x)<0\text{ on }(0,x_0),\qquad \mathrm{f}'(x)>0\text{ on }(x_0,\infty)$$
+
+$$\therefore \boxed{\mathrm{f}\text{ has a minimum point at }x=x_0}$$
+
+\textbf{(iii)(c)} For $c=0$
+
+$$\mathrm{g}'(x)=\frac{-x}{x^2(x+1)^2}<0$$
+
+$\mathrm{g}$ is decreasing on $x>0$ with $\mathrm{g}(x)\to0$, so $\mathrm{g}(x)>0$ throughout.
+
+$$\implies \mathrm{f}'(x)>0$$
+
+$$\therefore \boxed{\mathrm{f}\text{ is increasing}}$$
+
+\bigskip
+\hrule
+\begin{center}
+    This solution was submitted by \textbf{Jon}\\[4pt]
+    Published and refined by \textbf{Jon}\\[8pt]
+    \textit{Last updated: September 1, 2026}
+\end{center}
+
+\end{document}

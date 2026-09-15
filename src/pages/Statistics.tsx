@@ -130,7 +130,7 @@ const yearOptions = Array.from({ length: 27 }, (_, index) => 2026 - index);
 
 const Statistics: React.FC = () => {
   const [activeCompetition, setActiveCompetition] = React.useState<CompetitionStep>('I');
-  const [selectedYear, setSelectedYear] = React.useState<number>(2025);
+  const [selectedYear, setSelectedYear] = React.useState<number>(yearOptions[0]);
   const [hoveredBarScore, setHoveredBarScore] = React.useState<number | null>(null);
   const [pinnedBarScores, setPinnedBarScores] = React.useState<number[]>([]);
   const [isCumulativeView, setIsCumulativeView] = React.useState(false);
@@ -196,13 +196,18 @@ const Statistics: React.FC = () => {
     () => buildDistribution(visibleDistribution),
     [visibleDistribution]
   );
+  // 累计视图画累计概率（单调递增，末端到 1）；普通视图画每个分数各自的占比
+  const getBarValue = React.useCallback(
+    (item: ScoreDistributionItem) => (isCumulativeView ? item.cumulative : item.value),
+    [isCumulativeView]
+  );
   const maxDistributionValue = React.useMemo(() => {
     if (scoreDistribution.length === 0) {
       return 1;
     }
-    const maxValue = Math.max(...scoreDistribution.map((item) => item.value));
+    const maxValue = Math.max(...scoreDistribution.map(getBarValue));
     return maxValue === 0 ? 1 : maxValue;
-  }, [scoreDistribution]);
+  }, [getBarValue, scoreDistribution]);
   const summaryRows = React.useMemo(
     () => buildSummaryRows(visibleDistribution, selectedTopPercentile),
     [visibleDistribution, selectedTopPercentile]
@@ -403,7 +408,7 @@ const Statistics: React.FC = () => {
                               ? 'from-emerald-600/70 to-emerald-300/90'
                               : 'from-emerald-600/50 to-emerald-300/70 hover:from-emerald-600/70 hover:to-emerald-300/90'
                           }`}
-                          style={{ height: `${(item.value / maxDistributionValue) * 100}%` }}
+                          style={{ height: `${(getBarValue(item) / maxDistributionValue) * 100}%` }}
                           onMouseEnter={() => {
                             setHoveredBarScore(item.score);
                           }}

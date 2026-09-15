@@ -19,7 +19,7 @@ export default defineConfig([
       '@typescript-eslint/no-explicit-any': 'off',
     },
     languageOptions: {
-      ecmaVersion: 2020,
+      ecmaVersion: 2022,
       globals: globals.browser,
     },
   },
